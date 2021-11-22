@@ -40,6 +40,19 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Egg");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
+                {
+                    b.Property<string>("name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("image")
+                        .HasColumnType("text");
+
+                    b.HasKey("name");
+
+                    b.ToTable("Element");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>
                 {
                     b.Property<int>("pokemon_base")
@@ -91,6 +104,35 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("level");
 
                     b.ToTable("Level");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
+                {
+                    b.Property<string>("name")
+                        .HasColumnType("text");
+
+                    b.Property<int>("duration")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("element")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("energy")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("power")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("name");
+
+                    b.HasIndex("element");
+
+                    b.ToTable("Movement");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>
@@ -333,6 +375,17 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("PokeStop");
 
                     b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Element", "Element")
+                        .WithMany()
+                        .HasForeignKey("element")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Element");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>

@@ -38,5 +38,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<EvolutionChain> Evolution_chain { get; set; }
         public virtual DbSet<Egg> Egg { get; set; }
         public virtual DbSet<PackageOffer> Package_offer { get; set; }
+        public virtual DbSet<Movement> Movement { get; set; }
     }
 }
