@@ -13,6 +13,10 @@ namespace PokemonGolotEF.Data
         { 
         }
 
+        protected override void OnModelCreating(ModelBuilder model) 
+        {
+            model.Entity<EvolutionChain>().HasKey(nameof(EvolutionChain.pokemon_base), nameof(EvolutionChain.pokemon_evolved));
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -29,6 +33,8 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<Team> Team { get; set; }
         public virtual DbSet<PokeStop> PokeStop { get; set; }
         public virtual DbSet<Gym> Gym { get; set; }
-
+        public virtual DbSet<Pokemon_level> Pokemon_level { get; set; }
+        public virtual DbSet<Raid> Raid { get; set; }
+        public virtual DbSet<EvolutionChain> Evolution_chain { get; set; }
     }
 }

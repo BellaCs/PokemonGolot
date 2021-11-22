@@ -48,7 +48,7 @@
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
-              "version": "[6.2.0, )"
+              "version": "[6.4.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

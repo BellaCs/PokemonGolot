@@ -16,7 +16,7 @@ namespace PokemonGolotEF.Model
         [Required]
         public string password { get; set; }
         [ForeignKey("Team")]
-        public string team_name { get; set; }
+        public string team { get; set; }
         public char gender { get; set; }
         [Required]
         [ForeignKey("Level")]
@@ -36,7 +36,7 @@ namespace PokemonGolotEF.Model
 
 
 
-        [ForeignKey("team_name")]
+        [ForeignKey("team")]
         public virtual Team Team { get; set; }
         [ForeignKey("level")]
         public virtual Level Level { get; set; }

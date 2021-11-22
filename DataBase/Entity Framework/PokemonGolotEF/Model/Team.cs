@@ -12,7 +12,7 @@ namespace PokemonGolotEF.Model
         }
 
         [Key]
-        public string team_name { get; set; }
+        public string name { get; set; }
         [Required]
         public string color { get; set; }
         [Required]
