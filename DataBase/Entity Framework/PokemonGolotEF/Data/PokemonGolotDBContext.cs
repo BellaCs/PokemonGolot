@@ -36,5 +36,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<Pokemon_level> Pokemon_level { get; set; }
         public virtual DbSet<Raid> Raid { get; set; }
         public virtual DbSet<EvolutionChain> Evolution_chain { get; set; }
+        public virtual DbSet<Egg> Egg { get; set; }
     }
 }

@@ -22,6 +22,24 @@ namespace PokemonGolotEF.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Egg", b =>
+                {
+                    b.Property<double>("km_egg")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("km_egg");
+
+                    b.ToTable("Egg");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>
                 {
                     b.Property<int>("pokemon_base")
