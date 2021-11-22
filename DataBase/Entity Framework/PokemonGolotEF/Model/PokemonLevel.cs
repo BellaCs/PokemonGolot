@@ -2,7 +2,7 @@
 
 namespace PokemonGolotEF.Model
 {
-    class Pokemon_level
+    class PokemonLevel
     {
         [Key]
         public float pokemon_level { get; set; }

@@ -111,6 +111,22 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Object");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
+                {
+                    b.Property<string>("name")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("active")
+                        .HasColumnType("boolean");
+
+                    b.Property<double>("price")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("name");
+
+                    b.ToTable("Package_offer");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
                 {
                     b.Property<int>("num_pokedex")
@@ -159,7 +175,7 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Pokemon");
                 });
 
-            modelBuilder.Entity("PokemonGolotEF.Model.Pokemon_level", b =>
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
                 {
                     b.Property<float>("pokemon_level")
                         .HasColumnType("real");
