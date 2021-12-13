@@ -43,5 +43,7 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<PackageOffer> Package_offer { get; set; }
         public virtual DbSet<Movement> Movement { get; set; }
         public virtual DbSet<Present> Present { get; set; }
+        public virtual DbSet<RaidParticipant> Raid_participants { get; set; }
+        public virtual DbSet<PokemonOwned> Pokemon_owned { get; set; }
     }
 }
