@@ -16,6 +16,9 @@ namespace PokemonGolotEF.Data
         protected override void OnModelCreating(ModelBuilder model) 
         {
             model.Entity<EvolutionChain>().HasKey(nameof(EvolutionChain.pokemon_base), nameof(EvolutionChain.pokemon_evolved));
+            model.Entity<Present>().HasOne(p => p.Receptor).WithMany(u => u.recivedPresents);
+            model.Entity<Present>().HasOne(p => p.Owner).WithMany(u => u.presentsToSend);
+            model.Entity<RaidParticipant>().HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,5 +42,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<Egg> Egg { get; set; }
         public virtual DbSet<PackageOffer> Package_offer { get; set; }
         public virtual DbSet<Movement> Movement { get; set; }
+        public virtual DbSet<Present> Present { get; set; }
     }
 }
