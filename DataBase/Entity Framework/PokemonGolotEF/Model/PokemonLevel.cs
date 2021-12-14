@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PokemonGolotEF.Model
 {
     class PokemonLevel
     {
+        public PokemonLevel()
+        {
+            pokemons = new HashSet<PokemonOwned>();
+        }
         [Key]
         public float pokemon_level { get; set; }
         [Required]
@@ -12,5 +17,8 @@ namespace PokemonGolotEF.Model
         public int stardust_to_upgrade { get; set; }
         [Required]
         public int candy_to_upgrade { get; set; }
+
+
+        public virtual ICollection<PokemonOwned> pokemons { get; set; }
     }
 }

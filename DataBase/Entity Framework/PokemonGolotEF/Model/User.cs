@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,9 +7,18 @@ namespace PokemonGolotEF.Model
 {
     class User
     {
+        public User() 
+        {
+            recivedPresents = new HashSet<Present>();
+            presentsToSend = new HashSet<Present>();
+            raidsParticipated = new HashSet<RaidParticipant>();
+            pokemons = new HashSet<PokemonOwned>();
+        }
+
         [Key]
         [StringLength(20)]
         public string user_name { get; set; }
+        [Index(IsUnique =true)]
         [Required]
         public string email { get; set; }
         [Required]
@@ -40,6 +50,11 @@ namespace PokemonGolotEF.Model
         public virtual Team Team { get; set; }
         [ForeignKey("level")]
         public virtual Level Level { get; set; }
+
+        public virtual ICollection<Present> recivedPresents { get; set; }
+        public virtual ICollection<Present> presentsToSend { get; set; }
+        public virtual ICollection<RaidParticipant> raidsParticipated { get; set; }
+        public virtual ICollection<PokemonOwned> pokemons { get; set; }
 
     }
 }

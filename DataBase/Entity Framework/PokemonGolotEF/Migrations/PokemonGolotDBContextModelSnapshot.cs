@@ -106,6 +106,24 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Level");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
+                {
+                    b.Property<short>("level")
+                        .HasColumnType("smallint");
+
+                    b.Property<string>("object_name")
+                        .HasColumnType("text");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("level", "object_name");
+
+                    b.HasIndex("object_name");
+
+                    b.ToTable("Levelup_object_rewards");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
                 {
                     b.Property<string>("name")
@@ -236,6 +254,48 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Pokemon_level");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonOwned", b =>
+                {
+                    b.Property<int>("pokemonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("pokemonId"));
+
+                    b.Property<int>("atack_iv")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("defense_iv")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("level")
+                        .HasColumnType("real");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("stamina_iv")
+                        .HasColumnType("integer");
+
+                    b.HasKey("pokemonId");
+
+                    b.HasIndex("level");
+
+                    b.HasIndex("owner");
+
+                    b.HasIndex("pokemon");
+
+                    b.ToTable("Pokemon_owned");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
                 {
                     b.Property<string>("location")
@@ -248,6 +308,45 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("location");
 
                     b.ToTable("PokeStop");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
+                {
+                    b.Property<int>("presentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("presentId"));
+
+                    b.Property<DateTime>("getDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("opened")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("pokeStop")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("receptor")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<DateTime>("sendDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("presentId");
+
+                    b.HasIndex("owner");
+
+                    b.HasIndex("pokeStop");
+
+                    b.HasIndex("receptor");
+
+                    b.ToTable("Present");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -267,6 +366,26 @@ namespace PokemonGolotEF.Migrations
                     b.HasIndex("boss");
 
                     b.ToTable("Raid");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
+                {
+                    b.Property<string>("gym")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Raidlocation")
+                        .HasColumnType("text");
+
+                    b.HasKey("gym", "user");
+
+                    b.HasIndex("Raidlocation");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Raid_participants");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -377,6 +496,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Team");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Level", "Level")
+                        .WithMany("rewards")
+                        .HasForeignKey("level")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Object", "Object")
+                        .WithMany("levels")
+                        .HasForeignKey("object_name")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Level");
+
+                    b.Navigation("Object");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.Element", "Element")
@@ -386,6 +524,58 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired();
 
                     b.Navigation("Element");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonOwned", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.PokemonLevel", "Level")
+                        .WithMany("pokemons")
+                        .HasForeignKey("level")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "Owner")
+                        .WithMany("pokemons")
+                        .HasForeignKey("owner")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
+                        .WithMany("Owners")
+                        .HasForeignKey("pokemon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Level");
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("Pokemon");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.User", "Owner")
+                        .WithMany("presentsToSend")
+                        .HasForeignKey("owner")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.PokeStop", "PokeStop")
+                        .WithMany("presents")
+                        .HasForeignKey("pokeStop")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "Receptor")
+                        .WithMany("recivedPresents")
+                        .HasForeignKey("receptor");
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("PokeStop");
+
+                    b.Navigation("Receptor");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -405,6 +595,29 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Gym");
 
                     b.Navigation("Pokemon");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Raid", null)
+                        .WithMany("Participants")
+                        .HasForeignKey("Raidlocation");
+
+                    b.HasOne("PokemonGolotEF.Model.Gym", "Gym")
+                        .WithMany()
+                        .HasForeignKey("gym")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("raidsParticipated")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
@@ -431,7 +644,34 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
                 {
+                    b.Navigation("rewards");
+
                     b.Navigation("users");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>
+                {
+                    b.Navigation("levels");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
+                {
+                    b.Navigation("Owners");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
+                {
+                    b.Navigation("pokemons");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
+                {
+                    b.Navigation("presents");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
+                {
+                    b.Navigation("Participants");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -439,6 +679,17 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Gyms");
 
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
+                {
+                    b.Navigation("pokemons");
+
+                    b.Navigation("presentsToSend");
+
+                    b.Navigation("raidsParticipated");
+
+                    b.Navigation("recivedPresents");
                 });
 #pragma warning restore 612, 618
         }
