@@ -9,14 +9,21 @@ namespace PokemonGolotEF.Model
         [Key]
         public int pokemonId { get; set; }
         [ForeignKey("Pokemon")]
+        [Required]
         public int pokemon { get; set; }
         [ForeignKey("Owner")]
+        [Required]
         public string owner { get; set; }
+        [Required]
         public int atack_iv { get; set; }
+        [Required]
         public int stamina_iv { get; set; }
+        [Required]
         public int defense_iv { get; set; }
+        [Required]
         public string name { get; set; }
         [ForeignKey("Level")]
+        [Required]
         public float level { get; set; }
 
         [ForeignKey("pokemon")]

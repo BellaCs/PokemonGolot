@@ -9,14 +9,18 @@ namespace PokemonGolotEF.Model
         [Key]
         public int presentId { get; set; }
         [ForeignKey("Owner")]
+        [Required]
         public string owner { get; set; }
         [ForeignKey("PokeStop")]
+        [Required]
         public string pokeStop { get; set; }
         [ForeignKey("Receptor")]
         public string receptor { get; set; }
+        [Required]
         public bool opened { get; set; }
-        public DateTime sendDate { get; set; }
-        public DateTime recievedDate { get; set; } 
+        [Required]
+        public DateTime getDate { get; set; }
+        public DateTime sendDate { get; set; } 
 
 
         [ForeignKey("owner")]

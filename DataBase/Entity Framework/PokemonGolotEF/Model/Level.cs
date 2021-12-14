@@ -9,6 +9,7 @@ namespace PokemonGolotEF.Model
         public Level()
         {
             users = new HashSet<User>();
+            rewards = new HashSet<LevelupObjectReward>();
         }
 
         [Key]
@@ -19,5 +20,6 @@ namespace PokemonGolotEF.Model
 
 
         public virtual ICollection<User> users { get; set; }
+        public virtual ICollection<LevelupObjectReward> rewards { get; set; }
     }
 }
