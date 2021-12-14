@@ -71,6 +71,21 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Evolution_chain");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
+                {
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("friend")
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("user", "friend");
+
+                    b.HasIndex("friend");
+
+                    b.ToTable("Friendships");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
                 {
                     b.Property<string>("location")
@@ -500,6 +515,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("PokemonEvolved");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.User", "Friend")
+                        .WithMany("friends")
+                        .HasForeignKey("friend")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Friend");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.PokeStop", "PokeStop")
@@ -725,6 +759,8 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
                 {
+                    b.Navigation("friends");
+
                     b.Navigation("pokemons");
 
                     b.Navigation("presentsToSend");

@@ -13,6 +13,7 @@ namespace PokemonGolotEF.Model
             presentsToSend = new HashSet<Present>();
             raidsParticipated = new HashSet<RaidParticipant>();
             pokemons = new HashSet<PokemonOwned>();
+            friends = new HashSet<Friendship>();
         }
 
         [Key]
@@ -55,6 +56,7 @@ namespace PokemonGolotEF.Model
         public virtual ICollection<Present> presentsToSend { get; set; }
         public virtual ICollection<RaidParticipant> raidsParticipated { get; set; }
         public virtual ICollection<PokemonOwned> pokemons { get; set; }
+        public virtual ICollection<Friendship> friends { get; set; }
 
     }
 }

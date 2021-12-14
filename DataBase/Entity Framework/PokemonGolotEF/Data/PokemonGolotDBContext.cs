@@ -34,6 +34,15 @@ namespace PokemonGolotEF.Data
 
             model.Entity<GymDefense>()
                 .HasKey(nameof(GymDefense.gym), nameof(GymDefense.pokemon));
+
+            model.Entity<Friendship>()
+                .HasKey(nameof(Friendship.user), nameof(Friendship.friend));
+
+            model.Entity<Friendship>()
+                .HasOne(f => f.Friend)
+                .WithMany(u => u.friends);
+
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -62,5 +71,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<PokemonOwned> Pokemon_owned { get; set; }
         public virtual DbSet<LevelupObjectReward> Levelup_object_rewards { get; set; }
         public virtual DbSet<GymDefense> Gym_defensors { get; set; }
+        public virtual DbSet<Friendship> Friendships { get; set; }
     }
 }
