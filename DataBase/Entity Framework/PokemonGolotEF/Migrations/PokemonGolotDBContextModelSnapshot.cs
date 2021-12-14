@@ -442,6 +442,24 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Team");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
+                {
+                    b.Property<string>("element")
+                        .HasColumnType("text");
+
+                    b.Property<string>("affected_element")
+                        .HasColumnType("text");
+
+                    b.Property<double>("multiplier")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("element", "affected_element");
+
+                    b.HasIndex("affected_element");
+
+                    b.ToTable("Type_table");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
                 {
                     b.Property<string>("user_name")
@@ -692,6 +710,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Gym");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Element", "Affected_element")
+                        .WithMany()
+                        .HasForeignKey("affected_element")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Element", "Element")
+                        .WithMany()
+                        .HasForeignKey("element")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Affected_element");
+
+                    b.Navigation("Element");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>

@@ -42,6 +42,8 @@ namespace PokemonGolotEF.Data
                 .HasOne(f => f.Friend)
                 .WithMany(u => u.friends);
 
+            model.Entity<TypeTable>()
+                .HasKey(nameof(TypeTable.element), nameof(TypeTable.affected_element));
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,5 +74,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<LevelupObjectReward> Levelup_object_rewards { get; set; }
         public virtual DbSet<GymDefense> Gym_defensors { get; set; }
         public virtual DbSet<Friendship> Friendships { get; set; }
+        public virtual DbSet<TypeTable> Type_table { get; set; }
     }
 }
