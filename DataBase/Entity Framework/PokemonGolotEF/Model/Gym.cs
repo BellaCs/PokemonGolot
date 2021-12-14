@@ -11,6 +11,7 @@ namespace PokemonGolotEF.Model
         public Gym()
         {
             raids = new HashSet<Raid>();
+            defensors = new HashSet<GymDefense>();
         }
 
         [Key]
@@ -30,5 +31,7 @@ namespace PokemonGolotEF.Model
         [ForeignKey("team")]
         public virtual Team Team { get; set; }
         public virtual ICollection<Raid> raids { get; set; }
+        public virtual ICollection<GymDefense> defensors { get; set; }
+      
     }
 }
