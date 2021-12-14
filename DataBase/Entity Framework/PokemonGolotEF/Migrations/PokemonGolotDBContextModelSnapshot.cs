@@ -90,6 +90,27 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Gym");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.GymDefense", b =>
+                {
+                    b.Property<string>("gym")
+                        .HasColumnType("text");
+
+                    b.Property<int>("pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("defenseTime")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("timesFeeded")
+                        .HasColumnType("integer");
+
+                    b.HasKey("gym", "pokemon");
+
+                    b.HasIndex("pokemon");
+
+                    b.ToTable("Gym_defensors");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
                 {
                     b.Property<short>("level")
@@ -496,6 +517,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Team");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.GymDefense", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Gym", "Gym")
+                        .WithMany("defensors")
+                        .HasForeignKey("gym")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
+                        .WithMany()
+                        .HasForeignKey("pokemon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("Pokemon");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.Level", "Level")
@@ -639,6 +679,8 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
                 {
+                    b.Navigation("defensors");
+
                     b.Navigation("raids");
                 });
 
