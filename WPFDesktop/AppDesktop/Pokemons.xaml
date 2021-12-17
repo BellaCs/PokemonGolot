@@ -1,0 +1,39 @@
+﻿<Window x:Name="PokemonsPage" x:Class="AppDesktop.Pokemons"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppDesktop"
+        mc:Ignorable="d"
+        Title="Pokemons" Height="720" Width="1280" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="background.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="1274" Margin="0,0,-0.4,0" Background="Black" Opacity="0.75">
+            <Label x:Name="PokemonGolot" Content="POKEMON GOLOT" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="48" FontFamily="Caladea" FontWeight="Bold" Foreground="White" OpacityMask="White"/>
+
+            <Image x:Name="PokemonLogo" HorizontalAlignment="Left" Height="75" Margin="17,0,0,0" VerticalAlignment="Center" Width="75" Source="/Assets/logo2.png"/>
+            <Button HorizontalAlignment="Right" Margin="0,0,17,0" VerticalAlignment="Center" Height="75"  Width="75" Click="ButtonCloseSession_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/logout.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+            <Button x:Name="ButtonPlayers" Content="Jugadors" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonPlayers_Click"   Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White"/>
+            <Button x:Name="ButtonPokemons" Content="Pokemons" HorizontalAlignment="Left" Margin="335,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Background="White" BorderBrush="White" Opacity="0.98">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonAdmin"  Content="Administradors" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonAdmin_Click"   Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White"/>
+            <Grid HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
+
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

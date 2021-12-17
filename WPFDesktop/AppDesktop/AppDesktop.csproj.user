@@ -7,7 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Players.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pokemons.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

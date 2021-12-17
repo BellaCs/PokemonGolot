@@ -24,5 +24,12 @@ namespace AppDesktop
         {
             InitializeComponent();
         }
+
+        private void IniciarSessio_Click(object sender, RoutedEventArgs e)
+        {
+            Admin objSecondWindow = new Admin();
+            this.Visibility = Visibility.Hidden;
+            objSecondWindow.Show();
+        }
     }
 }

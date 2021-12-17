@@ -4,18 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokemonGolotEF.Model
 {
-    class RaidParticipant
+    internal class Friendship
     {
-        [ForeignKey("Gym")]
-        public string gym { get; set; }
         [ForeignKey("User")]
         public string user { get; set; }
+        [ForeignKey("Friend")]
+        public string friend { get; set; }
 
-
-
-        [ForeignKey("gym")]
-        public virtual Gym Gym { get; set; }
         [ForeignKey("user")]
         public virtual User User { get; set; }
+        [ForeignKey("friend")]
+        public virtual User Friend { get; set; }
     }
 }
