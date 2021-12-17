@@ -20,19 +20,13 @@
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="366,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"><Run Language="es-es"/>
         <Hyperlink NavigateUri="">He perdut la contrasenya</Hyperlink>
         </TextBlock>
+
         <Button x:Name="iniciar" 
                 HorizontalAlignment="Left" Margin="542,571,0,0" VerticalAlignment="Top" Width="190" 
                 Foreground="White" FontWeight="Bold"  
                 ClipToBounds="True" 
-                Height="45" FontSize="24" RenderTransformOrigin="0.5,0.5" BorderBrush="Black" Background="Black"
->
-            <Button.Content>
-                <Border CornerRadius="5" Height="45" Width="190" BorderThickness="3,3,3,3" BorderBrush="#FF707070">
-
-                </Border>
-            </Button.Content>
-
-        </Button>
+                Height="45" FontSize="24" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF707070" Background="#FF707070"
+                Content="Accedir" OpacityMask="White"/>
 
 
 
