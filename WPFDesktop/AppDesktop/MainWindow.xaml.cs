@@ -25,9 +25,9 @@ namespace AppDesktop
             InitializeComponent();
         }
 
-        private void IniciarSessio_Click(object sender, RoutedEventArgs e)
+        private void Login_OnClick(object sender, RoutedEventArgs e)
         {
-            Admin objSecondWindow = new Admin();
+            Pokemons objSecondWindow = new Pokemons();
             this.Visibility = Visibility.Hidden;
             objSecondWindow.Show();
         }

@@ -11,13 +11,13 @@
     </Window.Background>
     <Grid>
         <Grid HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="1274" Margin="0,0,-0.4,0" Background="Black" Opacity="0.75">
+            <Image x:Name="PokemonLogo" HorizontalAlignment="Left" Height="75" Margin="18,5,0,0" VerticalAlignment="Top" Width="75" Source="/logo2.png"/>
             <Label x:Name="PokemonGolot" Content="POKEMON GOLOT" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="48" FontFamily="Caladea" FontWeight="Bold" Foreground="White" OpacityMask="White"/>
-            <Button HorizontalAlignment="Right" Margin="0,0,17,0" VerticalAlignment="Center" Height="75"  Width="75" Click="ButtonCloseSession_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+            <Button HorizontalAlignment="Right" Margin="0,0,17,0" VerticalAlignment="Center" Height="75"  Width="75" Click="ButtonCloseSession_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
                 <Button.Background>
-                    <ImageBrush ImageSource="/Assets/logout.png"/>
+                    <ImageBrush ImageSource="/logout.png"/>
                 </Button.Background>
             </Button>
-            <Image x:Name="PokemonLogo" HorizontalAlignment="Left" Height="75" Margin="18,5,0,0" VerticalAlignment="Top" Width="75" Source="logo2.png"/>
         </Grid>
         <Button x:Name="ButtonPlayers" Content="Jugadors" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Background="White" BorderBrush="White" Opacity="0.98" OpacityMask="Black" Foreground="Black">
         <Button.Effect>
