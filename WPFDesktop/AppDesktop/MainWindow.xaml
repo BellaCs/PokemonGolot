@@ -21,7 +21,7 @@
         <Hyperlink NavigateUri="">He perdut la contrasenya</Hyperlink>
         </TextBlock>
 
-        <Button x:Name="iniciar" Click="Login_OnClick"
+        <Button x:Name="iniciar" 
                 HorizontalAlignment="Left" Margin="542,571,0,0" VerticalAlignment="Top" Width="190" 
                 Foreground="White" FontWeight="Bold"  
                 ClipToBounds="True" 
