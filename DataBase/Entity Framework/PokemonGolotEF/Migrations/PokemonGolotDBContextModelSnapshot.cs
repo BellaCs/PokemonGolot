@@ -241,6 +241,24 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Package_offer");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
+                {
+                    b.Property<string>("package")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<DateTime>("last_bought_date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("package", "user");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Package_offers_bought");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
                 {
                     b.Property<int>("num_pokedex")
@@ -685,6 +703,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Element");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.PackageOffer", "Package")
+                        .WithMany("buyers")
+                        .HasForeignKey("package")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("packagesOfferBought")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Package");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonOwned", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.PokemonLevel", "Level")
@@ -853,6 +890,11 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("levels");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
+                {
+                    b.Navigation("buyers");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
                 {
                     b.Navigation("Owners");
@@ -885,6 +927,8 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("eggs");
 
                     b.Navigation("friends");
+
+                    b.Navigation("packagesOfferBought");
 
                     b.Navigation("pokedex");
 

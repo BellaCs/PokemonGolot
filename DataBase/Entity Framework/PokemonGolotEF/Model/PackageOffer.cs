@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PokemonGolotEF.Model
 {
@@ -8,5 +9,8 @@ namespace PokemonGolotEF.Model
         public string name { get; set; }
         public double price { get; set; }
         public bool active { get; set; }
+
+
+        public ICollection<PackageOfferBought> buyers { get; set; }
     }
 }

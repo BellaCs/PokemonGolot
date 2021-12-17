@@ -70,6 +70,11 @@ namespace PokemonGolotEF.Data
             model.Entity<EggInventory>()
                 .HasKey(nameof(EggInventory.egg), nameof(EggInventory.user));
 
+            // Package Bought 
+
+            model.Entity<PackageOfferBought>()
+                .HasKey(nameof(PackageOfferBought.package), nameof(PackageOfferBought.user));
+
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -103,5 +108,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<TypeTable> Type_table { get; set; }
         public virtual DbSet<PokemonRegister> Pokemon_register { get; set; }
         public virtual DbSet<EggInventory> Egg_inventory { get; set;}
+        public virtual DbSet<PackageOfferBought> Package_offers_bought { get; set; }
     }
 }
