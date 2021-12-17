@@ -26,7 +26,7 @@
                 Foreground="White" FontWeight="Bold"  
                 ClipToBounds="True" 
                 Height="45" FontSize="24" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF707070" Background="#FF707070"
-                Content="Accedir" OpacityMask="White"/>
+                Content="Accedir" OpacityMask="White" Click="Login_OnClick"/>
 
 
 
