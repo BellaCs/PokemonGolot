@@ -225,6 +225,24 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Object");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
+                {
+                    b.Property<string>("objectName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("integer");
+
+                    b.HasKey("objectName", "user");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Object_inventories");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
                 {
                     b.Property<string>("name")
@@ -703,6 +721,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Element");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Object", "Object")
+                        .WithMany()
+                        .HasForeignKey("objectName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("inventory")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Object");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.PackageOffer", "Package")
@@ -927,6 +964,8 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("eggs");
 
                     b.Navigation("friends");
+
+                    b.Navigation("inventory");
 
                     b.Navigation("packagesOfferBought");
 

@@ -17,6 +17,7 @@ namespace PokemonGolotEF.Model
             pokedex = new HashSet<PokemonRegister>();
             eggs = new HashSet<EggInventory>();
             packagesOfferBought = new HashSet<PackageOfferBought>();
+            inventory = new HashSet<ObjectInventory>();
         }
 
         [Key]
@@ -63,6 +64,7 @@ namespace PokemonGolotEF.Model
         public virtual ICollection<PokemonRegister> pokedex { get; set; }
         public virtual ICollection<EggInventory> eggs { get; set; }
         public virtual ICollection<PackageOfferBought> packagesOfferBought { get; set; }
+        public virtual ICollection<ObjectInventory> inventory { get; set; }
 
     }
 }
