@@ -17,7 +17,7 @@ namespace PokemonGolotEF.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -38,6 +38,24 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("km_egg");
 
                     b.ToTable("Egg");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
+                {
+                    b.Property<double>("egg")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<double>("remainingKm")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("egg", "user");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Egg_inventory");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
@@ -332,6 +350,36 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Pokemon_owned");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
+                {
+                    b.Property<int>("pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<char>("gender")
+                        .HasColumnType("character(1)");
+
+                    b.Property<int>("capturedNumber")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("height")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("sawed")
+                        .HasColumnType("boolean");
+
+                    b.Property<double>("weight")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("pokemon", "user", "gender");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Pokemon_register");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
                 {
                     b.Property<string>("location")
@@ -514,6 +562,25 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Egg", "Egg")
+                        .WithMany()
+                        .HasForeignKey("egg")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("eggs")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Egg");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.Pokemon", "PokemonBase")
@@ -643,6 +710,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Owner");
 
                     b.Navigation("Pokemon");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
+                        .WithMany()
+                        .HasForeignKey("pokemon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("pokedex")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pokemon");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
@@ -796,7 +882,11 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
                 {
+                    b.Navigation("eggs");
+
                     b.Navigation("friends");
+
+                    b.Navigation("pokedex");
 
                     b.Navigation("pokemons");
 

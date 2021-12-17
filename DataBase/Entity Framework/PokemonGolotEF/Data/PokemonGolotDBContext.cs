@@ -15,8 +15,13 @@ namespace PokemonGolotEF.Data
 
         protected override void OnModelCreating(ModelBuilder model) 
         {
+
+            // Evolution Chain
+
             model.Entity<EvolutionChain>()
                 .HasKey(nameof(EvolutionChain.pokemon_base), nameof(EvolutionChain.pokemon_evolved));
+
+            // Present
 
             model.Entity<Present>()
                 .HasOne(p => p.Receptor)
@@ -26,14 +31,22 @@ namespace PokemonGolotEF.Data
                 .HasOne(p => p.Owner)
                 .WithMany(u => u.presentsToSend);
 
+            // Raid Participant
+
             model.Entity<RaidParticipant>()
                 .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
+
+            // LevelUp Reward
 
             model.Entity<LevelupObjectReward>()
                 .HasKey(nameof(LevelupObjectReward.level), nameof(LevelupObjectReward.object_name));
 
+            // Gym Defensors
+
             model.Entity<GymDefense>()
                 .HasKey(nameof(GymDefense.gym), nameof(GymDefense.pokemon));
+
+            // Friendship
 
             model.Entity<Friendship>()
                 .HasKey(nameof(Friendship.user), nameof(Friendship.friend));
@@ -42,8 +55,21 @@ namespace PokemonGolotEF.Data
                 .HasOne(f => f.Friend)
                 .WithMany(u => u.friends);
 
+            // Type Table
+
             model.Entity<TypeTable>()
                 .HasKey(nameof(TypeTable.element), nameof(TypeTable.affected_element));
+
+            // Pokemon Register
+
+            model.Entity<PokemonRegister>()
+                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.user), nameof(PokemonRegister.gender));
+
+            // Egg Inventory
+
+            model.Entity<EggInventory>()
+                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.user));
+
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -75,5 +101,7 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<GymDefense> Gym_defensors { get; set; }
         public virtual DbSet<Friendship> Friendships { get; set; }
         public virtual DbSet<TypeTable> Type_table { get; set; }
+        public virtual DbSet<PokemonRegister> Pokemon_register { get; set; }
+        public virtual DbSet<EggInventory> Egg_inventory { get; set;}
     }
 }
