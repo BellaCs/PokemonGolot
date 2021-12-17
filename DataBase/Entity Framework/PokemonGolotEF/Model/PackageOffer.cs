@@ -12,5 +12,6 @@ namespace PokemonGolotEF.Model
 
 
         public ICollection<PackageOfferBought> buyers { get; set; }
+        public ICollection<PackageItems> Items { get; set; }
     }
 }

@@ -243,6 +243,24 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Object_inventories");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
+                {
+                    b.Property<string>("objectName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("package")
+                        .HasColumnType("text");
+
+                    b.Property<int>("units")
+                        .HasColumnType("integer");
+
+                    b.HasKey("objectName", "package");
+
+                    b.HasIndex("package");
+
+                    b.ToTable("Package_items");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
                 {
                     b.Property<string>("name")
@@ -740,6 +758,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Object", "Object")
+                        .WithMany()
+                        .HasForeignKey("objectName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.PackageOffer", "Package")
+                        .WithMany("Items")
+                        .HasForeignKey("package")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Object");
+
+                    b.Navigation("Package");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.PackageOffer", "Package")
@@ -929,6 +966,8 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
                 {
+                    b.Navigation("Items");
+
                     b.Navigation("buyers");
                 });
 
