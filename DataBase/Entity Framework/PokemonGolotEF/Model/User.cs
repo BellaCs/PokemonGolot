@@ -18,6 +18,7 @@ namespace PokemonGolotEF.Model
             eggs = new HashSet<EggInventory>();
             packagesOfferBought = new HashSet<PackageOfferBought>();
             inventory = new HashSet<ObjectInventory>();
+            trophys = new HashSet<GymTrophy>();
         }
 
         [Key]
@@ -65,6 +66,7 @@ namespace PokemonGolotEF.Model
         public virtual ICollection<EggInventory> eggs { get; set; }
         public virtual ICollection<PackageOfferBought> packagesOfferBought { get; set; }
         public virtual ICollection<ObjectInventory> inventory { get; set; }
+        public virtual ICollection<GymTrophy> trophys { get; set; }
 
     }
 }

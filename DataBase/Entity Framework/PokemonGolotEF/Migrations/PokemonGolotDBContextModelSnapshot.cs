@@ -144,6 +144,30 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Gym_defensors");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
+                {
+                    b.Property<string>("gym")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("fights_won")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("pokemon_time")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("times_feeded")
+                        .HasColumnType("integer");
+
+                    b.HasKey("gym", "user");
+
+                    b.HasIndex("user");
+
+                    b.ToTable("Gym_trophies");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
                 {
                     b.Property<short>("level")
@@ -709,6 +733,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Pokemon");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Gym", "Gym")
+                        .WithMany()
+                        .HasForeignKey("gym")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                        .WithMany("trophys")
+                        .HasForeignKey("user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Gym");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.Level", "Level")
@@ -1017,6 +1060,8 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("raidsParticipated");
 
                     b.Navigation("recivedPresents");
+
+                    b.Navigation("trophys");
                 });
 #pragma warning restore 612, 618
         }
