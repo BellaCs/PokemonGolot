@@ -16,6 +16,8 @@ namespace PokemonGolotEF.Model
             Owners = new HashSet<PokemonOwned>();
         }
 
+        
+
 
         [Key]
         public int num_pokedex { get; set; }
