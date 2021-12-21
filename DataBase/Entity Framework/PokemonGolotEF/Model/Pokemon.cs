@@ -10,6 +10,13 @@ namespace PokemonGolotEF.Model
         {
             Owners = new HashSet<PokemonOwned>();
         }
+
+        public Pokemon(int num)
+        {
+            Owners = new HashSet<PokemonOwned>();
+        }
+
+
         [Key]
         public int num_pokedex { get; set; }
         [Required]

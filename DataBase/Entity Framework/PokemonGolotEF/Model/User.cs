@@ -13,6 +13,12 @@ namespace PokemonGolotEF.Model
             presentsToSend = new HashSet<Present>();
             raidsParticipated = new HashSet<RaidParticipant>();
             pokemons = new HashSet<PokemonOwned>();
+            friends = new HashSet<Friendship>();
+            pokedex = new HashSet<PokemonRegister>();
+            eggs = new HashSet<EggInventory>();
+            packagesOfferBought = new HashSet<PackageOfferBought>();
+            inventory = new HashSet<ObjectInventory>();
+            trophys = new HashSet<GymTrophy>();
         }
 
         [Key]
@@ -55,6 +61,12 @@ namespace PokemonGolotEF.Model
         public virtual ICollection<Present> presentsToSend { get; set; }
         public virtual ICollection<RaidParticipant> raidsParticipated { get; set; }
         public virtual ICollection<PokemonOwned> pokemons { get; set; }
+        public virtual ICollection<Friendship> friends { get; set; }
+        public virtual ICollection<PokemonRegister> pokedex { get; set; }
+        public virtual ICollection<EggInventory> eggs { get; set; }
+        public virtual ICollection<PackageOfferBought> packagesOfferBought { get; set; }
+        public virtual ICollection<ObjectInventory> inventory { get; set; }
+        public virtual ICollection<GymTrophy> trophys { get; set; }
 
     }
 }

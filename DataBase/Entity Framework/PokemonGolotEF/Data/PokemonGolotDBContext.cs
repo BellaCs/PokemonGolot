@@ -15,11 +15,81 @@ namespace PokemonGolotEF.Data
 
         protected override void OnModelCreating(ModelBuilder model) 
         {
-            model.Entity<EvolutionChain>().HasKey(nameof(EvolutionChain.pokemon_base), nameof(EvolutionChain.pokemon_evolved));
-            model.Entity<Present>().HasOne(p => p.Receptor).WithMany(u => u.recivedPresents);
-            model.Entity<Present>().HasOne(p => p.Owner).WithMany(u => u.presentsToSend);
-            model.Entity<RaidParticipant>().HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
-            model.Entity<LevelupObjectReward>().HasKey(nameof(LevelupObjectReward.level), nameof(LevelupObjectReward.object_name));
+
+            // Evolution Chain
+
+            model.Entity<EvolutionChain>()
+                .HasKey(nameof(EvolutionChain.pokemon_base), nameof(EvolutionChain.pokemon_evolved));
+
+            // Present
+
+            model.Entity<Present>()
+                .HasOne(p => p.Receptor)
+                .WithMany(u => u.recivedPresents);
+
+            model.Entity<Present>()
+                .HasOne(p => p.Owner)
+                .WithMany(u => u.presentsToSend);
+
+            // Raid Participant
+
+            model.Entity<RaidParticipant>()
+                .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
+
+            // LevelUp Reward
+
+            model.Entity<LevelupObjectReward>()
+                .HasKey(nameof(LevelupObjectReward.level), nameof(LevelupObjectReward.object_name));
+
+            // Gym Defensors
+
+            model.Entity<GymDefense>()
+                .HasKey(nameof(GymDefense.gym), nameof(GymDefense.pokemon));
+
+            // Friendship
+
+            model.Entity<Friendship>()
+                .HasKey(nameof(Friendship.user), nameof(Friendship.friend));
+
+            model.Entity<Friendship>()
+                .HasOne(f => f.Friend)
+                .WithMany(u => u.friends);
+
+            // Type Table
+
+            model.Entity<TypeTable>()
+                .HasKey(nameof(TypeTable.element), nameof(TypeTable.affected_element));
+
+            // Pokemon Register
+
+            model.Entity<PokemonRegister>()
+                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.user), nameof(PokemonRegister.gender));
+
+            // Egg Inventory
+
+            model.Entity<EggInventory>()
+                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.user));
+
+            // Package Bought 
+
+            model.Entity<PackageOfferBought>()
+                .HasKey(nameof(PackageOfferBought.package), nameof(PackageOfferBought.user));
+
+            // Object Inventory
+
+            model.Entity<ObjectInventory>()
+                .HasKey(nameof(ObjectInventory.objectName), nameof(ObjectInventory.user));
+
+            // Package items
+
+            model.Entity<PackageItems>()
+                .HasKey(nameof(PackageItems.objectName), nameof(PackageItems.package));
+
+            // Trophys
+
+            model.Entity<GymTrophy>()
+                .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.user));
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -47,5 +117,14 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<RaidParticipant> Raid_participants { get; set; }
         public virtual DbSet<PokemonOwned> Pokemon_owned { get; set; }
         public virtual DbSet<LevelupObjectReward> Levelup_object_rewards { get; set; }
+        public virtual DbSet<GymDefense> Gym_defensors { get; set; }
+        public virtual DbSet<Friendship> Friendships { get; set; }
+        public virtual DbSet<TypeTable> Type_table { get; set; }
+        public virtual DbSet<PokemonRegister> Pokemon_register { get; set; }
+        public virtual DbSet<EggInventory> Egg_inventory { get; set;}
+        public virtual DbSet<PackageOfferBought> Package_offers_bought { get; set; }
+        public virtual DbSet<ObjectInventory> Object_inventories { get; set; }
+        public virtual DbSet<PackageItems> Package_items { get; set; }
+        public virtual DbSet<GymTrophy> Gym_trophies { get; set; }
     }
 }
