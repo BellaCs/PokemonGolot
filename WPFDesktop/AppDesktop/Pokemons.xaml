@@ -26,10 +26,10 @@
                 </Button.Effect>
             </Button>
             <Button x:Name="ButtonAdmin"  Content="Administradors" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonAdmin_Click"   Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White"/>
-            <Grid HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
+            <Frame x:Name="frame" HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
 
 
-        </Grid>
+        </Frame>
 
 
 

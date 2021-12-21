@@ -8,16 +8,20 @@
 
   <ItemGroup>
     <None Remove="background.jpg" />
+    <None Remove="cancel.png" />
     <None Remove="logo.png" />
     <None Remove="logo2.png" />
     <None Remove="logout.png" />
+    <None Remove="save.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="background.jpg" />
+    <Resource Include="cancel.png" />
     <Resource Include="logo.png" />
     <Resource Include="logo2.png" />
     <Resource Include="logout.png" />
+    <Resource Include="save.png" />
   </ItemGroup>
 
 </Project>

@@ -3,27 +3,13 @@
 namespace AppDesktop
 {
     /// <summary>
-    /// Lógica de interacción para Players.xaml
+    /// Lógica de interacción para CreateAdmin.xaml
     /// </summary>
-    public partial class Players : Window
+    public partial class CreateAdmin : Window
     {
-        public Players()
+        public CreateAdmin()
         {
             InitializeComponent();
-        }
-
-        private void ButtonPokemons_Click(object sender, RoutedEventArgs e)
-        {
-            Pokemons objSecondWindow = new Pokemons();
-            this.Visibility = Visibility.Hidden;
-            objSecondWindow.Show();
-        }
-
-        private void ButtonAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            Admin objSecondWindow = new Admin();
-            this.Visibility = Visibility.Hidden;
-            objSecondWindow.Show();
         }
 
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)
@@ -37,6 +23,15 @@ namespace AppDesktop
                     objSecondWindow.Show();
                     break;
             }
+
+
+        }
+        private void ButtonCancelRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Admin objSecondWindow = new Admin();
+            this.Visibility = Visibility.Hidden;
+            objSecondWindow.Show();
+
         }
     }
 }

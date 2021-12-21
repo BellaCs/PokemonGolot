@@ -7,16 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="CreateAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Admin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Page1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Players.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pokemons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CreateAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

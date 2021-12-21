@@ -1,0 +1,56 @@
+﻿<Window x:Class="AppDesktop.CreateAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Left="50" Top="50"
+        Title="Pokemons" Height="720" Width="1280" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="background.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="1274" Margin="0,0,-0.4,0" Background="Black" Opacity="0.75">
+            <Image x:Name="PokemonLogo" HorizontalAlignment="Left" Height="75" Margin="18,5,0,0" VerticalAlignment="Top" Width="75" Source="/logo2.png"/>
+            <Label x:Name="PokemonGolot" Content="POKEMON GOLOT" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontFamily="Caladea" FontWeight="Bold" Foreground="White" OpacityMask="White"/>
+            <Button HorizontalAlignment="Right" Margin="0,0,17,0" VerticalAlignment="Center" Height="75"  Width="75" Click="ButtonCloseSession_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/logout.png"/>
+                </Button.Background>
+            </Button>
+
+
+
+        </Grid>
+        <Grid>
+            <Rectangle x:Name="ContentBox" HorizontalAlignment="Center" Height="505" Margin="0,164,0,0" Stroke="Black" VerticalAlignment="Top" Width="1200" Fill="White" RenderTransformOrigin="0.649,0.57"/>
+            <Rectangle x:Name="TitleBox" HorizontalAlignment="Center" Height="100" Margin="0,114,0,0" Stroke="Black" VerticalAlignment="Top" Width="725" Fill="#FF707070"/>
+            <TextBlock x:Name="Title" HorizontalAlignment="Center" Height="46" Margin="0,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="515" FontSize="34" Foreground="White" FontWeight="Bold"><Run Language="es-es" Text="Creació d'usuaris administrador"/></TextBlock>
+            <TextBox x:Name="EmailEntry" HorizontalAlignment="Left" Margin="110,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22" Padding="0,0,0,0" CharacterCasing="Normal"/>
+            <TextBlock x:Name="EmailBox" HorizontalAlignment="Left" Height="33" Margin="110,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="CORREU ELECTRONIC"/></TextBlock>
+            <TextBox x:Name="PasswordEntry" HorizontalAlignment="Left" Margin="856,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
+            <TextBox x:Name="RepeatPasswordEntry" HorizontalAlignment="Center" TextWrapping="NoWrap" VerticalAlignment="Center" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" SnapsToDevicePixels="True" FontSize="22"/>
+            <TextBlock x:Name="PasswordBox" HorizontalAlignment="Left" Height="33" Margin="480,256,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="204" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="CONTRASENYA"/></TextBlock>
+            <TextBlock x:Name="RepeatPassowrdBox" HorizontalAlignment="Left" Height="33" Margin="856,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="REPETIR CONTRASENYA"/></TextBlock>
+            <TextBox x:Name="NameEntr" HorizontalAlignment="Left" Margin="480,463,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="696" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
+            <TextBox x:Name="SurnameEntry" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" Margin="110,463,0,0" FontSize="22"/>
+            <TextBlock x:Name="SurnameBox" HorizontalAlignment="Left" Height="33" Margin="480,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="COGNOMS"/></TextBlock>
+            <TextBlock x:Name="NameBox" HorizontalAlignment="Left" Height="33" Margin="110,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="NOM"/></TextBlock>
+
+            <Button HorizontalAlignment="Right" Margin="0,565,727,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/cancel.png"/>
+                </Button.Background>
+            </Button>
+
+
+            <Button HorizontalAlignment="Right" Margin="0,565,480,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="-0.485,0.45">
+                <Button.Background>
+                    <ImageBrush ImageSource="/save.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

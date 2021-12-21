@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AppDesktop
 {
@@ -38,10 +25,17 @@ namespace AppDesktop
             this.Visibility = Visibility.Hidden;
             objSecondWindow.Show();
         }
+        private void ButtonCreateAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAdmin objSecondWindow = new CreateAdmin();
+            this.Visibility = Visibility.Hidden;
+            objSecondWindow.Show();
+
+        }
 
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = System.Windows.MessageBox.Show("Vols tancar la sessió?", "Tancar sessió",  MessageBoxButton.YesNo);
+            MessageBoxResult result = System.Windows.MessageBox.Show("Vols tancar la sessió?", "Tancar sessió", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
