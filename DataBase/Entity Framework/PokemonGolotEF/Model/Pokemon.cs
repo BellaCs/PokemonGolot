@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json.Linq;
 
 namespace PokemonGolotEF.Model
 {
@@ -11,9 +12,9 @@ namespace PokemonGolotEF.Model
             Owners = new HashSet<PokemonOwned>();
         }
 
-        public Pokemon(int num)
+        public Pokemon(KeyValuePair<String, JToken> pokemonJson)
         {
-            Owners = new HashSet<PokemonOwned>();
+            
         }
 
 
