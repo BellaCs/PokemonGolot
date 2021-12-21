@@ -17,6 +17,8 @@ namespace PokemonGolotEF.Model
             
         }
 
+        
+
 
         [Key]
         public int num_pokedex { get; set; }

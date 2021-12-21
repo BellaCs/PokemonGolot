@@ -1,4 +1,7 @@
 ﻿using System;
+using PokemonGolotEF.Library.Requests;
+using System.Threading.Tasks;
+
 
 namespace PokemonGolotEF
 {
@@ -6,7 +9,15 @@ namespace PokemonGolotEF
     {
        static void Main(string[] args)
         {
-            
+
+           
+            getlevel().Wait();
+
+        }
+
+        static async Task getlevel()
+        {
+            Console.WriteLine(); 
         }
     }
 }

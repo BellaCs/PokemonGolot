@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PokemonGolotEF.Model;
-
+using PokemonGolotEF.Library;
 namespace PokemonGolotEF.Data
 {
     class PokemonGolotDBContext : DbContext
     {
+        LoadData data = new LoadData();
         public PokemonGolotDBContext()
         { 
         }
@@ -89,6 +90,11 @@ namespace PokemonGolotEF.Data
 
             model.Entity<GymTrophy>()
                 .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.user));
+
+            // User Level
+
+            model.Entity<Level>()
+                .HasData(data.pokemonGolot.userLevels);
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
