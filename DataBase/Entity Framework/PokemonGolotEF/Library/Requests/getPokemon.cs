@@ -9,6 +9,5 @@ namespace PokemonGolotEF.Library.Requests
 {
     internal class getPokemon
     {
-        HttpWebRequest get = HttpWebRequest.Create(https://pogoapi.net/api/v1/player_xp_requirements.json);
     }
 }

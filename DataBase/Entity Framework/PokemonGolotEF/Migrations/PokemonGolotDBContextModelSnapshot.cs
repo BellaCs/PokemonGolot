@@ -182,6 +182,258 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("level");
 
                     b.ToTable("Level");
+
+                    b.HasData(
+                        new
+                        {
+                            level = (short)1,
+                            necessary_xp = 0
+                        },
+                        new
+                        {
+                            level = (short)2,
+                            necessary_xp = 1000
+                        },
+                        new
+                        {
+                            level = (short)3,
+                            necessary_xp = 3000
+                        },
+                        new
+                        {
+                            level = (short)4,
+                            necessary_xp = 6000
+                        },
+                        new
+                        {
+                            level = (short)5,
+                            necessary_xp = 10000
+                        },
+                        new
+                        {
+                            level = (short)6,
+                            necessary_xp = 15000
+                        },
+                        new
+                        {
+                            level = (short)7,
+                            necessary_xp = 21000
+                        },
+                        new
+                        {
+                            level = (short)8,
+                            necessary_xp = 28000
+                        },
+                        new
+                        {
+                            level = (short)9,
+                            necessary_xp = 36000
+                        },
+                        new
+                        {
+                            level = (short)10,
+                            necessary_xp = 45000
+                        },
+                        new
+                        {
+                            level = (short)11,
+                            necessary_xp = 55000
+                        },
+                        new
+                        {
+                            level = (short)12,
+                            necessary_xp = 65000
+                        },
+                        new
+                        {
+                            level = (short)13,
+                            necessary_xp = 75000
+                        },
+                        new
+                        {
+                            level = (short)14,
+                            necessary_xp = 85000
+                        },
+                        new
+                        {
+                            level = (short)15,
+                            necessary_xp = 100000
+                        },
+                        new
+                        {
+                            level = (short)16,
+                            necessary_xp = 120000
+                        },
+                        new
+                        {
+                            level = (short)17,
+                            necessary_xp = 140000
+                        },
+                        new
+                        {
+                            level = (short)18,
+                            necessary_xp = 160000
+                        },
+                        new
+                        {
+                            level = (short)19,
+                            necessary_xp = 185000
+                        },
+                        new
+                        {
+                            level = (short)20,
+                            necessary_xp = 210000
+                        },
+                        new
+                        {
+                            level = (short)21,
+                            necessary_xp = 260000
+                        },
+                        new
+                        {
+                            level = (short)22,
+                            necessary_xp = 335000
+                        },
+                        new
+                        {
+                            level = (short)23,
+                            necessary_xp = 435000
+                        },
+                        new
+                        {
+                            level = (short)24,
+                            necessary_xp = 560000
+                        },
+                        new
+                        {
+                            level = (short)25,
+                            necessary_xp = 710000
+                        },
+                        new
+                        {
+                            level = (short)26,
+                            necessary_xp = 900000
+                        },
+                        new
+                        {
+                            level = (short)27,
+                            necessary_xp = 1100000
+                        },
+                        new
+                        {
+                            level = (short)28,
+                            necessary_xp = 1350000
+                        },
+                        new
+                        {
+                            level = (short)29,
+                            necessary_xp = 1650000
+                        },
+                        new
+                        {
+                            level = (short)30,
+                            necessary_xp = 2000000
+                        },
+                        new
+                        {
+                            level = (short)31,
+                            necessary_xp = 2500000
+                        },
+                        new
+                        {
+                            level = (short)32,
+                            necessary_xp = 3000000
+                        },
+                        new
+                        {
+                            level = (short)33,
+                            necessary_xp = 3750000
+                        },
+                        new
+                        {
+                            level = (short)34,
+                            necessary_xp = 4750000
+                        },
+                        new
+                        {
+                            level = (short)35,
+                            necessary_xp = 6000000
+                        },
+                        new
+                        {
+                            level = (short)36,
+                            necessary_xp = 7500000
+                        },
+                        new
+                        {
+                            level = (short)37,
+                            necessary_xp = 9500000
+                        },
+                        new
+                        {
+                            level = (short)38,
+                            necessary_xp = 12000000
+                        },
+                        new
+                        {
+                            level = (short)39,
+                            necessary_xp = 15000000
+                        },
+                        new
+                        {
+                            level = (short)40,
+                            necessary_xp = 20000000
+                        },
+                        new
+                        {
+                            level = (short)41,
+                            necessary_xp = 26000000
+                        },
+                        new
+                        {
+                            level = (short)42,
+                            necessary_xp = 33500000
+                        },
+                        new
+                        {
+                            level = (short)43,
+                            necessary_xp = 42500000
+                        },
+                        new
+                        {
+                            level = (short)44,
+                            necessary_xp = 53500000
+                        },
+                        new
+                        {
+                            level = (short)45,
+                            necessary_xp = 66500000
+                        },
+                        new
+                        {
+                            level = (short)46,
+                            necessary_xp = 82000000
+                        },
+                        new
+                        {
+                            level = (short)47,
+                            necessary_xp = 100000000
+                        },
+                        new
+                        {
+                            level = (short)48,
+                            necessary_xp = 121000000
+                        },
+                        new
+                        {
+                            level = (short)49,
+                            necessary_xp = 146000000
+                        },
+                        new
+                        {
+                            level = (short)50,
+                            necessary_xp = 176000000
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
