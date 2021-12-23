@@ -35,5 +35,12 @@ namespace PokemonGolotEF.Library
                 pokemonGolot.userLevels.Add(actual);              
             }
         }
+
+        public async Task LoadPokemonLevels()
+        {
+            PokemonLevel actual;
+            String cpMultiplierJson = await getPokemonLevel.getCpMultiplier();
+            String requirementToPowerUpJson = await getPokemonLevel.getRequirementsToPowerUp();
+        }
     }
 }

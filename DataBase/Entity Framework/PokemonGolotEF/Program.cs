@@ -17,7 +17,8 @@ namespace PokemonGolotEF
 
         static async Task getlevel()
         {
-            Console.WriteLine(); 
+            Console.WriteLine(await getPokemonLevel.getCpMultiplier()); 
+            Console.WriteLine(await getPokemonLevel.getRequirementsToPowerUp());
         }
     }
 }
