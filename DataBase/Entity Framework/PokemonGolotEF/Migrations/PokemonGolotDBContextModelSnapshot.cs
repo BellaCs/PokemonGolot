@@ -627,7 +627,7 @@ namespace PokemonGolotEF.Migrations
                     b.Property<int>("candy_to_upgrade")
                         .HasColumnType("integer");
 
-                    b.Property<double>("pc_multiplier")
+                    b.Property<double>("cp_multiplier")
                         .HasColumnType("double precision");
 
                     b.Property<int>("stardust_to_upgrade")
@@ -636,6 +636,547 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("pokemon_level");
 
                     b.ToTable("Pokemon_level");
+
+                    b.HasData(
+                        new
+                        {
+                            pokemon_level = 1f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.093999996781349182,
+                            stardust_to_upgrade = 200
+                        },
+                        new
+                        {
+                            pokemon_level = 1.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.13513743132352829,
+                            stardust_to_upgrade = 200
+                        },
+                        new
+                        {
+                            pokemon_level = 2f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.16639786958694458,
+                            stardust_to_upgrade = 200
+                        },
+                        new
+                        {
+                            pokemon_level = 2.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.19265091419219971,
+                            stardust_to_upgrade = 200
+                        },
+                        new
+                        {
+                            pokemon_level = 3f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.21573247015476227,
+                            stardust_to_upgrade = 400
+                        },
+                        new
+                        {
+                            pokemon_level = 3.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.23657265305519104,
+                            stardust_to_upgrade = 400
+                        },
+                        new
+                        {
+                            pokemon_level = 4f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.25572004914283752,
+                            stardust_to_upgrade = 400
+                        },
+                        new
+                        {
+                            pokemon_level = 4.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.27353037893772125,
+                            stardust_to_upgrade = 400
+                        },
+                        new
+                        {
+                            pokemon_level = 5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.29024988412857056,
+                            stardust_to_upgrade = 600
+                        },
+                        new
+                        {
+                            pokemon_level = 5.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.30605737864971161,
+                            stardust_to_upgrade = 600
+                        },
+                        new
+                        {
+                            pokemon_level = 6f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.32108759880065918,
+                            stardust_to_upgrade = 600
+                        },
+                        new
+                        {
+                            pokemon_level = 6.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.33544503152370453,
+                            stardust_to_upgrade = 600
+                        },
+                        new
+                        {
+                            pokemon_level = 7f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.34921267628669739,
+                            stardust_to_upgrade = 800
+                        },
+                        new
+                        {
+                            pokemon_level = 7.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.36245773732662201,
+                            stardust_to_upgrade = 800
+                        },
+                        new
+                        {
+                            pokemon_level = 8f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.37523558735847473,
+                            stardust_to_upgrade = 800
+                        },
+                        new
+                        {
+                            pokemon_level = 8.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.38759241108516856,
+                            stardust_to_upgrade = 800
+                        },
+                        new
+                        {
+                            pokemon_level = 9f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.39956727623939514,
+                            stardust_to_upgrade = 1000
+                        },
+                        new
+                        {
+                            pokemon_level = 9.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.41119354951725062,
+                            stardust_to_upgrade = 1000
+                        },
+                        new
+                        {
+                            pokemon_level = 10f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.4225000143051148,
+                            stardust_to_upgrade = 1000
+                        },
+                        new
+                        {
+                            pokemon_level = 10.5f,
+                            candy_to_upgrade = 1,
+                            cp_multiplier = 0.43292641341041438,
+                            stardust_to_upgrade = 1000
+                        },
+                        new
+                        {
+                            pokemon_level = 11f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.44310754537582397,
+                            stardust_to_upgrade = 1300
+                        },
+                        new
+                        {
+                            pokemon_level = 11.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.45305995387198578,
+                            stardust_to_upgrade = 1300
+                        },
+                        new
+                        {
+                            pokemon_level = 12f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.46279838681221003,
+                            stardust_to_upgrade = 1300
+                        },
+                        new
+                        {
+                            pokemon_level = 12.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.47233607806265349,
+                            stardust_to_upgrade = 1300
+                        },
+                        new
+                        {
+                            pokemon_level = 13f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.48168495297431951,
+                            stardust_to_upgrade = 1600
+                        },
+                        new
+                        {
+                            pokemon_level = 13.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.4908558102324605,
+                            stardust_to_upgrade = 1600
+                        },
+                        new
+                        {
+                            pokemon_level = 14f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.49985843896865839,
+                            stardust_to_upgrade = 1600
+                        },
+                        new
+                        {
+                            pokemon_level = 14.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.50870175659656525,
+                            stardust_to_upgrade = 1600
+                        },
+                        new
+                        {
+                            pokemon_level = 15f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.51739394664764404,
+                            stardust_to_upgrade = 1900
+                        },
+                        new
+                        {
+                            pokemon_level = 15.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.52594251185655594,
+                            stardust_to_upgrade = 1900
+                        },
+                        new
+                        {
+                            pokemon_level = 16f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.53435432910919189,
+                            stardust_to_upgrade = 1900
+                        },
+                        new
+                        {
+                            pokemon_level = 16.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.54263576120138168,
+                            stardust_to_upgrade = 1900
+                        },
+                        new
+                        {
+                            pokemon_level = 17f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.55079269409179688,
+                            stardust_to_upgrade = 2200
+                        },
+                        new
+                        {
+                            pokemon_level = 17.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.55883059930056334,
+                            stardust_to_upgrade = 2200
+                        },
+                        new
+                        {
+                            pokemon_level = 18f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.56675451993942261,
+                            stardust_to_upgrade = 2200
+                        },
+                        new
+                        {
+                            pokemon_level = 18.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.57456914708018303,
+                            stardust_to_upgrade = 2200
+                        },
+                        new
+                        {
+                            pokemon_level = 19f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.58227890729904175,
+                            stardust_to_upgrade = 2500
+                        },
+                        new
+                        {
+                            pokemon_level = 19.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.5898879119195044,
+                            stardust_to_upgrade = 2500
+                        },
+                        new
+                        {
+                            pokemon_level = 20f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.5974000096321106,
+                            stardust_to_upgrade = 2500
+                        },
+                        new
+                        {
+                            pokemon_level = 20.5f,
+                            candy_to_upgrade = 2,
+                            cp_multiplier = 0.60482365638017654,
+                            stardust_to_upgrade = 2500
+                        },
+                        new
+                        {
+                            pokemon_level = 21f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.61215728521347046,
+                            stardust_to_upgrade = 3000
+                        },
+                        new
+                        {
+                            pokemon_level = 21.5f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.61940411105751991,
+                            stardust_to_upgrade = 3000
+                        },
+                        new
+                        {
+                            pokemon_level = 22f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.62656712532043457,
+                            stardust_to_upgrade = 3000
+                        },
+                        new
+                        {
+                            pokemon_level = 22.5f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.63364918157458305,
+                            stardust_to_upgrade = 3000
+                        },
+                        new
+                        {
+                            pokemon_level = 23f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.64065295457839966,
+                            stardust_to_upgrade = 3500
+                        },
+                        new
+                        {
+                            pokemon_level = 23.5f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.64758096635341644,
+                            stardust_to_upgrade = 3500
+                        },
+                        new
+                        {
+                            pokemon_level = 24f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.654435634613037,
+                            stardust_to_upgrade = 3500
+                        },
+                        new
+                        {
+                            pokemon_level = 24.5f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.6612192690372467,
+                            stardust_to_upgrade = 3500
+                        },
+                        new
+                        {
+                            pokemon_level = 25f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.66793400049209595,
+                            stardust_to_upgrade = 4000
+                        },
+                        new
+                        {
+                            pokemon_level = 25.5f,
+                            candy_to_upgrade = 3,
+                            cp_multiplier = 0.67458190023899078,
+                            stardust_to_upgrade = 4000
+                        },
+                        new
+                        {
+                            pokemon_level = 26f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.68116492033004761,
+                            stardust_to_upgrade = 4000
+                        },
+                        new
+                        {
+                            pokemon_level = 26.5f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.68768490850925446,
+                            stardust_to_upgrade = 4000
+                        },
+                        new
+                        {
+                            pokemon_level = 27f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.69414365291595459,
+                            stardust_to_upgrade = 4500
+                        },
+                        new
+                        {
+                            pokemon_level = 27.5f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.70054289698600769,
+                            stardust_to_upgrade = 4500
+                        },
+                        new
+                        {
+                            pokemon_level = 28f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.70688420534133911,
+                            stardust_to_upgrade = 4500
+                        },
+                        new
+                        {
+                            pokemon_level = 28.5f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.71316909790039062,
+                            stardust_to_upgrade = 4500
+                        },
+                        new
+                        {
+                            pokemon_level = 29f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.719399094581604,
+                            stardust_to_upgrade = 5000
+                        },
+                        new
+                        {
+                            pokemon_level = 29.5f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.72557561099529266,
+                            stardust_to_upgrade = 5000
+                        },
+                        new
+                        {
+                            pokemon_level = 30f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.73170000314712524,
+                            stardust_to_upgrade = 5000
+                        },
+                        new
+                        {
+                            pokemon_level = 30.5f,
+                            candy_to_upgrade = 4,
+                            cp_multiplier = 0.73474101722240448,
+                            stardust_to_upgrade = 5000
+                        },
+                        new
+                        {
+                            pokemon_level = 31f,
+                            candy_to_upgrade = 6,
+                            cp_multiplier = 0.7377694845199585,
+                            stardust_to_upgrade = 6000
+                        },
+                        new
+                        {
+                            pokemon_level = 31.5f,
+                            candy_to_upgrade = 6,
+                            cp_multiplier = 0.74078557640314102,
+                            stardust_to_upgrade = 6000
+                        },
+                        new
+                        {
+                            pokemon_level = 32f,
+                            candy_to_upgrade = 6,
+                            cp_multiplier = 0.7437894344329834,
+                            stardust_to_upgrade = 6000
+                        },
+                        new
+                        {
+                            pokemon_level = 32.5f,
+                            candy_to_upgrade = 6,
+                            cp_multiplier = 0.74678121507167816,
+                            stardust_to_upgrade = 6000
+                        },
+                        new
+                        {
+                            pokemon_level = 33f,
+                            candy_to_upgrade = 8,
+                            cp_multiplier = 0.74976104497909546,
+                            stardust_to_upgrade = 7000
+                        },
+                        new
+                        {
+                            pokemon_level = 33.5f,
+                            candy_to_upgrade = 8,
+                            cp_multiplier = 0.75272910296916962,
+                            stardust_to_upgrade = 7000
+                        },
+                        new
+                        {
+                            pokemon_level = 34f,
+                            candy_to_upgrade = 8,
+                            cp_multiplier = 0.75568550825119019,
+                            stardust_to_upgrade = 7000
+                        },
+                        new
+                        {
+                            pokemon_level = 34.5f,
+                            candy_to_upgrade = 8,
+                            cp_multiplier = 0.75863036513328552,
+                            stardust_to_upgrade = 7000
+                        },
+                        new
+                        {
+                            pokemon_level = 35f,
+                            candy_to_upgrade = 10,
+                            cp_multiplier = 0.76156383752822876,
+                            stardust_to_upgrade = 8000
+                        },
+                        new
+                        {
+                            pokemon_level = 35.5f,
+                            candy_to_upgrade = 10,
+                            cp_multiplier = 0.76448606699705124,
+                            stardust_to_upgrade = 8000
+                        },
+                        new
+                        {
+                            pokemon_level = 36f,
+                            candy_to_upgrade = 10,
+                            cp_multiplier = 0.76739716529846191,
+                            stardust_to_upgrade = 8000
+                        },
+                        new
+                        {
+                            pokemon_level = 36.5f,
+                            candy_to_upgrade = 10,
+                            cp_multiplier = 0.77029727399349213,
+                            stardust_to_upgrade = 8000
+                        },
+                        new
+                        {
+                            pokemon_level = 37f,
+                            candy_to_upgrade = 12,
+                            cp_multiplier = 0.77318650484085083,
+                            stardust_to_upgrade = 9000
+                        },
+                        new
+                        {
+                            pokemon_level = 37.5f,
+                            candy_to_upgrade = 12,
+                            cp_multiplier = 0.77606494724750519,
+                            stardust_to_upgrade = 9000
+                        },
+                        new
+                        {
+                            pokemon_level = 38f,
+                            candy_to_upgrade = 12,
+                            cp_multiplier = 0.77893275022506714,
+                            stardust_to_upgrade = 9000
+                        },
+                        new
+                        {
+                            pokemon_level = 38.5f,
+                            candy_to_upgrade = 12,
+                            cp_multiplier = 0.78179005999999995,
+                            stardust_to_upgrade = 9000
+                        },
+                        new
+                        {
+                            pokemon_level = 39f,
+                            candy_to_upgrade = 15,
+                            cp_multiplier = 0.78463696999999999,
+                            stardust_to_upgrade = 10000
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonOwned", b =>
@@ -854,6 +1395,9 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("experience")
+                        .HasColumnType("integer");
+
                     b.Property<char>("gender")
                         .HasColumnType("character(1)");
 
@@ -872,9 +1416,6 @@ namespace PokemonGolotEF.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("pokemon_slots")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("remaining_experience")
                         .HasColumnType("integer");
 
                     b.Property<string>("team")

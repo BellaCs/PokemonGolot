@@ -16,6 +16,7 @@ namespace PokemonGolotEF.Library
         public LoadData()
         {
             LoadLevel().Wait();
+            LoadPokemonLevels().Wait();
         }
 
         public void LoadPokemon() 
@@ -30,7 +31,6 @@ namespace PokemonGolotEF.Library
             JObject levelJson = JObject.Parse(levelJsonString);
             foreach (KeyValuePair<String, JToken> level in levelJson)
             {
-
                 actual = new Level(level);
                 pokemonGolot.userLevels.Add(actual);              
             }
@@ -40,7 +40,24 @@ namespace PokemonGolotEF.Library
         {
             PokemonLevel actual;
             String cpMultiplierJson = await getPokemonLevel.getCpMultiplier();
-            String requirementToPowerUpJson = await getPokemonLevel.getRequirementsToPowerUp();
+            String requirementsToPowerUpJson = await getPokemonLevel.getRequirementsToPowerUp();
+            JToken cpMultiplier = JToken.Parse(cpMultiplierJson);
+            JObject requirementsToPowerUp = JObject.Parse(requirementsToPowerUpJson);
+            foreach (JToken pokemonLevel in cpMultiplier)
+            {
+                if ((int)pokemonLevel["level"] < 40)
+                {
+                    actual = new PokemonLevel(pokemonLevel);
+                    foreach (KeyValuePair<String, JToken> requirment in requirementsToPowerUp)
+                    {
+                        if (requirment.Key.Replace('.', ',').Equals(actual.pokemon_level.ToString()))
+                        {
+                            actual.addData(requirment);
+                            pokemonGolot.pokemonsLevels.Add(actual);
+                        }
+                    }
+                }
+            }
         }
     }
 }

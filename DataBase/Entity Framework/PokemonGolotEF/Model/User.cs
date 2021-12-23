@@ -41,7 +41,7 @@ namespace PokemonGolotEF.Model
         [Required]
         public int inventory_capacity { get; set; }
         [Required]
-        public int remaining_experience { get; set; }
+        public int experience { get; set; }
         [Required]
         public int pokemon_slots { get; set; }
         public int won_battles { get; set; }

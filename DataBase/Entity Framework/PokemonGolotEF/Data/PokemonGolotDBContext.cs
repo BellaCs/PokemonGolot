@@ -96,6 +96,11 @@ namespace PokemonGolotEF.Data
             model.Entity<Level>()
                 .HasData(data.pokemonGolot.userLevels);
 
+            // Pokemon Level
+
+            model.Entity<PokemonLevel>()
+                .HasData(data.pokemonGolot.pokemonsLevels);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
