@@ -10,7 +10,7 @@ namespace PokemonGolotEF.Model
         public double egg { get; set; }
         [ForeignKey("Player")]
         public string player { get; set; }
-        public double remainingKm { get; set; }
+        public double remaining_km { get; set; }
 
 
         [ForeignKey("player")]

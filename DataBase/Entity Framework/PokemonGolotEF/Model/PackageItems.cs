@@ -7,14 +7,14 @@ namespace PokemonGolotEF.Model
     internal class PackageItems
     {
        [ForeignKey("Object")]
-       public string objectName { get; set; }
+       public string object_name { get; set; }
         [ForeignKey("Package")]
         public string package { get; set; }
         [Required]
-        public int units { get; set; }
+        public int quantity { get; set; }
 
 
-        [ForeignKey("objectName")]
+        [ForeignKey("object_name")]
         public Object Object { get; set; }
         [ForeignKey("package")]
         public PackageOffer Package { get; set; }

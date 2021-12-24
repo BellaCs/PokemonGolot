@@ -7,7 +7,7 @@ namespace PokemonGolotEF.Model
     class PokemonOwned
     {
         [Key]
-        public int pokemonId { get; set; }
+        public int pokemon_id { get; set; }
         [ForeignKey("Pokemon")]
         [Required]
         public int pokemon { get; set; }

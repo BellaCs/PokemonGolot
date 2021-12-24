@@ -14,7 +14,7 @@ namespace PokemonGolotEF.Model
         public bool sawed { get; set; }
         public char gender { get; set; }
         public double weight { get; set; }
-        public int height { get; set; }
+        public double height { get; set; }
         [Required]
         public int capturedNumber { get; set; }
 

@@ -79,12 +79,12 @@ namespace PokemonGolotEF.Data
             // Object Inventory
 
             model.Entity<ObjectInventory>()
-                .HasKey(nameof(ObjectInventory.objectName), nameof(ObjectInventory.player));
+                .HasKey(nameof(ObjectInventory.object_name), nameof(ObjectInventory.player));
 
             // Package items
 
             model.Entity<PackageItems>()
-                .HasKey(nameof(PackageItems.objectName), nameof(PackageItems.package));
+                .HasKey(nameof(PackageItems.object_name), nameof(PackageItems.package));
 
             // Trophys
 

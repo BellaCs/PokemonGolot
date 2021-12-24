@@ -7,25 +7,25 @@ namespace PokemonGolotEF.Model
     class Present
     {
         [Key]
-        public int presentId { get; set; }
+        public int present_id { get; set; }
         [ForeignKey("Owner")]
         [Required]
         public string owner { get; set; }
         [ForeignKey("PokeStop")]
         [Required]
-        public string pokeStop { get; set; }
+        public string pokestop { get; set; }
         [ForeignKey("Receptor")]
         public string receptor { get; set; }
         [Required]
         public bool opened { get; set; }
         [Required]
-        public DateTime getDate { get; set; }
-        public DateTime sendDate { get; set; } 
+        public DateTime get_date { get; set; }
+        public DateTime send_date { get; set; } 
 
 
         [ForeignKey("owner")]
         public virtual User Owner { get; set; }
-        [ForeignKey("pokeStop")]
+        [ForeignKey("pokestop")]
         public virtual PokeStop PokeStop { get; set; }
         [ForeignKey("receptor")]
         public virtual User Receptor { get; set; }
