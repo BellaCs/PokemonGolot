@@ -91,6 +91,11 @@ namespace PokemonGolotEF.Data
             model.Entity<GymTrophy>()
                 .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.player));
 
+            // Pokemon Exchange
+
+            model.Entity<PokemonExchange>()
+                .HasKey(nameof(PokemonExchange.pokemon), nameof(PokemonExchange.ex_owner));
+
             // User Level
 
             model.Entity<Level>()
@@ -138,5 +143,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<ObjectInventory> Object_inventories { get; set; }
         public virtual DbSet<PackageItems> Package_items { get; set; }
         public virtual DbSet<GymTrophy> Gym_trophies { get; set; }
+        public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
     }
 }

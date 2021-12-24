@@ -648,6 +648,21 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Pokemon");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
+                {
+                    b.Property<int>("pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ex_owner")
+                        .HasColumnType("character varying(20)");
+
+                    b.HasKey("pokemon", "ex_owner");
+
+                    b.HasIndex("ex_owner");
+
+                    b.ToTable("Pokemon_exchange");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
                 {
                     b.Property<float>("pokemon_level")
@@ -1641,6 +1656,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Package");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.User", "ExOwner")
+                        .WithMany()
+                        .HasForeignKey("ex_owner")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
+                        .WithMany()
+                        .HasForeignKey("pokemon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExOwner");
+
+                    b.Navigation("Pokemon");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonOwned", b =>
