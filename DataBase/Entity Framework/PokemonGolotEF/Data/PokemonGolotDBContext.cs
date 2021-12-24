@@ -35,7 +35,7 @@ namespace PokemonGolotEF.Data
             // Raid Participant
 
             model.Entity<RaidParticipant>()
-                .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
+                .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.player));
 
             // LevelUp Reward
 
@@ -50,7 +50,7 @@ namespace PokemonGolotEF.Data
             // Friendship
 
             model.Entity<Friendship>()
-                .HasKey(nameof(Friendship.user), nameof(Friendship.friend));
+                .HasKey(nameof(Friendship.player), nameof(Friendship.friend));
 
             model.Entity<Friendship>()
                 .HasOne(f => f.Friend)
@@ -64,12 +64,12 @@ namespace PokemonGolotEF.Data
             // Pokemon Register
 
             model.Entity<PokemonRegister>()
-                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.user), nameof(PokemonRegister.gender));
+                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.player), nameof(PokemonRegister.gender));
 
             // Egg Inventory
 
             model.Entity<EggInventory>()
-                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.user));
+                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.player));
 
             // Package Bought 
 
@@ -79,7 +79,7 @@ namespace PokemonGolotEF.Data
             // Object Inventory
 
             model.Entity<ObjectInventory>()
-                .HasKey(nameof(ObjectInventory.objectName), nameof(ObjectInventory.user));
+                .HasKey(nameof(ObjectInventory.objectName), nameof(ObjectInventory.player));
 
             // Package items
 
@@ -89,7 +89,7 @@ namespace PokemonGolotEF.Data
             // Trophys
 
             model.Entity<GymTrophy>()
-                .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.user));
+                .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.player));
 
             // User Level
 
@@ -111,6 +111,7 @@ namespace PokemonGolotEF.Data
             }
         }
 
+        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Object> Object { get; set; }

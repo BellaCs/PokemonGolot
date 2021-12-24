@@ -17,9 +17,6 @@ namespace PokemonGolotEF.Model
             
         }
 
-        
-
-
         [Key]
         public int num_pokedex { get; set; }
         [Required]
@@ -31,9 +28,9 @@ namespace PokemonGolotEF.Model
         [Required]
         public double defense { get; set; }
         [Required]
-        public bool male_gender { get; set; }
+        public float male_gender { get; set; } //Rate
         [Required]
-        public bool female_gender { get; set; }
+        public float female_gender { get; set; } //Rate
         [Required]
         public string rarity { get; set; }
         [Required]

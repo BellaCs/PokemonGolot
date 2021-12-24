@@ -7,7 +7,7 @@ namespace PokemonGolotEF.Model
         [Key]
         public double km_egg { get; set; }
         [Required]
-        public string description { get; set; }
+        public string name { get; set; }
         [Required]
         public string image { get; set; }
     }

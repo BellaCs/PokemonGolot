@@ -27,11 +27,11 @@ namespace PokemonGolotEF.Migrations
                     b.Property<double>("km_egg")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("description")
+                    b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("image")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -45,15 +45,15 @@ namespace PokemonGolotEF.Migrations
                     b.Property<double>("egg")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<double>("remainingKm")
                         .HasColumnType("double precision");
 
-                    b.HasKey("egg", "user");
+                    b.HasKey("egg", "player");
 
-                    b.HasIndex("user");
+                    b.HasIndex("player");
 
                     b.ToTable("Egg_inventory");
                 });
@@ -91,13 +91,13 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
                 {
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<string>("friend")
                         .HasColumnType("character varying(20)");
 
-                    b.HasKey("user", "friend");
+                    b.HasKey("player", "friend");
 
                     b.HasIndex("friend");
 
@@ -149,7 +149,7 @@ namespace PokemonGolotEF.Migrations
                     b.Property<string>("gym")
                         .HasColumnType("text");
 
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<int>("fights_won")
@@ -161,9 +161,9 @@ namespace PokemonGolotEF.Migrations
                     b.Property<int>("times_feeded")
                         .HasColumnType("integer");
 
-                    b.HasKey("gym", "user");
+                    b.HasKey("gym", "player");
 
-                    b.HasIndex("user");
+                    b.HasIndex("player");
 
                     b.ToTable("Gym_trophies");
                 });
@@ -506,15 +506,15 @@ namespace PokemonGolotEF.Migrations
                     b.Property<string>("objectName")
                         .HasColumnType("text");
 
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<int>("quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("objectName", "user");
+                    b.HasKey("objectName", "player");
 
-                    b.HasIndex("user");
+                    b.HasIndex("player");
 
                     b.ToTable("Object_inventories");
                 });
@@ -571,6 +571,35 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Package_offers_bought");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
+                {
+                    b.Property<string>("user_name")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<DateTime>("birth_date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<char>("gender")
+                        .HasColumnType("character(1)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("user_name");
+
+                    b.ToTable("Player");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
                 {
                     b.Property<int>("num_pokedex")
@@ -589,8 +618,8 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("female_gender")
-                        .HasColumnType("boolean");
+                    b.Property<float>("female_gender")
+                        .HasColumnType("real");
 
                     b.Property<string>("img_back")
                         .IsRequired()
@@ -600,8 +629,8 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("male_gender")
-                        .HasColumnType("boolean");
+                    b.Property<float>("male_gender")
+                        .HasColumnType("real");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -1226,7 +1255,7 @@ namespace PokemonGolotEF.Migrations
                     b.Property<int>("pokemon")
                         .HasColumnType("integer");
 
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<char>("gender")
@@ -1244,9 +1273,9 @@ namespace PokemonGolotEF.Migrations
                     b.Property<double>("weight")
                         .HasColumnType("double precision");
 
-                    b.HasKey("pokemon", "user", "gender");
+                    b.HasKey("pokemon", "player", "gender");
 
-                    b.HasIndex("user");
+                    b.HasIndex("player");
 
                     b.ToTable("Pokemon_register");
                 });
@@ -1328,17 +1357,17 @@ namespace PokemonGolotEF.Migrations
                     b.Property<string>("gym")
                         .HasColumnType("text");
 
-                    b.Property<string>("user")
+                    b.Property<string>("player")
                         .HasColumnType("character varying(20)");
 
                     b.Property<string>("Raidlocation")
                         .HasColumnType("text");
 
-                    b.HasKey("gym", "user");
+                    b.HasKey("gym", "player");
 
                     b.HasIndex("Raidlocation");
 
-                    b.HasIndex("user");
+                    b.HasIndex("player");
 
                     b.ToTable("Raid_participants");
                 });
@@ -1385,35 +1414,17 @@ namespace PokemonGolotEF.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
-                    b.Property<DateTime>("birth_date")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<int>("caputred_pokemon")
                         .HasColumnType("integer");
 
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<int>("experience")
                         .HasColumnType("integer");
-
-                    b.Property<char>("gender")
-                        .HasColumnType("character(1)");
 
                     b.Property<int>("inventory_capacity")
                         .HasColumnType("integer");
 
                     b.Property<short>("level")
                         .HasColumnType("smallint");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<int>("pokemon_slots")
                         .HasColumnType("integer");
@@ -1441,15 +1452,15 @@ namespace PokemonGolotEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
                         .WithMany("eggs")
-                        .HasForeignKey("user")
+                        .HasForeignKey("player")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Egg");
 
-                    b.Navigation("User");
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>
@@ -1479,15 +1490,15 @@ namespace PokemonGolotEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
                         .WithMany()
-                        .HasForeignKey("user")
+                        .HasForeignKey("player")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Friend");
 
-                    b.Navigation("User");
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
@@ -1534,15 +1545,15 @@ namespace PokemonGolotEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
                         .WithMany("trophys")
-                        .HasForeignKey("user")
+                        .HasForeignKey("player")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Gym");
 
-                    b.Navigation("User");
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.LevelupObjectReward", b =>
@@ -1583,15 +1594,15 @@ namespace PokemonGolotEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
                         .WithMany("inventory")
-                        .HasForeignKey("user")
+                        .HasForeignKey("player")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Object");
 
-                    b.Navigation("User");
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
@@ -1661,21 +1672,21 @@ namespace PokemonGolotEF.Migrations
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
                 {
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
+                        .WithMany("pokedex")
+                        .HasForeignKey("player")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
                         .WithMany()
                         .HasForeignKey("pokemon")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
-                        .WithMany("pokedex")
-                        .HasForeignKey("user")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Player");
 
                     b.Navigation("Pokemon");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
@@ -1734,15 +1745,15 @@ namespace PokemonGolotEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokemonGolotEF.Model.User", "User")
+                    b.HasOne("PokemonGolotEF.Model.User", "Player")
                         .WithMany("raidsParticipated")
-                        .HasForeignKey("user")
+                        .HasForeignKey("player")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Gym");
 
-                    b.Navigation("User");
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
@@ -1773,10 +1784,18 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired();
 
                     b.HasOne("PokemonGolotEF.Model.Team", "Team")
-                        .WithMany("Users")
+                        .WithMany("Players")
                         .HasForeignKey("team");
 
+                    b.HasOne("PokemonGolotEF.Model.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("user_name")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Level");
+
+                    b.Navigation("Player");
 
                     b.Navigation("Team");
                 });
@@ -1831,7 +1850,7 @@ namespace PokemonGolotEF.Migrations
                 {
                     b.Navigation("Gyms");
 
-                    b.Navigation("Users");
+                    b.Navigation("Players");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>

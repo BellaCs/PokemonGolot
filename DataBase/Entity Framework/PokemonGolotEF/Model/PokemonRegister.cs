@@ -8,8 +8,8 @@ namespace PokemonGolotEF.Model
     {
         [ForeignKey("Pokemon")]
         public int pokemon { get; set; }
-        [ForeignKey("User")]
-        public string user { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
         [Required]
         public bool sawed { get; set; }
         public char gender { get; set; }
@@ -23,7 +23,7 @@ namespace PokemonGolotEF.Model
 
         [ForeignKey("pokemon")]
         public virtual Pokemon Pokemon { get; set; }
-        [ForeignKey("user")]
-        public virtual User User { get; set; }  
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }  
     }
 }
