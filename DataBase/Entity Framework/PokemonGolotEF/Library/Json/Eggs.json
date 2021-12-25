@@ -1,11 +1,27 @@
 [
   {
-
+    "name": "2km Egg",
+    "km": 2,
+    "image": ""
   },
   {
-
+    "name": "5km Egg",
+    "km": 5,
+    "image": ""
   },
   {
-
+    "name": "7km Egg",
+    "km": 7,
+    "image": ""
+  },
+  {
+    "name": "10km Egg",
+    "km": 10,
+    "image": ""
+  },
+  {
+    "name": "12km Egg",
+    "km": 12,
+    "image": ""
   }
 ]

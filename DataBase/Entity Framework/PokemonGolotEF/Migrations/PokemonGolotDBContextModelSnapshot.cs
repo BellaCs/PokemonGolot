@@ -69,6 +69,88 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("name");
 
                     b.ToTable("Element");
+
+                    b.HasData(
+                        new
+                        {
+                            name = "normal"
+                        },
+                        new
+                        {
+                            name = "fighting"
+                        },
+                        new
+                        {
+                            name = "flying"
+                        },
+                        new
+                        {
+                            name = "poison"
+                        },
+                        new
+                        {
+                            name = "ground"
+                        },
+                        new
+                        {
+                            name = "rock"
+                        },
+                        new
+                        {
+                            name = "bug"
+                        },
+                        new
+                        {
+                            name = "ghost"
+                        },
+                        new
+                        {
+                            name = "steel"
+                        },
+                        new
+                        {
+                            name = "fire"
+                        },
+                        new
+                        {
+                            name = "water"
+                        },
+                        new
+                        {
+                            name = "grass"
+                        },
+                        new
+                        {
+                            name = "electric"
+                        },
+                        new
+                        {
+                            name = "psychic"
+                        },
+                        new
+                        {
+                            name = "ice"
+                        },
+                        new
+                        {
+                            name = "dragon"
+                        },
+                        new
+                        {
+                            name = "dark"
+                        },
+                        new
+                        {
+                            name = "fairy"
+                        },
+                        new
+                        {
+                            name = "unknown"
+                        },
+                        new
+                        {
+                            name = "shadow"
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>

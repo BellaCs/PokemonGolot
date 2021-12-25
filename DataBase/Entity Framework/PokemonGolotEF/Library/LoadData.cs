@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using PokemonGolotEF.Model;
 using PokemonGolotEF.Library.Requests;
@@ -17,6 +15,7 @@ namespace PokemonGolotEF.Library
         {
             LoadLevel().Wait();
             LoadPokemonLevels().Wait();
+            LoadElement().Wait();
         }
 
         public void LoadPokemon() 
@@ -57,6 +56,19 @@ namespace PokemonGolotEF.Library
                         }
                     }
                 }
+            }
+        }
+
+        public async Task LoadElement() 
+        {
+            Element actual;
+            String elementsJson = await getElement.getElements();
+            JObject rawElements = JObject.Parse(elementsJson);
+            JToken elements = rawElements["results"];
+            foreach (JToken element in elements)
+            {
+                actual = new Element(element);
+                pokemonGolot.elements.Add(actual);              
             }
         }
     }

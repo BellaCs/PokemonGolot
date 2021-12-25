@@ -15,13 +15,13 @@ namespace PokemonGolotEF
         {
 
             pokemonData = new LoadData();
-            getDataTry();
+            getDataTry().Wait();
 
         }
 
        
 
-        static void getDataTry() 
+        static async Task getDataTry() 
         {
 
             Console.WriteLine("User levels data:\n\n");
@@ -35,6 +35,13 @@ namespace PokemonGolotEF
             
             foreach(PokemonLevel actual in pokemonData.pokemonGolot.pokemonsLevels)
                 Console.WriteLine("Level: " + actual.pokemon_level + "\nMultiplier: " + actual.cp_multiplier + "\nCandy: " + actual.candy_to_upgrade + "\nStardust: " + actual.stardust_to_upgrade + "\n");
+
+            Console.WriteLine("\n----------------------------------------------------------------------------------------\n\n");
+
+            Console.WriteLine("Elements data:\n\n");
+
+            foreach (Element actual in pokemonData.pokemonGolot.elements)
+                Console.WriteLine("Name: " + actual.name + "\n");
 
         }
     }
