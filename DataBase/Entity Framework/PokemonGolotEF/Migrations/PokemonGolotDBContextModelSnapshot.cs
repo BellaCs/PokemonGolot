@@ -1220,6 +1220,20 @@ namespace PokemonGolotEF.Migrations
                             candy_to_upgrade = 15,
                             cp_multiplier = 0.78463696999999999,
                             stardust_to_upgrade = 10000
+                        },
+                        new
+                        {
+                            pokemon_level = 39.5f,
+                            candy_to_upgrade = 15,
+                            cp_multiplier = 0.78747358000000001,
+                            stardust_to_upgrade = 10000
+                        },
+                        new
+                        {
+                            pokemon_level = 40f,
+                            candy_to_upgrade = 0,
+                            cp_multiplier = 0.79030001000000005,
+                            stardust_to_upgrade = 10000
                         });
                 });
 

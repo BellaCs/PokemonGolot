@@ -45,7 +45,7 @@ namespace PokemonGolotEF.Library
             JObject requirementsToPowerUp = JObject.Parse(requirementsToPowerUpJson);
             foreach (JToken pokemonLevel in cpMultiplier)
             {
-                if ((int)pokemonLevel["level"] < 40)
+                if ((double)pokemonLevel["level"] <= 40.0f)
                 {
                     actual = new PokemonLevel(pokemonLevel);
                     foreach (KeyValuePair<String, JToken> requirment in requirementsToPowerUp)
