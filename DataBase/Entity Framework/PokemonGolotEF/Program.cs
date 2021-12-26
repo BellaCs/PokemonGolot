@@ -1,5 +1,6 @@
 ﻿using System;
 using PokemonGolotEF.Library.Requests;
+using PokemonGolotEF.Library.Readers;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using PokemonGolotEF.Model;
@@ -15,13 +16,13 @@ namespace PokemonGolotEF
         {
 
             pokemonData = new LoadData();
-            getDataTry().Wait();
+            getDataTry();
 
         }
 
        
 
-        static async Task getDataTry() 
+        static void getDataTry() 
         {
 
             Console.WriteLine("User levels data:\n\n");
@@ -42,6 +43,17 @@ namespace PokemonGolotEF
 
             foreach (Element actual in pokemonData.pokemonGolot.elements)
                 Console.WriteLine("Name: " + actual.name + "\n");
+
+            Console.WriteLine("\n----------------------------------------------------------------------------------------\n\n");
+
+            Console.WriteLine("Pokestops data:");
+
+            foreach (PokeStop actual in pokemonData.pokemonGolot.pokestops) 
+            {
+                String latitude = actual.location.Substring(0, actual.location.IndexOf("#"));
+                String longitude = actual.location.Substring(actual.location.IndexOf("#") + 1);
+                Console.WriteLine("Name: " + actual.name + "\nLatitude: " + latitude + "\nLongitude: " + longitude + "\n");
+            }
 
         }
     }

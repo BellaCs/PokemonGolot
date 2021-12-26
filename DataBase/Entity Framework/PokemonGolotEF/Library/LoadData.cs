@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using PokemonGolotEF.Model;
 using PokemonGolotEF.Library.Requests;
 using Newtonsoft.Json.Linq;
+using PokemonGolotEF.Library.Readers;
 
 namespace PokemonGolotEF.Library
 {
@@ -16,6 +17,7 @@ namespace PokemonGolotEF.Library
             LoadLevel().Wait();
             LoadPokemonLevels().Wait();
             LoadElement().Wait();
+            LoadPokestopsAndGyms();
         }
 
         public void LoadPokemon() 
@@ -69,6 +71,21 @@ namespace PokemonGolotEF.Library
             {
                 actual = new Element(element);
                 pokemonGolot.elements.Add(actual);              
+            }
+        }
+
+        public void LoadPokestopsAndGyms() 
+        {
+            PokeStop actual;
+            String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
+            JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
+            JToken gymsList = gymsAndPokestopsList["gyms"];
+            JObject pokestopsList = (JObject)gymsAndPokestopsList["pokestops"];
+            
+            foreach (KeyValuePair<String, JToken> pokestop in pokestopsList)
+            {
+                actual = new PokeStop(pokestop);
+                pokemonGolot.pokestops.Add(actual);
             }
         }
     }
