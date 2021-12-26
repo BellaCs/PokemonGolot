@@ -111,12 +111,18 @@ namespace PokemonGolotEF.Data
             model.Entity<Element>()
                 .HasData(data.pokemonGolot.elements);
 
+            // Egg Pokemon Pool
+
+            model.Entity<EggPokemonPool>()
+                .HasKey(nameof(EggPokemonPool.pokemon), nameof(EggPokemonPool.egg));
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
+                //string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
+                string con = "Host=192.168.1.249;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
                 optionsBuilder.UseNpgsql(con);
             }
         }
@@ -149,5 +155,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<PackageItems> Package_items { get; set; }
         public virtual DbSet<GymTrophy> Gym_trophies { get; set; }
         public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
+        public virtual DbSet<EggPokemonPool> Egg_pokemon_pool { get; set; }
     }
 }

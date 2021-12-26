@@ -1,0 +1,2133 @@
+{
+    "gyms": {
+        "989d02e0c5464ea2b3d6b1368553a24c.16": {
+            "guid": "989d02e0c5464ea2b3d6b1368553a24c.16",
+            "lat": 42.192291,
+            "lng": 2.500477,
+            "name": "Columna de l'Alba"
+        },
+        "7084a44b0be149d6be4bfab4e582e07a.16": {
+            "guid": "7084a44b0be149d6be4bfab4e582e07a.16",
+            "lat": 42.192587,
+            "lng": 2.508627,
+            "name": "Parc dels Ocells"
+        },
+        "8990a7bd0ab348e8838bb4c4f2b2419b.16": {
+            "guid": "8990a7bd0ab348e8838bb4c4f2b2419b.16",
+            "lat": 42.189583,
+            "lng": 2.499194,
+            "name": "Zona Verda d Esplai Mestre Moner"
+        },
+        "64994db985244b2885efb6c7f0102cbf.16": {
+            "guid": "64994db985244b2885efb6c7f0102cbf.16",
+            "lat": 42.188284,
+            "lng": 2.494975,
+            "name": "Relotge d en Clara"
+        },
+        "caf83eab814f4e9084523aeb83af961c.16": {
+            "guid": "caf83eab814f4e9084523aeb83af961c.16",
+            "lat": 42.187263,
+            "lng": 2.497006,
+            "name": "Servicio Moto Guzzi"
+        },
+        "e25a4ce34b7440c08824a54f386aa948.16": {
+            "guid": "e25a4ce34b7440c08824a54f386aa948.16",
+            "lat": 42.186527,
+            "lng": 2.497117,
+            "name": "Tornaboda"
+        },
+        "381def0e350547a083d02ce98a3db503.16": {
+            "guid": "381def0e350547a083d02ce98a3db503.16",
+            "lat": 42.186042,
+            "lng": 2.492402,
+            "name": "Font De La Nena"
+        },
+        "0a6bcfc1047a42848dd1ed45523b9b5a.16": {
+            "guid": "0a6bcfc1047a42848dd1ed45523b9b5a.16",
+            "lat": 42.180624,
+            "lng": 2.495599,
+            "name": "Font de Sant Cristofor"
+        },
+        "e7e345ba8e11450aa1aa679853260cb6.16": {
+            "guid": "e7e345ba8e11450aa1aa679853260cb6.16",
+            "lat": 42.178932,
+            "lng": 2.494906,
+            "name": "Foment de les Tradicions"
+        },
+        "582f481803094ecd8389cfad4a4d0b72.16": {
+            "guid": "582f481803094ecd8389cfad4a4d0b72.16",
+            "lat": 42.177906,
+            "lng": 2.494768,
+            "name": "Casal Barri Les Fonts"
+        },
+        "267264bc272741569b43fe45ea13e8d9.16": {
+            "guid": "267264bc272741569b43fe45ea13e8d9.16",
+            "lat": 42.175295,
+            "lng": 2.4894,
+            "name": "Monumento Parc Espunya"
+        },
+        "a2e1381232364ffca0ae6c75255abdf7.16": {
+            "guid": "a2e1381232364ffca0ae6c75255abdf7.16",
+            "lat": 42.183006,
+            "lng": 2.496606,
+            "name": "Art urbà"
+        },
+        "8477243914444d909b0660bd99b1f863.16": {
+            "guid": "8477243914444d909b0660bd99b1f863.16",
+            "lat": 42.181452,
+            "lng": 2.492522,
+            "name": "San Kirinoies"
+        },
+        "0df2f0d7c295483a9bc0e8d90af48fd2.16": {
+            "guid": "0df2f0d7c295483a9bc0e8d90af48fd2.16",
+            "lat": 42.177293,
+            "lng": 2.486369,
+            "name": "Escultura a Manel Malagrida"
+        },
+        "21b22e88fdd643dd868d6d802b0b181c.16": {
+            "guid": "21b22e88fdd643dd868d6d802b0b181c.16",
+            "lat": 42.177551,
+            "lng": 2.483017,
+            "name": "Estatua Plaça Manuel Malagrida"
+        },
+        "1a9080abdef842eb93aa5faa3f6337fe.16": {
+            "guid": "1a9080abdef842eb93aa5faa3f6337fe.16",
+            "lat": 42.180366,
+            "lng": 2.485257,
+            "name": "Estatua Per La Maternitat. Plaça Clarà."
+        },
+        "3a95ec5901694730beea6086de3dda74.16": {
+            "guid": "3a95ec5901694730beea6086de3dda74.16",
+            "lat": 42.181868,
+            "lng": 2.489382,
+            "name": "Plaça De L'àngel"
+        },
+        "e96bdb3e277a479e941ab6b0db13adb7.16": {
+            "guid": "e96bdb3e277a479e941ab6b0db13adb7.16",
+            "lat": 42.170689,
+            "lng": 2.48534,
+            "name": "Finestra a La Garrotxa"
+        },
+        "dd3edbbf6d67496eb516c3edcde55d24.16": {
+            "guid": "dd3edbbf6d67496eb516c3edcde55d24.16",
+            "lat": 42.166612,
+            "lng": 2.486186,
+            "name": "Sta Ana"
+        },
+        "a44e117b87aa426a8984634baa22fc59.16": {
+            "guid": "a44e117b87aa426a8984634baa22fc59.16",
+            "lat": 42.168368,
+            "lng": 2.493534,
+            "name": "Fagedes Entre Volcans"
+        },
+        "c45343cf12294f38b89d97ae0b800e0a.16": {
+            "guid": "c45343cf12294f38b89d97ae0b800e0a.16",
+            "lat": 42.169393,
+            "lng": 2.503041,
+            "name": "Font de la Vaca"
+        },
+        "15dcfe8e981d4ceca077518b7b87195c.16": {
+            "guid": "15dcfe8e981d4ceca077518b7b87195c.16",
+            "lat": 42.175602,
+            "lng": 2.481668,
+            "name": "Monument Funerari Moai"
+        },
+        "d11fb72272b44afeb2c12268ec9a9f6d.16": {
+            "guid": "d11fb72272b44afeb2c12268ec9a9f6d.16",
+            "lat": 42.172976,
+            "lng": 2.482529,
+            "name": "Estatua Plaça America"
+        },
+        "df64a995e7ca422a80e90c64bd0d56b8.16": {
+            "guid": "df64a995e7ca422a80e90c64bd0d56b8.16",
+            "lat": 42.17181,
+            "lng": 2.481047,
+            "name": "Pere Gussinyé"
+        },
+        "0dc95abd0e8f4300adcdd67a55f48a8b.16": {
+            "guid": "0dc95abd0e8f4300adcdd67a55f48a8b.16",
+            "lat": 42.171287,
+            "lng": 2.47997,
+            "name": "Museu Dels Volcans"
+        },
+        "fea4b213bce34d28a2dfea7dd6e9d345.16": {
+            "guid": "fea4b213bce34d28a2dfea7dd6e9d345.16",
+            "lat": 42.171244,
+            "lng": 2.477698,
+            "name": "Font de la plaça Pius XII"
+        },
+        "83bbc44ca999414d978073866098c18a.16": {
+            "guid": "83bbc44ca999414d978073866098c18a.16",
+            "lat": 42.169653,
+            "lng": 2.477541,
+            "name": "Parc De Pekin"
+        },
+        "31891fa95cbf4e1a9ca8fe05d480e036.16": {
+            "guid": "31891fa95cbf4e1a9ca8fe05d480e036.16",
+            "lat": 42.167398,
+            "lng": 2.480457,
+            "name": "Piscina Municipal"
+        },
+        "a2d0b1491b2746da9a86453462f32c60.16": {
+            "guid": "a2d0b1491b2746da9a86453462f32c60.16",
+            "lat": 42.163045,
+            "lng": 2.481201,
+            "name": "Parc de Bonavista"
+        },
+        "d6b5852c5e034ecf9171882974e9e118.16": {
+            "guid": "d6b5852c5e034ecf9171882974e9e118.16",
+            "lat": 42.165063,
+            "lng": 2.480102,
+            "name": "Homenatge al Camp"
+        },
+        "695d7ea28f95491e9cca7549f92d0958.16": {
+            "guid": "695d7ea28f95491e9cca7549f92d0958.16",
+            "lat": 42.175004,
+            "lng": 2.479952,
+            "name": "Antiga Estacio de Tren d Olot"
+        },
+        "37b498afdd0d424ebe2196f0c24bf22d.16": {
+            "guid": "37b498afdd0d424ebe2196f0c24bf22d.16",
+            "lat": 42.17366,
+            "lng": 2.474043,
+            "name": "Font De Sant Roc"
+        },
+        "51c59b2621d04633ae2e1ab27f77f88d.16": {
+            "guid": "51c59b2621d04633ae2e1ab27f77f88d.16",
+            "lat": 42.174341,
+            "lng": 2.469,
+            "name": "Travesía Tossols-Basil"
+        },
+        "ac2c30b3abc244feb75949a87d1f4efa.16": {
+            "guid": "ac2c30b3abc244feb75949a87d1f4efa.16",
+            "lat": 42.170545,
+            "lng": 2.473211,
+            "name": "Font de la Plaça Boratosca"
+        },
+        "a1da6cb7c22243369c1d76478cf16c19.16": {
+            "guid": "a1da6cb7c22243369c1d76478cf16c19.16",
+            "lat": 42.170236,
+            "lng": 2.469201,
+            "name": "Font del Anec"
+        },
+        "253d0b0d44024033a2f74b1b2c370456.16": {
+            "guid": "253d0b0d44024033a2f74b1b2c370456.16",
+            "lat": 42.168528,
+            "lng": 2.470507,
+            "name": "Parc Plaça de Picasso"
+        },
+        "1ca11c81bb574440a17d698c29b4fc22.16": {
+            "guid": "1ca11c81bb574440a17d698c29b4fc22.16",
+            "lat": 42.207574,
+            "lng": 2.494876,
+            "name": "La casa de los navarros"
+        },
+        "a6ea5214a0ef4b0395d01f2ff21090c9.16": {
+            "guid": "a6ea5214a0ef4b0395d01f2ff21090c9.16",
+            "lat": 42.206018,
+            "lng": 2.492983,
+            "name": "Església de La Canya"
+        },
+        "c0076b2d9c664b1f8fc295a62d1802c9.16": {
+            "guid": "c0076b2d9c664b1f8fc295a62d1802c9.16",
+            "lat": 42.183437,
+            "lng": 2.492668,
+            "name": "Ateneu Central D'olot"
+        },
+        "d02fc3ef316b472d8ef01eb5ecd66f1f.16": {
+            "guid": "d02fc3ef316b472d8ef01eb5ecd66f1f.16",
+            "lat": 42.183344,
+            "lng": 2.490676,
+            "name": "Aigua"
+        },
+        "a49794fe27c948569e34efc308c31ab2.16": {
+            "guid": "a49794fe27c948569e34efc308c31ab2.16",
+            "lat": 42.186987,
+            "lng": 2.4865,
+            "name": "Estrats De Reserva"
+        },
+        "6fe32364bc04475f88eaf3c63108f080.16": {
+            "guid": "6fe32364bc04475f88eaf3c63108f080.16",
+            "lat": 42.188259,
+            "lng": 2.489509,
+            "name": "Torre Dels Carlins"
+        },
+        "1fac39490ac145649e132fb526e97e88.16": {
+            "guid": "1fac39490ac145649e132fb526e97e88.16",
+            "lat": 42.181803,
+            "lng": 2.488183,
+            "name": "Estatua Placida"
+        },
+        "89fee7cedd744ad7a19212a93eaf62cc.16": {
+            "guid": "89fee7cedd744ad7a19212a93eaf62cc.16",
+            "lat": 42.185129,
+            "lng": 2.484677,
+            "name": "Muralla Carlina"
+        },
+        "583f3434fa3344bbbb05158b1d356b2c.16": {
+            "guid": "583f3434fa3344bbbb05158b1d356b2c.16",
+            "lat": 42.183095,
+            "lng": 2.48482,
+            "name": "Olot Indepe"
+        },
+        "b12a9a6dd6d64e1eb3c26a42484490d7.16": {
+            "guid": "b12a9a6dd6d64e1eb3c26a42484490d7.16",
+            "lat": 42.183748,
+            "lng": 2.485099,
+            "name": "Monument Al Rotary Club"
+        },
+        "49dc85440d0746d59744b109acfdb220.16": {
+            "guid": "49dc85440d0746d59744b109acfdb220.16",
+            "lat": 42.190087,
+            "lng": 2.478243,
+            "name": "Escultura Al Treball"
+        },
+        "53a0499ef38e4ba8a012d47680db3a80.16": {
+            "guid": "53a0499ef38e4ba8a012d47680db3a80.16",
+            "lat": 42.190078,
+            "lng": 2.484673,
+            "name": "Font De Roca Volcànica"
+        },
+        "145822eca899449286047cbd6e3f5643.16": {
+            "guid": "145822eca899449286047cbd6e3f5643.16",
+            "lat": 42.192092,
+            "lng": 2.488654,
+            "name": "Sant Antoni Abad"
+        },
+        "7215836c4a5e4c549c5bc32f3685b3f3.16": {
+            "guid": "7215836c4a5e4c549c5bc32f3685b3f3.16",
+            "lat": 42.182488,
+            "lng": 2.479496,
+            "name": "Font Plaça Doctor Fleming"
+        },
+        "71f2ada6942944808229895d5b062b0e.16": {
+            "guid": "71f2ada6942944808229895d5b062b0e.16",
+            "lat": 42.182286,
+            "lng": 2.478306,
+            "name": "St. Pere Màrtir"
+        },
+        "b52b3bf37c2f4cc8872b8cc15189b69d.16": {
+            "guid": "b52b3bf37c2f4cc8872b8cc15189b69d.16",
+            "lat": 42.184181,
+            "lng": 2.471866,
+            "name": "Escultura del Pla de Dalt"
+        },
+        "226e935d4ff1485395b1c038bc602db3.16": {
+            "guid": "226e935d4ff1485395b1c038bc602db3.16",
+            "lat": 42.186149,
+            "lng": 2.472613,
+            "name": "Camp de Futbol Joventut SPM"
+        },
+        "e02356bf66f84ce59fcf1246c9f289c2.16": {
+            "guid": "e02356bf66f84ce59fcf1246c9f289c2.16",
+            "lat": 42.184663,
+            "lng": 2.463171,
+            "name": "Pista de bàsquet"
+        },
+        "eb366893d64d468c91f07e6022189442.16": {
+            "guid": "eb366893d64d468c91f07e6022189442.16",
+            "lat": 42.187217,
+            "lng": 2.468935,
+            "name": "Area de Salut Pla de Dalt"
+        },
+        "82d4c52f3bc24e4a97b1444f6238368c.16": {
+            "guid": "82d4c52f3bc24e4a97b1444f6238368c.16",
+            "lat": 42.211312,
+            "lng": 2.513696,
+            "name": "Familia"
+        },
+        "0ac7bfc17fd24c2fa12920d0f688f779.16": {
+            "guid": "0ac7bfc17fd24c2fa12920d0f688f779.16",
+            "lat": 42.21307,
+            "lng": 2.509031,
+            "name": "Monestir De Sant Joan"
+        },
+        "c3a01fcd724249af931d60eb28d3ce3a.16": {
+            "guid": "c3a01fcd724249af931d60eb28d3ce3a.16",
+            "lat": 42.216145,
+            "lng": 2.511136,
+            "name": "Poblat Iberic La Societat"
+        },
+        "d5e67829b67646d69818cc52084453c3.16": {
+            "guid": "d5e67829b67646d69818cc52084453c3.16",
+            "lat": 42.217585,
+            "lng": 2.515104,
+            "name": "Monestir de Sant Joan de les Fonts"
+        },
+        "3281b40b31b945be830da361ab144f58.16": {
+            "guid": "3281b40b31b945be830da361ab144f58.16",
+            "lat": 42.144247,
+            "lng": 2.571541,
+            "name": "Esglesia de Santa Pau"
+        },
+        "3313d98c275149298c51c5b489250787.16": {
+            "guid": "3313d98c275149298c51c5b489250787.16",
+            "lat": 42.147908,
+            "lng": 2.462148,
+            "name": "Parc Infantil Plaça Catalunya"
+        },
+        "5270ec7874cf4e06a6257bdca6feeeba.16": {
+            "guid": "5270ec7874cf4e06a6257bdca6feeeba.16",
+            "lat": 42.146915,
+            "lng": 2.458231,
+            "name": "El bressol de Verntallat Les Presses"
+        },
+        "837e743e56ef4c40b83910759ee41d67.16": {
+            "guid": "837e743e56ef4c40b83910759ee41d67.16",
+            "lat": 42.142938,
+            "lng": 2.461877,
+            "name": "Parc Infantil"
+        },
+        "bbc8da4802854f678068548e70fddc2d.16": {
+            "guid": "bbc8da4802854f678068548e70fddc2d.16",
+            "lat": 42.141931,
+            "lng": 2.460739,
+            "name": "La casa de l' heura"
+        },
+        "9ede068d1630427b9ba466490d2f5eea.16": {
+            "guid": "9ede068d1630427b9ba466490d2f5eea.16",
+            "lat": 42.140909,
+            "lng": 2.459233,
+            "name": "Parc Infantil 1 d'Octubre"
+        }
+    },
+    "pokestops": {
+        "14ececb192dd48b68c62f300dc78fdcc.16": {
+            "guid": "14ececb192dd48b68c62f300dc78fdcc.16",
+            "lat": 42.193153,
+            "lng": 2.5031,
+            "name": "Font de les Mates"
+        },
+        "8dbc3dff22394fa9b3f3d11bfe75f3dc.16": {
+            "guid": "8dbc3dff22394fa9b3f3d11bfe75f3dc.16",
+            "lat": 42.192937,
+            "lng": 2.504372,
+            "name": "Centre Civic Mas les Mates"
+        },
+        "2fac9f0b5f4c4676837b91e5754b52f8.16": {
+            "guid": "2fac9f0b5f4c4676837b91e5754b52f8.16",
+            "lat": 42.19193,
+            "lng": 2.503457,
+            "name": "Camp de Futbol de Les Mates"
+        },
+        "9bdacdee25b54426a789dc387002e2d2.16": {
+            "guid": "9bdacdee25b54426a789dc387002e2d2.16",
+            "lat": 42.19205,
+            "lng": 2.508972,
+            "name": "Homenatge al Cant dels Ocells"
+        },
+        "a82fd5f22b4b4eaea706c1e22fbf0340.16": {
+            "guid": "a82fd5f22b4b4eaea706c1e22fbf0340.16",
+            "lat": 42.190588,
+            "lng": 2.502526,
+            "name": "Monument Ca Espunya"
+        },
+        "26ef83d3bac34c07a57ac2a91f6fd7fb.16": {
+            "guid": "26ef83d3bac34c07a57ac2a91f6fd7fb.16",
+            "lat": 42.189745,
+            "lng": 2.510175,
+            "name": "Parque infantil Les Tries"
+        },
+        "6de321c42da044829abb1de2b92ae667.16": {
+            "guid": "6de321c42da044829abb1de2b92ae667.16",
+            "lat": 42.189446,
+            "lng": 2.50946,
+            "name": "La torre del Club Natació Olot"
+        },
+        "e17637eb37bf48f2af4b31eeac202128.16": {
+            "guid": "e17637eb37bf48f2af4b31eeac202128.16",
+            "lat": 42.189257,
+            "lng": 2.505546,
+            "name": "Parc Infantil Mestre Falla"
+        },
+        "5cc1b610ae8f412ea27e2ecda3b0ff75.16": {
+            "guid": "5cc1b610ae8f412ea27e2ecda3b0ff75.16",
+            "lat": 42.189932,
+            "lng": 2.500812,
+            "name": "Parc Infantil Alba Rosa"
+        },
+        "e7b9f174c037427b8bc078253c0de17d.16": {
+            "guid": "e7b9f174c037427b8bc078253c0de17d.16",
+            "lat": 42.190278,
+            "lng": 2.498496,
+            "name": "Memoria Al Ball Pla Sant Miquel"
+        },
+        "1384735a74e64b0bb72022f3f8a7d399.16": {
+            "guid": "1384735a74e64b0bb72022f3f8a7d399.16",
+            "lat": 42.189074,
+            "lng": 2.500672,
+            "name": "El Raïm garrotxí"
+        },
+        "48e40363aaa1476da5961ec7f37c43b7.16": {
+            "guid": "48e40363aaa1476da5961ec7f37c43b7.16",
+            "lat": 42.18917,
+            "lng": 2.498544,
+            "name": "Panell Cultural De La Ciutat"
+        },
+        "750018c546ff47a28565f9f05bfe8862.16": {
+            "guid": "750018c546ff47a28565f9f05bfe8862.16",
+            "lat": 42.188282,
+            "lng": 2.499454,
+            "name": "Parc Infantil de la Rodona"
+        },
+        "e240c6f34ff748d88a20bfaf01149dfc.16": {
+            "guid": "e240c6f34ff748d88a20bfaf01149dfc.16",
+            "lat": 42.187509,
+            "lng": 2.49555,
+            "name": "Parc Infantil Sant Miquel"
+        },
+        "a738e4152c4c4273b65618ca13fb77a5.16": {
+            "guid": "a738e4152c4c4273b65618ca13fb77a5.16",
+            "lat": 42.187407,
+            "lng": 2.494926,
+            "name": "En Honor A Leonci Quera"
+        },
+        "86567eaaf3fe4aacb4a9f0d3860072c1.16": {
+            "guid": "86567eaaf3fe4aacb4a9f0d3860072c1.16",
+            "lat": 42.186993,
+            "lng": 2.494968,
+            "name": "Mesquita al rahma de la garrotxa"
+        },
+        "cb643e33876c4329aa9828bc417312df.16": {
+            "guid": "cb643e33876c4329aa9828bc417312df.16",
+            "lat": 42.185993,
+            "lng": 2.496586,
+            "name": "Xarxa D'itineraris Saludables"
+        },
+        "758f84fe1842473aa7f3710de0245411.16": {
+            "guid": "758f84fe1842473aa7f3710de0245411.16",
+            "lat": 42.185831,
+            "lng": 2.497779,
+            "name": "Agrupament Escolta Nostra Dona Del Tura"
+        },
+        "f59ad2d2eb7b46f8ba7f5941ad6d1671.16": {
+            "guid": "f59ad2d2eb7b46f8ba7f5941ad6d1671.16",
+            "lat": 42.185787,
+            "lng": 2.495406,
+            "name": "Font Juan Casula Vilanova"
+        },
+        "bfea73ac474d4f5d8b9e041f4bfa022a.16": {
+            "guid": "bfea73ac474d4f5d8b9e041f4bfa022a.16",
+            "lat": 42.185562,
+            "lng": 2.494867,
+            "name": "Penya Barcelonista d’Olot"
+        },
+        "ab8f751426f44160a6e76985f3265e0f.16": {
+            "guid": "ab8f751426f44160a6e76985f3265e0f.16",
+            "lat": 42.186059,
+            "lng": 2.493079,
+            "name": "Memoria Vestits Tradicionals"
+        },
+        "68c842eb43e74a31b13fb3e3e2183a48.16": {
+            "guid": "68c842eb43e74a31b13fb3e3e2183a48.16",
+            "lat": 42.18501,
+            "lng": 2.49247,
+            "name": "Capella de Sant Bernat"
+        },
+        "b73b99a39c684ce8a30c7798ad8680e9.16": {
+            "guid": "b73b99a39c684ce8a30c7798ad8680e9.16",
+            "lat": 42.184199,
+            "lng": 2.491673,
+            "name": "Font De Sant Bernat"
+        },
+        "04f8aabfd65949dcb80a12568df200fd.16": {
+            "guid": "04f8aabfd65949dcb80a12568df200fd.16",
+            "lat": 42.185468,
+            "lng": 2.491081,
+            "name": "Viacrucis Montsacopa III"
+        },
+        "68f8191a2b954d0c91618f643fe416c2.16": {
+            "guid": "68f8191a2b954d0c91618f643fe416c2.16",
+            "lat": 42.185212,
+            "lng": 2.491034,
+            "name": "Montsacopa"
+        },
+        "07d9217343334425855e8dc0f2131224.16": {
+            "guid": "07d9217343334425855e8dc0f2131224.16",
+            "lat": 42.188308,
+            "lng": 2.511355,
+            "name": "Font de les Tries"
+        },
+        "aadc94cafdb0495a8c755384b7e81e57.16": {
+            "guid": "aadc94cafdb0495a8c755384b7e81e57.16",
+            "lat": 42.188232,
+            "lng": 2.509423,
+            "name": "Camp de futbol les tries"
+        },
+        "0148de2d390e4c4c8ef8480130bcf9c3.16": {
+            "guid": "0148de2d390e4c4c8ef8480130bcf9c3.16",
+            "lat": 42.18339,
+            "lng": 2.49869,
+            "name": "Església Bíblica d'Olot"
+        },
+        "ecda660a1803413591a8a4f30453ff22.16": {
+            "guid": "ecda660a1803413591a8a4f30453ff22.16",
+            "lat": 42.184308,
+            "lng": 2.494592,
+            "name": "Sant Miquel"
+        },
+        "ebff8c92f4db4943b37a09621ca7ed6c.16": {
+            "guid": "ebff8c92f4db4943b37a09621ca7ed6c.16",
+            "lat": 42.181057,
+            "lng": 2.49887,
+            "name": "Palamós 1989"
+        },
+        "24aa1a5532bc41ada20e68d12c49dfdc.16": {
+            "guid": "24aa1a5532bc41ada20e68d12c49dfdc.16",
+            "lat": 42.181291,
+            "lng": 2.49729,
+            "name": "Area de Salut de les Bisaroques"
+        },
+        "9598832dac6e4762980ea7b7bd612195.16": {
+            "guid": "9598832dac6e4762980ea7b7bd612195.16",
+            "lat": 42.179872,
+            "lng": 2.497285,
+            "name": "Homenatge a la fira de embotits d'Olot"
+        },
+        "0436d87daa174f689766fc1c275a02c4.16": {
+            "guid": "0436d87daa174f689766fc1c275a02c4.16",
+            "lat": 42.178344,
+            "lng": 2.49597,
+            "name": "Parc Infantil de Benavent"
+        },
+        "1550ed3386dc47e8b108a644526a54a8.16": {
+            "guid": "1550ed3386dc47e8b108a644526a54a8.16",
+            "lat": 42.176826,
+            "lng": 2.495602,
+            "name": "Canasta de Benavent"
+        },
+        "9586e9489d254ccb8a1d2ebe550533b3.16": {
+            "guid": "9586e9489d254ccb8a1d2ebe550533b3.16",
+            "lat": 42.175606,
+            "lng": 2.491831,
+            "name": "Ermita del Pla de l Oruga"
+        },
+        "399e020e967f483895d4a0ea6cd82a55.16": {
+            "guid": "399e020e967f483895d4a0ea6cd82a55.16",
+            "lat": 42.174006,
+            "lng": 2.489988,
+            "name": "Itinerannia xarxa de senders de la Garrotxa"
+        },
+        "9b67856a481e47de8cde8aa56135da4f.16": {
+            "guid": "9b67856a481e47de8cde8aa56135da4f.16",
+            "lat": 42.17514,
+            "lng": 2.488867,
+            "name": "Parc Infantil de les Mores"
+        },
+        "970c43646bf549d193bc65a183fb58ad.16": {
+            "guid": "970c43646bf549d193bc65a183fb58ad.16",
+            "lat": 42.175581,
+            "lng": 2.488922,
+            "name": "Font del Parc de les Mores"
+        },
+        "4f4383cc176f49af976a5129a8b0ac10.16": {
+            "guid": "4f4383cc176f49af976a5129a8b0ac10.16",
+            "lat": 42.175945,
+            "lng": 2.488625,
+            "name": "Itineraris Naturals per la Garrotxa"
+        },
+        "5b4f3cc7901242b6b4da5204619d6757.16": {
+            "guid": "5b4f3cc7901242b6b4da5204619d6757.16",
+            "lat": 42.17609,
+            "lng": 2.488819,
+            "name": "Ruta Volcà de les Bisaroques"
+        },
+        "ba1065585cea456282b917a5a263a39a.16": {
+            "guid": "ba1065585cea456282b917a5a263a39a.16",
+            "lat": 42.177074,
+            "lng": 2.48927,
+            "name": "Imatge de la Verge del Tura"
+        },
+        "82e37ba4153e42dc841f69a5c4d8c3ad.16": {
+            "guid": "82e37ba4153e42dc841f69a5c4d8c3ad.16",
+            "lat": 42.176375,
+            "lng": 2.489583,
+            "name": "Escacs Ronda Somatent"
+        },
+        "9114d7828e0944b3be858cfb01ff8034.16": {
+            "guid": "9114d7828e0944b3be858cfb01ff8034.16",
+            "lat": 42.177647,
+            "lng": 2.48901,
+            "name": "Font Verge del Tura"
+        },
+        "9b2c5c1554144bbd9e1be9eb6ec8f696.16": {
+            "guid": "9b2c5c1554144bbd9e1be9eb6ec8f696.16",
+            "lat": 42.178044,
+            "lng": 2.490228,
+            "name": "Mosaic Ratafia Russet"
+        },
+        "0080eaef7d774b2aa1b7458735e003c8.16": {
+            "guid": "0080eaef7d774b2aa1b7458735e003c8.16",
+            "lat": 42.177233,
+            "lng": 2.49037,
+            "name": "The Graphic Room"
+        },
+        "6e9d47da88cd450592cc4a772dfbc4c7.16": {
+            "guid": "6e9d47da88cd450592cc4a772dfbc4c7.16",
+            "lat": 42.180603,
+            "lng": 2.494297,
+            "name": "Gegants Del Barri"
+        },
+        "79e99c5e57164d4cbde98f5c4450dff7.16": {
+            "guid": "79e99c5e57164d4cbde98f5c4450dff7.16",
+            "lat": 42.180594,
+            "lng": 2.493782,
+            "name": "Olot Esportiu"
+        },
+        "c971e394e05b4f39b48568ce39332988.16": {
+            "guid": "c971e394e05b4f39b48568ce39332988.16",
+            "lat": 42.181453,
+            "lng": 2.4941,
+            "name": "Sant Cristofor"
+        },
+        "664a31cdc918482289b0642351f11b0f.16": {
+            "guid": "664a31cdc918482289b0642351f11b0f.16",
+            "lat": 42.180731,
+            "lng": 2.492788,
+            "name": "Itinerari de vells camins de Batet"
+        },
+        "e2a23abc281849bc9ec58f636977a4b4.16": {
+            "guid": "e2a23abc281849bc9ec58f636977a4b4.16",
+            "lat": 42.182538,
+            "lng": 2.494664,
+            "name": "Parc Infantil Miquel Marti Pol"
+        },
+        "c6b679fc1e9745b6b568b9be47ebb078.16": {
+            "guid": "c6b679fc1e9745b6b568b9be47ebb078.16",
+            "lat": 42.182833,
+            "lng": 2.494928,
+            "name": "Monument Miquel Martí i Pol"
+        },
+        "a8e099fa2b96412594668b2bb744fe79.16": {
+            "guid": "a8e099fa2b96412594668b2bb744fe79.16",
+            "lat": 42.182521,
+            "lng": 2.494003,
+            "name": "Molí antic del riu fluvia"
+        },
+        "942f717a62ba4834b0b971593fe7e93d.16": {
+            "guid": "942f717a62ba4834b0b971593fe7e93d.16",
+            "lat": 42.18314,
+            "lng": 2.493878,
+            "name": "Consorci d Accio Social"
+        },
+        "ba676fd4140a4f70aca46ced0044578a.16": {
+            "guid": "ba676fd4140a4f70aca46ced0044578a.16",
+            "lat": 42.183272,
+            "lng": 2.493631,
+            "name": "Monument Plaça Palau"
+        },
+        "7ac2fcc31d23439ea33aa3e8ebecdc79.16": {
+            "guid": "7ac2fcc31d23439ea33aa3e8ebecdc79.16",
+            "lat": 42.18268,
+            "lng": 2.493328,
+            "name": "Consell Comarcal de la Garrotxa"
+        },
+        "1443785937d14db28d14d2dd5ddd2f16.16": {
+            "guid": "1443785937d14db28d14d2dd5ddd2f16.16",
+            "lat": 42.182031,
+            "lng": 2.493127,
+            "name": "Santa Magdalena Del Pont"
+        },
+        "af7b811d2fc54dd6863f27022725c670.16": {
+            "guid": "af7b811d2fc54dd6863f27022725c670.16",
+            "lat": 42.181439,
+            "lng": 2.491707,
+            "name": "Escultura Carbonell d'Olot"
+        },
+        "be17d4e333ee4304bc2c7ae0ceeb06d9.16": {
+            "guid": "be17d4e333ee4304bc2c7ae0ceeb06d9.16",
+            "lat": 42.181086,
+            "lng": 2.491292,
+            "name": "Mapa d'Olot"
+        },
+        "39cdec2f7d2b464197324d2dddc7b14e.16": {
+            "guid": "39cdec2f7d2b464197324d2dddc7b14e.16",
+            "lat": 42.180657,
+            "lng": 2.491659,
+            "name": "Estació Bus Olot"
+        },
+        "c434843c462b4b87b5d4470912ede2db.16": {
+            "guid": "c434843c462b4b87b5d4470912ede2db.16",
+            "lat": 42.180462,
+            "lng": 2.490827,
+            "name": "Font Del Fluvia"
+        },
+        "0ae4022daae342469b1896a0711537ae.16": {
+            "guid": "0ae4022daae342469b1896a0711537ae.16",
+            "lat": 42.180014,
+            "lng": 2.491824,
+            "name": "Monestir Divina Providencia"
+        },
+        "5af2cd0bfdc84030b67cd9f40b6285b8.16": {
+            "guid": "5af2cd0bfdc84030b67cd9f40b6285b8.16",
+            "lat": 42.179579,
+            "lng": 2.491918,
+            "name": "Nostra Senyora Del Tura"
+        },
+        "9aa32398560748c8beb9c2e956514a04.16": {
+            "guid": "9aa32398560748c8beb9c2e956514a04.16",
+            "lat": 42.179727,
+            "lng": 2.490231,
+            "name": "Sant Antoni De Padua"
+        },
+        "73f40c1cb54243769d43a5d4ec64ba0b.16": {
+            "guid": "73f40c1cb54243769d43a5d4ec64ba0b.16",
+            "lat": 42.178874,
+            "lng": 2.490906,
+            "name": "Hippo"
+        },
+        "c613c86b535a41a98883e07b75fdc8c8.16": {
+            "guid": "c613c86b535a41a98883e07b75fdc8c8.16",
+            "lat": 42.179971,
+            "lng": 2.48921,
+            "name": "Wom Art Olot"
+        },
+        "fa9c357b134e4f86b99b277462a28925.16": {
+            "guid": "fa9c357b134e4f86b99b277462a28925.16",
+            "lat": 42.180098,
+            "lng": 2.489013,
+            "name": "Museu dels Sants"
+        },
+        "cf643ab4141d49abb12433df32c7535e.16": {
+            "guid": "cf643ab4141d49abb12433df32c7535e.16",
+            "lat": 42.180041,
+            "lng": 2.488743,
+            "name": "Joaquim Vayreda"
+        },
+        "0ef5d6a89c5d4f98b195dc3e050c1107.16": {
+            "guid": "0ef5d6a89c5d4f98b195dc3e050c1107.16",
+            "lat": 42.177817,
+            "lng": 2.486894,
+            "name": "Escut Escola De Musica"
+        },
+        "97cfc4e935ba4ab996f8e429a5a53af4.16": {
+            "guid": "97cfc4e935ba4ab996f8e429a5a53af4.16",
+            "lat": 42.178384,
+            "lng": 2.488155,
+            "name": "Montserrat"
+        },
+        "b73f8d053f1b41e9b1033a86f7bdab48.16": {
+            "guid": "b73f8d053f1b41e9b1033a86f7bdab48.16",
+            "lat": 42.179306,
+            "lng": 2.48615,
+            "name": "Escut del cor vermell"
+        },
+        "5450525c4b0e48ce8bb2326614a37f01.16": {
+            "guid": "5450525c4b0e48ce8bb2326614a37f01.16",
+            "lat": 42.179121,
+            "lng": 2.488865,
+            "name": "Capella de Sant Roc"
+        },
+        "c08fedccd57948dbae900dcc055f6434.16": {
+            "guid": "c08fedccd57948dbae900dcc055f6434.16",
+            "lat": 42.17512,
+            "lng": 2.486926,
+            "name": "Porta Begoña Uriarte"
+        },
+        "5a3e235b61bd4f1b843e5e84b1e68dad.16": {
+            "guid": "5a3e235b61bd4f1b843e5e84b1e68dad.16",
+            "lat": 42.176229,
+            "lng": 2.483712,
+            "name": "Parc Infantil Pisos de la Caixa"
+        },
+        "671f65672429467e85cdb1a7bf105c6f.16": {
+            "guid": "671f65672429467e85cdb1a7bf105c6f.16",
+            "lat": 42.176848,
+            "lng": 2.484047,
+            "name": "Escultura en Planxa, Leonci Quera"
+        },
+        "a164c141de974bb0b1bd57caf7c8ce77.16": {
+            "guid": "a164c141de974bb0b1bd57caf7c8ce77.16",
+            "lat": 42.176557,
+            "lng": 2.482342,
+            "name": "Font Passeig De Barcelona"
+        },
+        "c19a77886462418d837c2bafd391c5e6.16": {
+            "guid": "c19a77886462418d837c2bafd391c5e6.16",
+            "lat": 42.179032,
+            "lng": 2.484385,
+            "name": "Monument A Joan Pere Fontanella"
+        },
+        "021cb6fddbd74692bc6418b5f4d0b5e7.16": {
+            "guid": "021cb6fddbd74692bc6418b5f4d0b5e7.16",
+            "lat": 42.179728,
+            "lng": 2.484515,
+            "name": "Museu De L'entrepà D'Olot"
+        },
+        "97a89dbbcc194c259eb6d49f3a572dee.16": {
+            "guid": "97a89dbbcc194c259eb6d49f3a572dee.16",
+            "lat": 42.180417,
+            "lng": 2.484978,
+            "name": "Font Blava"
+        },
+        "774d89f4cfea405db1e722149ed09efc.16": {
+            "guid": "774d89f4cfea405db1e722149ed09efc.16",
+            "lat": 42.180679,
+            "lng": 2.486072,
+            "name": "Mapa Turistic Ciutat D'Olot"
+        },
+        "7708f8bcd18a41498e0e52349f471e6d.16": {
+            "guid": "7708f8bcd18a41498e0e52349f471e6d.16",
+            "lat": 42.18075,
+            "lng": 2.487011,
+            "name": "Establiment Històric Curós Espigulé SL. 1965"
+        },
+        "4793967c09cd4525bdd81118612089b3.16": {
+            "guid": "4793967c09cd4525bdd81118612089b3.16",
+            "lat": 42.180816,
+            "lng": 2.487678,
+            "name": "Antic Hospital d Olot 700 Aniversari"
+        },
+        "ba07674f717a403f87cff038ea0e203a.16": {
+            "guid": "ba07674f717a403f87cff038ea0e203a.16",
+            "lat": 42.180895,
+            "lng": 2.488355,
+            "name": "Plaça Mercat 2"
+        },
+        "39a4067762674ab6924109e88fa8aa46.16": {
+            "guid": "39a4067762674ab6924109e88fa8aa46.16",
+            "lat": 42.180977,
+            "lng": 2.488705,
+            "name": "parc infaltil dels coloms"
+        },
+        "a759d610603f4177a93e20eba23960a2.16": {
+            "guid": "a759d610603f4177a93e20eba23960a2.16",
+            "lat": 42.181177,
+            "lng": 2.489128,
+            "name": "De. Candi in Memoriam"
+        },
+        "9955cf157f034e61a71f527b0ebe3c52.16": {
+            "guid": "9955cf157f034e61a71f527b0ebe3c52.16",
+            "lat": 42.18129,
+            "lng": 2.489679,
+            "name": "Edifici Hospici"
+        },
+        "0a9d78bc8ac943ffa26bd2e271836c15.16": {
+            "guid": "0a9d78bc8ac943ffa26bd2e271836c15.16",
+            "lat": 42.181609,
+            "lng": 2.489535,
+            "name": "Escultura de Sant Antoni de Padua"
+        },
+        "f38389c50ee84bed83f864ca1e80470e.16": {
+            "guid": "f38389c50ee84bed83f864ca1e80470e.16",
+            "lat": 42.174244,
+            "lng": 2.487387,
+            "name": "Area de Salut del Parc de les Mores"
+        },
+        "6cae8520fe31471e907c6cf79b66899b.16": {
+            "guid": "6cae8520fe31471e907c6cf79b66899b.16",
+            "lat": 42.17299,
+            "lng": 2.486636,
+            "name": "Pista d Esports"
+        },
+        "747125f6dc0a4706a34293de46429d4e.16": {
+            "guid": "747125f6dc0a4706a34293de46429d4e.16",
+            "lat": 42.170936,
+            "lng": 2.487652,
+            "name": "Itineraris de la Moixina"
+        },
+        "77f91e4fdc194b46b49a92c7bd2d8f9b.16": {
+            "guid": "77f91e4fdc194b46b49a92c7bd2d8f9b.16",
+            "lat": 42.168715,
+            "lng": 2.486777,
+            "name": "Ermita de la Moixina"
+        },
+        "55f6933591244046b41bfa8833cfe4bd.16": {
+            "guid": "55f6933591244046b41bfa8833cfe4bd.16",
+            "lat": 42.16674,
+            "lng": 2.486423,
+            "name": "Turisme Garrotxa a La Moixina"
+        },
+        "7915c597ac2a4a228403dd55145c49a1.16": {
+            "guid": "7915c597ac2a4a228403dd55145c49a1.16",
+            "lat": 42.165101,
+            "lng": 2.486097,
+            "name": "Pedra conmemorativa Ramon Bernadas"
+        },
+        "48bcd2ed6c734e6b9654ec622e56f434.16": {
+            "guid": "48bcd2ed6c734e6b9654ec622e56f434.16",
+            "lat": 42.16491,
+            "lng": 2.485357,
+            "name": "Ca La Deu"
+        },
+        "ed60a657d55e491fbb5be5760b51902a.16": {
+            "guid": "ed60a657d55e491fbb5be5760b51902a.16",
+            "lat": 42.16455,
+            "lng": 2.487057,
+            "name": "Ruta Fageda d'en Jorda"
+        },
+        "8406774be2e742079da09967cb8d4de0.16": {
+            "guid": "8406774be2e742079da09967cb8d4de0.16",
+            "lat": 42.166976,
+            "lng": 2.482283,
+            "name": "Itinerannia Xarxa Via Verda"
+        },
+        "f93db06e75fb46c2841303ce5f503712.16": {
+            "guid": "f93db06e75fb46c2841303ce5f503712.16",
+            "lat": 42.16888,
+            "lng": 2.483203,
+            "name": "Cocodril de Fusta"
+        },
+        "332cef82e5fa42338b619e8c4cdf7a16.16": {
+            "guid": "332cef82e5fa42338b619e8c4cdf7a16.16",
+            "lat": 42.168897,
+            "lng": 2.493594,
+            "name": "Espais De Memoria"
+        },
+        "f760fddcaf63487d8b50df90169b9f11.16": {
+            "guid": "f760fddcaf63487d8b50df90169b9f11.16",
+            "lat": 42.168591,
+            "lng": 2.494627,
+            "name": "La Creu del Triai"
+        },
+        "a963f4392e714b4aacf8cda62d51ac3d.16": {
+            "guid": "a963f4392e714b4aacf8cda62d51ac3d.16",
+            "lat": 42.168651,
+            "lng": 2.499837,
+            "name": "Esglèsia Parroquial De Sant Cristofor Les Fonts"
+        },
+        "eeec3be34da94e4d9a153e001dac061c.16": {
+            "guid": "eeec3be34da94e4d9a153e001dac061c.16",
+            "lat": 42.168451,
+            "lng": 2.503385,
+            "name": "Casa Hobbit"
+        },
+        "1c16772c783944cb887cff3f1c411aba.16": {
+            "guid": "1c16772c783944cb887cff3f1c411aba.16",
+            "lat": 42.175067,
+            "lng": 2.484298,
+            "name": "Pont de Ferro d'Olot"
+        },
+        "2e702c9f94bf48d4b7370c1d7409ade2.16": {
+            "guid": "2e702c9f94bf48d4b7370c1d7409ade2.16",
+            "lat": 42.175048,
+            "lng": 2.482533,
+            "name": "Escultura J. Henry Dunant"
+        },
+        "1938504daee44d67a3f57304ee2ab079.16": {
+            "guid": "1938504daee44d67a3f57304ee2ab079.16",
+            "lat": 42.174687,
+            "lng": 2.483206,
+            "name": "Rocodrom"
+        },
+        "6cdefd1e8e8740c5b7b139bacd4f3922.16": {
+            "guid": "6cdefd1e8e8740c5b7b139bacd4f3922.16",
+            "lat": 42.174212,
+            "lng": 2.482304,
+            "name": "Pista de Basquet"
+        },
+        "2370182940074a36b850791f9991ba89.16": {
+            "guid": "2370182940074a36b850791f9991ba89.16",
+            "lat": 42.173466,
+            "lng": 2.482519,
+            "name": "Parc Infantil Plaça America"
+        },
+        "a94c9cd8cb644d1aa1ecbd183e79280e.16": {
+            "guid": "a94c9cd8cb644d1aa1ecbd183e79280e.16",
+            "lat": 42.173238,
+            "lng": 2.482761,
+            "name": "Parc Esportiu"
+        },
+        "04e3d89ece584b009b191dec7ce75333.16": {
+            "guid": "04e3d89ece584b009b191dec7ce75333.16",
+            "lat": 42.172158,
+            "lng": 2.48272,
+            "name": "Club Municipal de Tennis Olot"
+        },
+        "f3f16931977e47c199a9c9da27eac0a8.16": {
+            "guid": "f3f16931977e47c199a9c9da27eac0a8.16",
+            "lat": 42.172636,
+            "lng": 2.479228,
+            "name": "Escultura Maria Compàs"
+        },
+        "52d6c6aaa94547b2a4625d0cd33ea23c.16": {
+            "guid": "52d6c6aaa94547b2a4625d0cd33ea23c.16",
+            "lat": 42.172424,
+            "lng": 2.47983,
+            "name": "Mapa Olot"
+        },
+        "47e7bdc2d6b14d53afd26ccdb4ad8c73.16": {
+            "guid": "47e7bdc2d6b14d53afd26ccdb4ad8c73.16",
+            "lat": 42.172131,
+            "lng": 2.480003,
+            "name": "Font De La Sardana Al Parc Nou"
+        },
+        "a218ca5b9ed741b7b93d960c1b4c5281.16": {
+            "guid": "a218ca5b9ed741b7b93d960c1b4c5281.16",
+            "lat": 42.171895,
+            "lng": 2.480381,
+            "name": "Pont de Fusta"
+        },
+        "349e2f6323ce4b8885e7ac996fe6f828.16": {
+            "guid": "349e2f6323ce4b8885e7ac996fe6f828.16",
+            "lat": 42.171808,
+            "lng": 2.481546,
+            "name": "Parc Nou Casal dels Volcans"
+        },
+        "4c44ec8b2ec34d7f8f19228875a0b7a0.16": {
+            "guid": "4c44ec8b2ec34d7f8f19228875a0b7a0.16",
+            "lat": 42.171126,
+            "lng": 2.481132,
+            "name": "Roureda de roure pènol"
+        },
+        "f889a7fe37004b7db441b2d74a426204.16": {
+            "guid": "f889a7fe37004b7db441b2d74a426204.16",
+            "lat": 42.171112,
+            "lng": 2.480345,
+            "name": "Ruta Paratges la Moixina"
+        },
+        "765b33df14ff4491a4340b5f154f8742.16": {
+            "guid": "765b33df14ff4491a4340b5f154f8742.16",
+            "lat": 42.171649,
+            "lng": 2.480085,
+            "name": "Fauna del Parc Nou"
+        },
+        "3b3f715d6d0440308b1edd4efbc0ea97.16": {
+            "guid": "3b3f715d6d0440308b1edd4efbc0ea97.16",
+            "lat": 42.172073,
+            "lng": 2.479094,
+            "name": "Garrotxa cultour"
+        },
+        "5c7f1f57cf4746a68819ec7207bec9b6.16": {
+            "guid": "5c7f1f57cf4746a68819ec7207bec9b6.16",
+            "lat": 42.171491,
+            "lng": 2.47891,
+            "name": "Els arbres del Parc Nou"
+        },
+        "dd3662cd3a1d4592aa5a1286e760e388.16": {
+            "guid": "dd3662cd3a1d4592aa5a1286e760e388.16",
+            "lat": 42.170809,
+            "lng": 2.479212,
+            "name": "Ocells del Parc Nou"
+        },
+        "9bc29182aa074d6aa31540b4666bf482.16": {
+            "guid": "9bc29182aa074d6aa31540b4666bf482.16",
+            "lat": 42.170536,
+            "lng": 2.479895,
+            "name": "Plantes sense flors i líquens"
+        },
+        "8e4b4f7b46114c8f988da4db125e7098.16": {
+            "guid": "8e4b4f7b46114c8f988da4db125e7098.16",
+            "lat": 42.168586,
+            "lng": 2.477871,
+            "name": "Parc Infantil de Pekin"
+        },
+        "b200f61a11fc4e0fa4abc9e00ebba211.16": {
+            "guid": "b200f61a11fc4e0fa4abc9e00ebba211.16",
+            "lat": 42.167395,
+            "lng": 2.47861,
+            "name": "Parc Infantil Bonavista"
+        },
+        "3415e571efe54841a5e3ee74bf3dbb2f.16": {
+            "guid": "3415e571efe54841a5e3ee74bf3dbb2f.16",
+            "lat": 42.164701,
+            "lng": 2.480335,
+            "name": "Parc Infantil de Bonavista"
+        },
+        "62b0fe9b0b5049bc8390d14a2cb0d89c.16": {
+            "guid": "62b0fe9b0b5049bc8390d14a2cb0d89c.16",
+            "lat": 42.16472,
+            "lng": 2.477049,
+            "name": "Vol de Pau"
+        },
+        "5ca251bb34674e6d999cf8b2c34ef497.16": {
+            "guid": "5ca251bb34674e6d999cf8b2c34ef497.16",
+            "lat": 42.164981,
+            "lng": 2.4773,
+            "name": "Plaça de Bonavista"
+        },
+        "6e80731a8c484139a9399e2d8719d191.16": {
+            "guid": "6e80731a8c484139a9399e2d8719d191.16",
+            "lat": 42.165068,
+            "lng": 2.477931,
+            "name": "Pista de Esports"
+        },
+        "60e28886ff82419e99ef2cef4c838552.16": {
+            "guid": "60e28886ff82419e99ef2cef4c838552.16",
+            "lat": 42.1634,
+            "lng": 2.476778,
+            "name": "Font de la roca volcánica de Bonavista"
+        },
+        "c0fd16f264b746b39a835d1896e89faa.16": {
+            "guid": "c0fd16f264b746b39a835d1896e89faa.16",
+            "lat": 42.167467,
+            "lng": 2.474953,
+            "name": "Barri de Bonavista"
+        },
+        "763cfdda5cb6498e8c859b15ab2bb77e.16": {
+            "guid": "763cfdda5cb6498e8c859b15ab2bb77e.16",
+            "lat": 42.176627,
+            "lng": 2.481203,
+            "name": "Monument de Ernest Lluch"
+        },
+        "eaee807e60b84e19b91c4c96b999bd71.16": {
+            "guid": "eaee807e60b84e19b91c4c96b999bd71.16",
+            "lat": 42.176871,
+            "lng": 2.481344,
+            "name": "Loro Park"
+        },
+        "bf5058bd4f4b4c08b5ee400994852d54.16": {
+            "guid": "bf5058bd4f4b4c08b5ee400994852d54.16",
+            "lat": 42.176483,
+            "lng": 2.478335,
+            "name": "Els Desemparats"
+        },
+        "019854414f7747058554908dbdcb2082.16": {
+            "guid": "019854414f7747058554908dbdcb2082.16",
+            "lat": 42.179018,
+            "lng": 2.478519,
+            "name": "Torre de defensa Carlina"
+        },
+        "ed6ab0e706944febb3c9f2fc761752dc.16": {
+            "guid": "ed6ab0e706944febb3c9f2fc761752dc.16",
+            "lat": 42.174505,
+            "lng": 2.475331,
+            "name": "Mare de Deu de l Empenta"
+        },
+        "f0e15e5c4069446a8b7ded05901760f0.16": {
+            "guid": "f0e15e5c4069446a8b7ded05901760f0.16",
+            "lat": 42.174563,
+            "lng": 2.473336,
+            "name": "Monument Club Natació Olot"
+        },
+        "b597ab243edf4139936430726e45059c.16": {
+            "guid": "b597ab243edf4139936430726e45059c.16",
+            "lat": 42.173218,
+            "lng": 2.47401,
+            "name": "Parc de Vista Alegre"
+        },
+        "90cbcc95abea45fa8d3eb3b639595c0e.16": {
+            "guid": "90cbcc95abea45fa8d3eb3b639595c0e.16",
+            "lat": 42.173216,
+            "lng": 2.472987,
+            "name": "Ermita Sant Roc"
+        },
+        "ab9e5462a996491d93c0357426765833.16": {
+            "guid": "ab9e5462a996491d93c0357426765833.16",
+            "lat": 42.173853,
+            "lng": 2.475413,
+            "name": "Inici Ruta del Bicicarril"
+        },
+        "785d2e9b52a14a5fb72b4271d812fed6.16": {
+            "guid": "785d2e9b52a14a5fb72b4271d812fed6.16",
+            "lat": 42.174115,
+            "lng": 2.476329,
+            "name": "Monument en als vençuts"
+        },
+        "c7c654ca48c04b3395c8813ab0cd0118.16": {
+            "guid": "c7c654ca48c04b3395c8813ab0cd0118.16",
+            "lat": 42.173607,
+            "lng": 2.477856,
+            "name": "El Silo"
+        },
+        "7580d0671f564d1aab41cf75babb0aaf.16": {
+            "guid": "7580d0671f564d1aab41cf75babb0aaf.16",
+            "lat": 42.176772,
+            "lng": 2.468398,
+            "name": "Montanya Pelada i rutes de senders saludables"
+        },
+        "825a207a4e8643cc8be34cefede8222a.16": {
+            "guid": "825a207a4e8643cc8be34cefede8222a.16",
+            "lat": 42.17295,
+            "lng": 2.475224,
+            "name": "Centre Civic de Sant Roc"
+        },
+        "38e02b3b99414b1a8345915bc653d020.16": {
+            "guid": "38e02b3b99414b1a8345915bc653d020.16",
+            "lat": 42.17265,
+            "lng": 2.474387,
+            "name": "La Font de Pedra"
+        },
+        "efca7f12f1c6411ab587f583405e09d3.16": {
+            "guid": "efca7f12f1c6411ab587f583405e09d3.16",
+            "lat": 42.172299,
+            "lng": 2.474416,
+            "name": "Esglesia de Sant Roc"
+        },
+        "367bf3a2a29849e28acd80c21871c012.16": {
+            "guid": "367bf3a2a29849e28acd80c21871c012.16",
+            "lat": 42.171833,
+            "lng": 2.475105,
+            "name": "Parc infantil Bosc de la Coma"
+        },
+        "f4621b1b99624c6d9e8c1ebd30e484a6.16": {
+            "guid": "f4621b1b99624c6d9e8c1ebd30e484a6.16",
+            "lat": 42.170918,
+            "lng": 2.471817,
+            "name": "Verge Maria"
+        },
+        "59ae25782dd949289c9aae49c92396ab.16": {
+            "guid": "59ae25782dd949289c9aae49c92396ab.16",
+            "lat": 42.170146,
+            "lng": 2.472966,
+            "name": "zona infantil boratosca"
+        },
+        "671a45fd07004a4aa57d60adb91f2424.16": {
+            "guid": "671a45fd07004a4aa57d60adb91f2424.16",
+            "lat": 42.170274,
+            "lng": 2.468759,
+            "name": "Camp de Futbol Sant Roc"
+        },
+        "de3c31bc15bf4d87b1e98253f1c59ff6.16": {
+            "guid": "de3c31bc15bf4d87b1e98253f1c59ff6.16",
+            "lat": 42.171297,
+            "lng": 2.467279,
+            "name": "pista d'atletisme"
+        },
+        "17cfe9c40aa045c49fba705e4efd3ceb.16": {
+            "guid": "17cfe9c40aa045c49fba705e4efd3ceb.16",
+            "lat": 42.167833,
+            "lng": 2.473439,
+            "name": "Parc Infantil La Solfa"
+        },
+        "7005e56663f94ad8974c1295626f5ff0.16": {
+            "guid": "7005e56663f94ad8974c1295626f5ff0.16",
+            "lat": 42.166514,
+            "lng": 2.473046,
+            "name": "Skateboard Olot"
+        },
+        "7f0fa0ba05684cc381b7e87dae6b37a1.16": {
+            "guid": "7f0fa0ba05684cc381b7e87dae6b37a1.16",
+            "lat": 42.165964,
+            "lng": 2.466934,
+            "name": "Parc infantil Artiga Bonica"
+        },
+        "0e3415298af64cb7a5b7ee31b7d49908.16": {
+            "guid": "0e3415298af64cb7a5b7ee31b7d49908.16",
+            "lat": 42.164719,
+            "lng": 2.465584,
+            "name": "El Clot De L'infern"
+        },
+        "9bbd1d40a90c4d669d839436bb33ea54.16": {
+            "guid": "9bbd1d40a90c4d669d839436bb33ea54.16",
+            "lat": 42.159138,
+            "lng": 2.473388,
+            "name": "Futbol Bosc De Tosca"
+        },
+        "0098512cd5b94a7493d59f4c8865c929.16": {
+            "guid": "0098512cd5b94a7493d59f4c8865c929.16",
+            "lat": 42.159343,
+            "lng": 2.468415,
+            "name": "Font de Boscdetosca"
+        },
+        "5b5e2a0357f845da8cbaa79f666fc11c.16": {
+            "guid": "5b5e2a0357f845da8cbaa79f666fc11c.16",
+            "lat": 42.159115,
+            "lng": 2.468935,
+            "name": "Pista Esportiva"
+        },
+        "ce371e5369fa449681fd75e30751f68b.16": {
+            "guid": "ce371e5369fa449681fd75e30751f68b.16",
+            "lat": 42.155766,
+            "lng": 2.473464,
+            "name": "Ruta camins de pedra tosca"
+        },
+        "6614cf7390ff402db4b24f568e4faf57.16": {
+            "guid": "6614cf7390ff402db4b24f568e4faf57.16",
+            "lat": 42.155208,
+            "lng": 2.473602,
+            "name": "Parc infantil de Pocafarina"
+        },
+        "b4638c840cd649d6b73e559f13a0dde5.16": {
+            "guid": "b4638c840cd649d6b73e559f13a0dde5.16",
+            "lat": 42.153922,
+            "lng": 2.516991,
+            "name": "Monument A La Memòria De Joan Maragall"
+        },
+        "e063cf6ed15142cdb9ecf3d60f030167.16": {
+            "guid": "e063cf6ed15142cdb9ecf3d60f030167.16",
+            "lat": 42.158847,
+            "lng": 2.511335,
+            "name": "Parc infantil Can Blanc"
+        },
+        "1506be210b854c0db630a4a3458891ba.16": {
+            "guid": "1506be210b854c0db630a4a3458891ba.16",
+            "lat": 42.159682,
+            "lng": 2.511221,
+            "name": "Pista de fútbol de Can Blanc"
+        },
+        "1dcd3871562b4f9aae4f05d53fb16a9d.16": {
+            "guid": "1dcd3871562b4f9aae4f05d53fb16a9d.16",
+            "lat": 42.209885,
+            "lng": 2.492,
+            "name": "Camp de Futbol de La Canya"
+        },
+        "aebe6a7f5a1644c8a8b90459a7e7004c.16": {
+            "guid": "aebe6a7f5a1644c8a8b90459a7e7004c.16",
+            "lat": 42.208799,
+            "lng": 2.491924,
+            "name": "Parc infantil carretera Bianya"
+        },
+        "ddca55c194bb42849d5b3e33ae45a990.16": {
+            "guid": "ddca55c194bb42849d5b3e33ae45a990.16",
+            "lat": 42.205493,
+            "lng": 2.493214,
+            "name": "Camp de futbol la Canya"
+        },
+        "6fdf66198df94185b08342306a50f55a.16": {
+            "guid": "6fdf66198df94185b08342306a50f55a.16",
+            "lat": 42.20507,
+            "lng": 2.494422,
+            "name": "La Canya circuit de rehabilitació"
+        },
+        "d2e579b7b04e4bfd9a81f7f0dbe2ded6.16": {
+            "guid": "d2e579b7b04e4bfd9a81f7f0dbe2ded6.16",
+            "lat": 42.204663,
+            "lng": 2.49247,
+            "name": "Ermita d'Esperança"
+        },
+        "ef2ad35ffaf144b08b54921c4dc70917.16": {
+            "guid": "ef2ad35ffaf144b08b54921c4dc70917.16",
+            "lat": 42.204479,
+            "lng": 2.494618,
+            "name": "Parc Infantil La Canya"
+        },
+        "1d4251fdb4a343789d0940f514193e90.16": {
+            "guid": "1d4251fdb4a343789d0940f514193e90.16",
+            "lat": 42.202943,
+            "lng": 2.497735,
+            "name": "Parc infantil carretera Olot"
+        },
+        "65ce0649c0b94f69adacc5f04a96a55d.16": {
+            "guid": "65ce0649c0b94f69adacc5f04a96a55d.16",
+            "lat": 42.182209,
+            "lng": 2.492468,
+            "name": "Font Zona Verda Santa Magdalena"
+        },
+        "3fca1830fb4747e3bc8aec0813150b97.16": {
+            "guid": "3fca1830fb4747e3bc8aec0813150b97.16",
+            "lat": 42.182949,
+            "lng": 2.492807,
+            "name": "Parc Infantil del Palau"
+        },
+        "b635addd38bf4d3eb2f036e8c0e852b6.16": {
+            "guid": "b635addd38bf4d3eb2f036e8c0e852b6.16",
+            "lat": 42.183217,
+            "lng": 2.492051,
+            "name": "Església Del Carme"
+        },
+        "719090af397f4bea89f93923f3b9f730.16": {
+            "guid": "719090af397f4bea89f93923f3b9f730.16",
+            "lat": 42.182919,
+            "lng": 2.491632,
+            "name": "El Drac"
+        },
+        "c23458a800de48aea1dafbe66a170148.16": {
+            "guid": "c23458a800de48aea1dafbe66a170148.16",
+            "lat": 42.182798,
+            "lng": 2.491343,
+            "name": "Font del Conill"
+        },
+        "214a3993f87c4859b96bd1662cb32139.16": {
+            "guid": "214a3993f87c4859b96bd1662cb32139.16",
+            "lat": 42.183002,
+            "lng": 2.491006,
+            "name": "Can Boquica"
+        },
+        "af1be2030a2441b29399db8f983a9903.16": {
+            "guid": "af1be2030a2441b29399db8f983a9903.16",
+            "lat": 42.1827,
+            "lng": 2.490694,
+            "name": "Homenatge al carnaval d'Olot"
+        },
+        "bf62f8680270433c9da20750db2904ee.16": {
+            "guid": "bf62f8680270433c9da20750db2904ee.16",
+            "lat": 42.183551,
+            "lng": 2.490952,
+            "name": "Pista Esportiva Nucli Antic"
+        },
+        "e1af25b3d34e48be823aa9838cef70bd.16": {
+            "guid": "e1af25b3d34e48be823aa9838cef70bd.16",
+            "lat": 42.183617,
+            "lng": 2.490619,
+            "name": "Campdenmas"
+        },
+        "810bbbf392cc4171b64fad25d833a8e2.16": {
+            "guid": "810bbbf392cc4171b64fad25d833a8e2.16",
+            "lat": 42.184785,
+            "lng": 2.488642,
+            "name": "Figura De Sant Andreu"
+        },
+        "6ba460f5d80848b1a703a2d74e0d13ef.16": {
+            "guid": "6ba460f5d80848b1a703a2d74e0d13ef.16",
+            "lat": 42.185794,
+            "lng": 2.487733,
+            "name": "Espai moseistic del volcà del montsacopa"
+        },
+        "57a7ea80c7d24bcbabf413ad11ce1bc5.16": {
+            "guid": "57a7ea80c7d24bcbabf413ad11ce1bc5.16",
+            "lat": 42.184787,
+            "lng": 2.486647,
+            "name": "Bust Desfigurat"
+        },
+        "51ac90ee8a514c8b8d04479d96d6e458.16": {
+            "guid": "51ac90ee8a514c8b8d04479d96d6e458.16",
+            "lat": 42.18523,
+            "lng": 2.486272,
+            "name": "Monument d'homenatge als Morts"
+        },
+        "0243291d3d724cb891498abafe274211.16": {
+            "guid": "0243291d3d724cb891498abafe274211.16",
+            "lat": 42.185455,
+            "lng": 2.486172,
+            "name": "Cementiri d'Olot"
+        },
+        "8b6ae72f0e6f42fe8b9d9dd6598973d7.16": {
+            "guid": "8b6ae72f0e6f42fe8b9d9dd6598973d7.16",
+            "lat": 42.185983,
+            "lng": 2.485648,
+            "name": "Turisme Garrotxa"
+        },
+        "5b38b62e1ebe46baa44ec0f807ea16c4.16": {
+            "guid": "5b38b62e1ebe46baa44ec0f807ea16c4.16",
+            "lat": 42.187126,
+            "lng": 2.488204,
+            "name": "Capella de la Roca Volcànica"
+        },
+        "46bcb896f6134e38ac29a5e003be574c.16": {
+            "guid": "46bcb896f6134e38ac29a5e003be574c.16",
+            "lat": 42.187158,
+            "lng": 2.488537,
+            "name": "Església al Volcà del Montsacopa"
+        },
+        "511c49c62ae74440b51d07157ce12ac8.16": {
+            "guid": "511c49c62ae74440b51d07157ce12ac8.16",
+            "lat": 42.186927,
+            "lng": 2.488417,
+            "name": "Creu del volcà Montsacopa"
+        },
+        "8c4f44e8b8e840fda4980b1a83c24af3.16": {
+            "guid": "8c4f44e8b8e840fda4980b1a83c24af3.16",
+            "lat": 42.188111,
+            "lng": 2.48941,
+            "name": "Montsacopa"
+        },
+        "410a153c8edd4a968730307f95f33183.16": {
+            "guid": "410a153c8edd4a968730307f95f33183.16",
+            "lat": 42.18832,
+            "lng": 2.487904,
+            "name": "Torre Nord de Sant Francesc. Segle XVIII"
+        },
+        "b22a876a960449b58a0646ab677d72ba.16": {
+            "guid": "b22a876a960449b58a0646ab677d72ba.16",
+            "lat": 42.183318,
+            "lng": 2.48981,
+            "name": "Plaça De Les Monjes"
+        },
+        "22a0231397e248609dd706702a0d45f2.16": {
+            "guid": "22a0231397e248609dd706702a0d45f2.16",
+            "lat": 42.183519,
+            "lng": 2.489716,
+            "name": "Edifici del Ganxet"
+        },
+        "d4b4538741fa4dc09e888af098ae9c27.16": {
+            "guid": "d4b4538741fa4dc09e888af098ae9c27.16",
+            "lat": 42.183066,
+            "lng": 2.489279,
+            "name": "Grafiti Cal Pirata"
+        },
+        "cd9eabfe3c1549a9b4909ef6692d5e50.16": {
+            "guid": "cd9eabfe3c1549a9b4909ef6692d5e50.16",
+            "lat": 42.182798,
+            "lng": 2.488817,
+            "name": "Cor de Maria"
+        },
+        "ef3d5126553044f38a78772e117dc85b.16": {
+            "guid": "ef3d5126553044f38a78772e117dc85b.16",
+            "lat": 42.182443,
+            "lng": 2.489213,
+            "name": "Can Japot"
+        },
+        "4c551f017bdd41a4af7369af17b26651.16": {
+            "guid": "4c551f017bdd41a4af7369af17b26651.16",
+            "lat": 42.182282,
+            "lng": 2.489496,
+            "name": "Ca L'Albert"
+        },
+        "f140ca1138144d9c8c8a4527f313e411.16": {
+            "guid": "f140ca1138144d9c8c8a4527f313e411.16",
+            "lat": 42.182214,
+            "lng": 2.490716,
+            "name": "Plaça De La Pia Almonia"
+        },
+        "fd3296bec17b48f8971f1a566b6d02ff.16": {
+            "guid": "fd3296bec17b48f8971f1a566b6d02ff.16",
+            "lat": 42.181998,
+            "lng": 2.490919,
+            "name": "Estàtua de la Mare de Déu del Tura"
+        },
+        "a679d232015149ffa5ad2505899a2d83.16": {
+            "guid": "a679d232015149ffa5ad2505899a2d83.16",
+            "lat": 42.181931,
+            "lng": 2.490396,
+            "name": "Imatge De Sant Albert"
+        },
+        "271fc7a25df04f729aebdf76a948b060.16": {
+            "guid": "271fc7a25df04f729aebdf76a948b060.16",
+            "lat": 42.18228,
+            "lng": 2.491355,
+            "name": "Escut Família"
+        },
+        "910c27f779ff49449459b640c77d51ad.16": {
+            "guid": "910c27f779ff49449459b640c77d51ad.16",
+            "lat": 42.182373,
+            "lng": 2.491866,
+            "name": "Església del Tura"
+        },
+        "bb1cb183b59a4c05bf105ac73067dfa1.16": {
+            "guid": "bb1cb183b59a4c05bf105ac73067dfa1.16",
+            "lat": 42.181931,
+            "lng": 2.491578,
+            "name": "Font De Valls Nous"
+        },
+        "9f324b0e44694ee48c0614654189708e.16": {
+            "guid": "9f324b0e44694ee48c0614654189708e.16",
+            "lat": 42.181563,
+            "lng": 2.490688,
+            "name": "Rescat a la Natura"
+        },
+        "12206c3430f540fe8fb06513a506dda0.16": {
+            "guid": "12206c3430f540fe8fb06513a506dda0.16",
+            "lat": 42.182067,
+            "lng": 2.489169,
+            "name": "Biblioteca Marià Vayreda"
+        },
+        "ef51a1f220dd442c9b2c177692a1f2c3.16": {
+            "guid": "ef51a1f220dd442c9b2c177692a1f2c3.16",
+            "lat": 42.181921,
+            "lng": 2.488742,
+            "name": "Nena Que Mira Enlaire"
+        },
+        "bd3c24992bd64d6eb82b52a43eb8f41e.16": {
+            "guid": "bd3c24992bd64d6eb82b52a43eb8f41e.16",
+            "lat": 42.181498,
+            "lng": 2.488108,
+            "name": "Ràdio Olot"
+        },
+        "c9e7aa4fde1b4fd68cd4f5919d2a0a94.16": {
+            "guid": "c9e7aa4fde1b4fd68cd4f5919d2a0a94.16",
+            "lat": 42.181804,
+            "lng": 2.487565,
+            "name": "Casa Natal Joseph Clarà"
+        },
+        "8987d810458d4d93ae0c6a21292f4175.16": {
+            "guid": "8987d810458d4d93ae0c6a21292f4175.16",
+            "lat": 42.182295,
+            "lng": 2.488093,
+            "name": "Escultura a Manuel Traité"
+        },
+        "cb9bea2b580047b68dd456ac3cb83a68.16": {
+            "guid": "cb9bea2b580047b68dd456ac3cb83a68.16",
+            "lat": 42.182531,
+            "lng": 2.488234,
+            "name": "Contemplant"
+        },
+        "8bf467a145f24d5ca9af4243a8a621eb.16": {
+            "guid": "8bf467a145f24d5ca9af4243a8a621eb.16",
+            "lat": 42.181542,
+            "lng": 2.48719,
+            "name": "Vernio"
+        },
+        "516ea5de9a7e4088a978418db69270ad.16": {
+            "guid": "516ea5de9a7e4088a978418db69270ad.16",
+            "lat": 42.181174,
+            "lng": 2.486553,
+            "name": "Esglesia Sant Rafael"
+        },
+        "1800af4400dc4db8a5eb1af8c90e1a54.16": {
+            "guid": "1800af4400dc4db8a5eb1af8c90e1a54.16",
+            "lat": 42.181964,
+            "lng": 2.486938,
+            "name": "Font de la plaça del Teatre"
+        },
+        "7549de17c7a64c2298a2df49f6bd8d07.16": {
+            "guid": "7549de17c7a64c2298a2df49f6bd8d07.16",
+            "lat": 42.182339,
+            "lng": 2.486748,
+            "name": "Homenaje a Cándida Pérez"
+        },
+        "8b1baeb7091c4ef69f4c182626d0680f.16": {
+            "guid": "8b1baeb7091c4ef69f4c182626d0680f.16",
+            "lat": 42.18271,
+            "lng": 2.487339,
+            "name": "Teatre Principal"
+        },
+        "2965b0207c80444a814551682a142ca9.16": {
+            "guid": "2965b0207c80444a814551682a142ca9.16",
+            "lat": 42.183196,
+            "lng": 2.486619,
+            "name": "Estatua De Miquel Blay"
+        },
+        "de97634b668d476592204c82af2725ef.16": {
+            "guid": "de97634b668d476592204c82af2725ef.16",
+            "lat": 42.183368,
+            "lng": 2.4872,
+            "name": "Volcans del terme municipal d'Olot"
+        },
+        "6e8ffe20bfa44bc68345fcfebb830641.16": {
+            "guid": "6e8ffe20bfa44bc68345fcfebb830641.16",
+            "lat": 42.183414,
+            "lng": 2.486297,
+            "name": "Escultura L'Origen"
+        },
+        "ee20ccf1874b4e87afec2a1884898ffd.16": {
+            "guid": "ee20ccf1874b4e87afec2a1884898ffd.16",
+            "lat": 42.183864,
+            "lng": 2.485952,
+            "name": "Arxiu Comarcal de la Garrotxa"
+        },
+        "121262c5725043028637ffbf45914f69.16": {
+            "guid": "121262c5725043028637ffbf45914f69.16",
+            "lat": 42.184317,
+            "lng": 2.485641,
+            "name": "Plaça de Toros"
+        },
+        "afb5714cd084403f8e0ed8de27a56c5b.16": {
+            "guid": "afb5714cd084403f8e0ed8de27a56c5b.16",
+            "lat": 42.184087,
+            "lng": 2.485513,
+            "name": "Estrella Mal Acabada"
+        },
+        "135175167bb9460c82992ce9ce6611f2.16": {
+            "guid": "135175167bb9460c82992ce9ce6611f2.16",
+            "lat": 42.181951,
+            "lng": 2.486179,
+            "name": "Casa Noucentista"
+        },
+        "1157271c276345a7a387565dbfff88ce.16": {
+            "guid": "1157271c276345a7a387565dbfff88ce.16",
+            "lat": 42.181989,
+            "lng": 2.485609,
+            "name": "Sant Pere Martir"
+        },
+        "ec294374ba8140e5a0cbcdf4b1f126bf.16": {
+            "guid": "ec294374ba8140e5a0cbcdf4b1f126bf.16",
+            "lat": 42.182042,
+            "lng": 2.484682,
+            "name": "Font Sant Pere Martir"
+        },
+        "193cda39db9f40b2a0d1b0b36bc6eaf2.16": {
+            "guid": "193cda39db9f40b2a0d1b0b36bc6eaf2.16",
+            "lat": 42.182089,
+            "lng": 2.483645,
+            "name": "Edifici Roc Blanc"
+        },
+        "c04c90cfd2734c399523c532e5788358.16": {
+            "guid": "c04c90cfd2734c399523c532e5788358.16",
+            "lat": 42.182502,
+            "lng": 2.482175,
+            "name": "Ruta Volcà Montsacopa i Montolivet"
+        },
+        "563bc66a449047e5a4434b2bd0d4730f.16": {
+            "guid": "563bc66a449047e5a4434b2bd0d4730f.16",
+            "lat": 42.184043,
+            "lng": 2.48115,
+            "name": "Olot sense correbous"
+        },
+        "93b20ba1a245471cb2edced3f6992585.16": {
+            "guid": "93b20ba1a245471cb2edced3f6992585.16",
+            "lat": 42.184523,
+            "lng": 2.481113,
+            "name": "Esglesia Cristiana Evangelica"
+        },
+        "6a30b29b33124d3c90b3364b89d1831e.16": {
+            "guid": "6a30b29b33124d3c90b3364b89d1831e.16",
+            "lat": 42.184182,
+            "lng": 2.482166,
+            "name": "Mosaic dels segadors"
+        },
+        "3da3fada455344e6ab4f8d85fb48c1a4.16": {
+            "guid": "3da3fada455344e6ab4f8d85fb48c1a4.16",
+            "lat": 42.185128,
+            "lng": 2.482716,
+            "name": "escola municipal d'expressiö"
+        },
+        "6518fdaa40224009a0cca7c0a3d43798.16": {
+            "guid": "6518fdaa40224009a0cca7c0a3d43798.16",
+            "lat": 42.184597,
+            "lng": 2.483882,
+            "name": "lucky luke"
+        },
+        "53f5f6575ae34d5c9fc1dd8e0db24311.16": {
+            "guid": "53f5f6575ae34d5c9fc1dd8e0db24311.16",
+            "lat": 42.18383,
+            "lng": 2.482699,
+            "name": "Plaça Balmes"
+        },
+        "c0e2e4c61d154e85886323c1f81ce93a.16": {
+            "guid": "c0e2e4c61d154e85886323c1f81ce93a.16",
+            "lat": 42.183368,
+            "lng": 2.483292,
+            "name": "Esglesia Testigos de Jehova"
+        },
+        "ebf2416699664a9ea678e23094e1e54f.16": {
+            "guid": "ebf2416699664a9ea678e23094e1e54f.16",
+            "lat": 42.182789,
+            "lng": 2.484181,
+            "name": "Casal Maria"
+        },
+        "2229fea294d44e4f8b6a70672be0534e.16": {
+            "guid": "2229fea294d44e4f8b6a70672be0534e.16",
+            "lat": 42.182733,
+            "lng": 2.485017,
+            "name": "Esglesia Nostre Dona del Tura"
+        },
+        "f3f8525e9216450ab15e008e05ab37ae.16": {
+            "guid": "f3f8525e9216450ab15e008e05ab37ae.16",
+            "lat": 42.183111,
+            "lng": 2.484467,
+            "name": "Ajuntament"
+        },
+        "92f9458cd052411d8d231a663563dd91.16": {
+            "guid": "92f9458cd052411d8d231a663563dd91.16",
+            "lat": 42.183673,
+            "lng": 2.484202,
+            "name": "Antiga Muralla de Defensa"
+        },
+        "d90f7ebfbcad453ab6409093c4cf1d37.16": {
+            "guid": "d90f7ebfbcad453ab6409093c4cf1d37.16",
+            "lat": 42.183719,
+            "lng": 2.483792,
+            "name": "Esglesia Protestant"
+        },
+        "396dc9baffc34f06a440fda823e5c2a2.16": {
+            "guid": "396dc9baffc34f06a440fda823e5c2a2.16",
+            "lat": 42.186679,
+            "lng": 2.479641,
+            "name": "Caseta dels Burots"
+        },
+        "f86bdcf402e94ba0af5d3b8a4c7b481f.16": {
+            "guid": "f86bdcf402e94ba0af5d3b8a4c7b481f.16",
+            "lat": 42.181298,
+            "lng": 2.484955,
+            "name": "Parc Infantil Plaça Clara"
+        },
+        "8ca62d9a313c486092ccb61a08007657.16": {
+            "guid": "8ca62d9a313c486092ccb61a08007657.16",
+            "lat": 42.181235,
+            "lng": 2.485507,
+            "name": "Capella de Sant Ferriol"
+        },
+        "f046a1932f2143e4b6c9b2858d2abb52.16": {
+            "guid": "f046a1932f2143e4b6c9b2858d2abb52.16",
+            "lat": 42.180774,
+            "lng": 2.484477,
+            "name": "Escolàpies d'Olot"
+        },
+        "e5313977b85c46199a3cd0c875aa7bee.16": {
+            "guid": "e5313977b85c46199a3cd0c875aa7bee.16",
+            "lat": 42.190242,
+            "lng": 2.478696,
+            "name": "Cami Natural per bicicletes i vianants"
+        },
+        "73562d1d9cd749de8190e4e76adcb3c5.16": {
+            "guid": "73562d1d9cd749de8190e4e76adcb3c5.16",
+            "lat": 42.190195,
+            "lng": 2.481211,
+            "name": "Camp de Futbol Pla de Baix"
+        },
+        "2bec6e59d6ae4c1282eaeb24e0d902e2.16": {
+            "guid": "2bec6e59d6ae4c1282eaeb24e0d902e2.16",
+            "lat": 42.190554,
+            "lng": 2.483438,
+            "name": "Parc Infantil Pla de Baix"
+        },
+        "663ef9dc9a76423c89cc309207dfd9a4.16": {
+            "guid": "663ef9dc9a76423c89cc309207dfd9a4.16",
+            "lat": 42.189992,
+            "lng": 2.484391,
+            "name": "Parc Infantil del Morrot"
+        },
+        "c76a5a5a0ff74df19ef1e42564fd972b.16": {
+            "guid": "c76a5a5a0ff74df19ef1e42564fd972b.16",
+            "lat": 42.18966,
+            "lng": 2.485404,
+            "name": "Homenatge als nens"
+        },
+        "71ae058828d14079871fc021e152f376.16": {
+            "guid": "71ae058828d14079871fc021e152f376.16",
+            "lat": 42.192088,
+            "lng": 2.485779,
+            "name": "Temple \"Gurudwara bhai mardana ji\""
+        },
+        "542328ac88fc44fa99e1ee93b03cc69f.16": {
+            "guid": "542328ac88fc44fa99e1ee93b03cc69f.16",
+            "lat": 42.192187,
+            "lng": 2.486873,
+            "name": "Escultura a Arturo Simon"
+        },
+        "85a6b6e444854b05a46f09082bdd1908.16": {
+            "guid": "85a6b6e444854b05a46f09082bdd1908.16",
+            "lat": 42.193427,
+            "lng": 2.483063,
+            "name": "Homenatge a la Revolucio Industrial"
+        },
+        "8f24178baead4ba2a1fae573759044a6.16": {
+            "guid": "8f24178baead4ba2a1fae573759044a6.16",
+            "lat": 42.194901,
+            "lng": 2.489883,
+            "name": "Parc de la Ruta del Carrilet"
+        },
+        "7b708d1ea41a4a7983b2366dd70292af.16": {
+            "guid": "7b708d1ea41a4a7983b2366dd70292af.16",
+            "lat": 42.179476,
+            "lng": 2.483831,
+            "name": "Xemenia La Coperacio"
+        },
+        "fb3e63ee2c654999bc73bc63392039a0.16": {
+            "guid": "fb3e63ee2c654999bc73bc63392039a0.16",
+            "lat": 42.180615,
+            "lng": 2.483208,
+            "name": "fundicio ductil benito manlleu"
+        },
+        "2d4a0a1fed534a91bb0c3b73e746d1a7.16": {
+            "guid": "2d4a0a1fed534a91bb0c3b73e746d1a7.16",
+            "lat": 42.180346,
+            "lng": 2.48295,
+            "name": "Parc Infantil de la Hidro"
+        },
+        "c441aff9483048f180b193b65a60d4ec.16": {
+            "guid": "c441aff9483048f180b193b65a60d4ec.16",
+            "lat": 42.180398,
+            "lng": 2.481319,
+            "name": "Mapa Historic"
+        },
+        "e242c629281e457697bde5e28cd29bc0.16": {
+            "guid": "e242c629281e457697bde5e28cd29bc0.16",
+            "lat": 42.180933,
+            "lng": 2.47943,
+            "name": "Torre de Vigilancia"
+        },
+        "26fee2903faf4f9fad1242ea6a2ac520.16": {
+            "guid": "26fee2903faf4f9fad1242ea6a2ac520.16",
+            "lat": 42.180977,
+            "lng": 2.477426,
+            "name": "Font de la Placeta"
+        },
+        "40e49c4a278b43b895973174a0baf4fc.16": {
+            "guid": "40e49c4a278b43b895973174a0baf4fc.16",
+            "lat": 42.182832,
+            "lng": 2.478917,
+            "name": "Monument Rosa Serra"
+        },
+        "3cbce61e991a4d41b82b09980d5bfd6a.16": {
+            "guid": "3cbce61e991a4d41b82b09980d5bfd6a.16",
+            "lat": 42.181651,
+            "lng": 2.477238,
+            "name": "Escultura Jardi Lluis Planella"
+        },
+        "5fabd6567ab04df98c44b272fe0d8029.16": {
+            "guid": "5fabd6567ab04df98c44b272fe0d8029.16",
+            "lat": 42.183014,
+            "lng": 2.476441,
+            "name": "Entrada Barri SPM"
+        },
+        "b936dcacf7364333b08f8524cd8d18ac.16": {
+            "guid": "b936dcacf7364333b08f8524cd8d18ac.16",
+            "lat": 42.182638,
+            "lng": 2.47662,
+            "name": "Homenatge a la dona Treballadora"
+        },
+        "fbd5fd28f5674f928123e1a64e348ac8.16": {
+            "guid": "fbd5fd28f5674f928123e1a64e348ac8.16",
+            "lat": 42.182901,
+            "lng": 2.471903,
+            "name": "Pou ornamental del Pla de Dalt"
+        },
+        "d18c526a743b400193239123d1a2b5d7.16": {
+            "guid": "d18c526a743b400193239123d1a2b5d7.16",
+            "lat": 42.182628,
+            "lng": 2.470488,
+            "name": "Parc Esportiu Plaça Pla de Dalt"
+        },
+        "437d5a080d5e49d297f2545f747bc8c8.16": {
+            "guid": "437d5a080d5e49d297f2545f747bc8c8.16",
+            "lat": 42.183453,
+            "lng": 2.471427,
+            "name": "Font del Puig"
+        },
+        "a636fcc27bb34524bc6c229bca16fbbf.16": {
+            "guid": "a636fcc27bb34524bc6c229bca16fbbf.16",
+            "lat": 42.18319,
+            "lng": 2.470148,
+            "name": "Parc infantil Pla de Dalt"
+        },
+        "fa2382a35d5846bd9db25655eb1b6e4d.16": {
+            "guid": "fa2382a35d5846bd9db25655eb1b6e4d.16",
+            "lat": 42.185053,
+            "lng": 2.472865,
+            "name": "Parc del Pla de Dalt"
+        },
+        "628bd135e19444f580b777d5ad4d10fb.16": {
+            "guid": "628bd135e19444f580b777d5ad4d10fb.16",
+            "lat": 42.183478,
+            "lng": 2.457388,
+            "name": "Parc infantil de la Garrotxa"
+        },
+        "772198e0116d424d9a400fe9d83746e3.16": {
+            "guid": "772198e0116d424d9a400fe9d83746e3.16",
+            "lat": 42.18474,
+            "lng": 2.461585,
+            "name": "Parc de Les Planotes"
+        },
+        "67a3d626d28440cf98f7e71510cab269.16": {
+            "guid": "67a3d626d28440cf98f7e71510cab269.16",
+            "lat": 42.183906,
+            "lng": 2.465914,
+            "name": "Parc Infantil Les Planotes"
+        },
+        "06e6deb597424e1b81020e8100e8ac83.16": {
+            "guid": "06e6deb597424e1b81020e8100e8ac83.16",
+            "lat": 42.184003,
+            "lng": 2.467161,
+            "name": "Font del xiprer"
+        },
+        "454bb827db194b758a03c491708de3cd.16": {
+            "guid": "454bb827db194b758a03c491708de3cd.16",
+            "lat": 42.187125,
+            "lng": 2.468216,
+            "name": "Monument als Donants de Sang"
+        },
+        "2e1fa9dda24e4042b64a047ece3bde7d.16": {
+            "guid": "2e1fa9dda24e4042b64a047ece3bde7d.16",
+            "lat": 42.187959,
+            "lng": 2.471217,
+            "name": "Centre Meteorologic Pla de Dalt"
+        },
+        "418327fa01a84b32a65a850474e54460.16": {
+            "guid": "418327fa01a84b32a65a850474e54460.16",
+            "lat": 42.18958,
+            "lng": 2.476024,
+            "name": "Estadi Municipal d Olot"
+        },
+        "65ca084739d84255b550d2690ba34262.16": {
+            "guid": "65ca084739d84255b550d2690ba34262.16",
+            "lat": 42.192947,
+            "lng": 2.477383,
+            "name": "Parc Infantil Hostal del Sol"
+        },
+        "843dd0b0cd6e4d08a68ee7280d0fa5d6.16": {
+            "guid": "843dd0b0cd6e4d08a68ee7280d0fa5d6.16",
+            "lat": 42.211491,
+            "lng": 2.514822,
+            "name": "La Casa Extranya"
+        },
+        "3fe307b14e1d4b90b0eedb450c6b83cc.16": {
+            "guid": "3fe307b14e1d4b90b0eedb450c6b83cc.16",
+            "lat": 42.212438,
+            "lng": 2.511442,
+            "name": "Monument A La Industria I Cultura"
+        },
+        "4432227fccc347758c5d4fddc9a22563.16": {
+            "guid": "4432227fccc347758c5d4fddc9a22563.16",
+            "lat": 42.212552,
+            "lng": 2.511057,
+            "name": "Ajuntament Sant Joan Les Fonts"
+        },
+        "6fb2a8ae4fda42499599a03264795c92.16": {
+            "guid": "6fb2a8ae4fda42499599a03264795c92.16",
+            "lat": 42.212753,
+            "lng": 2.512207,
+            "name": "Parc Infantil"
+        },
+        "ebf01cb5042840f3bf9026c7a873fe94.16": {
+            "guid": "ebf01cb5042840f3bf9026c7a873fe94.16",
+            "lat": 42.212593,
+            "lng": 2.509454,
+            "name": "pont medieval"
+        },
+        "3b4beefcd2fd48c9b741ff1265958ba9.16": {
+            "guid": "3b4beefcd2fd48c9b741ff1265958ba9.16",
+            "lat": 42.213478,
+            "lng": 2.509039,
+            "name": "Absis Catedral Sant Joan"
+        },
+        "0fb0e6f2418f4bbb895a5b37cdbd00b1.16": {
+            "guid": "0fb0e6f2418f4bbb895a5b37cdbd00b1.16",
+            "lat": 42.214354,
+            "lng": 2.50968,
+            "name": "mapa Molí Fondo"
+        },
+        "ea9aa5cb8e6c4de4801662baf54447b8.16": {
+            "guid": "ea9aa5cb8e6c4de4801662baf54447b8.16",
+            "lat": 42.215052,
+            "lng": 2.510166,
+            "name": "Pedrera Del Boscarro"
+        },
+        "035fa59ab58d447ea96a00f8494c70df.16": {
+            "guid": "035fa59ab58d447ea96a00f8494c70df.16",
+            "lat": 42.14824,
+            "lng": 2.460987,
+            "name": "Homenatge a la Dona"
+        },
+        "5723276d4ba842d3ad61fc6414d47346.16": {
+            "guid": "5723276d4ba842d3ad61fc6414d47346.16",
+            "lat": 42.147087,
+            "lng": 2.461474,
+            "name": "Parc Infantil"
+        },
+        "24c823c42b8a40098b4363eaff8c06e2.16": {
+            "guid": "24c823c42b8a40098b4363eaff8c06e2.16",
+            "lat": 42.146228,
+            "lng": 2.460296,
+            "name": "Dibuix de Sant Sebastià"
+        },
+        "ecdb64807e67495e8718d8c796ccba58.16": {
+            "guid": "ecdb64807e67495e8718d8c796ccba58.16",
+            "lat": 42.145556,
+            "lng": 2.457068,
+            "name": "Parc Infantil de Les Preses"
+        },
+        "620e1a5ac17448218430668ecb6f6f75.16": {
+            "guid": "620e1a5ac17448218430668ecb6f6f75.16",
+            "lat": 42.144626,
+            "lng": 2.460495,
+            "name": "Centre Cultural Les Preses"
+        },
+        "c7e2ac587697465ca35f5a2ae061654e.16": {
+            "guid": "c7e2ac587697465ca35f5a2ae061654e.16",
+            "lat": 42.143571,
+            "lng": 2.460709,
+            "name": "Camp Municipal d Esports"
+        },
+        "51f3daa6ae8845a7aaa962c987a63d4c.16": {
+            "guid": "51f3daa6ae8845a7aaa962c987a63d4c.16",
+            "lat": 42.143114,
+            "lng": 2.462558,
+            "name": "Ruta Volcà del Racó"
+        },
+        "6bd61f39ec2d48c8977b6bfd6b7d9fc9.16": {
+            "guid": "6bd61f39ec2d48c8977b6bfd6b7d9fc9.16",
+            "lat": 42.142807,
+            "lng": 2.46312,
+            "name": "Piscina Municipal de Les Preses"
+        },
+        "8334520b588f457fb91245cdb7752e25.16": {
+            "guid": "8334520b588f457fb91245cdb7752e25.16",
+            "lat": 42.142457,
+            "lng": 2.458232,
+            "name": "Antiga Estacio de Tren"
+        },
+        "24ddf588455c4fad91646879d3ecbf4a.16": {
+            "guid": "24ddf588455c4fad91646879d3ecbf4a.16",
+            "lat": 42.141384,
+            "lng": 2.461057,
+            "name": "Restes Monastir"
+        },
+        "e96aedac328641f1b09f9c8c05f5b2d3.16": {
+            "guid": "e96aedac328641f1b09f9c8c05f5b2d3.16",
+            "lat": 42.141052,
+            "lng": 2.461108,
+            "name": "Esglesia De Les Presses"
+        },
+        "05ded2762fae459a9d36a0872be541e5.16": {
+            "guid": "05ded2762fae459a9d36a0872be541e5.16",
+            "lat": 42.140203,
+            "lng": 2.45893,
+            "name": "Torre Independentista"
+        }
+    },
+    "notpogo": {},
+    "ignoredCellsExtraGyms": {},
+    "ignoredCellsMissingGyms": {}
+}

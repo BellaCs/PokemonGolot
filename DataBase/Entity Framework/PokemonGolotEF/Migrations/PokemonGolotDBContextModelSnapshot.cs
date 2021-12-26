@@ -58,6 +58,21 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Egg_inventory");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
+                {
+                    b.Property<int>("pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("egg")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("pokemon", "egg");
+
+                    b.HasIndex("egg");
+
+                    b.ToTable("Egg_pokemon_pool");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
                 {
                     b.Property<string>("name")
@@ -690,6 +705,9 @@ namespace PokemonGolotEF.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("num_pokedex"));
 
+                    b.Property<double?>("Eggkm_egg")
+                        .HasColumnType("double precision");
+
                     b.Property<double>("attack")
                         .HasColumnType("double precision");
 
@@ -700,7 +718,7 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<float>("female_gender")
+                    b.Property<float>("female_gender_rate")
                         .HasColumnType("real");
 
                     b.Property<string>("img_back")
@@ -711,7 +729,7 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<float>("male_gender")
+                    b.Property<float>("male_gender_rate")
                         .HasColumnType("real");
 
                     b.Property<string>("name")
@@ -726,6 +744,8 @@ namespace PokemonGolotEF.Migrations
                         .HasColumnType("double precision");
 
                     b.HasKey("num_pokedex");
+
+                    b.HasIndex("Eggkm_egg");
 
                     b.ToTable("Pokemon");
                 });
@@ -1309,6 +1329,13 @@ namespace PokemonGolotEF.Migrations
                             candy_to_upgrade = 15,
                             cp_multiplier = 0.78747358000000001,
                             stardust_to_upgrade = 10000
+                        },
+                        new
+                        {
+                            pokemon_level = 40f,
+                            candy_to_upgrade = 0,
+                            cp_multiplier = 0.79030001000000005,
+                            stardust_to_upgrade = 10000
                         });
                 });
 
@@ -1567,6 +1594,25 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Player");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Egg", "Egg")
+                        .WithMany()
+                        .HasForeignKey("egg")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGolotEF.Model.Pokemon", "Pokemon")
+                        .WithMany()
+                        .HasForeignKey("pokemon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Egg");
+
+                    b.Navigation("Pokemon");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.EvolutionChain", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.Pokemon", "PokemonBase")
@@ -1747,6 +1793,13 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.Egg", null)
+                        .WithMany("PokemonPool")
+                        .HasForeignKey("Eggkm_egg");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.User", "ExOwner")
@@ -1921,6 +1974,11 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Player");
 
                     b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Egg", b =>
+                {
+                    b.Navigation("PokemonPool");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>

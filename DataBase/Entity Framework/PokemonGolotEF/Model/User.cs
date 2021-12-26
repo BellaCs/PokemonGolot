@@ -33,6 +33,8 @@ namespace PokemonGolotEF.Model
         [Required]
         public int inventory_capacity { get; set; }
         [Required]
+        public int current_level_experience { get; set; }
+        [Required]
         public int experience { get; set; }
         [Required]
         public int pokemon_slots { get; set; }

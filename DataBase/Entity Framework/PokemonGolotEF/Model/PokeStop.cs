@@ -14,7 +14,7 @@ namespace PokemonGolotEF.Model
         [Key]
         public string location { get; set; }
         [Required]
-        public string image { get; set; }
+        public string name { get; set; }
 
 
         public virtual ICollection<Present> presents { get; set; }

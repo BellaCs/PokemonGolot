@@ -2,26 +2,31 @@
   {
     "name": "2km Egg",
     "km": 2,
-    "image": "https://mbellavista.s-ul.eu/pkTdkUj8"
+    "image": "https://mbellavista.s-ul.eu/pkTdkUj8",
+    "pokemons": []
   },
   {
     "name": "5km Egg",
     "km": 5,
-    "image": "https://mbellavista.s-ul.eu/SsAs3rum"
+    "image": "https://mbellavista.s-ul.eu/SsAs3rum",
+    "pokemons": []
   },
   {
     "name": "7km Egg",
     "km": 7,
-    "image": "https://mbellavista.s-ul.eu/qXTlp5ZT"
+    "image": "https://mbellavista.s-ul.eu/qXTlp5ZT",
+    "pokemons": []
   },
   {
     "name": "10km Egg",
     "km": 10,
-    "image": "https://mbellavista.s-ul.eu/VAKF7m61"
+    "image": "https://mbellavista.s-ul.eu/VAKF7m61",
+    "pokemons": []
   },
   {
     "name": "12km Egg",
     "km": 12,
-    "image": "https://mbellavista.s-ul.eu/qS72aFGm"
+    "image": "https://mbellavista.s-ul.eu/qS72aFGm",
+    "pokemons": []
   }
 ]
