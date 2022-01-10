@@ -24,7 +24,9 @@ namespace AppDesktop
         private void ButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
 
-            frame.Content = new Page1();
+            Admin objSecondWindow = new Admin();
+            this.Visibility = Visibility.Hidden;
+            objSecondWindow.Show();
 
         }
 
