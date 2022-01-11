@@ -74,5 +74,35 @@ namespace PokemonGolotEF.Library.Requests
 
 
         }
+
+
+        public static async Task<String> getPokemonImages(string namePokemon)
+        {
+
+            string sURL;
+            sURL = "https://pokeapi.co/api/v2/pokemon/" + namePokemon;
+            var request = new HttpRequestMessage(HttpMethod.Get, sURL);
+
+            request.Headers.Add("Accept", "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return responseBody;
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message : {0} ", e.Message);
+
+                return null;
+            }
+
+
+        }
     }
 }

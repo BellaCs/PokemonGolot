@@ -54,10 +54,13 @@ namespace PokemonGolotEF.Library
         {
             
         }
-
+        
         public async Task LoadPokemonImages(Pokemon pokemon)
         {
-
+            String levelJsonString = await getPokemon.getPokemonImages(pokemon.name);
+            JObject pokemonJson = JObject.Parse(levelJsonString);
+            JToken pokemonImages = pokemonJson["sprites"];
+            pokemon.addImages(pokemonImages);
         }
 
         public async Task LoadLevel()
