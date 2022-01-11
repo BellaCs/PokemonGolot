@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PokemonGolotEF.Model;
 using PokemonGolotEF.Library;
+
+
 namespace PokemonGolotEF.Data
 {
     class PokemonGolotDBContext : DbContext

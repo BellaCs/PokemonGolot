@@ -12,8 +12,14 @@ namespace PokemonGolotEF.Model
             Owners = new HashSet<PokemonOwned>();
         }
 
-        public Pokemon(KeyValuePair<String, JToken> pokemonJson)
+        public Pokemon(JToken pokemonJson)
         {
+
+            num_pokedex = (int)pokemonJson["id"];
+            name = (string)pokemonJson["name"];
+            attack = (double)pokemonJson["atk"];
+            stamina = (double)pokemonJson["sta"];
+            defense = (double)pokemonJson["def"];
             
         }
 

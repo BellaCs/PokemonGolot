@@ -20,8 +20,20 @@ namespace PokemonGolotEF.Library
             LoadPokestops();
         }
 
-        public void LoadPokemon() 
+        public async Task LoadPokemon() 
         {
+            Pokemon actual;
+            for(var gen = 1; gen <= 7; gen++) 
+            {
+                String pokmeonJsonString = await getPokemon.getPokemons(gen.ToString());
+                JToken pokemonString = JObject.Parse(pokmeonJsonString);
+                foreach (JToken pokemon in pokemonString) 
+                {
+                    actual = new Pokemon(pokemon);
+                }
+            
+            }
+
             
         }
 
