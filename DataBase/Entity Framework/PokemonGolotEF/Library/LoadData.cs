@@ -18,6 +18,7 @@ namespace PokemonGolotEF.Library
             LoadPokemonLevels().Wait();
             LoadElement().Wait();
             LoadPokestops();
+            LoadGyms();
         }
 
         public async Task LoadPokemon() 
@@ -90,7 +91,6 @@ namespace PokemonGolotEF.Library
         {            
             String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
             JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
-            JToken gymsList = gymsAndPokestopsList["gyms"];
             JObject pokestopsList = (JObject)gymsAndPokestopsList["pokestops"];
             addPokestopsForJsonList(pokestopsList);            
         }
@@ -104,5 +104,22 @@ namespace PokemonGolotEF.Library
                 pokemonGolot.pokestops.Add(actual);
             }
         }
+
+        // Gyms
+        public void LoadGyms() 
+        {            
+            String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
+            JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
+            JObject gymsList = (JObject)gymsAndPokestopsList["gyms"];
+            addPokestopsForJsonList(gymsList);
+            //crear un objkecte de gimas amb la localiitzacio de llista
+            Gym actual;
+            foreach (KeyValuePair<String, JToken> gym in gymsList)
+            {
+                actual = new Gym(gym);
+                pokemonGolot.gyms.Add(actual);
+            }
+        }
+
     }
 }
