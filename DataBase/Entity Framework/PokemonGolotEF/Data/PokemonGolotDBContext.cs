@@ -129,8 +129,8 @@ namespace PokemonGolotEF.Data
 
             // Pokemon
 
-            model.Entity<Pokemon>()
-                .HasData(data.pokemonGolot.pokemons);
+           /* model.Entity<Pokemon>()
+                .HasData(data.pokemonGolot.pokemons);*/
 
 
         }

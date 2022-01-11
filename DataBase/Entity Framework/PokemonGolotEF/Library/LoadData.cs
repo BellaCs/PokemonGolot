@@ -52,7 +52,9 @@ namespace PokemonGolotEF.Library
 
         public async Task LoadPokemonDetails(Pokemon pokemon) 
         {
-            
+            String pokemonDetailsJson = await getPokemon.getPokemonDetails(pokemon.num_pokedex.ToString());
+            JToken pokemonDetails = JToken.Parse(pokemonDetailsJson);
+            pokemon.addDetails();
         }
 
         public async Task LoadPokemonImages(Pokemon pokemon)
