@@ -116,6 +116,14 @@ namespace PokemonGolotEF.Data
             model.Entity<EggPokemonPool>()
                 .HasKey(nameof(EggPokemonPool.pokemon), nameof(EggPokemonPool.egg));
 
+            // Pokestop
+            model.Entity<PokeStop>()
+                .HasData(data.pokemonGolot.pokestops);
+
+            // Gyms
+            model.Entity<Gym>()
+                .HasData(data.pokemonGolot.gyms);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -37,7 +37,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("km_egg");
 
-                    b.ToTable("Egg", (string)null);
+                    b.ToTable("Egg");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -55,7 +55,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Egg_inventory", (string)null);
+                    b.ToTable("Egg_inventory");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
@@ -70,7 +70,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("egg");
 
-                    b.ToTable("Egg_pokemon_pool", (string)null);
+                    b.ToTable("Egg_pokemon_pool");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
@@ -83,7 +83,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Element", (string)null);
+                    b.ToTable("Element");
 
                     b.HasData(
                         new
@@ -183,7 +183,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon_evolved");
 
-                    b.ToTable("Evolution_chain", (string)null);
+                    b.ToTable("Evolution_chain");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
@@ -198,16 +198,12 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("friend");
 
-                    b.ToTable("Friendships", (string)null);
+                    b.ToTable("Friendships");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
                 {
                     b.Property<string>("location")
-                        .HasColumnType("text");
-
-                    b.Property<string>("name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("team")
@@ -217,7 +213,269 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("Gym", (string)null);
+                    b.ToTable("Gym");
+
+                    b.HasData(
+                        new
+                        {
+                            location = "42,192291#2,500477"
+                        },
+                        new
+                        {
+                            location = "42,192587#2,508627"
+                        },
+                        new
+                        {
+                            location = "42,189583#2,499194"
+                        },
+                        new
+                        {
+                            location = "42,188284#2,494975"
+                        },
+                        new
+                        {
+                            location = "42,187263#2,497006"
+                        },
+                        new
+                        {
+                            location = "42,186527#2,497117"
+                        },
+                        new
+                        {
+                            location = "42,186042#2,492402"
+                        },
+                        new
+                        {
+                            location = "42,180624#2,495599"
+                        },
+                        new
+                        {
+                            location = "42,178932#2,494906"
+                        },
+                        new
+                        {
+                            location = "42,177906#2,494768"
+                        },
+                        new
+                        {
+                            location = "42,175295#2,4894"
+                        },
+                        new
+                        {
+                            location = "42,183006#2,496606"
+                        },
+                        new
+                        {
+                            location = "42,181452#2,492522"
+                        },
+                        new
+                        {
+                            location = "42,177293#2,486369"
+                        },
+                        new
+                        {
+                            location = "42,177551#2,483017"
+                        },
+                        new
+                        {
+                            location = "42,180366#2,485257"
+                        },
+                        new
+                        {
+                            location = "42,181868#2,489382"
+                        },
+                        new
+                        {
+                            location = "42,170689#2,48534"
+                        },
+                        new
+                        {
+                            location = "42,166612#2,486186"
+                        },
+                        new
+                        {
+                            location = "42,168368#2,493534"
+                        },
+                        new
+                        {
+                            location = "42,169393#2,503041"
+                        },
+                        new
+                        {
+                            location = "42,175602#2,481668"
+                        },
+                        new
+                        {
+                            location = "42,172976#2,482529"
+                        },
+                        new
+                        {
+                            location = "42,17181#2,481047"
+                        },
+                        new
+                        {
+                            location = "42,171287#2,47997"
+                        },
+                        new
+                        {
+                            location = "42,171244#2,477698"
+                        },
+                        new
+                        {
+                            location = "42,169653#2,477541"
+                        },
+                        new
+                        {
+                            location = "42,167398#2,480457"
+                        },
+                        new
+                        {
+                            location = "42,163045#2,481201"
+                        },
+                        new
+                        {
+                            location = "42,165063#2,480102"
+                        },
+                        new
+                        {
+                            location = "42,175004#2,479952"
+                        },
+                        new
+                        {
+                            location = "42,17366#2,474043"
+                        },
+                        new
+                        {
+                            location = "42,174341#2,469"
+                        },
+                        new
+                        {
+                            location = "42,170545#2,473211"
+                        },
+                        new
+                        {
+                            location = "42,170236#2,469201"
+                        },
+                        new
+                        {
+                            location = "42,168528#2,470507"
+                        },
+                        new
+                        {
+                            location = "42,207574#2,494876"
+                        },
+                        new
+                        {
+                            location = "42,206018#2,492983"
+                        },
+                        new
+                        {
+                            location = "42,183437#2,492668"
+                        },
+                        new
+                        {
+                            location = "42,183344#2,490676"
+                        },
+                        new
+                        {
+                            location = "42,186987#2,4865"
+                        },
+                        new
+                        {
+                            location = "42,188259#2,489509"
+                        },
+                        new
+                        {
+                            location = "42,181803#2,488183"
+                        },
+                        new
+                        {
+                            location = "42,185129#2,484677"
+                        },
+                        new
+                        {
+                            location = "42,183095#2,48482"
+                        },
+                        new
+                        {
+                            location = "42,183748#2,485099"
+                        },
+                        new
+                        {
+                            location = "42,190087#2,478243"
+                        },
+                        new
+                        {
+                            location = "42,190078#2,484673"
+                        },
+                        new
+                        {
+                            location = "42,192092#2,488654"
+                        },
+                        new
+                        {
+                            location = "42,182488#2,479496"
+                        },
+                        new
+                        {
+                            location = "42,182286#2,478306"
+                        },
+                        new
+                        {
+                            location = "42,184181#2,471866"
+                        },
+                        new
+                        {
+                            location = "42,186149#2,472613"
+                        },
+                        new
+                        {
+                            location = "42,184663#2,463171"
+                        },
+                        new
+                        {
+                            location = "42,187217#2,468935"
+                        },
+                        new
+                        {
+                            location = "42,211312#2,513696"
+                        },
+                        new
+                        {
+                            location = "42,21307#2,509031"
+                        },
+                        new
+                        {
+                            location = "42,216145#2,511136"
+                        },
+                        new
+                        {
+                            location = "42,217585#2,515104"
+                        },
+                        new
+                        {
+                            location = "42,144247#2,571541"
+                        },
+                        new
+                        {
+                            location = "42,147908#2,462148"
+                        },
+                        new
+                        {
+                            location = "42,146915#2,458231"
+                        },
+                        new
+                        {
+                            location = "42,142938#2,461877"
+                        },
+                        new
+                        {
+                            location = "42,141931#2,460739"
+                        },
+                        new
+                        {
+                            location = "42,140909#2,459233"
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymDefense", b =>
@@ -238,7 +496,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Gym_defensors", (string)null);
+                    b.ToTable("Gym_defensors");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
@@ -262,7 +520,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Gym_trophies", (string)null);
+                    b.ToTable("Gym_trophies");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
@@ -278,7 +536,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("level");
 
-                    b.ToTable("Level", (string)null);
+                    b.ToTable("Level");
 
                     b.HasData(
                         new
@@ -548,7 +806,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("object_name");
 
-                    b.ToTable("Levelup_object_rewards", (string)null);
+                    b.ToTable("Levelup_object_rewards");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
@@ -577,7 +835,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("element");
 
-                    b.ToTable("Movement", (string)null);
+                    b.ToTable("Movement");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>
@@ -595,7 +853,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Object", (string)null);
+                    b.ToTable("Object");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
@@ -613,7 +871,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Object_inventories", (string)null);
+                    b.ToTable("Object_inventories");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
@@ -631,7 +889,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("package");
 
-                    b.ToTable("Package_items", (string)null);
+                    b.ToTable("Package_items");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
@@ -647,7 +905,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Package_offer", (string)null);
+                    b.ToTable("Package_offer");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
@@ -665,7 +923,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("user");
 
-                    b.ToTable("Package_offers_bought", (string)null);
+                    b.ToTable("Package_offers_bought");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
@@ -694,7 +952,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("user_name");
 
-                    b.ToTable("Player", (string)null);
+                    b.ToTable("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
@@ -747,7 +1005,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("Eggkm_egg");
 
-                    b.ToTable("Pokemon", (string)null);
+                    b.ToTable("Pokemon");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
@@ -762,7 +1020,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("ex_owner");
 
-                    b.ToTable("Pokemon_exchange", (string)null);
+                    b.ToTable("Pokemon_exchange");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
@@ -781,7 +1039,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("pokemon_level");
 
-                    b.ToTable("Pokemon_level", (string)null);
+                    b.ToTable("Pokemon_level");
 
                     b.HasData(
                         new
@@ -1378,7 +1636,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Pokemon_owned", (string)null);
+                    b.ToTable("Pokemon_owned");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
@@ -1408,7 +1666,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Pokemon_register", (string)null);
+                    b.ToTable("Pokemon_register");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
@@ -1416,13 +1674,1785 @@ namespace PokemonGolotEF.Migrations
                     b.Property<string>("location")
                         .HasColumnType("text");
 
-                    b.Property<string>("image")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("location");
 
-                    b.ToTable("PokeStop", (string)null);
+                    b.ToTable("PokeStop");
+
+                    b.HasData(
+                        new
+                        {
+                            location = "42,193153#2,5031",
+                            name = "Font de les Mates"
+                        },
+                        new
+                        {
+                            location = "42,192937#2,504372",
+                            name = "Centre Civic Mas les Mates"
+                        },
+                        new
+                        {
+                            location = "42,19193#2,503457",
+                            name = "Camp de Futbol de Les Mates"
+                        },
+                        new
+                        {
+                            location = "42,19205#2,508972",
+                            name = "Homenatge al Cant dels Ocells"
+                        },
+                        new
+                        {
+                            location = "42,190588#2,502526",
+                            name = "Monument Ca Espunya"
+                        },
+                        new
+                        {
+                            location = "42,189745#2,510175",
+                            name = "Parque infantil Les Tries"
+                        },
+                        new
+                        {
+                            location = "42,189446#2,50946",
+                            name = "La torre del Club Natació Olot"
+                        },
+                        new
+                        {
+                            location = "42,189257#2,505546",
+                            name = "Parc Infantil Mestre Falla"
+                        },
+                        new
+                        {
+                            location = "42,189932#2,500812",
+                            name = "Parc Infantil Alba Rosa"
+                        },
+                        new
+                        {
+                            location = "42,190278#2,498496",
+                            name = "Memoria Al Ball Pla Sant Miquel"
+                        },
+                        new
+                        {
+                            location = "42,189074#2,500672",
+                            name = "El Raïm garrotxí"
+                        },
+                        new
+                        {
+                            location = "42,18917#2,498544",
+                            name = "Panell Cultural De La Ciutat"
+                        },
+                        new
+                        {
+                            location = "42,188282#2,499454",
+                            name = "Parc Infantil de la Rodona"
+                        },
+                        new
+                        {
+                            location = "42,187509#2,49555",
+                            name = "Parc Infantil Sant Miquel"
+                        },
+                        new
+                        {
+                            location = "42,187407#2,494926",
+                            name = "En Honor A Leonci Quera"
+                        },
+                        new
+                        {
+                            location = "42,186993#2,494968",
+                            name = "Mesquita al rahma de la garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,185993#2,496586",
+                            name = "Xarxa D'itineraris Saludables"
+                        },
+                        new
+                        {
+                            location = "42,185831#2,497779",
+                            name = "Agrupament Escolta Nostra Dona Del Tura"
+                        },
+                        new
+                        {
+                            location = "42,185787#2,495406",
+                            name = "Font Juan Casula Vilanova"
+                        },
+                        new
+                        {
+                            location = "42,185562#2,494867",
+                            name = "Penya Barcelonista d’Olot"
+                        },
+                        new
+                        {
+                            location = "42,186059#2,493079",
+                            name = "Memoria Vestits Tradicionals"
+                        },
+                        new
+                        {
+                            location = "42,18501#2,49247",
+                            name = "Capella de Sant Bernat"
+                        },
+                        new
+                        {
+                            location = "42,184199#2,491673",
+                            name = "Font De Sant Bernat"
+                        },
+                        new
+                        {
+                            location = "42,185468#2,491081",
+                            name = "Viacrucis Montsacopa III"
+                        },
+                        new
+                        {
+                            location = "42,185212#2,491034",
+                            name = "Montsacopa"
+                        },
+                        new
+                        {
+                            location = "42,188308#2,511355",
+                            name = "Font de les Tries"
+                        },
+                        new
+                        {
+                            location = "42,188232#2,509423",
+                            name = "Camp de futbol les tries"
+                        },
+                        new
+                        {
+                            location = "42,18339#2,49869",
+                            name = "Església Bíblica d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,184308#2,494592",
+                            name = "Sant Miquel"
+                        },
+                        new
+                        {
+                            location = "42,181057#2,49887",
+                            name = "Palamós 1989"
+                        },
+                        new
+                        {
+                            location = "42,181291#2,49729",
+                            name = "Area de Salut de les Bisaroques"
+                        },
+                        new
+                        {
+                            location = "42,179872#2,497285",
+                            name = "Homenatge a la fira de embotits d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,178344#2,49597",
+                            name = "Parc Infantil de Benavent"
+                        },
+                        new
+                        {
+                            location = "42,176826#2,495602",
+                            name = "Canasta de Benavent"
+                        },
+                        new
+                        {
+                            location = "42,175606#2,491831",
+                            name = "Ermita del Pla de l Oruga"
+                        },
+                        new
+                        {
+                            location = "42,174006#2,489988",
+                            name = "Itinerannia xarxa de senders de la Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,17514#2,488867",
+                            name = "Parc Infantil de les Mores"
+                        },
+                        new
+                        {
+                            location = "42,175581#2,488922",
+                            name = "Font del Parc de les Mores"
+                        },
+                        new
+                        {
+                            location = "42,175945#2,488625",
+                            name = "Itineraris Naturals per la Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,17609#2,488819",
+                            name = "Ruta Volcà de les Bisaroques"
+                        },
+                        new
+                        {
+                            location = "42,177074#2,48927",
+                            name = "Imatge de la Verge del Tura"
+                        },
+                        new
+                        {
+                            location = "42,176375#2,489583",
+                            name = "Escacs Ronda Somatent"
+                        },
+                        new
+                        {
+                            location = "42,177647#2,48901",
+                            name = "Font Verge del Tura"
+                        },
+                        new
+                        {
+                            location = "42,178044#2,490228",
+                            name = "Mosaic Ratafia Russet"
+                        },
+                        new
+                        {
+                            location = "42,177233#2,49037",
+                            name = "The Graphic Room"
+                        },
+                        new
+                        {
+                            location = "42,180603#2,494297",
+                            name = "Gegants Del Barri"
+                        },
+                        new
+                        {
+                            location = "42,180594#2,493782",
+                            name = "Olot Esportiu"
+                        },
+                        new
+                        {
+                            location = "42,181453#2,4941",
+                            name = "Sant Cristofor"
+                        },
+                        new
+                        {
+                            location = "42,180731#2,492788",
+                            name = "Itinerari de vells camins de Batet"
+                        },
+                        new
+                        {
+                            location = "42,182538#2,494664",
+                            name = "Parc Infantil Miquel Marti Pol"
+                        },
+                        new
+                        {
+                            location = "42,182833#2,494928",
+                            name = "Monument Miquel Martí i Pol"
+                        },
+                        new
+                        {
+                            location = "42,182521#2,494003",
+                            name = "Molí antic del riu fluvia"
+                        },
+                        new
+                        {
+                            location = "42,18314#2,493878",
+                            name = "Consorci d Accio Social"
+                        },
+                        new
+                        {
+                            location = "42,183272#2,493631",
+                            name = "Monument Plaça Palau"
+                        },
+                        new
+                        {
+                            location = "42,18268#2,493328",
+                            name = "Consell Comarcal de la Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,182031#2,493127",
+                            name = "Santa Magdalena Del Pont"
+                        },
+                        new
+                        {
+                            location = "42,181439#2,491707",
+                            name = "Escultura Carbonell d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,181086#2,491292",
+                            name = "Mapa d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,180657#2,491659",
+                            name = "Estació Bus Olot"
+                        },
+                        new
+                        {
+                            location = "42,180462#2,490827",
+                            name = "Font Del Fluvia"
+                        },
+                        new
+                        {
+                            location = "42,180014#2,491824",
+                            name = "Monestir Divina Providencia"
+                        },
+                        new
+                        {
+                            location = "42,179579#2,491918",
+                            name = "Nostra Senyora Del Tura"
+                        },
+                        new
+                        {
+                            location = "42,179727#2,490231",
+                            name = "Sant Antoni De Padua"
+                        },
+                        new
+                        {
+                            location = "42,178874#2,490906",
+                            name = "Hippo"
+                        },
+                        new
+                        {
+                            location = "42,179971#2,48921",
+                            name = "Wom Art Olot"
+                        },
+                        new
+                        {
+                            location = "42,180098#2,489013",
+                            name = "Museu dels Sants"
+                        },
+                        new
+                        {
+                            location = "42,180041#2,488743",
+                            name = "Joaquim Vayreda"
+                        },
+                        new
+                        {
+                            location = "42,177817#2,486894",
+                            name = "Escut Escola De Musica"
+                        },
+                        new
+                        {
+                            location = "42,178384#2,488155",
+                            name = "Montserrat"
+                        },
+                        new
+                        {
+                            location = "42,179306#2,48615",
+                            name = "Escut del cor vermell"
+                        },
+                        new
+                        {
+                            location = "42,179121#2,488865",
+                            name = "Capella de Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,17512#2,486926",
+                            name = "Porta Begoña Uriarte"
+                        },
+                        new
+                        {
+                            location = "42,176229#2,483712",
+                            name = "Parc Infantil Pisos de la Caixa"
+                        },
+                        new
+                        {
+                            location = "42,176848#2,484047",
+                            name = "Escultura en Planxa, Leonci Quera"
+                        },
+                        new
+                        {
+                            location = "42,176557#2,482342",
+                            name = "Font Passeig De Barcelona"
+                        },
+                        new
+                        {
+                            location = "42,179032#2,484385",
+                            name = "Monument A Joan Pere Fontanella"
+                        },
+                        new
+                        {
+                            location = "42,179728#2,484515",
+                            name = "Museu De L'entrepà D'Olot"
+                        },
+                        new
+                        {
+                            location = "42,180417#2,484978",
+                            name = "Font Blava"
+                        },
+                        new
+                        {
+                            location = "42,180679#2,486072",
+                            name = "Mapa Turistic Ciutat D'Olot"
+                        },
+                        new
+                        {
+                            location = "42,18075#2,487011",
+                            name = "Establiment Històric Curós Espigulé SL. 1965"
+                        },
+                        new
+                        {
+                            location = "42,180816#2,487678",
+                            name = "Antic Hospital d Olot 700 Aniversari"
+                        },
+                        new
+                        {
+                            location = "42,180895#2,488355",
+                            name = "Plaça Mercat 2"
+                        },
+                        new
+                        {
+                            location = "42,180977#2,488705",
+                            name = "parc infaltil dels coloms"
+                        },
+                        new
+                        {
+                            location = "42,181177#2,489128",
+                            name = "De. Candi in Memoriam"
+                        },
+                        new
+                        {
+                            location = "42,18129#2,489679",
+                            name = "Edifici Hospici"
+                        },
+                        new
+                        {
+                            location = "42,181609#2,489535",
+                            name = "Escultura de Sant Antoni de Padua"
+                        },
+                        new
+                        {
+                            location = "42,174244#2,487387",
+                            name = "Area de Salut del Parc de les Mores"
+                        },
+                        new
+                        {
+                            location = "42,17299#2,486636",
+                            name = "Pista d Esports"
+                        },
+                        new
+                        {
+                            location = "42,170936#2,487652",
+                            name = "Itineraris de la Moixina"
+                        },
+                        new
+                        {
+                            location = "42,168715#2,486777",
+                            name = "Ermita de la Moixina"
+                        },
+                        new
+                        {
+                            location = "42,16674#2,486423",
+                            name = "Turisme Garrotxa a La Moixina"
+                        },
+                        new
+                        {
+                            location = "42,165101#2,486097",
+                            name = "Pedra conmemorativa Ramon Bernadas"
+                        },
+                        new
+                        {
+                            location = "42,16491#2,485357",
+                            name = "Ca La Deu"
+                        },
+                        new
+                        {
+                            location = "42,16455#2,487057",
+                            name = "Ruta Fageda d'en Jorda"
+                        },
+                        new
+                        {
+                            location = "42,166976#2,482283",
+                            name = "Itinerannia Xarxa Via Verda"
+                        },
+                        new
+                        {
+                            location = "42,16888#2,483203",
+                            name = "Cocodril de Fusta"
+                        },
+                        new
+                        {
+                            location = "42,168897#2,493594",
+                            name = "Espais De Memoria"
+                        },
+                        new
+                        {
+                            location = "42,168591#2,494627",
+                            name = "La Creu del Triai"
+                        },
+                        new
+                        {
+                            location = "42,168651#2,499837",
+                            name = "Esglèsia Parroquial De Sant Cristofor Les Fonts"
+                        },
+                        new
+                        {
+                            location = "42,168451#2,503385",
+                            name = "Casa Hobbit"
+                        },
+                        new
+                        {
+                            location = "42,175067#2,484298",
+                            name = "Pont de Ferro d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,175048#2,482533",
+                            name = "Escultura J. Henry Dunant"
+                        },
+                        new
+                        {
+                            location = "42,174687#2,483206",
+                            name = "Rocodrom"
+                        },
+                        new
+                        {
+                            location = "42,174212#2,482304",
+                            name = "Pista de Basquet"
+                        },
+                        new
+                        {
+                            location = "42,173466#2,482519",
+                            name = "Parc Infantil Plaça America"
+                        },
+                        new
+                        {
+                            location = "42,173238#2,482761",
+                            name = "Parc Esportiu"
+                        },
+                        new
+                        {
+                            location = "42,172158#2,48272",
+                            name = "Club Municipal de Tennis Olot"
+                        },
+                        new
+                        {
+                            location = "42,172636#2,479228",
+                            name = "Escultura Maria Compàs"
+                        },
+                        new
+                        {
+                            location = "42,172424#2,47983",
+                            name = "Mapa Olot"
+                        },
+                        new
+                        {
+                            location = "42,172131#2,480003",
+                            name = "Font De La Sardana Al Parc Nou"
+                        },
+                        new
+                        {
+                            location = "42,171895#2,480381",
+                            name = "Pont de Fusta"
+                        },
+                        new
+                        {
+                            location = "42,171808#2,481546",
+                            name = "Parc Nou Casal dels Volcans"
+                        },
+                        new
+                        {
+                            location = "42,171126#2,481132",
+                            name = "Roureda de roure pènol"
+                        },
+                        new
+                        {
+                            location = "42,171112#2,480345",
+                            name = "Ruta Paratges la Moixina"
+                        },
+                        new
+                        {
+                            location = "42,171649#2,480085",
+                            name = "Fauna del Parc Nou"
+                        },
+                        new
+                        {
+                            location = "42,172073#2,479094",
+                            name = "Garrotxa cultour"
+                        },
+                        new
+                        {
+                            location = "42,171491#2,47891",
+                            name = "Els arbres del Parc Nou"
+                        },
+                        new
+                        {
+                            location = "42,170809#2,479212",
+                            name = "Ocells del Parc Nou"
+                        },
+                        new
+                        {
+                            location = "42,170536#2,479895",
+                            name = "Plantes sense flors i líquens"
+                        },
+                        new
+                        {
+                            location = "42,168586#2,477871",
+                            name = "Parc Infantil de Pekin"
+                        },
+                        new
+                        {
+                            location = "42,167395#2,47861",
+                            name = "Parc Infantil Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,164701#2,480335",
+                            name = "Parc Infantil de Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,16472#2,477049",
+                            name = "Vol de Pau"
+                        },
+                        new
+                        {
+                            location = "42,164981#2,4773",
+                            name = "Plaça de Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,165068#2,477931",
+                            name = "Pista de Esports"
+                        },
+                        new
+                        {
+                            location = "42,1634#2,476778",
+                            name = "Font de la roca volcánica de Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,167467#2,474953",
+                            name = "Barri de Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,176627#2,481203",
+                            name = "Monument de Ernest Lluch"
+                        },
+                        new
+                        {
+                            location = "42,176871#2,481344",
+                            name = "Loro Park"
+                        },
+                        new
+                        {
+                            location = "42,176483#2,478335",
+                            name = "Els Desemparats"
+                        },
+                        new
+                        {
+                            location = "42,179018#2,478519",
+                            name = "Torre de defensa Carlina"
+                        },
+                        new
+                        {
+                            location = "42,174505#2,475331",
+                            name = "Mare de Deu de l Empenta"
+                        },
+                        new
+                        {
+                            location = "42,174563#2,473336",
+                            name = "Monument Club Natació Olot"
+                        },
+                        new
+                        {
+                            location = "42,173218#2,47401",
+                            name = "Parc de Vista Alegre"
+                        },
+                        new
+                        {
+                            location = "42,173216#2,472987",
+                            name = "Ermita Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,173853#2,475413",
+                            name = "Inici Ruta del Bicicarril"
+                        },
+                        new
+                        {
+                            location = "42,174115#2,476329",
+                            name = "Monument en als vençuts"
+                        },
+                        new
+                        {
+                            location = "42,173607#2,477856",
+                            name = "El Silo"
+                        },
+                        new
+                        {
+                            location = "42,176772#2,468398",
+                            name = "Montanya Pelada i rutes de senders saludables"
+                        },
+                        new
+                        {
+                            location = "42,17295#2,475224",
+                            name = "Centre Civic de Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,17265#2,474387",
+                            name = "La Font de Pedra"
+                        },
+                        new
+                        {
+                            location = "42,172299#2,474416",
+                            name = "Esglesia de Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,171833#2,475105",
+                            name = "Parc infantil Bosc de la Coma"
+                        },
+                        new
+                        {
+                            location = "42,170918#2,471817",
+                            name = "Verge Maria"
+                        },
+                        new
+                        {
+                            location = "42,170146#2,472966",
+                            name = "zona infantil boratosca"
+                        },
+                        new
+                        {
+                            location = "42,170274#2,468759",
+                            name = "Camp de Futbol Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,171297#2,467279",
+                            name = "pista d'atletisme"
+                        },
+                        new
+                        {
+                            location = "42,167833#2,473439",
+                            name = "Parc Infantil La Solfa"
+                        },
+                        new
+                        {
+                            location = "42,166514#2,473046",
+                            name = "Skateboard Olot"
+                        },
+                        new
+                        {
+                            location = "42,165964#2,466934",
+                            name = "Parc infantil Artiga Bonica"
+                        },
+                        new
+                        {
+                            location = "42,164719#2,465584",
+                            name = "El Clot De L'infern"
+                        },
+                        new
+                        {
+                            location = "42,159138#2,473388",
+                            name = "Futbol Bosc De Tosca"
+                        },
+                        new
+                        {
+                            location = "42,159343#2,468415",
+                            name = "Font de Boscdetosca"
+                        },
+                        new
+                        {
+                            location = "42,159115#2,468935",
+                            name = "Pista Esportiva"
+                        },
+                        new
+                        {
+                            location = "42,155766#2,473464",
+                            name = "Ruta camins de pedra tosca"
+                        },
+                        new
+                        {
+                            location = "42,155208#2,473602",
+                            name = "Parc infantil de Pocafarina"
+                        },
+                        new
+                        {
+                            location = "42,153922#2,516991",
+                            name = "Monument A La Memòria De Joan Maragall"
+                        },
+                        new
+                        {
+                            location = "42,158847#2,511335",
+                            name = "Parc infantil Can Blanc"
+                        },
+                        new
+                        {
+                            location = "42,159682#2,511221",
+                            name = "Pista de fútbol de Can Blanc"
+                        },
+                        new
+                        {
+                            location = "42,209885#2,492",
+                            name = "Camp de Futbol de La Canya"
+                        },
+                        new
+                        {
+                            location = "42,208799#2,491924",
+                            name = "Parc infantil carretera Bianya"
+                        },
+                        new
+                        {
+                            location = "42,205493#2,493214",
+                            name = "Camp de futbol la Canya"
+                        },
+                        new
+                        {
+                            location = "42,20507#2,494422",
+                            name = "La Canya circuit de rehabilitació"
+                        },
+                        new
+                        {
+                            location = "42,204663#2,49247",
+                            name = "Ermita d'Esperança"
+                        },
+                        new
+                        {
+                            location = "42,204479#2,494618",
+                            name = "Parc Infantil La Canya"
+                        },
+                        new
+                        {
+                            location = "42,202943#2,497735",
+                            name = "Parc infantil carretera Olot"
+                        },
+                        new
+                        {
+                            location = "42,182209#2,492468",
+                            name = "Font Zona Verda Santa Magdalena"
+                        },
+                        new
+                        {
+                            location = "42,182949#2,492807",
+                            name = "Parc Infantil del Palau"
+                        },
+                        new
+                        {
+                            location = "42,183217#2,492051",
+                            name = "Església Del Carme"
+                        },
+                        new
+                        {
+                            location = "42,182919#2,491632",
+                            name = "El Drac"
+                        },
+                        new
+                        {
+                            location = "42,182798#2,491343",
+                            name = "Font del Conill"
+                        },
+                        new
+                        {
+                            location = "42,183002#2,491006",
+                            name = "Can Boquica"
+                        },
+                        new
+                        {
+                            location = "42,1827#2,490694",
+                            name = "Homenatge al carnaval d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,183551#2,490952",
+                            name = "Pista Esportiva Nucli Antic"
+                        },
+                        new
+                        {
+                            location = "42,183617#2,490619",
+                            name = "Campdenmas"
+                        },
+                        new
+                        {
+                            location = "42,184785#2,488642",
+                            name = "Figura De Sant Andreu"
+                        },
+                        new
+                        {
+                            location = "42,185794#2,487733",
+                            name = "Espai moseistic del volcà del montsacopa"
+                        },
+                        new
+                        {
+                            location = "42,184787#2,486647",
+                            name = "Bust Desfigurat"
+                        },
+                        new
+                        {
+                            location = "42,18523#2,486272",
+                            name = "Monument d'homenatge als Morts"
+                        },
+                        new
+                        {
+                            location = "42,185455#2,486172",
+                            name = "Cementiri d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,185983#2,485648",
+                            name = "Turisme Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,187126#2,488204",
+                            name = "Capella de la Roca Volcànica"
+                        },
+                        new
+                        {
+                            location = "42,187158#2,488537",
+                            name = "Església al Volcà del Montsacopa"
+                        },
+                        new
+                        {
+                            location = "42,186927#2,488417",
+                            name = "Creu del volcà Montsacopa"
+                        },
+                        new
+                        {
+                            location = "42,188111#2,48941",
+                            name = "Montsacopa"
+                        },
+                        new
+                        {
+                            location = "42,18832#2,487904",
+                            name = "Torre Nord de Sant Francesc. Segle XVIII"
+                        },
+                        new
+                        {
+                            location = "42,183318#2,48981",
+                            name = "Plaça De Les Monjes"
+                        },
+                        new
+                        {
+                            location = "42,183519#2,489716",
+                            name = "Edifici del Ganxet"
+                        },
+                        new
+                        {
+                            location = "42,183066#2,489279",
+                            name = "Grafiti Cal Pirata"
+                        },
+                        new
+                        {
+                            location = "42,182798#2,488817",
+                            name = "Cor de Maria"
+                        },
+                        new
+                        {
+                            location = "42,182443#2,489213",
+                            name = "Can Japot"
+                        },
+                        new
+                        {
+                            location = "42,182282#2,489496",
+                            name = "Ca L'Albert"
+                        },
+                        new
+                        {
+                            location = "42,182214#2,490716",
+                            name = "Plaça De La Pia Almonia"
+                        },
+                        new
+                        {
+                            location = "42,181998#2,490919",
+                            name = "Estàtua de la Mare de Déu del Tura"
+                        },
+                        new
+                        {
+                            location = "42,181931#2,490396",
+                            name = "Imatge De Sant Albert"
+                        },
+                        new
+                        {
+                            location = "42,18228#2,491355",
+                            name = "Escut Família"
+                        },
+                        new
+                        {
+                            location = "42,182373#2,491866",
+                            name = "Església del Tura"
+                        },
+                        new
+                        {
+                            location = "42,181931#2,491578",
+                            name = "Font De Valls Nous"
+                        },
+                        new
+                        {
+                            location = "42,181563#2,490688",
+                            name = "Rescat a la Natura"
+                        },
+                        new
+                        {
+                            location = "42,182067#2,489169",
+                            name = "Biblioteca Marià Vayreda"
+                        },
+                        new
+                        {
+                            location = "42,181921#2,488742",
+                            name = "Nena Que Mira Enlaire"
+                        },
+                        new
+                        {
+                            location = "42,181498#2,488108",
+                            name = "Ràdio Olot"
+                        },
+                        new
+                        {
+                            location = "42,181804#2,487565",
+                            name = "Casa Natal Joseph Clarà"
+                        },
+                        new
+                        {
+                            location = "42,182295#2,488093",
+                            name = "Escultura a Manuel Traité"
+                        },
+                        new
+                        {
+                            location = "42,182531#2,488234",
+                            name = "Contemplant"
+                        },
+                        new
+                        {
+                            location = "42,181542#2,48719",
+                            name = "Vernio"
+                        },
+                        new
+                        {
+                            location = "42,181174#2,486553",
+                            name = "Esglesia Sant Rafael"
+                        },
+                        new
+                        {
+                            location = "42,181964#2,486938",
+                            name = "Font de la plaça del Teatre"
+                        },
+                        new
+                        {
+                            location = "42,182339#2,486748",
+                            name = "Homenaje a Cándida Pérez"
+                        },
+                        new
+                        {
+                            location = "42,18271#2,487339",
+                            name = "Teatre Principal"
+                        },
+                        new
+                        {
+                            location = "42,183196#2,486619",
+                            name = "Estatua De Miquel Blay"
+                        },
+                        new
+                        {
+                            location = "42,183368#2,4872",
+                            name = "Volcans del terme municipal d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,183414#2,486297",
+                            name = "Escultura L'Origen"
+                        },
+                        new
+                        {
+                            location = "42,183864#2,485952",
+                            name = "Arxiu Comarcal de la Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,184317#2,485641",
+                            name = "Plaça de Toros"
+                        },
+                        new
+                        {
+                            location = "42,184087#2,485513",
+                            name = "Estrella Mal Acabada"
+                        },
+                        new
+                        {
+                            location = "42,181951#2,486179",
+                            name = "Casa Noucentista"
+                        },
+                        new
+                        {
+                            location = "42,181989#2,485609",
+                            name = "Sant Pere Martir"
+                        },
+                        new
+                        {
+                            location = "42,182042#2,484682",
+                            name = "Font Sant Pere Martir"
+                        },
+                        new
+                        {
+                            location = "42,182089#2,483645",
+                            name = "Edifici Roc Blanc"
+                        },
+                        new
+                        {
+                            location = "42,182502#2,482175",
+                            name = "Ruta Volcà Montsacopa i Montolivet"
+                        },
+                        new
+                        {
+                            location = "42,184043#2,48115",
+                            name = "Olot sense correbous"
+                        },
+                        new
+                        {
+                            location = "42,184523#2,481113",
+                            name = "Esglesia Cristiana Evangelica"
+                        },
+                        new
+                        {
+                            location = "42,184182#2,482166",
+                            name = "Mosaic dels segadors"
+                        },
+                        new
+                        {
+                            location = "42,185128#2,482716",
+                            name = "escola municipal d'expressiö"
+                        },
+                        new
+                        {
+                            location = "42,184597#2,483882",
+                            name = "lucky luke"
+                        },
+                        new
+                        {
+                            location = "42,18383#2,482699",
+                            name = "Plaça Balmes"
+                        },
+                        new
+                        {
+                            location = "42,183368#2,483292",
+                            name = "Esglesia Testigos de Jehova"
+                        },
+                        new
+                        {
+                            location = "42,182789#2,484181",
+                            name = "Casal Maria"
+                        },
+                        new
+                        {
+                            location = "42,182733#2,485017",
+                            name = "Esglesia Nostre Dona del Tura"
+                        },
+                        new
+                        {
+                            location = "42,183111#2,484467",
+                            name = "Ajuntament"
+                        },
+                        new
+                        {
+                            location = "42,183673#2,484202",
+                            name = "Antiga Muralla de Defensa"
+                        },
+                        new
+                        {
+                            location = "42,183719#2,483792",
+                            name = "Esglesia Protestant"
+                        },
+                        new
+                        {
+                            location = "42,186679#2,479641",
+                            name = "Caseta dels Burots"
+                        },
+                        new
+                        {
+                            location = "42,181298#2,484955",
+                            name = "Parc Infantil Plaça Clara"
+                        },
+                        new
+                        {
+                            location = "42,181235#2,485507",
+                            name = "Capella de Sant Ferriol"
+                        },
+                        new
+                        {
+                            location = "42,180774#2,484477",
+                            name = "Escolàpies d'Olot"
+                        },
+                        new
+                        {
+                            location = "42,190242#2,478696",
+                            name = "Cami Natural per bicicletes i vianants"
+                        },
+                        new
+                        {
+                            location = "42,190195#2,481211",
+                            name = "Camp de Futbol Pla de Baix"
+                        },
+                        new
+                        {
+                            location = "42,190554#2,483438",
+                            name = "Parc Infantil Pla de Baix"
+                        },
+                        new
+                        {
+                            location = "42,189992#2,484391",
+                            name = "Parc Infantil del Morrot"
+                        },
+                        new
+                        {
+                            location = "42,18966#2,485404",
+                            name = "Homenatge als nens"
+                        },
+                        new
+                        {
+                            location = "42,192088#2,485779",
+                            name = "Temple \"Gurudwara bhai mardana ji\""
+                        },
+                        new
+                        {
+                            location = "42,192187#2,486873",
+                            name = "Escultura a Arturo Simon"
+                        },
+                        new
+                        {
+                            location = "42,193427#2,483063",
+                            name = "Homenatge a la Revolucio Industrial"
+                        },
+                        new
+                        {
+                            location = "42,194901#2,489883",
+                            name = "Parc de la Ruta del Carrilet"
+                        },
+                        new
+                        {
+                            location = "42,179476#2,483831",
+                            name = "Xemenia La Coperacio"
+                        },
+                        new
+                        {
+                            location = "42,180615#2,483208",
+                            name = "fundicio ductil benito manlleu"
+                        },
+                        new
+                        {
+                            location = "42,180346#2,48295",
+                            name = "Parc Infantil de la Hidro"
+                        },
+                        new
+                        {
+                            location = "42,180398#2,481319",
+                            name = "Mapa Historic"
+                        },
+                        new
+                        {
+                            location = "42,180933#2,47943",
+                            name = "Torre de Vigilancia"
+                        },
+                        new
+                        {
+                            location = "42,180977#2,477426",
+                            name = "Font de la Placeta"
+                        },
+                        new
+                        {
+                            location = "42,182832#2,478917",
+                            name = "Monument Rosa Serra"
+                        },
+                        new
+                        {
+                            location = "42,181651#2,477238",
+                            name = "Escultura Jardi Lluis Planella"
+                        },
+                        new
+                        {
+                            location = "42,183014#2,476441",
+                            name = "Entrada Barri SPM"
+                        },
+                        new
+                        {
+                            location = "42,182638#2,47662",
+                            name = "Homenatge a la dona Treballadora"
+                        },
+                        new
+                        {
+                            location = "42,182901#2,471903",
+                            name = "Pou ornamental del Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,182628#2,470488",
+                            name = "Parc Esportiu Plaça Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,183453#2,471427",
+                            name = "Font del Puig"
+                        },
+                        new
+                        {
+                            location = "42,18319#2,470148",
+                            name = "Parc infantil Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,185053#2,472865",
+                            name = "Parc del Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,183478#2,457388",
+                            name = "Parc infantil de la Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,18474#2,461585",
+                            name = "Parc de Les Planotes"
+                        },
+                        new
+                        {
+                            location = "42,183906#2,465914",
+                            name = "Parc Infantil Les Planotes"
+                        },
+                        new
+                        {
+                            location = "42,184003#2,467161",
+                            name = "Font del xiprer"
+                        },
+                        new
+                        {
+                            location = "42,187125#2,468216",
+                            name = "Monument als Donants de Sang"
+                        },
+                        new
+                        {
+                            location = "42,187959#2,471217",
+                            name = "Centre Meteorologic Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,18958#2,476024",
+                            name = "Estadi Municipal d Olot"
+                        },
+                        new
+                        {
+                            location = "42,192947#2,477383",
+                            name = "Parc Infantil Hostal del Sol"
+                        },
+                        new
+                        {
+                            location = "42,211491#2,514822",
+                            name = "La Casa Extranya"
+                        },
+                        new
+                        {
+                            location = "42,212438#2,511442",
+                            name = "Monument A La Industria I Cultura"
+                        },
+                        new
+                        {
+                            location = "42,212552#2,511057",
+                            name = "Ajuntament Sant Joan Les Fonts"
+                        },
+                        new
+                        {
+                            location = "42,212753#2,512207",
+                            name = "Parc Infantil"
+                        },
+                        new
+                        {
+                            location = "42,212593#2,509454",
+                            name = "pont medieval"
+                        },
+                        new
+                        {
+                            location = "42,213478#2,509039",
+                            name = "Absis Catedral Sant Joan"
+                        },
+                        new
+                        {
+                            location = "42,214354#2,50968",
+                            name = "mapa Molí Fondo"
+                        },
+                        new
+                        {
+                            location = "42,215052#2,510166",
+                            name = "Pedrera Del Boscarro"
+                        },
+                        new
+                        {
+                            location = "42,14824#2,460987",
+                            name = "Homenatge a la Dona"
+                        },
+                        new
+                        {
+                            location = "42,147087#2,461474",
+                            name = "Parc Infantil"
+                        },
+                        new
+                        {
+                            location = "42,146228#2,460296",
+                            name = "Dibuix de Sant Sebastià"
+                        },
+                        new
+                        {
+                            location = "42,145556#2,457068",
+                            name = "Parc Infantil de Les Preses"
+                        },
+                        new
+                        {
+                            location = "42,144626#2,460495",
+                            name = "Centre Cultural Les Preses"
+                        },
+                        new
+                        {
+                            location = "42,143571#2,460709",
+                            name = "Camp Municipal d Esports"
+                        },
+                        new
+                        {
+                            location = "42,143114#2,462558",
+                            name = "Ruta Volcà del Racó"
+                        },
+                        new
+                        {
+                            location = "42,142807#2,46312",
+                            name = "Piscina Municipal de Les Preses"
+                        },
+                        new
+                        {
+                            location = "42,142457#2,458232",
+                            name = "Antiga Estacio de Tren"
+                        },
+                        new
+                        {
+                            location = "42,141384#2,461057",
+                            name = "Restes Monastir"
+                        },
+                        new
+                        {
+                            location = "42,141052#2,461108",
+                            name = "Esglesia De Les Presses"
+                        },
+                        new
+                        {
+                            location = "42,140203#2,45893",
+                            name = "Torre Independentista"
+                        },
+                        new
+                        {
+                            location = "42,192291#2,500477",
+                            name = "Columna de l'Alba"
+                        },
+                        new
+                        {
+                            location = "42,192587#2,508627",
+                            name = "Parc dels Ocells"
+                        },
+                        new
+                        {
+                            location = "42,189583#2,499194",
+                            name = "Zona Verda d Esplai Mestre Moner"
+                        },
+                        new
+                        {
+                            location = "42,188284#2,494975",
+                            name = "Relotge d en Clara"
+                        },
+                        new
+                        {
+                            location = "42,187263#2,497006",
+                            name = "Servicio Moto Guzzi"
+                        },
+                        new
+                        {
+                            location = "42,186527#2,497117",
+                            name = "Tornaboda"
+                        },
+                        new
+                        {
+                            location = "42,186042#2,492402",
+                            name = "Font De La Nena"
+                        },
+                        new
+                        {
+                            location = "42,180624#2,495599",
+                            name = "Font de Sant Cristofor"
+                        },
+                        new
+                        {
+                            location = "42,178932#2,494906",
+                            name = "Foment de les Tradicions"
+                        },
+                        new
+                        {
+                            location = "42,177906#2,494768",
+                            name = "Casal Barri Les Fonts"
+                        },
+                        new
+                        {
+                            location = "42,175295#2,4894",
+                            name = "Monumento Parc Espunya"
+                        },
+                        new
+                        {
+                            location = "42,183006#2,496606",
+                            name = "Art urbà"
+                        },
+                        new
+                        {
+                            location = "42,181452#2,492522",
+                            name = "San Kirinoies"
+                        },
+                        new
+                        {
+                            location = "42,177293#2,486369",
+                            name = "Escultura a Manel Malagrida"
+                        },
+                        new
+                        {
+                            location = "42,177551#2,483017",
+                            name = "Estatua Plaça Manuel Malagrida"
+                        },
+                        new
+                        {
+                            location = "42,180366#2,485257",
+                            name = "Estatua Per La Maternitat. Plaça Clarà."
+                        },
+                        new
+                        {
+                            location = "42,181868#2,489382",
+                            name = "Plaça De L'àngel"
+                        },
+                        new
+                        {
+                            location = "42,170689#2,48534",
+                            name = "Finestra a La Garrotxa"
+                        },
+                        new
+                        {
+                            location = "42,166612#2,486186",
+                            name = "Sta Ana"
+                        },
+                        new
+                        {
+                            location = "42,168368#2,493534",
+                            name = "Fagedes Entre Volcans"
+                        },
+                        new
+                        {
+                            location = "42,169393#2,503041",
+                            name = "Font de la Vaca"
+                        },
+                        new
+                        {
+                            location = "42,175602#2,481668",
+                            name = "Monument Funerari Moai"
+                        },
+                        new
+                        {
+                            location = "42,172976#2,482529",
+                            name = "Estatua Plaça America"
+                        },
+                        new
+                        {
+                            location = "42,17181#2,481047",
+                            name = "Pere Gussinyé"
+                        },
+                        new
+                        {
+                            location = "42,171287#2,47997",
+                            name = "Museu Dels Volcans"
+                        },
+                        new
+                        {
+                            location = "42,171244#2,477698",
+                            name = "Font de la plaça Pius XII"
+                        },
+                        new
+                        {
+                            location = "42,169653#2,477541",
+                            name = "Parc De Pekin"
+                        },
+                        new
+                        {
+                            location = "42,167398#2,480457",
+                            name = "Piscina Municipal"
+                        },
+                        new
+                        {
+                            location = "42,163045#2,481201",
+                            name = "Parc de Bonavista"
+                        },
+                        new
+                        {
+                            location = "42,165063#2,480102",
+                            name = "Homenatge al Camp"
+                        },
+                        new
+                        {
+                            location = "42,175004#2,479952",
+                            name = "Antiga Estacio de Tren d Olot"
+                        },
+                        new
+                        {
+                            location = "42,17366#2,474043",
+                            name = "Font De Sant Roc"
+                        },
+                        new
+                        {
+                            location = "42,174341#2,469",
+                            name = "Travesía Tossols-Basil"
+                        },
+                        new
+                        {
+                            location = "42,170545#2,473211",
+                            name = "Font de la Plaça Boratosca"
+                        },
+                        new
+                        {
+                            location = "42,170236#2,469201",
+                            name = "Font del Anec"
+                        },
+                        new
+                        {
+                            location = "42,168528#2,470507",
+                            name = "Parc Plaça de Picasso"
+                        },
+                        new
+                        {
+                            location = "42,207574#2,494876",
+                            name = "La casa de los navarros"
+                        },
+                        new
+                        {
+                            location = "42,206018#2,492983",
+                            name = "Església de La Canya"
+                        },
+                        new
+                        {
+                            location = "42,183437#2,492668",
+                            name = "Ateneu Central D'olot"
+                        },
+                        new
+                        {
+                            location = "42,183344#2,490676",
+                            name = "Aigua"
+                        },
+                        new
+                        {
+                            location = "42,186987#2,4865",
+                            name = "Estrats De Reserva"
+                        },
+                        new
+                        {
+                            location = "42,188259#2,489509",
+                            name = "Torre Dels Carlins"
+                        },
+                        new
+                        {
+                            location = "42,181803#2,488183",
+                            name = "Estatua Placida"
+                        },
+                        new
+                        {
+                            location = "42,185129#2,484677",
+                            name = "Muralla Carlina"
+                        },
+                        new
+                        {
+                            location = "42,183095#2,48482",
+                            name = "Olot Indepe"
+                        },
+                        new
+                        {
+                            location = "42,183748#2,485099",
+                            name = "Monument Al Rotary Club"
+                        },
+                        new
+                        {
+                            location = "42,190087#2,478243",
+                            name = "Escultura Al Treball"
+                        },
+                        new
+                        {
+                            location = "42,190078#2,484673",
+                            name = "Font De Roca Volcànica"
+                        },
+                        new
+                        {
+                            location = "42,192092#2,488654",
+                            name = "Sant Antoni Abad"
+                        },
+                        new
+                        {
+                            location = "42,182488#2,479496",
+                            name = "Font Plaça Doctor Fleming"
+                        },
+                        new
+                        {
+                            location = "42,182286#2,478306",
+                            name = "St. Pere Màrtir"
+                        },
+                        new
+                        {
+                            location = "42,184181#2,471866",
+                            name = "Escultura del Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,186149#2,472613",
+                            name = "Camp de Futbol Joventut SPM"
+                        },
+                        new
+                        {
+                            location = "42,184663#2,463171",
+                            name = "Pista de bàsquet"
+                        },
+                        new
+                        {
+                            location = "42,187217#2,468935",
+                            name = "Area de Salut Pla de Dalt"
+                        },
+                        new
+                        {
+                            location = "42,211312#2,513696",
+                            name = "Familia"
+                        },
+                        new
+                        {
+                            location = "42,21307#2,509031",
+                            name = "Monestir De Sant Joan"
+                        },
+                        new
+                        {
+                            location = "42,216145#2,511136",
+                            name = "Poblat Iberic La Societat"
+                        },
+                        new
+                        {
+                            location = "42,217585#2,515104",
+                            name = "Monestir de Sant Joan de les Fonts"
+                        },
+                        new
+                        {
+                            location = "42,144247#2,571541",
+                            name = "Esglesia de Santa Pau"
+                        },
+                        new
+                        {
+                            location = "42,147908#2,462148",
+                            name = "Parc Infantil Plaça Catalunya"
+                        },
+                        new
+                        {
+                            location = "42,146915#2,458231",
+                            name = "El bressol de Verntallat Les Presses"
+                        },
+                        new
+                        {
+                            location = "42,142938#2,461877",
+                            name = "Parc Infantil"
+                        },
+                        new
+                        {
+                            location = "42,141931#2,460739",
+                            name = "La casa de l' heura"
+                        },
+                        new
+                        {
+                            location = "42,140909#2,459233",
+                            name = "Parc Infantil 1 d'Octubre"
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
@@ -1461,7 +3491,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("receptor");
 
-                    b.ToTable("Present", (string)null);
+                    b.ToTable("Present");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -1480,7 +3510,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("boss");
 
-                    b.ToTable("Raid", (string)null);
+                    b.ToTable("Raid");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
@@ -1500,7 +3530,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Raid_participants", (string)null);
+                    b.ToTable("Raid_participants");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -1518,7 +3548,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Team", (string)null);
+                    b.ToTable("Team");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
@@ -1536,7 +3566,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("affected_element");
 
-                    b.ToTable("Type_table", (string)null);
+                    b.ToTable("Type_table");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
@@ -1546,6 +3576,9 @@ namespace PokemonGolotEF.Migrations
                         .HasColumnType("character varying(20)");
 
                     b.Property<int>("caputred_pokemon")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("current_level_experience")
                         .HasColumnType("integer");
 
                     b.Property<int>("experience")
@@ -1572,7 +3605,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
