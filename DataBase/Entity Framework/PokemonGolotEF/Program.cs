@@ -13,13 +13,8 @@ namespace PokemonGolotEF
     {
         public static LoadData pokemonData;
         static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-            pokemonData = new LoadData();
-            getDataTry();
-
-        }
-
+            => CreateHostBuilder(args).Build().Run();      
+               
         public static IHostBuilder CreateHostBuilder(string[] args)
         => Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(
@@ -35,7 +30,7 @@ namespace PokemonGolotEF
             }
         }
 
-        static void getDataTry() 
+        /*static void getDataTry() 
         {
 
             Console.WriteLine("User levels data:\n\n");
@@ -68,6 +63,6 @@ namespace PokemonGolotEF
                 Console.WriteLine("Name: " + actual.name + "\nLatitude: " + latitude + "\nLongitude: " + longitude + "\n");
             }
 
-        }
+        }*/
     }
 }
