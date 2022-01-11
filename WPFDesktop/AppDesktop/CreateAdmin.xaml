@@ -31,10 +31,11 @@
             <TextBox x:Name="RepeatPasswordEntry" HorizontalAlignment="Center" TextWrapping="NoWrap" VerticalAlignment="Center" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" SnapsToDevicePixels="True" FontSize="22"/>
             <TextBlock x:Name="PasswordBox" HorizontalAlignment="Left" Height="33" Margin="480,256,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="204" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="CONTRASENYA"/></TextBlock>
             <TextBlock x:Name="RepeatPassowrdBox" HorizontalAlignment="Left" Height="33" Margin="856,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="REPETIR CONTRASENYA"/></TextBlock>
-            <TextBox x:Name="NameEntr" HorizontalAlignment="Left" Margin="480,463,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="696" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
-            <TextBox x:Name="SurnameEntry" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" Margin="110,463,0,0" FontSize="22"/>
-            <TextBlock x:Name="SurnameBox" HorizontalAlignment="Left" Height="33" Margin="480,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="COGNOMS"/></TextBlock>
-            <TextBlock x:Name="NameBox" HorizontalAlignment="Left" Height="33" Margin="110,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="NOM"/></TextBlock>
+            <TextBox x:Name="NameEntr" HorizontalAlignment="Center" Margin="0,467,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
+            <TextBox x:Name="SurnameEntry" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" Margin="110,467,0,0" FontSize="22"/>
+            <TextBlock x:Name="SurnameBox" HorizontalAlignment="Left" Height="33" Margin="480,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="COGNOMS"/></TextBlock>
+            <TextBlock x:Name="NameBox" HorizontalAlignment="Left" Height="33" Margin="110,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="NOM"/></TextBlock>
+            <TextBlock x:Name="AdminBox" HorizontalAlignment="Left" Height="33" Margin="856,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" FontSize="28" FontWeight="Bold" RenderTransformOrigin="-0.053,0.547"><Run Text="ADMINISTRADOR"/><Run Language="es-es" Text="?"/></TextBlock>
 
             <Button HorizontalAlignment="Right" Margin="0,565,727,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
                 <Button.Background>
@@ -49,6 +50,11 @@
                 </Button.Background>
             </Button>
 
+            <CheckBox Margin="1130,465,64,162">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </Grid>
 
 
