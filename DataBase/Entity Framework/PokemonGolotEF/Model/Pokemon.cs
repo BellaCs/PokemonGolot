@@ -38,7 +38,11 @@ namespace PokemonGolotEF.Model
         [Required]
         public string img_front { get; set; }
         [Required]
+        public string img_front_female { get; set; }
+        [Required]
         public string img_back { get; set; }
+        [Required]
+        public string img_back_female { get; set; }
         [Required]
         public string description { get; set; }
         [Required]
@@ -48,5 +52,13 @@ namespace PokemonGolotEF.Model
 
 
         public virtual ICollection<PokemonOwned> Owners { get; set; }
+
+        public void addImages(JToken pokemonImages)
+        {
+            img_front = (string)pokemonImages["back_default"];
+            img_front_female = (string)pokemonImages["back_female"];
+            img_back = (string)pokemonImages["front_default"];
+            img_back_female = (string)pokemonImages["front_female"];
+        }
     }
 }
