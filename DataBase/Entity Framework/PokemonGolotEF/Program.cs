@@ -1,11 +1,11 @@
 ﻿using System;
-using PokemonGolotEF.Library.Requests;
-using PokemonGolotEF.Library.Readers;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using PokemonGolotEF.Model;
-using System.Collections.Generic;
 using PokemonGolotEF.Library;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
+using PokemonGolotEF.Data;
 
 namespace PokemonGolotEF
 {
@@ -14,13 +14,26 @@ namespace PokemonGolotEF
         public static LoadData pokemonData;
         static void Main(string[] args)
         {
-
+            CreateHostBuilder(args).Build().Run();
             pokemonData = new LoadData();
             getDataTry();
 
         }
 
-       
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        => Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(
+                webBuilder => webBuilder.UseStartup<Startup>());
+
+        public class Startup
+        {
+            public void ConfigureServices(IServiceCollection services)
+                => services.AddDbContext<PokemonGolotDBContext>();
+
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            {
+            }
+        }
 
         static void getDataTry() 
         {

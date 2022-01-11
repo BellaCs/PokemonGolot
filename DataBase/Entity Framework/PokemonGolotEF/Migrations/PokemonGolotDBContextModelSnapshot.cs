@@ -37,7 +37,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("km_egg");
 
-                    b.ToTable("Egg");
+                    b.ToTable("Egg", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -55,7 +55,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Egg_inventory");
+                    b.ToTable("Egg_inventory", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
@@ -70,7 +70,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("egg");
 
-                    b.ToTable("Egg_pokemon_pool");
+                    b.ToTable("Egg_pokemon_pool", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
@@ -83,7 +83,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Element");
+                    b.ToTable("Element", (string)null);
 
                     b.HasData(
                         new
@@ -183,7 +183,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon_evolved");
 
-                    b.ToTable("Evolution_chain");
+                    b.ToTable("Evolution_chain", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
@@ -198,7 +198,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("friend");
 
-                    b.ToTable("Friendships");
+                    b.ToTable("Friendships", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
@@ -217,7 +217,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("Gym");
+                    b.ToTable("Gym", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymDefense", b =>
@@ -238,7 +238,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Gym_defensors");
+                    b.ToTable("Gym_defensors", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
@@ -262,7 +262,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Gym_trophies");
+                    b.ToTable("Gym_trophies", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
@@ -278,7 +278,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("level");
 
-                    b.ToTable("Level");
+                    b.ToTable("Level", (string)null);
 
                     b.HasData(
                         new
@@ -548,7 +548,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("object_name");
 
-                    b.ToTable("Levelup_object_rewards");
+                    b.ToTable("Levelup_object_rewards", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
@@ -577,7 +577,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("element");
 
-                    b.ToTable("Movement");
+                    b.ToTable("Movement", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>
@@ -595,7 +595,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Object");
+                    b.ToTable("Object", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
@@ -613,7 +613,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Object_inventories");
+                    b.ToTable("Object_inventories", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
@@ -631,7 +631,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("package");
 
-                    b.ToTable("Package_items");
+                    b.ToTable("Package_items", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
@@ -647,7 +647,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Package_offer");
+                    b.ToTable("Package_offer", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
@@ -665,7 +665,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("user");
 
-                    b.ToTable("Package_offers_bought");
+                    b.ToTable("Package_offers_bought", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
@@ -694,7 +694,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("user_name");
 
-                    b.ToTable("Player");
+                    b.ToTable("Player", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
@@ -747,7 +747,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("Eggkm_egg");
 
-                    b.ToTable("Pokemon");
+                    b.ToTable("Pokemon", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
@@ -762,7 +762,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("ex_owner");
 
-                    b.ToTable("Pokemon_exchange");
+                    b.ToTable("Pokemon_exchange", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
@@ -781,7 +781,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("pokemon_level");
 
-                    b.ToTable("Pokemon_level");
+                    b.ToTable("Pokemon_level", (string)null);
 
                     b.HasData(
                         new
@@ -1378,7 +1378,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Pokemon_owned");
+                    b.ToTable("Pokemon_owned", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
@@ -1408,7 +1408,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Pokemon_register");
+                    b.ToTable("Pokemon_register", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
@@ -1422,7 +1422,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("location");
 
-                    b.ToTable("PokeStop");
+                    b.ToTable("PokeStop", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Present", b =>
@@ -1461,7 +1461,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("receptor");
 
-                    b.ToTable("Present");
+                    b.ToTable("Present", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -1480,7 +1480,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("boss");
 
-                    b.ToTable("Raid");
+                    b.ToTable("Raid", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
@@ -1500,7 +1500,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Raid_participants");
+                    b.ToTable("Raid_participants", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -1518,7 +1518,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Team");
+                    b.ToTable("Team", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
@@ -1536,7 +1536,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("affected_element");
 
-                    b.ToTable("Type_table");
+                    b.ToTable("Type_table", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
@@ -1572,7 +1572,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>

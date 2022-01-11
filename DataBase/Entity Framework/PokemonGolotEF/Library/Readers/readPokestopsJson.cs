@@ -11,7 +11,7 @@ namespace PokemonGolotEF.Library.Readers
     {
         public static String readPokestopsData() 
         {
-            String file = "..\\..\\..\\Library\\Json\\pokestop.json";
+            String file = ".\\Library\\Json\\pokestop.json";
             String data = "";
 
             using (StreamReader r = new StreamReader(file)) 
