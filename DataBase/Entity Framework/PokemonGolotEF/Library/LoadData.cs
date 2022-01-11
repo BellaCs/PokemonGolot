@@ -17,7 +17,7 @@ namespace PokemonGolotEF.Library
             LoadLevel().Wait();
             LoadPokemonLevels().Wait();
             LoadElement().Wait();
-            LoadPokestopsAndGyms();
+            LoadPokestops();
         }
 
         public void LoadPokemon() 
@@ -74,14 +74,18 @@ namespace PokemonGolotEF.Library
             }
         }
 
-        public void LoadPokestopsAndGyms() 
-        {
-            PokeStop actual;
+        public void LoadPokestops() 
+        {            
             String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
             JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
             JToken gymsList = gymsAndPokestopsList["gyms"];
             JObject pokestopsList = (JObject)gymsAndPokestopsList["pokestops"];
-            
+            addPokestopsForJsonList(pokestopsList);            
+        }
+
+        public void addPokestopsForJsonList(JObject pokestopsList)
+        {
+            PokeStop actual;
             foreach (KeyValuePair<String, JToken> pokestop in pokestopsList)
             {
                 actual = new PokeStop(pokestop);
