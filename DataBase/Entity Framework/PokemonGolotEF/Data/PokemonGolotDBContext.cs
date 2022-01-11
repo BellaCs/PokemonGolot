@@ -123,8 +123,15 @@ namespace PokemonGolotEF.Data
                 .HasData(data.pokemonGolot.pokestops);
 
             // Gyms
+            
             model.Entity<Gym>()
                 .HasData(data.pokemonGolot.gyms);
+
+            // Pokemon
+
+            model.Entity<Pokemon>()
+                .HasData(data.pokemonGolot.pokemons);
+
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

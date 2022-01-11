@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,12 +15,18 @@ namespace PokemonGolotEF.Library.Requests
 
         public static async Task<String> getPokemons(string gen)
         {
+
             string sURL;
-            sURL = "https://db.pokemongohub.net/pokemon-list/gen-" + gen;
+            sURL = "https://db.pokemongohub.net/api/pokemon/with-generation/" + gen + "?locale=en";
+            var productValue = new ProductInfoHeaderValue("Mozilla","5.0");
+            var request = new HttpRequestMessage(HttpMethod.Get, sURL);
+
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.UserAgent.Add(productValue);
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync(sURL);
+                HttpResponseMessage response = await client.SendAsync(request);
 
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -29,7 +36,38 @@ namespace PokemonGolotEF.Library.Requests
             catch (HttpRequestException e)
             {
                 Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Console.WriteLine("Message : {0} ", e.Message);
+
+                return null;
+            }
+
+
+        }
+
+        public static async Task<String> getPokemonDetails(string numPokedex)
+        {
+
+            string sURL;
+            sURL = "https://db.pokemongohub.net/api/pokemon/" + numPokedex + "?locale=en";
+            var productValue = new ProductInfoHeaderValue("Mozilla", "5.0");
+            var request = new HttpRequestMessage(HttpMethod.Get, sURL);
+
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.UserAgent.Add(productValue);
+
+            try
+            {
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return responseBody;
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message : {0} ", e.Message);
 
                 return null;
             }

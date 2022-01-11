@@ -14,6 +14,7 @@ namespace PokemonGolotEF.Library
 
         public LoadData()
         {
+            LoadPokemon().Wait();
             LoadLevel().Wait();
             LoadPokemonLevels().Wait();
             LoadElement().Wait();
@@ -24,18 +25,39 @@ namespace PokemonGolotEF.Library
         public async Task LoadPokemon() 
         {
             Pokemon actual;
+            bool isIn = false;
+            
             for(var gen = 1; gen <= 7; gen++) 
             {
-                String pokmeonJsonString = await getPokemon.getPokemons(gen.ToString());
-                JToken pokemonString = JObject.Parse(pokmeonJsonString);
+                String pokemonJsonString = await getPokemon.getPokemons(gen.ToString());
+                JToken pokemonString = JToken.Parse(pokemonJsonString);
                 foreach (JToken pokemon in pokemonString) 
                 {
                     actual = new Pokemon(pokemon);
-                }
-            
-            }
 
+                    foreach (Pokemon poke in pokemonGolot.pokemons) 
+                    {
+                        if (poke.num_pokedex == actual.num_pokedex) 
+                        {
+                            isIn = true;
+                            break;
+                        }
+                    }
+                    if(!isIn)
+                        pokemonGolot.pokemons.Add(actual);
+                    isIn = false;
+                }
+            }
+        }
+
+        public async Task LoadPokemonDetails(Pokemon pokemon) 
+        {
             
+        }
+
+        public async Task LoadPokemonImages(Pokemon pokemon)
+        {
+
         }
 
         public async Task LoadLevel()
@@ -105,14 +127,12 @@ namespace PokemonGolotEF.Library
             }
         }
 
-        // Gyms
         public void LoadGyms() 
         {            
             String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
             JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
             JObject gymsList = (JObject)gymsAndPokestopsList["gyms"];
             addPokestopsForJsonList(gymsList);
-            //crear un objkecte de gimas amb la localiitzacio de llista
             Gym actual;
             foreach (KeyValuePair<String, JToken> gym in gymsList)
             {
