@@ -11,7 +11,6 @@ namespace PokemonGolotEF
 {
     class Program
     {
-        public static LoadData pokemonData;
         static void Main(string[] args)
             => CreateHostBuilder(args).Build().Run();      
                

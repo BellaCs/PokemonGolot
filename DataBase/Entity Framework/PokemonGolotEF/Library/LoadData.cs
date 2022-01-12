@@ -26,10 +26,12 @@ namespace PokemonGolotEF.Library
         {
             Pokemon actual;
             bool isIn = false;
+            //string 
+            
             
             for(var gen = 1; gen <= 7; gen++) 
             {
-                String pokemonJsonString = await getPokemon.getPokemons(gen.ToString());
+                string pokemonJsonString = await getPokemon.getPokemons(gen.ToString());
                 JToken pokemonString = JToken.Parse(pokemonJsonString);
                 foreach (JToken pokemon in pokemonString) 
                 {
@@ -43,8 +45,13 @@ namespace PokemonGolotEF.Library
                             break;
                         }
                     }
-                    if(!isIn)
-                        pokemonGolot.pokemons.Add(actual);
+                    if (!isIn)
+                    {
+                        LoadPokemonImages(actual).Wait();
+                        LoadPokemonDetails(actual).Wait();
+                        if(actual.description != null && actual.img_back != null && actual.img_front != null)
+                            pokemonGolot.pokemons.Add(actual);
+                    }
                     isIn = false;
                 }
             }
@@ -52,15 +59,37 @@ namespace PokemonGolotEF.Library
 
         public async Task LoadPokemonDetails(Pokemon pokemon) 
         {
-            String pokemonDetailsJson = await getPokemon.getPokemonDetails(pokemon.num_pokedex.ToString());
-            JToken pokemonDetails = JToken.Parse(pokemonDetailsJson);
-            pokemon.addDetails();
+            string pokemonDetailsJson = await getPokemon.getPokemonDetails(pokemon.num_pokedex.ToString());
+            
+            if (pokemonDetailsJson != null)
+            {
+                try
+                {
+                    JToken pokemonDetails = JToken.Parse(pokemonDetailsJson);
+                    List<int> genders = new List<int>();
+
+                    pokemon.setDetails(pokemonDetails, genders);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
+            }
+        }
+
+        public List<int> getGender() {
+
+            return null;
         }
         
         public async Task LoadPokemonImages(Pokemon pokemon)
         {
-            String levelJsonString = await getPokemon.getPokemonImages(pokemon.name);
-            JObject pokemonJson = JObject.Parse(levelJsonString);
+            Console.WriteLine(pokemon.name + " " + pokemon.num_pokedex.ToString());
+            string pokemonJsonString;
+            pokemonJsonString = await getPokemon.getPokemonImages(pokemon.num_pokedex);
+           
+            JObject pokemonJson = JObject.Parse(pokemonJsonString);
             JToken pokemonImages = pokemonJson["sprites"];
             pokemon.addImages(pokemonImages);
         }
@@ -68,7 +97,7 @@ namespace PokemonGolotEF.Library
         public async Task LoadLevel()
         {
             Level actual;
-            String levelJsonString = await getLevel.getLevels();
+            string levelJsonString = await getLevel.getLevels();
             JObject levelJson = JObject.Parse(levelJsonString);
             foreach (KeyValuePair<String, JToken> level in levelJson)
             {
@@ -80,8 +109,8 @@ namespace PokemonGolotEF.Library
         public async Task LoadPokemonLevels()
         {
             PokemonLevel actual;
-            String cpMultiplierJson = await getPokemonLevel.getCpMultiplier();
-            String requirementsToPowerUpJson = await getPokemonLevel.getRequirementsToPowerUp();
+            string cpMultiplierJson = await getPokemonLevel.getCpMultiplier();
+            string requirementsToPowerUpJson = await getPokemonLevel.getRequirementsToPowerUp();
             JToken cpMultiplier = JToken.Parse(cpMultiplierJson);
             JObject requirementsToPowerUp = JObject.Parse(requirementsToPowerUpJson);
             foreach (JToken pokemonLevel in cpMultiplier)
@@ -104,7 +133,7 @@ namespace PokemonGolotEF.Library
         public async Task LoadElement() 
         {
             Element actual;
-            String elementsJson = await getElement.getElements();
+            string elementsJson = await getElement.getElements();
             JObject rawElements = JObject.Parse(elementsJson);
             JToken elements = rawElements["results"];
             foreach (JToken element in elements)
@@ -116,7 +145,7 @@ namespace PokemonGolotEF.Library
 
         public void LoadPokestops() 
         {            
-            String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
+            string gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
             JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
             JObject pokestopsList = (JObject)gymsAndPokestopsList["pokestops"];
             addPokestopsForJsonList(pokestopsList);            
@@ -134,7 +163,7 @@ namespace PokemonGolotEF.Library
 
         public void LoadGyms() 
         {            
-            String gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
+            string gymsAndPokestopsJson = readPokestopsJson.readPokestopsData();
             JObject gymsAndPokestopsList = JObject.Parse(gymsAndPokestopsJson);
             JObject gymsList = (JObject)gymsAndPokestopsList["gyms"];
             addPokestopsForJsonList(gymsList);

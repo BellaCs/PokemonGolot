@@ -7,7 +7,7 @@ namespace PokemonGolotEF.Model
     {
         public Egg() 
         {
-            PokemonPool = new HashSet<Pokemon>();
+            //PokemonPool = new HashSet<Pokemon>();
         }
 
         [Key]
@@ -17,6 +17,6 @@ namespace PokemonGolotEF.Model
         [Required]
         public string image { get; set; }
 
-        public virtual ICollection<Pokemon> PokemonPool { get; set; }
+        //public virtual ICollection<Pokemon> PokemonPool { get; set; }
     }
 }

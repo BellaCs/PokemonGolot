@@ -48,7 +48,7 @@ namespace PokemonGolotEF.Library.Requests
         {
 
             string sURL;
-            sURL = "https://db.pokemongohub.net/api/pokemon/" + numPokedex + "?locale=en";
+            sURL = "https://db.pokemongohub.net/api/pokemon/" + numPokedex + "?locale=en&form=";
             var productValue = new ProductInfoHeaderValue("Mozilla", "5.0");
             var request = new HttpRequestMessage(HttpMethod.Get, sURL);
 
@@ -76,7 +76,7 @@ namespace PokemonGolotEF.Library.Requests
         }
 
 
-        public static async Task<String> getPokemonImages(string namePokemon)
+        public static async Task<String> getPokemonImages(int namePokemon)
         {
 
             string sURL;

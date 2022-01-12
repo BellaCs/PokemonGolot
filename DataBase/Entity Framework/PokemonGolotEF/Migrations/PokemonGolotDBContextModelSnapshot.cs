@@ -37,7 +37,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("km_egg");
 
-                    b.ToTable("Egg", (string)null);
+                    b.ToTable("Egg");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -55,7 +55,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Egg_inventory", (string)null);
+                    b.ToTable("Egg_inventory");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
@@ -70,7 +70,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("egg");
 
-                    b.ToTable("Egg_pokemon_pool", (string)null);
+                    b.ToTable("Egg_pokemon_pool");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
@@ -83,7 +83,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Element", (string)null);
+                    b.ToTable("Element");
 
                     b.HasData(
                         new
@@ -183,7 +183,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon_evolved");
 
-                    b.ToTable("Evolution_chain", (string)null);
+                    b.ToTable("Evolution_chain");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
@@ -198,7 +198,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("friend");
 
-                    b.ToTable("Friendships", (string)null);
+                    b.ToTable("Friendships");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
@@ -213,7 +213,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("Gym", (string)null);
+                    b.ToTable("Gym");
 
                     b.HasData(
                         new
@@ -496,7 +496,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Gym_defensors", (string)null);
+                    b.ToTable("Gym_defensors");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
@@ -520,7 +520,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Gym_trophies", (string)null);
+                    b.ToTable("Gym_trophies");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
@@ -536,7 +536,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("level");
 
-                    b.ToTable("Level", (string)null);
+                    b.ToTable("Level");
 
                     b.HasData(
                         new
@@ -806,7 +806,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("object_name");
 
-                    b.ToTable("Levelup_object_rewards", (string)null);
+                    b.ToTable("Levelup_object_rewards");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
@@ -835,7 +835,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("element");
 
-                    b.ToTable("Movement", (string)null);
+                    b.ToTable("Movement");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>
@@ -853,7 +853,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Object", (string)null);
+                    b.ToTable("Object");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
@@ -871,7 +871,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Object_inventories", (string)null);
+                    b.ToTable("Object_inventories");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
@@ -889,7 +889,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("package");
 
-                    b.ToTable("Package_items", (string)null);
+                    b.ToTable("Package_items");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
@@ -905,7 +905,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Package_offer", (string)null);
+                    b.ToTable("Package_offer");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
@@ -923,7 +923,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("user");
 
-                    b.ToTable("Package_offers_bought", (string)null);
+                    b.ToTable("Package_offers_bought");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
@@ -952,7 +952,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("user_name");
 
-                    b.ToTable("Player", (string)null);
+                    b.ToTable("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
@@ -962,9 +962,6 @@ namespace PokemonGolotEF.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("num_pokedex"));
-
-                    b.Property<double?>("Eggkm_egg")
-                        .HasColumnType("double precision");
 
                     b.Property<double>("attack")
                         .HasColumnType("double precision");
@@ -983,8 +980,14 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("img_back_female")
+                        .HasColumnType("text");
+
                     b.Property<string>("img_front")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("img_front_female")
                         .HasColumnType("text");
 
                     b.Property<float>("male_gender_rate")
@@ -1003,9 +1006,9741 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("num_pokedex");
 
-                    b.HasIndex("Eggkm_egg");
+                    b.ToTable("Pokemon");
 
-                    b.ToTable("Pokemon", (string)null);
+                    b.HasData(
+                        new
+                        {
+                            num_pokedex = 1,
+                            attack = 118.0,
+                            defense = 111.0,
+                            description = "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+                            male_gender_rate = 0f,
+                            name = "Bulbasaur",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 2,
+                            attack = 151.0,
+                            defense = 143.0,
+                            description = "There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+                            male_gender_rate = 0f,
+                            name = "Ivysaur",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 3,
+                            attack = 198.0,
+                            defense = 189.0,
+                            description = "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/3.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/3.png",
+                            male_gender_rate = 0f,
+                            name = "Venusaur",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 4,
+                            attack = 116.0,
+                            defense = 93.0,
+                            description = "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+                            male_gender_rate = 0f,
+                            name = "Charmander",
+                            rarity = "common",
+                            stamina = 118.0
+                        },
+                        new
+                        {
+                            num_pokedex = 5,
+                            attack = 158.0,
+                            defense = 126.0,
+                            description = "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+                            male_gender_rate = 0f,
+                            name = "Charmeleon",
+                            rarity = "common",
+                            stamina = 151.0
+                        },
+                        new
+                        {
+                            num_pokedex = 6,
+                            attack = 223.0,
+                            defense = 173.0,
+                            description = "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+                            male_gender_rate = 0f,
+                            name = "Charizard",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 7,
+                            attack = 94.0,
+                            defense = 121.0,
+                            description = "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+                            male_gender_rate = 0f,
+                            name = "Squirtle",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 8,
+                            attack = 126.0,
+                            defense = 155.0,
+                            description = "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/8.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+                            male_gender_rate = 0f,
+                            name = "Wartortle",
+                            rarity = "common",
+                            stamina = 153.0
+                        },
+                        new
+                        {
+                            num_pokedex = 9,
+                            attack = 171.0,
+                            defense = 207.0,
+                            description = "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+                            male_gender_rate = 0f,
+                            name = "Blastoise",
+                            rarity = "common",
+                            stamina = 188.0
+                        },
+                        new
+                        {
+                            num_pokedex = 10,
+                            attack = 55.0,
+                            defense = 55.0,
+                            description = "Caterpie has a voracious appetite. It can devour leaves bigger than its body right before your eyes. From its antenna, this Pokémon releases a terrifically strong odor.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+                            male_gender_rate = 0f,
+                            name = "Caterpie",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 11,
+                            attack = 45.0,
+                            defense = 80.0,
+                            description = "The shell covering this Pokémon's body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+                            male_gender_rate = 0f,
+                            name = "Metapod",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 12,
+                            attack = 167.0,
+                            defense = 137.0,
+                            description = "Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/12.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/12.png",
+                            male_gender_rate = 0f,
+                            name = "Butterfree",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 13,
+                            attack = 63.0,
+                            defense = 50.0,
+                            description = "Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose).",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+                            male_gender_rate = 0f,
+                            name = "Weedle",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 14,
+                            attack = 46.0,
+                            defense = 75.0,
+                            description = "Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+                            male_gender_rate = 0f,
+                            name = "Kakuna",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 15,
+                            attack = 169.0,
+                            defense = 130.0,
+                            description = "Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+                            male_gender_rate = 0f,
+                            name = "Beedrill",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 16,
+                            attack = 85.0,
+                            defense = 73.0,
+                            description = "Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/16.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+                            male_gender_rate = 0f,
+                            name = "Pidgey",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 17,
+                            attack = 117.0,
+                            defense = 105.0,
+                            description = "Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/17.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+                            male_gender_rate = 0f,
+                            name = "Pidgeotto",
+                            rarity = "common",
+                            stamina = 160.0
+                        },
+                        new
+                        {
+                            num_pokedex = 18,
+                            attack = 166.0,
+                            defense = 154.0,
+                            description = "This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/18.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+                            male_gender_rate = 0f,
+                            name = "Pidgeot",
+                            rarity = "common",
+                            stamina = 195.0
+                        },
+                        new
+                        {
+                            num_pokedex = 19,
+                            attack = 103.0,
+                            defense = 70.0,
+                            description = "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/19.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/19.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/19.png",
+                            male_gender_rate = 0f,
+                            name = "Rattata",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 20,
+                            attack = 161.0,
+                            defense = 139.0,
+                            description = "Raticate's sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/20.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/20.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/20.png",
+                            male_gender_rate = 0f,
+                            name = "Raticate",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 21,
+                            attack = 112.0,
+                            defense = 60.0,
+                            description = "Spearow has a very loud cry that can be heard over half a mile away. If its high, keening cry is heard echoing all around, it is a sign that they are warning each other of danger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/21.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+                            male_gender_rate = 0f,
+                            name = "Spearow",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 22,
+                            attack = 182.0,
+                            defense = 133.0,
+                            description = "Fearow is recognized by its long neck and elongated beak. They are conveniently shaped for catching prey in soil or water. It deftly moves its long and skinny beak to pluck prey.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/22.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+                            male_gender_rate = 0f,
+                            name = "Fearow",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 23,
+                            attack = 110.0,
+                            defense = 97.0,
+                            description = "Ekans curls itself up in a spiral while it rests. Assuming this position allows it to quickly respond to a threat from any direction with a glare from its upraised head.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/23.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+                            male_gender_rate = 0f,
+                            name = "Ekans",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 24,
+                            attack = 167.0,
+                            defense = 153.0,
+                            description = "This Pokémon is terrifically strong in order to constrict things with its body. It can even flatten steel oil drums. Once Arbok wraps its body around its foe, escaping its crushing embrace is impossible.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/24.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+                            male_gender_rate = 0f,
+                            name = "Arbok",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 25,
+                            attack = 112.0,
+                            defense = 96.0,
+                            description = "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/25.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/25.png",
+                            male_gender_rate = 0f,
+                            name = "Pikachu",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 26,
+                            attack = 193.0,
+                            defense = 151.0,
+                            description = "If the electrical sacs become excessively charged, Raichu plants its tail in the ground and discharges. Scorched patches of ground will be found near this Pokémon's nest.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/26.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/26.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/26.png",
+                            male_gender_rate = 0f,
+                            name = "Raichu",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 27,
+                            attack = 126.0,
+                            defense = 120.0,
+                            description = "Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/27.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+                            male_gender_rate = 0f,
+                            name = "Sandshrew",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 28,
+                            attack = 182.0,
+                            defense = 175.0,
+                            description = "Sandslash's body is covered by tough spikes, which are hardened sections of its hide. Once a year, the old spikes fall out, to be replaced with new spikes that grow out from beneath the old ones.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/28.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+                            male_gender_rate = 0f,
+                            name = "Sandslash",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 29,
+                            attack = 86.0,
+                            defense = 89.0,
+                            description = "Nidoran♀ has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokémon. When enraged, it releases a horrible toxin from its horn.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/29.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
+                            male_gender_rate = 0f,
+                            name = "Nidoran♀",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 30,
+                            attack = 117.0,
+                            defense = 120.0,
+                            description = "When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other. This Pokémon appears to become nervous if separated from the others.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/30.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+                            male_gender_rate = 0f,
+                            name = "Nidorina",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 31,
+                            attack = 180.0,
+                            defense = 173.0,
+                            description = "Nidoqueen's body is encased in extremely hard scales. It is adept at sending foes flying with harsh tackles. This Pokémon is at its strongest when it is defending its young.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/31.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+                            male_gender_rate = 0f,
+                            name = "Nidoqueen",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 32,
+                            attack = 105.0,
+                            defense = 76.0,
+                            description = "Nidoran♂ has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokémon's notice.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/32.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
+                            male_gender_rate = 0f,
+                            name = "Nidoran♂",
+                            rarity = "common",
+                            stamina = 130.0
+                        },
+                        new
+                        {
+                            num_pokedex = 33,
+                            attack = 137.0,
+                            defense = 111.0,
+                            description = "Nidorino has a horn that is harder than a diamond. If it senses a hostile presence, all the barbs on its back bristle up at once, and it challenges the foe with all its might.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/33.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+                            male_gender_rate = 0f,
+                            name = "Nidorino",
+                            rarity = "common",
+                            stamina = 156.0
+                        },
+                        new
+                        {
+                            num_pokedex = 34,
+                            attack = 204.0,
+                            defense = 156.0,
+                            description = "Nidoking's thick tail packs enormously destructive power. With one swing, it can topple a metal transmission tower. Once this Pokémon goes on a rampage, there is no stopping it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/34.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
+                            male_gender_rate = 0f,
+                            name = "Nidoking",
+                            rarity = "common",
+                            stamina = 191.0
+                        },
+                        new
+                        {
+                            num_pokedex = 35,
+                            attack = 107.0,
+                            defense = 108.0,
+                            description = "On every night of a full moon, groups of this Pokémon come out to play. When dawn arrives, the tired Clefairy return to their quiet mountain retreats and go to sleep nestled up against each other.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/35.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
+                            male_gender_rate = 0f,
+                            name = "Clefairy",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 36,
+                            attack = 178.0,
+                            defense = 162.0,
+                            description = "Clefable moves by skipping lightly as if it were flying using its wings. Its bouncy step lets it even walk on water. It is known to take strolls on lakes on quiet, moonlit nights.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/36.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+                            male_gender_rate = 0f,
+                            name = "Clefable",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 37,
+                            attack = 96.0,
+                            defense = 109.0,
+                            description = "At the time of its birth, Vulpix has one white tail. The tail separates into six if this Pokémon receives plenty of love from its Trainer. The six tails become magnificently curled.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/37.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
+                            male_gender_rate = 0f,
+                            name = "Vulpix",
+                            rarity = "common",
+                            stamina = 116.0
+                        },
+                        new
+                        {
+                            num_pokedex = 38,
+                            attack = 169.0,
+                            defense = 190.0,
+                            description = "Ninetales casts a sinister light from its bright red eyes to gain total control over its foe's mind. This Pokémon is said to live for a thousand years.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/38.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+                            male_gender_rate = 0f,
+                            name = "Ninetales",
+                            rarity = "common",
+                            stamina = 177.0
+                        },
+                        new
+                        {
+                            num_pokedex = 39,
+                            attack = 80.0,
+                            defense = 41.0,
+                            description = "Jigglypuff's vocal cords can freely adjust the wavelength of its voice. This Pokémon uses this ability to sing at precisely the right wavelength to make its foes most drowsy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/39.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+                            male_gender_rate = 0f,
+                            name = "Jigglypuff",
+                            rarity = "common",
+                            stamina = 251.0
+                        },
+                        new
+                        {
+                            num_pokedex = 40,
+                            attack = 156.0,
+                            defense = 90.0,
+                            description = "Wigglytuff has large, saucerlike eyes. The surfaces of its eyes are always covered with a thin layer of tears. If any dust gets in this Pokémon's eyes, it is quickly washed away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/40.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+                            male_gender_rate = 0f,
+                            name = "Wigglytuff",
+                            rarity = "common",
+                            stamina = 295.0
+                        },
+                        new
+                        {
+                            num_pokedex = 41,
+                            attack = 83.0,
+                            defense = 73.0,
+                            description = "Zubat remains quietly unmoving in a dark spot during the bright daylight hours. It does so because prolonged exposure to the sun causes its body to become slightly burned.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/41.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/41.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/41.png",
+                            male_gender_rate = 0f,
+                            name = "Zubat",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 42,
+                            attack = 161.0,
+                            defense = 150.0,
+                            description = "Golbat loves to drink the blood of living things. It is particularly active in the pitch black of night. This Pokémon flits around in the night skies, seeking fresh blood.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/42.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/42.png",
+                            male_gender_rate = 0f,
+                            name = "Golbat",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 43,
+                            attack = 131.0,
+                            defense = 112.0,
+                            description = "During the daytime, Oddish buries itself in soil to absorb nutrients from the ground using its entire body. The more fertile the soil, the glossier its leaves become.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/43.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+                            male_gender_rate = 0f,
+                            name = "Oddish",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 44,
+                            attack = 153.0,
+                            defense = 136.0,
+                            description = "Gloom releases a foul fragrance from the pistil of its flower. When faced with danger, the stench worsens. If this Pokémon is feeling calm and secure, it does not release its usual stinky aroma.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/44.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/44.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/44.png",
+                            male_gender_rate = 0f,
+                            name = "Gloom",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 45,
+                            attack = 202.0,
+                            defense = 167.0,
+                            description = "Vileplume's toxic pollen triggers atrocious allergy attacks. That's why it is advisable never to approach any attractive flowers in a jungle, however pretty they may be.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/45.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/45.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/45.png",
+                            male_gender_rate = 0f,
+                            name = "Vileplume",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 46,
+                            attack = 121.0,
+                            defense = 99.0,
+                            description = "Paras has parasitic mushrooms growing on its back called tochukaso. They grow large by drawing nutrients from this Bug Pokémon host. They are highly valued as a medicine for extending life.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/46.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+                            male_gender_rate = 0f,
+                            name = "Paras",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 47,
+                            attack = 165.0,
+                            defense = 146.0,
+                            description = "Parasect is known to infest large trees en masse and drain nutrients from the lower trunk and roots. When an infested tree dies, they move onto another tree all at once.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/47.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
+                            male_gender_rate = 0f,
+                            name = "Parasect",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 48,
+                            attack = 100.0,
+                            defense = 100.0,
+                            description = "Venonat is said to have evolved with a coat of thin, stiff hair that covers its entire body for protection. It possesses large eyes that never fail to spot even minuscule prey.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/48.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
+                            male_gender_rate = 0f,
+                            name = "Venonat",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 49,
+                            attack = 179.0,
+                            defense = 143.0,
+                            description = "Venomoth is nocturnal—it is a Pokémon that only becomes active at night. Its favorite prey are small insects that gather around streetlights, attracted by the light in the darkness.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/49.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
+                            male_gender_rate = 0f,
+                            name = "Venomoth",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 50,
+                            attack = 109.0,
+                            defense = 78.0,
+                            description = "Diglett are raised in most farms. The reason is simple—wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/50.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+                            male_gender_rate = 0f,
+                            name = "Diglett",
+                            rarity = "common",
+                            stamina = 67.0
+                        },
+                        new
+                        {
+                            num_pokedex = 51,
+                            attack = 167.0,
+                            defense = 134.0,
+                            description = "Dugtrio are actually triplets that emerged from one body. As a result, each triplet thinks exactly like the other two triplets. They work cooperatively to burrow endlessly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/51.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
+                            male_gender_rate = 0f,
+                            name = "Dugtrio",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 52,
+                            attack = 92.0,
+                            defense = 78.0,
+                            description = "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
+                            male_gender_rate = 0f,
+                            name = "Meowth",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 53,
+                            attack = 150.0,
+                            defense = 136.0,
+                            description = "Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/53.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
+                            male_gender_rate = 0f,
+                            name = "Persian",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 54,
+                            attack = 122.0,
+                            defense = 95.0,
+                            description = "Psyduck uses a mysterious power. When it does so, this Pokémon generates brain waves that are supposedly only seen in sleepers. This discovery spurred controversy among scholars.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/54.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+                            male_gender_rate = 0f,
+                            name = "Psyduck",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 55,
+                            attack = 191.0,
+                            defense = 162.0,
+                            description = "The webbed flippers on its forelegs and hind legs and the streamlined body of Golduck give it frightening speed. This Pokémon is definitely much faster than even the most athletic swimmer.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/55.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+                            male_gender_rate = 0f,
+                            name = "Golduck",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 56,
+                            attack = 148.0,
+                            defense = 82.0,
+                            description = "When Mankey starts shaking and its nasal breathing turns rough, it's a sure sign that it is becoming angry. However, because it goes into a towering rage almost instantly, it is impossible for anyone to flee its wrath.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/56.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
+                            male_gender_rate = 0f,
+                            name = "Mankey",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 57,
+                            attack = 207.0,
+                            defense = 138.0,
+                            description = "When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger. However, it also becomes much less intelligent at the same time.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/57.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
+                            male_gender_rate = 0f,
+                            name = "Primeape",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 58,
+                            attack = 136.0,
+                            defense = 93.0,
+                            description = "Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what. It uses its advanced olfactory sense to determine the emotions of other living things.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/58.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
+                            male_gender_rate = 0f,
+                            name = "Growlithe",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 59,
+                            attack = 227.0,
+                            defense = 166.0,
+                            description = "Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/59.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+                            male_gender_rate = 0f,
+                            name = "Arcanine",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 60,
+                            attack = 101.0,
+                            defense = 82.0,
+                            description = "Poliwag has a very thin skin. It is possible to see the Pokémon's spiral innards right through the skin. Despite its thinness, however, the skin is also very flexible. Even sharp fangs bounce right off it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/60.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
+                            male_gender_rate = 0f,
+                            name = "Poliwag",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 61,
+                            attack = 130.0,
+                            defense = 123.0,
+                            description = "The surface of Poliwhirl's body is always wet and slick with a slimy fluid. Because of this slippery covering, it can easily slip and slide out of the clutches of any enemy in battle.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/61.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
+                            male_gender_rate = 0f,
+                            name = "Poliwhirl",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 62,
+                            attack = 182.0,
+                            defense = 184.0,
+                            description = "Poliwrath's highly developed, brawny muscles never grow fatigued, however much it exercises. It is so tirelessly strong, this Pokémon can swim back and forth across the ocean without effort.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/62.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
+                            male_gender_rate = 0f,
+                            name = "Poliwrath",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 63,
+                            attack = 195.0,
+                            defense = 82.0,
+                            description = "Abra sleeps for 18 hours a day. However, it can sense the presence of foes even while it is sleeping. In such a situation, this Pokémon immediately teleports to safety.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/63.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+                            male_gender_rate = 0f,
+                            name = "Abra",
+                            rarity = "common",
+                            stamina = 93.0
+                        },
+                        new
+                        {
+                            num_pokedex = 64,
+                            attack = 232.0,
+                            defense = 117.0,
+                            description = "Kadabra emits a peculiar alpha wave if it develops a headache. Only those people with a particularly strong psyche can hope to become a Trainer of this Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/64.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/64.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/64.png",
+                            male_gender_rate = 0f,
+                            name = "Kadabra",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 65,
+                            attack = 271.0,
+                            defense = 167.0,
+                            description = "Alakazam's brain continually grows, making its head far too heavy to support with its neck. This Pokémon holds its head up using its psychokinetic power instead.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/65.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/65.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/65.png",
+                            male_gender_rate = 0f,
+                            name = "Alakazam",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 66,
+                            attack = 137.0,
+                            defense = 82.0,
+                            description = "Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/66.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
+                            male_gender_rate = 0f,
+                            name = "Machop",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 67,
+                            attack = 177.0,
+                            defense = 125.0,
+                            description = "Machoke's thoroughly toned muscles possess the hardness of steel. This Pokémon has so much strength, it can easily hold aloft a sumo wrestler on just one finger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/67.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+                            male_gender_rate = 0f,
+                            name = "Machoke",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 68,
+                            attack = 234.0,
+                            defense = 159.0,
+                            description = "Machamp has the power to hurl anything aside. However, trying to do any work requiring care and dexterity causes its arms to get tangled. This Pokémon tends to leap into action before it thinks.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/68.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
+                            male_gender_rate = 0f,
+                            name = "Machamp",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 69,
+                            attack = 139.0,
+                            defense = 61.0,
+                            description = "Bellsprout's thin and flexible body lets it bend and sway to avoid any attack, however strong it may be. From its mouth, this Pokémon spits a corrosive fluid that melts even iron.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/69.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
+                            male_gender_rate = 0f,
+                            name = "Bellsprout",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 70,
+                            attack = 172.0,
+                            defense = 92.0,
+                            description = "Weepinbell has a large hook on its rear end. At night, the Pokémon hooks on to a tree branch and goes to sleep. If it moves around in its sleep, it may wake up to find itself on the ground.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/70.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
+                            male_gender_rate = 0f,
+                            name = "Weepinbell",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 71,
+                            attack = 207.0,
+                            defense = 135.0,
+                            description = "Victreebel has a long vine that extends from its head. This vine is waved and flicked about as if it were an animal to attract prey. When an unsuspecting prey draws near, this Pokémon swallows it whole.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/71.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+                            male_gender_rate = 0f,
+                            name = "Victreebel",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 72,
+                            attack = 97.0,
+                            defense = 149.0,
+                            description = "Tentacool's body is largely composed of water. If it is removed from the sea, it dries up like parchment. If this Pokémon happens to become dehydrated, put it back into the sea.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/72.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
+                            male_gender_rate = 0f,
+                            name = "Tentacool",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 73,
+                            attack = 166.0,
+                            defense = 209.0,
+                            description = "Tentacruel has large red orbs on its head. The orbs glow before lashing the vicinity with a harsh ultrasonic blast. This Pokémon's outburst creates rough waves around it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/73.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
+                            male_gender_rate = 0f,
+                            name = "Tentacruel",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 74,
+                            attack = 132.0,
+                            defense = 132.0,
+                            description = "The longer a Geodude lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/74.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
+                            male_gender_rate = 0f,
+                            name = "Geodude",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 75,
+                            attack = 164.0,
+                            defense = 164.0,
+                            description = "Graveler grows by feeding on rocks. Apparently, it prefers to eat rocks that are covered in moss. This Pokémon eats its way through a ton of rocks on a daily basis.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/75.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+                            male_gender_rate = 0f,
+                            name = "Graveler",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 76,
+                            attack = 211.0,
+                            defense = 198.0,
+                            description = "Golem live up on mountains. If there is a large earthquake, these Pokémon will come rolling down off the mountains en masse to the foothills below.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/76.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+                            male_gender_rate = 0f,
+                            name = "Golem",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 77,
+                            attack = 170.0,
+                            defense = 127.0,
+                            description = "Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/77.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
+                            male_gender_rate = 0f,
+                            name = "Ponyta",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 78,
+                            attack = 207.0,
+                            defense = 162.0,
+                            description = "Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/78.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
+                            male_gender_rate = 0f,
+                            name = "Rapidash",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 79,
+                            attack = 109.0,
+                            defense = 98.0,
+                            description = "Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/79.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
+                            male_gender_rate = 0f,
+                            name = "Slowpoke",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 80,
+                            attack = 177.0,
+                            defense = 180.0,
+                            description = "Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This causes Slowbro to grudgingly swim and catch prey instead.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/80.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+                            male_gender_rate = 0f,
+                            name = "Slowbro",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 81,
+                            attack = 165.0,
+                            defense = 121.0,
+                            description = "Magnemite attaches itself to power lines to feed on electricity. If your house has a power outage, check your circuit breakers. You may find a large number of this Pokémon clinging to the breaker box.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/81.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
+                            male_gender_rate = 0f,
+                            name = "Magnemite",
+                            rarity = "common",
+                            stamina = 93.0
+                        },
+                        new
+                        {
+                            num_pokedex = 82,
+                            attack = 223.0,
+                            defense = 169.0,
+                            description = "Magneton emits a powerful magnetic force that is fatal to mechanical devices. As a result, large cities sound sirens to warn citizens of large-scale outbreaks of this Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/82.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
+                            male_gender_rate = 0f,
+                            name = "Magneton",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 83,
+                            attack = 124.0,
+                            defense = 115.0,
+                            description = "Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/83.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
+                            male_gender_rate = 0f,
+                            name = "Farfetch'd",
+                            rarity = "common",
+                            stamina = 141.0
+                        },
+                        new
+                        {
+                            num_pokedex = 84,
+                            attack = 158.0,
+                            defense = 83.0,
+                            description = "Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/84.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/84.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/84.png",
+                            male_gender_rate = 0f,
+                            name = "Doduo",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 85,
+                            attack = 218.0,
+                            defense = 140.0,
+                            description = "Watch out if Dodrio's three heads are looking in three separate directions. It's a sure sign that it is on its guard. Don't go near this Pokémon if it's being wary—it may decide to peck you.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/85.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/85.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/85.png",
+                            male_gender_rate = 0f,
+                            name = "Dodrio",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 86,
+                            attack = 85.0,
+                            defense = 121.0,
+                            description = "Seel hunts for prey in the frigid sea underneath sheets of ice. When it needs to breathe, it punches a hole through the ice with the sharply protruding section of its head.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/86.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
+                            male_gender_rate = 0f,
+                            name = "Seel",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 87,
+                            attack = 139.0,
+                            defense = 177.0,
+                            description = "Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/87.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
+                            male_gender_rate = 0f,
+                            name = "Dewgong",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 88,
+                            attack = 135.0,
+                            defense = 90.0,
+                            description = "Grimer's sludgy and rubbery body can be forced through any opening, however small it may be. This Pokémon enters sewer pipes to drink filthy wastewater.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/88.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
+                            male_gender_rate = 0f,
+                            name = "Grimer",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 89,
+                            attack = 190.0,
+                            defense = 172.0,
+                            description = "From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/89.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
+                            male_gender_rate = 0f,
+                            name = "Muk",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 90,
+                            attack = 116.0,
+                            defense = 134.0,
+                            description = "At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/90.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
+                            male_gender_rate = 0f,
+                            name = "Shellder",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 91,
+                            attack = 186.0,
+                            defense = 256.0,
+                            description = "Cloyster is capable of swimming in the sea. It does so by swallowing water, then jetting it out toward the rear. This Pokémon shoots spikes from its shell using the same system.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/91.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
+                            male_gender_rate = 0f,
+                            name = "Cloyster",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 92,
+                            attack = 186.0,
+                            defense = 67.0,
+                            description = "Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away. Groups of this Pokémon cluster under the eaves of houses to escape the ravages of wind.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/92.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
+                            male_gender_rate = 0f,
+                            name = "Gastly",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 93,
+                            attack = 223.0,
+                            defense = 107.0,
+                            description = "Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/93.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
+                            male_gender_rate = 0f,
+                            name = "Haunter",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 94,
+                            attack = 261.0,
+                            defense = 149.0,
+                            description = "Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/94.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+                            male_gender_rate = 0f,
+                            name = "Gengar",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 95,
+                            attack = 85.0,
+                            defense = 232.0,
+                            description = "Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/95.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
+                            male_gender_rate = 0f,
+                            name = "Onix",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 96,
+                            attack = 89.0,
+                            defense = 136.0,
+                            description = "If your nose becomes itchy while you are sleeping, it's a sure sign that one of these Pokémon is standing above your pillow and trying to eat your dream through your nostrils.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/96.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
+                            male_gender_rate = 0f,
+                            name = "Drowzee",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 97,
+                            attack = 144.0,
+                            defense = 193.0,
+                            description = "Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis. While this Pokémon searches for prey, it polishes the pendulum.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/97.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/97.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/97.png",
+                            male_gender_rate = 0f,
+                            name = "Hypno",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 98,
+                            attack = 181.0,
+                            defense = 124.0,
+                            description = "Krabby live on beaches, burrowed inside holes dug into the sand. On sandy beaches with little in the way of food, these Pokémon can be seen squabbling with each other over territory.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/98.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
+                            male_gender_rate = 0f,
+                            name = "Krabby",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 99,
+                            attack = 240.0,
+                            defense = 181.0,
+                            description = "Kingler has an enormous, oversized claw. It waves this huge claw in the air to communicate with others. However, because the claw is so heavy, the Pokémon quickly tires.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/99.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
+                            male_gender_rate = 0f,
+                            name = "Kingler",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 100,
+                            attack = 109.0,
+                            defense = 111.0,
+                            description = "Voltorb was first sighted at a company that manufactures Poké Balls. The link between that sighting and the fact that this Pokémon looks very similar to a Poké Ball remains a mystery.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/100.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+                            male_gender_rate = 0f,
+                            name = "Voltorb",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 101,
+                            attack = 173.0,
+                            defense = 173.0,
+                            description = "Electrode eats electricity in the atmosphere. On days when lightning strikes, you can see this Pokémon exploding all over the place from eating too much electricity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/101.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+                            male_gender_rate = 0f,
+                            name = "Electrode",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 102,
+                            attack = 107.0,
+                            defense = 125.0,
+                            description = "This Pokémon consists of six eggs that form a closely knit cluster. The six eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/102.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
+                            male_gender_rate = 0f,
+                            name = "Exeggcute",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 103,
+                            attack = 233.0,
+                            defense = 149.0,
+                            description = "Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/103.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
+                            male_gender_rate = 0f,
+                            name = "Exeggutor",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 104,
+                            attack = 90.0,
+                            defense = 144.0,
+                            description = "Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/104.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
+                            male_gender_rate = 0f,
+                            name = "Cubone",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 105,
+                            attack = 144.0,
+                            defense = 186.0,
+                            description = "Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokémon's tempered and hardened spirit is not easily broken.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/105.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
+                            male_gender_rate = 0f,
+                            name = "Marowak",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 106,
+                            attack = 224.0,
+                            defense = 181.0,
+                            description = "Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs and loosens the muscles to overcome fatigue.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/106.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
+                            male_gender_rate = 0f,
+                            name = "Hitmonlee",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 107,
+                            attack = 193.0,
+                            defense = 197.0,
+                            description = "Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/107.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
+                            male_gender_rate = 0f,
+                            name = "Hitmonchan",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 108,
+                            attack = 108.0,
+                            defense = 137.0,
+                            description = "Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/108.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
+                            male_gender_rate = 0f,
+                            name = "Lickitung",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 109,
+                            attack = 119.0,
+                            defense = 141.0,
+                            description = "If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/109.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
+                            male_gender_rate = 0f,
+                            name = "Koffing",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 110,
+                            attack = 174.0,
+                            defense = 197.0,
+                            description = "Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/110.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+                            male_gender_rate = 0f,
+                            name = "Weezing",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 111,
+                            attack = 140.0,
+                            defense = 127.0,
+                            description = "Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel. This Pokémon may feel some pain from the collision the next day, however.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/111.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/111.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/111.png",
+                            male_gender_rate = 0f,
+                            name = "Rhyhorn",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 112,
+                            attack = 222.0,
+                            defense = 171.0,
+                            description = "Rhydon's horn can crush even uncut diamonds. One sweeping blow of its tail can topple a building. This Pokémon's hide is extremely tough. Even direct cannon hits don't leave a scratch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/112.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/112.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/112.png",
+                            male_gender_rate = 0f,
+                            name = "Rhydon",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 113,
+                            attack = 60.0,
+                            defense = 128.0,
+                            description = "Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/113.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
+                            male_gender_rate = 0f,
+                            name = "Chansey",
+                            rarity = "common",
+                            stamina = 487.0
+                        },
+                        new
+                        {
+                            num_pokedex = 114,
+                            attack = 183.0,
+                            defense = 169.0,
+                            description = "Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/114.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
+                            male_gender_rate = 0f,
+                            name = "Tangela",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 115,
+                            attack = 181.0,
+                            defense = 165.0,
+                            description = "If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/115.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
+                            male_gender_rate = 0f,
+                            name = "Kangaskhan",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 116,
+                            attack = 129.0,
+                            defense = 103.0,
+                            description = "Horsea eats small insects and moss off of rocks. If the ocean current turns fast, this Pokémon anchors itself by wrapping its tail around rocks or coral to prevent being washed away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/116.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+                            male_gender_rate = 0f,
+                            name = "Horsea",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 117,
+                            attack = 187.0,
+                            defense = 156.0,
+                            description = "Seadra sleeps after wriggling itself between the branches of coral. Those trying to harvest coral are occasionally stung by this Pokémon's poison barbs if they fail to notice it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/117.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
+                            male_gender_rate = 0f,
+                            name = "Seadra",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 118,
+                            attack = 123.0,
+                            defense = 110.0,
+                            description = "Goldeen is a very beautiful Pokémon with fins that billow elegantly in water. However, don't let your guard down around this Pokémon—it could ram you powerfully with its horn.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/118.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/118.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/118.png",
+                            male_gender_rate = 0f,
+                            name = "Goldeen",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 119,
+                            attack = 175.0,
+                            defense = 147.0,
+                            description = "In the autumn, Seaking males can be seen performing courtship dances in riverbeds to woo females. During this season, this Pokémon's body coloration is at its most beautiful.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/119.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/119.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/119.png",
+                            male_gender_rate = 0f,
+                            name = "Seaking",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 120,
+                            attack = 137.0,
+                            defense = 112.0,
+                            description = "Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/120.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+                            male_gender_rate = 0f,
+                            name = "Staryu",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 121,
+                            attack = 210.0,
+                            defense = 184.0,
+                            description = "Starmie's center section—the core—glows brightly in seven colors. Because of its luminous nature, this Pokémon has been given the nickname “the gem of the sea.”",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/121.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
+                            male_gender_rate = 0f,
+                            name = "Starmie",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 122,
+                            attack = 192.0,
+                            defense = 205.0,
+                            description = "Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/122.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
+                            male_gender_rate = 0f,
+                            name = "Mr. Mime",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 123,
+                            attack = 218.0,
+                            defense = 170.0,
+                            description = "Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/123.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/123.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/123.png",
+                            male_gender_rate = 0f,
+                            name = "Scyther",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 124,
+                            attack = 223.0,
+                            defense = 151.0,
+                            description = "Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/124.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
+                            male_gender_rate = 0f,
+                            name = "Jynx",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 125,
+                            attack = 198.0,
+                            defense = 158.0,
+                            description = "When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/125.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
+                            male_gender_rate = 0f,
+                            name = "Electabuzz",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 126,
+                            attack = 206.0,
+                            defense = 154.0,
+                            description = "In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/126.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
+                            male_gender_rate = 0f,
+                            name = "Magmar",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 127,
+                            attack = 238.0,
+                            defense = 182.0,
+                            description = "Pinsir is astoundingly strong. It can grip a foe weighing twice its weight in its horns and easily lift it. This Pokémon's movements turn sluggish in cold places.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/127.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+                            male_gender_rate = 0f,
+                            name = "Pinsir",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 128,
+                            attack = 198.0,
+                            defense = 183.0,
+                            description = "This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/128.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
+                            male_gender_rate = 0f,
+                            name = "Tauros",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 129,
+                            attack = 29.0,
+                            defense = 85.0,
+                            description = "Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/129.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/129.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/129.png",
+                            male_gender_rate = 0f,
+                            name = "Magikarp",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 130,
+                            attack = 237.0,
+                            defense = 186.0,
+                            description = "When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/130.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/130.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/130.png",
+                            male_gender_rate = 0f,
+                            name = "Gyarados",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 131,
+                            attack = 165.0,
+                            defense = 174.0,
+                            description = "People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/131.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
+                            male_gender_rate = 0f,
+                            name = "Lapras",
+                            rarity = "common",
+                            stamina = 277.0
+                        },
+                        new
+                        {
+                            num_pokedex = 132,
+                            attack = 91.0,
+                            defense = 91.0,
+                            description = "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+                            male_gender_rate = 0f,
+                            name = "Ditto",
+                            rarity = "common",
+                            stamina = 134.0
+                        },
+                        new
+                        {
+                            num_pokedex = 133,
+                            attack = 104.0,
+                            defense = 114.0,
+                            description = "Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/133.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+                            male_gender_rate = 0f,
+                            name = "Eevee",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 134,
+                            attack = 205.0,
+                            defense = 161.0,
+                            description = "Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/134.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
+                            male_gender_rate = 0f,
+                            name = "Vaporeon",
+                            rarity = "common",
+                            stamina = 277.0
+                        },
+                        new
+                        {
+                            num_pokedex = 135,
+                            attack = 232.0,
+                            defense = 182.0,
+                            description = "Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/135.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
+                            male_gender_rate = 0f,
+                            name = "Jolteon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 136,
+                            attack = 246.0,
+                            defense = 179.0,
+                            description = "Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/136.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
+                            male_gender_rate = 0f,
+                            name = "Flareon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 137,
+                            attack = 153.0,
+                            defense = 136.0,
+                            description = "Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/137.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
+                            male_gender_rate = 0f,
+                            name = "Porygon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 138,
+                            attack = 155.0,
+                            defense = 153.0,
+                            description = "Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/138.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+                            male_gender_rate = 0f,
+                            name = "Omanyte",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 139,
+                            attack = 207.0,
+                            defense = 201.0,
+                            description = "Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/139.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
+                            male_gender_rate = 0f,
+                            name = "Omastar",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 140,
+                            attack = 148.0,
+                            defense = 140.0,
+                            description = "Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/140.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
+                            male_gender_rate = 0f,
+                            name = "Kabuto",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 141,
+                            attack = 220.0,
+                            defense = 186.0,
+                            description = "Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land as evident from the beginnings of change in its gills and legs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/141.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
+                            male_gender_rate = 0f,
+                            name = "Kabutops",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 142,
+                            attack = 221.0,
+                            defense = 159.0,
+                            description = "Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from genetic material extracted from amber. It is imagined to have been the king of the skies in ancient times.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/142.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
+                            male_gender_rate = 0f,
+                            name = "Aerodactyl",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 143,
+                            attack = 190.0,
+                            defense = 169.0,
+                            description = "Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its expansive belly as a place to play.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/143.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
+                            male_gender_rate = 0f,
+                            name = "Snorlax",
+                            rarity = "common",
+                            stamina = 330.0
+                        },
+                        new
+                        {
+                            num_pokedex = 144,
+                            attack = 192.0,
+                            defense = 236.0,
+                            description = "Articuno is a Legendary Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/144.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
+                            male_gender_rate = 0f,
+                            name = "Articuno",
+                            rarity = "Legendary",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 145,
+                            attack = 253.0,
+                            defense = 185.0,
+                            description = "Zapdos is a Legendary Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/145.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
+                            male_gender_rate = 0f,
+                            name = "Zapdos",
+                            rarity = "Legendary",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 146,
+                            attack = 251.0,
+                            defense = 181.0,
+                            description = "Moltres is a Legendary Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/146.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
+                            male_gender_rate = 0f,
+                            name = "Moltres",
+                            rarity = "Legendary",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 147,
+                            attack = 119.0,
+                            defense = 91.0,
+                            description = "Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/147.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
+                            male_gender_rate = 0f,
+                            name = "Dratini",
+                            rarity = "common",
+                            stamina = 121.0
+                        },
+                        new
+                        {
+                            num_pokedex = 148,
+                            attack = 163.0,
+                            defense = 135.0,
+                            description = "Dragonair stores an enormous amount of energy inside its body. It is said to alter weather conditions in its vicinity by discharging energy from the crystals on its neck and tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/148.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
+                            male_gender_rate = 0f,
+                            name = "Dragonair",
+                            rarity = "common",
+                            stamina = 156.0
+                        },
+                        new
+                        {
+                            num_pokedex = 149,
+                            attack = 263.0,
+                            defense = 198.0,
+                            description = "Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/149.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
+                            male_gender_rate = 0f,
+                            name = "Dragonite",
+                            rarity = "common",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 150,
+                            attack = 300.0,
+                            defense = 182.0,
+                            description = "Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+                            male_gender_rate = 0f,
+                            name = "Mewtwo",
+                            rarity = "Legendary",
+                            stamina = 214.0
+                        },
+                        new
+                        {
+                            num_pokedex = 151,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/151.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
+                            male_gender_rate = 0f,
+                            name = "Mew",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 152,
+                            attack = 92.0,
+                            defense = 122.0,
+                            description = "In battle, Chikorita waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling Pokémon and creating a cozy, friendly atmosphere all around.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/152.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png",
+                            male_gender_rate = 0f,
+                            name = "Chikorita",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 153,
+                            attack = 122.0,
+                            defense = 155.0,
+                            description = "Bayleef's neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/153.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/153.png",
+                            male_gender_rate = 0f,
+                            name = "Bayleef",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 154,
+                            attack = 168.0,
+                            defense = 202.0,
+                            description = "The fragrance of Meganium's flower soothes and calms emotions. In battle, this Pokémon gives off more of its becalming scent to blunt the foe's fighting spirit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/154.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/154.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/154.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/154.png",
+                            male_gender_rate = 0f,
+                            name = "Meganium",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 155,
+                            attack = 116.0,
+                            defense = 93.0,
+                            description = "Cyndaquil protects itself by flaring up the flames on its back. The flames are vigorous if the Pokémon is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/155.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png",
+                            male_gender_rate = 0f,
+                            name = "Cyndaquil",
+                            rarity = "common",
+                            stamina = 118.0
+                        },
+                        new
+                        {
+                            num_pokedex = 156,
+                            attack = 158.0,
+                            defense = 126.0,
+                            description = "Quilava keeps its foes at bay with the intensity of its flames and gusts of superheated air. This Pokémon applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/156.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png",
+                            male_gender_rate = 0f,
+                            name = "Quilava",
+                            rarity = "common",
+                            stamina = 151.0
+                        },
+                        new
+                        {
+                            num_pokedex = 157,
+                            attack = 223.0,
+                            defense = 173.0,
+                            description = "Typhlosion obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This Pokémon creates blazing explosive blasts that burn everything to cinders.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/157.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png",
+                            male_gender_rate = 0f,
+                            name = "Typhlosion",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 158,
+                            attack = 117.0,
+                            defense = 109.0,
+                            description = "Despite the smallness of its body, Totodile's jaws are very powerful. While the Pokémon may think it is just playfully nipping, its bite has enough power to cause serious injury.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/158.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png",
+                            male_gender_rate = 0f,
+                            name = "Totodile",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 159,
+                            attack = 150.0,
+                            defense = 142.0,
+                            description = "Once Croconaw has clamped its jaws on its foe, it will absolutely not let go. Because the tips of its fangs are forked back like barbed fishhooks, they become impossible to remove when they have sunk in.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/159.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/159.png",
+                            male_gender_rate = 0f,
+                            name = "Croconaw",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 160,
+                            attack = 205.0,
+                            defense = 188.0,
+                            description = "Feraligatr intimidates its foes by opening its huge mouth. In battle, it will kick the ground hard with its thick and powerful hind legs to charge at the foe at an incredible speed.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/160.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png",
+                            male_gender_rate = 0f,
+                            name = "Feraligatr",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 161,
+                            attack = 79.0,
+                            defense = 73.0,
+                            description = "When Sentret sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this Pokémon becomes separated from its pack, it becomes incapable of sleep due to fear.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/161.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/161.png",
+                            male_gender_rate = 0f,
+                            name = "Sentret",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 162,
+                            attack = 148.0,
+                            defense = 125.0,
+                            description = "Furret has a very slim build. When under attack, it can slickly squirm through narrow spaces and get away. In spite of its short limbs, this Pokémon is very nimble and fleet.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/162.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/162.png",
+                            male_gender_rate = 0f,
+                            name = "Furret",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 163,
+                            attack = 67.0,
+                            defense = 88.0,
+                            description = "Hoothoot has an internal organ that senses and tracks the earth's rotation. Using this special organ, this Pokémon begins hooting at precisely the same time every day.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/163.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/163.png",
+                            male_gender_rate = 0f,
+                            name = "Hoothoot",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 164,
+                            attack = 145.0,
+                            defense = 156.0,
+                            description = "Noctowl never fails at catching prey in darkness. This Pokémon owes its success to its superior vision that allows it to see in minimal light, and to its soft, supple wings that make no sound in flight.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/164.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png",
+                            male_gender_rate = 0f,
+                            name = "Noctowl",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 165,
+                            attack = 72.0,
+                            defense = 118.0,
+                            description = "Ledyba secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This Pokémon conveys its feelings to others by altering the fluid's scent.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/165.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/165.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/165.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/165.png",
+                            male_gender_rate = 0f,
+                            name = "Ledyba",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 166,
+                            attack = 107.0,
+                            defense = 179.0,
+                            description = "It is said that in lands with clean air, where the stars fill the sky, there live Ledian in countless numbers. There is a good reason for this—the Pokémon uses the light of the stars as its energy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/166.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/166.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/166.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/166.png",
+                            male_gender_rate = 0f,
+                            name = "Ledian",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 167,
+                            attack = 105.0,
+                            defense = 73.0,
+                            description = "The web spun by Spinarak can be considered its second nervous system. It is said that this Pokémon can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web's strands.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/167.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/167.png",
+                            male_gender_rate = 0f,
+                            name = "Spinarak",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 168,
+                            attack = 161.0,
+                            defense = 124.0,
+                            description = "Ariados's feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This Pokémon constricts the foe with thin and strong silk webbing.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/168.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/168.png",
+                            male_gender_rate = 0f,
+                            name = "Ariados",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 169,
+                            attack = 194.0,
+                            defense = 178.0,
+                            description = "If this Pokémon is flying by fluttering only a pair of wings on either the forelegs or hind legs, it's proof that Crobat has been flying a long distance. It switches the wings it uses if it is tired.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/169.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/169.png",
+                            male_gender_rate = 0f,
+                            name = "Crobat",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 170,
+                            attack = 106.0,
+                            defense = 97.0,
+                            description = "Chinchou lets loose positive and negative electrical charges from its two antennas to make its prey faint. This Pokémon flashes its electric lights to exchange signals with others.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/170.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
+                            male_gender_rate = 0f,
+                            name = "Chinchou",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 171,
+                            attack = 146.0,
+                            defense = 137.0,
+                            description = "Lanturn is nicknamed “the deep-sea star” for its illuminated antenna. This Pokémon produces light by causing a chemical reaction between bacteria and its bodily fluids inside the antenna.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/171.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/171.png",
+                            male_gender_rate = 0f,
+                            name = "Lanturn",
+                            rarity = "common",
+                            stamina = 268.0
+                        },
+                        new
+                        {
+                            num_pokedex = 172,
+                            attack = 77.0,
+                            defense = 53.0,
+                            description = "Pichu charges itself with electricity more easily on days with thunderclouds or when the air is very dry. You can hear the crackling of static electricity coming off this Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/172.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/172.png",
+                            male_gender_rate = 0f,
+                            name = "Pichu",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 173,
+                            attack = 75.0,
+                            defense = 79.0,
+                            description = "On nights with many shooting stars, Cleffa can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these Pokémon quench their thirst with the morning dew.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/173.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/173.png",
+                            male_gender_rate = 0f,
+                            name = "Cleffa",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 174,
+                            attack = 69.0,
+                            defense = 32.0,
+                            description = "Igglybuff's vocal cords are not sufficiently developed. It would hurt its throat if it were to sing too much. This Pokémon gargles with freshwater from a clean stream.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/174.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/174.png",
+                            male_gender_rate = 0f,
+                            name = "Igglybuff",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 175,
+                            attack = 67.0,
+                            defense = 116.0,
+                            description = "As its energy, Togepi uses the positive emotions of compassion and pleasure exuded by people and Pokémon. This Pokémon stores up feelings of happiness inside its shell, then shares them with others.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/175.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png",
+                            male_gender_rate = 0f,
+                            name = "Togepi",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 176,
+                            attack = 139.0,
+                            defense = 181.0,
+                            description = "Togetic is said to be a Pokémon that brings good fortune. When the Pokémon spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/176.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/176.png",
+                            male_gender_rate = 0f,
+                            name = "Togetic",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 177,
+                            attack = 134.0,
+                            defense = 89.0,
+                            description = "Natu cannot fly because its wings are not yet fully grown. If your eyes meet with this Pokémon's eyes, it will stare back intently at you. But if you move even slightly, it will hop away to safety.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/177.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/177.png",
+                            male_gender_rate = 0f,
+                            name = "Natu",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 178,
+                            attack = 192.0,
+                            defense = 146.0,
+                            description = "Xatu stands rooted and still in one spot all day long. People believe that this Pokémon does so out of fear of the terrible things it has foreseen in the future.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/178.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/178.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/178.png",
+                            male_gender_rate = 0f,
+                            name = "Xatu",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 179,
+                            attack = 114.0,
+                            defense = 79.0,
+                            description = "Mareep's fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail glows.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/179.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/179.png",
+                            male_gender_rate = 0f,
+                            name = "Mareep",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 180,
+                            attack = 145.0,
+                            defense = 109.0,
+                            description = "Flaaffy's wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/180.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/180.png",
+                            male_gender_rate = 0f,
+                            name = "Flaaffy",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 181,
+                            attack = 211.0,
+                            defense = 169.0,
+                            description = "Ampharos gives off so much light that it can be seen even from space. People in the old days used the light of this Pokémon to send signals back and forth with others far away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/181.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png",
+                            male_gender_rate = 0f,
+                            name = "Ampharos",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 182,
+                            attack = 169.0,
+                            defense = 186.0,
+                            description = "When Bellossom gets exposed to plenty of sunlight, the leaves ringing its body begin to spin around. This Pokémon's dancing is renowned in the southern lands.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/182.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/182.png",
+                            male_gender_rate = 0f,
+                            name = "Bellossom",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 183,
+                            attack = 37.0,
+                            defense = 93.0,
+                            description = "Marill's oil-filled tail acts much like a life preserver. If you see just its tail bobbing on the water's surface, it's a sure indication that this Pokémon is diving beneath the water to feed on aquatic plants.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/183.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/183.png",
+                            male_gender_rate = 0f,
+                            name = "Marill",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 184,
+                            attack = 112.0,
+                            defense = 152.0,
+                            description = "Azumarill's long ears are indispensable sensors. By focusing its hearing, this Pokémon can identify what kinds of prey are around, even in rough and fast-running rivers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/184.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
+                            male_gender_rate = 0f,
+                            name = "Azumarill",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 185,
+                            attack = 167.0,
+                            defense = 176.0,
+                            description = "Sudowoodo camouflages itself as a tree to avoid being attacked by enemies. However, because its hands remain green throughout the year, the Pokémon is easily identified as a fake during the winter.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/185.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/185.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/185.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/185.png",
+                            male_gender_rate = 0f,
+                            name = "Sudowoodo",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 186,
+                            attack = 174.0,
+                            defense = 179.0,
+                            description = "The curled hair on Politoed's head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this Pokémon earns from its peers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/186.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/186.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/186.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/186.png",
+                            male_gender_rate = 0f,
+                            name = "Politoed",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 187,
+                            attack = 67.0,
+                            defense = 94.0,
+                            description = "This Pokémon drifts and floats with the wind. If it senses the approach of strong winds, Hoppip links its leaves with other Hoppip to prepare against being blown away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/187.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/187.png",
+                            male_gender_rate = 0f,
+                            name = "Hoppip",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 188,
+                            attack = 91.0,
+                            defense = 120.0,
+                            description = "Skiploom's flower blossoms when the temperature rises above 64 degrees Fahrenheit. How much the flower opens depends on the temperature. For that reason, this Pokémon is sometimes used as a thermometer.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/188.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/188.png",
+                            male_gender_rate = 0f,
+                            name = "Skiploom",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 189,
+                            attack = 118.0,
+                            defense = 183.0,
+                            description = "Jumpluff rides warm southern winds to cross the sea and fly to foreign lands. The Pokémon descends to the ground when it encounters cold air while it is floating.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/189.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/189.png",
+                            male_gender_rate = 0f,
+                            name = "Jumpluff",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 190,
+                            attack = 136.0,
+                            defense = 112.0,
+                            description = "Aipom's tail ends in a hand-like appendage that can be cleverly manipulated. However, because the Pokémon uses its tail so much, its real hands have become rather clumsy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/190.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/190.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/190.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/190.png",
+                            male_gender_rate = 0f,
+                            name = "Aipom",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 191,
+                            attack = 55.0,
+                            defense = 55.0,
+                            description = "Sunkern tries to move as little as it possibly can. It does so because it tries to conserve all the nutrients it has stored in its body for its evolution. It will not eat a thing, subsisting only on morning dew.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/191.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/191.png",
+                            male_gender_rate = 0f,
+                            name = "Sunkern",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 192,
+                            attack = 185.0,
+                            defense = 135.0,
+                            description = "Sunflora converts solar energy into nutrition. It moves around actively in the daytime when it is warm. It stops moving as soon as the sun goes down for the night.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/192.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/192.png",
+                            male_gender_rate = 0f,
+                            name = "Sunflora",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 193,
+                            attack = 154.0,
+                            defense = 94.0,
+                            description = "Yanma is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This Pokémon uses its flying ability to quickly chase down targeted prey.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/193.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/193.png",
+                            male_gender_rate = 0f,
+                            name = "Yanma",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 194,
+                            attack = 75.0,
+                            defense = 66.0,
+                            description = "Wooper usually lives in water. However, it occasionally comes out onto land in search of food. On land, it coats its body with a gooey, toxic film.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/194.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/194.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/194.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/194.png",
+                            male_gender_rate = 0f,
+                            name = "Wooper",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 195,
+                            attack = 152.0,
+                            defense = 143.0,
+                            description = "Quagsire hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the Pokémon does not move, it does not get very hungry.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/195.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/195.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/195.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/195.png",
+                            male_gender_rate = 0f,
+                            name = "Quagsire",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 196,
+                            attack = 261.0,
+                            defense = 175.0,
+                            description = "Espeon is extremely loyal to any Trainer it considers to be worthy. It is said that this Pokémon developed its precognitive powers to protect its Trainer from harm.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/196.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png",
+                            male_gender_rate = 0f,
+                            name = "Espeon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 197,
+                            attack = 126.0,
+                            defense = 240.0,
+                            description = "Umbreon evolved as a result of exposure to the moon's waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/197.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png",
+                            male_gender_rate = 0f,
+                            name = "Umbreon",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 198,
+                            attack = 175.0,
+                            defense = 87.0,
+                            description = "Murkrow was feared and loathed as the alleged bearer of ill fortune. This Pokémon shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/198.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/198.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/198.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/198.png",
+                            male_gender_rate = 0f,
+                            name = "Murkrow",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 199,
+                            attack = 177.0,
+                            defense = 180.0,
+                            description = "Slowking undertakes research every day in an effort to solve the mysteries of the world. However, this Pokémon apparently forgets everything it has learned if the Shellder on its head comes off.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/199.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png",
+                            male_gender_rate = 0f,
+                            name = "Slowking",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 200,
+                            attack = 167.0,
+                            defense = 154.0,
+                            description = "Misdreavus frightens people with a creepy, sobbing cry. The Pokémon apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/200.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png",
+                            male_gender_rate = 0f,
+                            name = "Misdreavus",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 201,
+                            attack = 136.0,
+                            defense = 91.0,
+                            description = "This Pokémon is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various Unown. Research into this topic is ongoing but nothing is known.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/201.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201.png",
+                            male_gender_rate = 0f,
+                            name = "Unown",
+                            rarity = "common",
+                            stamina = 134.0
+                        },
+                        new
+                        {
+                            num_pokedex = 202,
+                            attack = 60.0,
+                            defense = 106.0,
+                            description = "If two or more Wobbuffet meet, they will turn competitive and try to outdo each other's endurance. However, they may try to see which one can endure the longest without food. Trainers need to beware of this habit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/202.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/202.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/202.png",
+                            male_gender_rate = 0f,
+                            name = "Wobbuffet",
+                            rarity = "common",
+                            stamina = 382.0
+                        },
+                        new
+                        {
+                            num_pokedex = 203,
+                            attack = 182.0,
+                            defense = 133.0,
+                            description = "Girafarig's rear head also has a brain, but it is small. The rear head attacks in response to smells and sounds. Approaching this Pokémon from behind can cause the rear head to suddenly lash out and bite.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/203.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/203.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/203.png",
+                            male_gender_rate = 0f,
+                            name = "Girafarig",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 204,
+                            attack = 108.0,
+                            defense = 122.0,
+                            description = "Pineco hangs from a tree branch and patiently waits for prey to come along. If the Pokémon is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/204.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/204.png",
+                            male_gender_rate = 0f,
+                            name = "Pineco",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 205,
+                            attack = 161.0,
+                            defense = 205.0,
+                            description = "Forretress conceals itself inside its hardened steel shell. The shell is opened when the Pokémon is catching prey, but it does so at such a quick pace that the shell's inside cannot be seen.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/205.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/205.png",
+                            male_gender_rate = 0f,
+                            name = "Forretress",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 206,
+                            attack = 131.0,
+                            defense = 128.0,
+                            description = "Dunsparce has a drill for its tail. It uses this tail to burrow into the ground backward. This Pokémon is known to make its nest in complex shapes deep under the ground.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/206.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/206.png",
+                            male_gender_rate = 0f,
+                            name = "Dunsparce",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 207,
+                            attack = 143.0,
+                            defense = 184.0,
+                            description = "Gligar glides through the air without a sound as if it were sliding. This Pokémon hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/207.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/207.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/207.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/207.png",
+                            male_gender_rate = 0f,
+                            name = "Gligar",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 208,
+                            attack = 148.0,
+                            defense = 272.0,
+                            description = "Steelix lives even further underground than Onix. This Pokémon is known to dig toward the earth's core. There are records of this Pokémon reaching a depth of over six-tenths of a mile underground.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/208.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/208.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/208.png",
+                            male_gender_rate = 0f,
+                            name = "Steelix",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 209,
+                            attack = 137.0,
+                            defense = 85.0,
+                            description = "By baring its fangs and making a scary face, Snubbull sends smaller Pokémon scurrying away in terror. However, this Pokémon seems a little sad at making its foes flee.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/209.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/209.png",
+                            male_gender_rate = 0f,
+                            name = "Snubbull",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 210,
+                            attack = 212.0,
+                            defense = 131.0,
+                            description = "Granbull has a particularly well-developed lower jaw. The enormous fangs are heavy, causing the Pokémon to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/210.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png",
+                            male_gender_rate = 0f,
+                            name = "Granbull",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 211,
+                            attack = 184.0,
+                            defense = 138.0,
+                            description = "Qwilfish sucks in water, inflating itself. This Pokémon uses the pressure of the water it swallowed to shoot toxic quills all at once from all over its body. It finds swimming somewhat challenging.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/211.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png",
+                            male_gender_rate = 0f,
+                            name = "Qwilfish",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 212,
+                            attack = 236.0,
+                            defense = 181.0,
+                            description = "Scizor has a body with the hardness of steel. It is not easily fazed by ordinary sorts of attacks. This Pokémon flaps its wings to regulate its body temperature.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/212.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/212.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/212.png",
+                            male_gender_rate = 0f,
+                            name = "Scizor",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 213,
+                            attack = 17.0,
+                            defense = 396.0,
+                            description = "Shuckle quietly hides itself under rocks, keeping its body concealed inside its hard shell while eating berries it has stored away. The berries mix with its body fluids to become a juice.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/213.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/213.png",
+                            male_gender_rate = 0f,
+                            name = "Shuckle",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 214,
+                            attack = 234.0,
+                            defense = 179.0,
+                            description = "Heracross charges in a straight line at its foe, slips beneath the foe's grasp, and then scoops up and hurls the opponent with its mighty horn. This Pokémon even has enough power to topple a massive tree.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/214.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/214.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/214.png",
+                            male_gender_rate = 0f,
+                            name = "Heracross",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 215,
+                            attack = 189.0,
+                            defense = 146.0,
+                            description = "Sneasel scales trees by punching its hooked claws into the bark. This Pokémon seeks out unguarded nests and steals eggs for food while the parents are away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/215.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/215.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/215.png",
+                            male_gender_rate = 0f,
+                            name = "Sneasel",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 216,
+                            attack = 142.0,
+                            defense = 93.0,
+                            description = "This Pokémon likes to lick its palms that are sweetened by being soaked in honey. Teddiursa concocts its own honey by blending fruits and pollen collected by Beedrill.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/216.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/216.png",
+                            male_gender_rate = 0f,
+                            name = "Teddiursa",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 217,
+                            attack = 236.0,
+                            defense = 144.0,
+                            description = "In the forests inhabited by Ursaring, it is said that there are many streams and towering trees where they gather food. This Pokémon walks through its forest gathering food every day.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/217.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/217.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/217.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/217.png",
+                            male_gender_rate = 0f,
+                            name = "Ursaring",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 218,
+                            attack = 118.0,
+                            defense = 71.0,
+                            description = "Molten magma courses throughout Slugma's circulatory system. If this Pokémon is chilled, the magma cools and hardens. Its body turns brittle and chunks fall off, reducing its size.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/218.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/218.png",
+                            male_gender_rate = 0f,
+                            name = "Slugma",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 219,
+                            attack = 139.0,
+                            defense = 191.0,
+                            description = "Magcargo's shell is actually its skin that hardened as a result of cooling. Its shell is very brittle and fragile—just touching it causes it to crumble apart. This Pokémon returns to its original size by dipping itself in magma.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/219.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
+                            male_gender_rate = 0f,
+                            name = "Magcargo",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 220,
+                            attack = 90.0,
+                            defense = 69.0,
+                            description = "Swinub roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This Pokémon occasionally roots out hot springs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/220.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/220.png",
+                            male_gender_rate = 0f,
+                            name = "Swinub",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 221,
+                            attack = 181.0,
+                            defense = 138.0,
+                            description = "Piloswine is covered by a thick coat of long hair that enables it to endure the freezing cold. This Pokémon uses its tusks to dig up food that has been buried under ice.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/221.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/221.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/221.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/221.png",
+                            male_gender_rate = 0f,
+                            name = "Piloswine",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 222,
+                            attack = 118.0,
+                            defense = 156.0,
+                            description = "Corsola's branches glitter very beautifully in seven colors when they catch sunlight. If any branch breaks off, this Pokémon grows it back in just one night.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/222.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png",
+                            male_gender_rate = 0f,
+                            name = "Corsola",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 223,
+                            attack = 127.0,
+                            defense = 69.0,
+                            description = "Remoraid sucks in water, then expels it at high velocity using its abdominal muscles to shoot down flying prey. When evolution draws near, this Pokémon travels downstream from rivers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/223.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/223.png",
+                            male_gender_rate = 0f,
+                            name = "Remoraid",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 224,
+                            attack = 197.0,
+                            defense = 141.0,
+                            description = "Octillery grabs onto its foe using its tentacles. This Pokémon tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, Octillery spews ink to escape.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/224.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/224.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/224.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/224.png",
+                            male_gender_rate = 0f,
+                            name = "Octillery",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 225,
+                            attack = 128.0,
+                            defense = 90.0,
+                            description = "Delibird carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of the world's highest mountain, thanks to one of these Pokémon sharing its food.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/225.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/225.png",
+                            male_gender_rate = 0f,
+                            name = "Delibird",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 226,
+                            attack = 148.0,
+                            defense = 226.0,
+                            description = "On sunny days, schools of Mantine can be seen elegantly leaping over the sea's waves. This Pokémon is not bothered by the Remoraid that hitches rides.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/226.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/226.png",
+                            male_gender_rate = 0f,
+                            name = "Mantine",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 227,
+                            attack = 148.0,
+                            defense = 226.0,
+                            description = "Skarmory is entirely encased in hard, protective armor. This Pokémon flies at close to 190 mph. It slashes foes with its wings that possess swordlike cutting edges.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/227.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png",
+                            male_gender_rate = 0f,
+                            name = "Skarmory",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 228,
+                            attack = 152.0,
+                            defense = 83.0,
+                            description = "Houndour hunt as a coordinated pack. They communicate with each other using a variety of cries to corner their prey. This Pokémon's remarkable teamwork is unparalleled.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/228.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/228.png",
+                            male_gender_rate = 0f,
+                            name = "Houndour",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 229,
+                            attack = 224.0,
+                            defense = 144.0,
+                            description = "In a Houndoom pack, the one with its horns raked sharply toward the back serves a leadership role. These Pokémon choose their leader by fighting among themselves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/229.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/229.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/229.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/229.png",
+                            male_gender_rate = 0f,
+                            name = "Houndoom",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 230,
+                            attack = 194.0,
+                            defense = 194.0,
+                            description = "Kingdra lives at extreme ocean depths that are otherwise uninhabited. It has long been believed that the yawning of this Pokémon creates spiraling ocean currents.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/230.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/230.png",
+                            male_gender_rate = 0f,
+                            name = "Kingdra",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 231,
+                            attack = 107.0,
+                            defense = 98.0,
+                            description = "For its nest, Phanpy digs a vertical pit in the ground at the edge of a river. It marks the area around its nest with its trunk to let the others know that the area has been claimed.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/231.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png",
+                            male_gender_rate = 0f,
+                            name = "Phanpy",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 232,
+                            attack = 214.0,
+                            defense = 185.0,
+                            description = "Donphan's favorite attack is curling its body into a ball, then charging at its foe while rolling at high speed. Once it starts rolling, this Pokémon can't stop very easily.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/232.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/232.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/232.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/232.png",
+                            male_gender_rate = 0f,
+                            name = "Donphan",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 233,
+                            attack = 198.0,
+                            defense = 180.0,
+                            description = "Porygon2 was created by humans using the power of science. The man-made Pokémon has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/233.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/233.png",
+                            male_gender_rate = 0f,
+                            name = "Porygon2",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 234,
+                            attack = 192.0,
+                            defense = 131.0,
+                            description = "Stantler's magnificent antlers were traded at high prices as works of art. As a result, this Pokémon was hunted close to extinction by those who were after the priceless antlers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/234.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/234.png",
+                            male_gender_rate = 0f,
+                            name = "Stantler",
+                            rarity = "common",
+                            stamina = 177.0
+                        },
+                        new
+                        {
+                            num_pokedex = 235,
+                            attack = 40.0,
+                            defense = 83.0,
+                            description = "Smeargle marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this Pokémon have been found.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/235.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png",
+                            male_gender_rate = 0f,
+                            name = "Smeargle",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 236,
+                            attack = 64.0,
+                            defense = 64.0,
+                            description = "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/236.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/236.png",
+                            male_gender_rate = 0f,
+                            name = "Tyrogue",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 237,
+                            attack = 173.0,
+                            defense = 207.0,
+                            description = "Hitmontop spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The Pokémon travels faster spinning than it does walking.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/237.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/237.png",
+                            male_gender_rate = 0f,
+                            name = "Hitmontop",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 238,
+                            attack = 153.0,
+                            defense = 91.0,
+                            description = "Smoochum actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn't become dirty.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/238.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/238.png",
+                            male_gender_rate = 0f,
+                            name = "Smoochum",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 239,
+                            attack = 135.0,
+                            defense = 101.0,
+                            description = "Elekid stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this Pokémon begins swinging its arms in circles to recharge itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/239.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/239.png",
+                            male_gender_rate = 0f,
+                            name = "Elekid",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 240,
+                            attack = 151.0,
+                            defense = 99.0,
+                            description = "Magby's state of health is determined by observing the fire it breathes. If the Pokémon is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/240.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/240.png",
+                            male_gender_rate = 0f,
+                            name = "Magby",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 241,
+                            attack = 157.0,
+                            defense = 193.0,
+                            description = "Miltank gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can't drink milk turn it into yogurt and eat it instead.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/241.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/241.png",
+                            male_gender_rate = 0f,
+                            name = "Miltank",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 242,
+                            attack = 129.0,
+                            defense = 169.0,
+                            description = "Blissey senses sadness with its fluffy coat of fur. If it does so, this Pokémon will rush over to a sad person, no matter how far away, to share a Lucky Egg that brings a smile to any face.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/242.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png",
+                            male_gender_rate = 0f,
+                            name = "Blissey",
+                            rarity = "common",
+                            stamina = 496.0
+                        },
+                        new
+                        {
+                            num_pokedex = 243,
+                            attack = 241.0,
+                            defense = 195.0,
+                            description = "Raikou embodies the speed of lightning. The roars of this Pokémon send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/243.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png",
+                            male_gender_rate = 0f,
+                            name = "Raikou",
+                            rarity = "Legendary",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 244,
+                            attack = 235.0,
+                            defense = 171.0,
+                            description = "Entei embodies the passion of magma. This Pokémon is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/244.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/244.png",
+                            male_gender_rate = 0f,
+                            name = "Entei",
+                            rarity = "Legendary",
+                            stamina = 251.0
+                        },
+                        new
+                        {
+                            num_pokedex = 245,
+                            attack = 180.0,
+                            defense = 235.0,
+                            description = "Suicune embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This Pokémon has the power to purify dirty water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/245.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png",
+                            male_gender_rate = 0f,
+                            name = "Suicune",
+                            rarity = "Legendary",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 246,
+                            attack = 115.0,
+                            defense = 93.0,
+                            description = "Larvitar is born deep under the ground. To come up to the surface, this Pokémon must eat its way through the soil above. Until it does so, Larvitar cannot see its parents.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/246.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/246.png",
+                            male_gender_rate = 0f,
+                            name = "Larvitar",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 247,
+                            attack = 155.0,
+                            defense = 133.0,
+                            description = "Pupitar creates a gas inside its body that it compresses and forcefully ejects to propel itself like a jet. The body is very durable—it avoids damage even if it hits solid steel.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/247.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/247.png",
+                            male_gender_rate = 0f,
+                            name = "Pupitar",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 248,
+                            attack = 251.0,
+                            defense = 207.0,
+                            description = "Tyranitar is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This Pokémon wanders about in mountains seeking new opponents to fight.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/248.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png",
+                            male_gender_rate = 0f,
+                            name = "Tyranitar",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 249,
+                            attack = 193.0,
+                            defense = 310.0,
+                            description = "Lugia's wings pack devastating power—a light fluttering of its wings can blow apart regular houses. As a result, this Pokémon chooses to live out of sight deep under the sea.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/249.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/249.png",
+                            male_gender_rate = 0f,
+                            name = "Lugia",
+                            rarity = "Legendary",
+                            stamina = 235.0
+                        },
+                        new
+                        {
+                            num_pokedex = 250,
+                            attack = 239.0,
+                            defense = 244.0,
+                            description = "Ho-Oh's feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This Pokémon is said to live at the foot of a rainbow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/250.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/250.png",
+                            male_gender_rate = 0f,
+                            name = "Ho-Oh",
+                            rarity = "Legendary",
+                            stamina = 214.0
+                        },
+                        new
+                        {
+                            num_pokedex = 251,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "This Pokémon came from the future by crossing over time. It is thought that so long as Celebi appears, a bright and shining future awaits us.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/251.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/251.png",
+                            male_gender_rate = 0f,
+                            name = "Celebi",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 252,
+                            attack = 124.0,
+                            defense = 94.0,
+                            description = "Treecko has small hooks on the bottom of its feet that enable it to scale vertical walls. This Pokémon attacks by slamming foes with its thick tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/252.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",
+                            male_gender_rate = 0f,
+                            name = "Treecko",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 253,
+                            attack = 172.0,
+                            defense = 120.0,
+                            description = "The leaves growing out of Grovyle's body are convenient for camouflaging it from enemies in the forest. This Pokémon is a master at climbing trees in jungles.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/253.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/253.png",
+                            male_gender_rate = 0f,
+                            name = "Grovyle",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 254,
+                            attack = 223.0,
+                            defense = 169.0,
+                            description = "The leaves growing on Sceptile's body are very sharp edged. This Pokémon is very agile—it leaps all over the branches of trees and jumps on its foe from above or behind.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/254.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png",
+                            male_gender_rate = 0f,
+                            name = "Sceptile",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 255,
+                            attack = 130.0,
+                            defense = 87.0,
+                            description = "Torchic sticks with its Trainer, following behind with unsteady steps. This Pokémon breathes fire of over 1,800 degrees Fahrenheit, including fireballs that leave the foe scorched black.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/255.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/255.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/255.png",
+                            male_gender_rate = 0f,
+                            name = "Torchic",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 256,
+                            attack = 163.0,
+                            defense = 115.0,
+                            description = "Combusken toughens up its legs and thighs by running through fields and mountains. This Pokémon's legs possess both speed and power, enabling it to dole out 10 kicks in one second.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/256.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/256.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/256.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/256.png",
+                            male_gender_rate = 0f,
+                            name = "Combusken",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 257,
+                            attack = 240.0,
+                            defense = 141.0,
+                            description = "In battle, Blaziken blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this Pokémon's wrists burn.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/257.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/257.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/257.png",
+                            male_gender_rate = 0f,
+                            name = "Blaziken",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 258,
+                            attack = 126.0,
+                            defense = 93.0,
+                            description = "The fin on Mudkip's head acts as highly sensitive radar. Using this fin to sense movements of water and air, this Pokémon can determine what is taking place around it without using its eyes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/258.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/258.png",
+                            male_gender_rate = 0f,
+                            name = "Mudkip",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 259,
+                            attack = 156.0,
+                            defense = 133.0,
+                            description = "The surface of Marshtomp's body is enveloped by a thin, sticky film that enables it to live on land. This Pokémon plays in mud on beaches when the ocean tide is low.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/259.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/259.png",
+                            male_gender_rate = 0f,
+                            name = "Marshtomp",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 260,
+                            attack = 208.0,
+                            defense = 175.0,
+                            description = "Swampert is very strong. It has enough power to easily drag a boulder weighing more than a ton. This Pokémon also has powerful vision that lets it see even in murky water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/260.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png",
+                            male_gender_rate = 0f,
+                            name = "Swampert",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 261,
+                            attack = 96.0,
+                            defense = 61.0,
+                            description = "At first sight, Poochyena takes a bite at anything that moves. This Pokémon chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/261.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/261.png",
+                            male_gender_rate = 0f,
+                            name = "Poochyena",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 262,
+                            attack = 171.0,
+                            defense = 132.0,
+                            description = "Mightyena gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This Pokémon will bite savagely with its sharply pointed fangs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/262.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/262.png",
+                            male_gender_rate = 0f,
+                            name = "Mightyena",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 263,
+                            attack = 58.0,
+                            defense = 80.0,
+                            description = "Zigzagoon restlessly wanders everywhere at all times. This Pokémon does so because it is very curious. It becomes interested in anything that it happens to see.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/263.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
+                            male_gender_rate = 0f,
+                            name = "Zigzagoon",
+                            rarity = "common",
+                            stamina = 116.0
+                        },
+                        new
+                        {
+                            num_pokedex = 264,
+                            attack = 142.0,
+                            defense = 128.0,
+                            description = "Linoone always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This Pokémon is very challenged by gently curving roads.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/264.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
+                            male_gender_rate = 0f,
+                            name = "Linoone",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 265,
+                            attack = 75.0,
+                            defense = 59.0,
+                            description = "Using the spikes on its rear end, Wurmple peels the bark off trees and feeds on the sap that oozes out. This Pokémon's feet are tipped with suction pads that allow it to cling to glass without slipping.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/265.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/265.png",
+                            male_gender_rate = 0f,
+                            name = "Wurmple",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 266,
+                            attack = 60.0,
+                            defense = 77.0,
+                            description = "Silcoon tethers itself to a tree branch using silk to keep from falling. There, this Pokémon hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/266.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/266.png",
+                            male_gender_rate = 0f,
+                            name = "Silcoon",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 267,
+                            attack = 189.0,
+                            defense = 98.0,
+                            description = "Beautifly's favorite food is the sweet pollen of flowers. If you want to see this Pokémon, just leave a potted flower by an open window. Beautifly is sure to come looking for pollen.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/267.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/267.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/267.png",
+                            male_gender_rate = 0f,
+                            name = "Beautifly",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 268,
+                            attack = 60.0,
+                            defense = 77.0,
+                            description = "Cascoon makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This Pokémon prepares for its evolution inside the cocoon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/268.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/268.png",
+                            male_gender_rate = 0f,
+                            name = "Cascoon",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 269,
+                            attack = 98.0,
+                            defense = 162.0,
+                            description = "Dustox is instinctively drawn to light. Swarms of this Pokémon are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/269.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/269.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/269.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/269.png",
+                            male_gender_rate = 0f,
+                            name = "Dustox",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 270,
+                            attack = 71.0,
+                            defense = 77.0,
+                            description = "Lotad live in ponds and lakes, where they float on the surface. It grows weak if its broad leaf dies. On rare occasions, this Pokémon travels on land in search of clean water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/270.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/270.png",
+                            male_gender_rate = 0f,
+                            name = "Lotad",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 271,
+                            attack = 112.0,
+                            defense = 119.0,
+                            description = "Lombre is nocturnal—it will get active after dusk. It is also a mischief maker. When this Pokémon spots anglers, it tugs on their fishing lines from beneath the surface and enjoys their consternation.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/271.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/271.png",
+                            male_gender_rate = 0f,
+                            name = "Lombre",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 272,
+                            attack = 173.0,
+                            defense = 176.0,
+                            description = "Ludicolo begins dancing as soon as it hears cheerful, festive music. This Pokémon is said to appear when it hears the singing of children on hiking outings.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/272.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/272.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/272.png",
+                            male_gender_rate = 0f,
+                            name = "Ludicolo",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 273,
+                            attack = 71.0,
+                            defense = 77.0,
+                            description = "Seedot attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this Pokémon's body becomes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/273.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/273.png",
+                            male_gender_rate = 0f,
+                            name = "Seedot",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 274,
+                            attack = 134.0,
+                            defense = 78.0,
+                            description = "Nuzleaf live in densely overgrown forests. They occasionally venture out of the forest to startle people. This Pokémon dislikes having its long nose pinched.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/274.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/274.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/274.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/274.png",
+                            male_gender_rate = 0f,
+                            name = "Nuzleaf",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 275,
+                            attack = 200.0,
+                            defense = 121.0,
+                            description = "Shiftry is a mysterious Pokémon that is said to live atop towering trees dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/275.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/275.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/275.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/275.png",
+                            male_gender_rate = 0f,
+                            name = "Shiftry",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 276,
+                            attack = 106.0,
+                            defense = 61.0,
+                            description = "Taillow courageously stands its ground against foes, however strong they may be. This gutsy Pokémon will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/276.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/276.png",
+                            male_gender_rate = 0f,
+                            name = "Taillow",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 277,
+                            attack = 185.0,
+                            defense = 124.0,
+                            description = "Swellow flies high above our heads, making graceful arcs in the sky. This Pokémon dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by Swellow's clawed feet, preventing escape.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/277.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png",
+                            male_gender_rate = 0f,
+                            name = "Swellow",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 278,
+                            attack = 106.0,
+                            defense = 61.0,
+                            description = "Wingull has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This Pokémon rides the winds and flies as if it were skating across the sky.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/278.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/278.png",
+                            male_gender_rate = 0f,
+                            name = "Wingull",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 279,
+                            attack = 175.0,
+                            defense = 174.0,
+                            description = "Pelipper is a flying transporter that carries small Pokémon and eggs inside its massive bill. This Pokémon builds its nest on steep cliffs facing the sea.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/279.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png",
+                            male_gender_rate = 0f,
+                            name = "Pelipper",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 280,
+                            attack = 79.0,
+                            defense = 59.0,
+                            description = "Ralts senses the emotions of people using the horns on its head. This Pokémon rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/280.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png",
+                            male_gender_rate = 0f,
+                            name = "Ralts",
+                            rarity = "common",
+                            stamina = 99.0
+                        },
+                        new
+                        {
+                            num_pokedex = 281,
+                            attack = 117.0,
+                            defense = 90.0,
+                            description = "It is said that a Kirlia that is exposed to the positive emotions of its Trainer grows beautiful. This Pokémon controls psychokinetic powers with its highly developed brain.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/281.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/281.png",
+                            male_gender_rate = 0f,
+                            name = "Kirlia",
+                            rarity = "common",
+                            stamina = 116.0
+                        },
+                        new
+                        {
+                            num_pokedex = 282,
+                            attack = 237.0,
+                            defense = 195.0,
+                            description = "Gardevoir has the ability to read the future. If it senses impending danger to its Trainer, this Pokémon is said to unleash its psychokinetic energy at full power.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/282.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png",
+                            male_gender_rate = 0f,
+                            name = "Gardevoir",
+                            rarity = "common",
+                            stamina = 169.0
+                        },
+                        new
+                        {
+                            num_pokedex = 283,
+                            attack = 93.0,
+                            defense = 87.0,
+                            description = "From the tips of its feet, Surskit secretes an oil that enables it to walk on water as if it were skating. This Pokémon feeds on microscopic organisms in ponds and lakes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/283.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/283.png",
+                            male_gender_rate = 0f,
+                            name = "Surskit",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 284,
+                            attack = 192.0,
+                            defense = 150.0,
+                            description = "Masquerain intimidates enemies with the eyelike patterns on its antennas. This Pokémon flaps its four wings to freely fly in any direction—even sideways and backwards—as if it were a helicopter.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/284.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/284.png",
+                            male_gender_rate = 0f,
+                            name = "Masquerain",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 285,
+                            attack = 74.0,
+                            defense = 110.0,
+                            description = "Shroomish live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This Pokémon feeds on compost that is made up of fallen, rotted leaves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/285.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/285.png",
+                            male_gender_rate = 0f,
+                            name = "Shroomish",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 286,
+                            attack = 241.0,
+                            defense = 144.0,
+                            description = "Breloom closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This Pokémon's fighting technique puts boxers to shame.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/286.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/286.png",
+                            male_gender_rate = 0f,
+                            name = "Breloom",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 287,
+                            attack = 104.0,
+                            defense = 92.0,
+                            description = "Slakoth lolls around for over 20 hours every day. Because it moves so little, it does not need much food. This Pokémon's sole daily meal consists of just three leaves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/287.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/287.png",
+                            male_gender_rate = 0f,
+                            name = "Slakoth",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 288,
+                            attack = 159.0,
+                            defense = 145.0,
+                            description = "Vigoroth is always itching and agitated to go on a wild rampage. It simply can't tolerate sitting still for even a minute. This Pokémon's stress level rises if it can't be moving constantly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/288.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/288.png",
+                            male_gender_rate = 0f,
+                            name = "Vigoroth",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 289,
+                            attack = 290.0,
+                            defense = 166.0,
+                            description = "Slaking spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this Pokémon reluctantly moves to another spot.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/289.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png",
+                            male_gender_rate = 0f,
+                            name = "Slaking",
+                            rarity = "common",
+                            stamina = 284.0
+                        },
+                        new
+                        {
+                            num_pokedex = 290,
+                            attack = 80.0,
+                            defense = 126.0,
+                            description = "Nincada lives underground for many years in complete darkness. This Pokémon absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/290.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png",
+                            male_gender_rate = 0f,
+                            name = "Nincada",
+                            rarity = "common",
+                            stamina = 104.0
+                        },
+                        new
+                        {
+                            num_pokedex = 291,
+                            attack = 199.0,
+                            defense = 112.0,
+                            description = "Ninjask moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this Pokémon was long believed to be invisible.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/291.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/291.png",
+                            male_gender_rate = 0f,
+                            name = "Ninjask",
+                            rarity = "common",
+                            stamina = 156.0
+                        },
+                        new
+                        {
+                            num_pokedex = 292,
+                            attack = 153.0,
+                            defense = 73.0,
+                            description = "Shedinja's hard body doesn't move—not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this Pokémon will steal the spirit of anyone peering into its hollow body from its back.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/292.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png",
+                            male_gender_rate = 0f,
+                            name = "Shedinja",
+                            rarity = "common",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 293,
+                            attack = 92.0,
+                            defense = 42.0,
+                            description = "Normally, Whismur's voice is very quiet—it is barely audible even if one is paying close attention. However, if this Pokémon senses danger, it starts crying at an earsplitting volume.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/293.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
+                            male_gender_rate = 0f,
+                            name = "Whismur",
+                            rarity = "common",
+                            stamina = 162.0
+                        },
+                        new
+                        {
+                            num_pokedex = 294,
+                            attack = 134.0,
+                            defense = 81.0,
+                            description = "Loudred's bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This Pokémon's round ears serve as loudspeakers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/294.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/294.png",
+                            male_gender_rate = 0f,
+                            name = "Loudred",
+                            rarity = "common",
+                            stamina = 197.0
+                        },
+                        new
+                        {
+                            num_pokedex = 295,
+                            attack = 179.0,
+                            defense = 137.0,
+                            description = "Exploud triggers earthquakes with the tremors it creates by bellowing. If this Pokémon violently inhales from the ports on its body, it's a sign that it is preparing to let loose a huge bellow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/295.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/295.png",
+                            male_gender_rate = 0f,
+                            name = "Exploud",
+                            rarity = "common",
+                            stamina = 232.0
+                        },
+                        new
+                        {
+                            num_pokedex = 296,
+                            attack = 99.0,
+                            defense = 54.0,
+                            description = "Makuhita is tenacious—it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this Pokémon stores more energy in its body for evolving.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/296.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/296.png",
+                            male_gender_rate = 0f,
+                            name = "Makuhita",
+                            rarity = "common",
+                            stamina = 176.0
+                        },
+                        new
+                        {
+                            num_pokedex = 297,
+                            attack = 209.0,
+                            defense = 114.0,
+                            description = "Hariyama practices its straight-arm slaps in any number of locations. One hit of this Pokémon's powerful, openhanded, straight-arm punches could snap a telephone pole in two.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/297.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/297.png",
+                            male_gender_rate = 0f,
+                            name = "Hariyama",
+                            rarity = "common",
+                            stamina = 302.0
+                        },
+                        new
+                        {
+                            num_pokedex = 298,
+                            attack = 36.0,
+                            defense = 71.0,
+                            description = "Azurill spins its tail as if it were a lasso, then hurls it far. The momentum of the throw sends its body flying, too. Using this unique action, one of these Pokémon managed to hurl itself a record 33 feet.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/298.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/298.png",
+                            male_gender_rate = 0f,
+                            name = "Azurill",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 299,
+                            attack = 82.0,
+                            defense = 215.0,
+                            description = "Nosepass's magnetic nose is always pointed to the north. If two of these Pokémon meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/299.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/299.png",
+                            male_gender_rate = 0f,
+                            name = "Nosepass",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 300,
+                            attack = 84.0,
+                            defense = 79.0,
+                            description = "Skitty has the habit of becoming fascinated by moving objects and chasing them around. This Pokémon is known to chase after its own tail and become dizzy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/300.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/300.png",
+                            male_gender_rate = 0f,
+                            name = "Skitty",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 301,
+                            attack = 132.0,
+                            defense = 127.0,
+                            description = "Delcatty prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this Pokémon eats and sleeps whenever it decides, its daily routines are completely random.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/301.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/301.png",
+                            male_gender_rate = 0f,
+                            name = "Delcatty",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 302,
+                            attack = 141.0,
+                            defense = 136.0,
+                            description = "Sableye lead quiet lives deep inside caverns. They are feared, however, because these Pokémon are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/302.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png",
+                            male_gender_rate = 0f,
+                            name = "Sableye",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 303,
+                            attack = 155.0,
+                            defense = 141.0,
+                            description = "Mawile's huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, Mawile chomps it with its gaping jaws.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/303.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/303.png",
+                            male_gender_rate = 0f,
+                            name = "Mawile",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 304,
+                            attack = 121.0,
+                            defense = 141.0,
+                            description = "This Pokémon has a body of steel. To make its body, Aron feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/304.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/304.png",
+                            male_gender_rate = 0f,
+                            name = "Aron",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 305,
+                            attack = 158.0,
+                            defense = 198.0,
+                            description = "Lairon tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This Pokémon makes its nest close to springs of delicious water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/305.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/305.png",
+                            male_gender_rate = 0f,
+                            name = "Lairon",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 306,
+                            attack = 198.0,
+                            defense = 257.0,
+                            description = "Aggron claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This Pokémon vigilantly patrols its territory at all times.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/306.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png",
+                            male_gender_rate = 0f,
+                            name = "Aggron",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 307,
+                            attack = 78.0,
+                            defense = 107.0,
+                            description = "Meditite undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this Pokémon always loses its concentration and focus. As a result, its training never ends.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/307.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/307.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/307.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/307.png",
+                            male_gender_rate = 0f,
+                            name = "Meditite",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 308,
+                            attack = 121.0,
+                            defense = 152.0,
+                            description = "It is said that through meditation, Medicham heightens energy inside its body and sharpens its sixth sense. This Pokémon hides its presence by merging itself with fields and mountains.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/308.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/308.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/308.png",
+                            male_gender_rate = 0f,
+                            name = "Medicham",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 309,
+                            attack = 123.0,
+                            defense = 78.0,
+                            description = "Electrike stores electricity in its long body hair. This Pokémon stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/309.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/309.png",
+                            male_gender_rate = 0f,
+                            name = "Electrike",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 310,
+                            attack = 215.0,
+                            defense = 127.0,
+                            description = "Manectric is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this Pokémon creates thunderclouds.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/310.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png",
+                            male_gender_rate = 0f,
+                            name = "Manectric",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 311,
+                            attack = 167.0,
+                            defense = 129.0,
+                            description = "Plusle always acts as a cheerleader for its partners. Whenever a teammate puts out a good effort in battle, this Pokémon shorts out its body to create the crackling noises of sparks to show its joy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/311.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
+                            male_gender_rate = 0f,
+                            name = "Plusle",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 312,
+                            attack = 147.0,
+                            defense = 150.0,
+                            description = "Minun is more concerned about cheering on its partners than its own safety. It shorts out the electricity in its body to create brilliant showers of sparks to cheer on its teammates.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/312.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/312.png",
+                            male_gender_rate = 0f,
+                            name = "Minun",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 313,
+                            attack = 143.0,
+                            defense = 166.0,
+                            description = "With the arrival of night, Volbeat emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This Pokémon is attracted by the sweet aroma of Illumise.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/313.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/313.png",
+                            male_gender_rate = 0f,
+                            name = "Volbeat",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 314,
+                            attack = 143.0,
+                            defense = 166.0,
+                            description = "Illumise attracts a swarm of Volbeat using a sweet fragrance. Once the Volbeat have gathered, this Pokémon leads the lit-up swarm in drawing geometric designs on the canvas of the night sky.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/314.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
+                            male_gender_rate = 0f,
+                            name = "Illumise",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 315,
+                            attack = 186.0,
+                            defense = 131.0,
+                            description = "Roselia shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this Pokémon brings serenity to living things.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/315.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/315.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/315.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/315.png",
+                            male_gender_rate = 0f,
+                            name = "Roselia",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 316,
+                            attack = 80.0,
+                            defense = 99.0,
+                            description = "Virtually all of Gulpin's body is its stomach. As a result, it can swallow something its own size. This Pokémon's stomach contains a special fluid that digests anything.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/316.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/316.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/316.png",
+                            male_gender_rate = 0f,
+                            name = "Gulpin",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 317,
+                            attack = 140.0,
+                            defense = 159.0,
+                            description = "When Swalot spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this Pokémon gulps it down whole with its cavernous mouth.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/317.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/317.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/317.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/317.png",
+                            male_gender_rate = 0f,
+                            name = "Swalot",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 318,
+                            attack = 171.0,
+                            defense = 39.0,
+                            description = "Carvanha's strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/318.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/318.png",
+                            male_gender_rate = 0f,
+                            name = "Carvanha",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 319,
+                            attack = 243.0,
+                            defense = 83.0,
+                            description = "Nicknamed “the bully of the sea,” Sharpedo is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these Pokémon can thoroughly tear apart a supertanker.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/319.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png",
+                            male_gender_rate = 0f,
+                            name = "Sharpedo",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 320,
+                            attack = 136.0,
+                            defense = 68.0,
+                            description = "Wailmer's nostrils are located above its eyes. This playful Pokémon loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/320.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png",
+                            male_gender_rate = 0f,
+                            name = "Wailmer",
+                            rarity = "common",
+                            stamina = 277.0
+                        },
+                        new
+                        {
+                            num_pokedex = 321,
+                            attack = 175.0,
+                            defense = 87.0,
+                            description = "Wailord is the largest of all identified Pokémon up to now. This giant Pokémon swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/321.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/321.png",
+                            male_gender_rate = 0f,
+                            name = "Wailord",
+                            rarity = "common",
+                            stamina = 347.0
+                        },
+                        new
+                        {
+                            num_pokedex = 322,
+                            attack = 119.0,
+                            defense = 79.0,
+                            description = "Numel is extremely dull witted—it doesn't notice being hit. However, it can't stand hunger for even a second. This Pokémon's body is a seething cauldron of boiling magma.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/322.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/322.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/322.png",
+                            male_gender_rate = 0f,
+                            name = "Numel",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 323,
+                            attack = 194.0,
+                            defense = 136.0,
+                            description = "Camerupt has a volcano inside its body. Magma of 18,000 degrees Fahrenheit courses through its body. Occasionally, the humps on this Pokémon's back erupt, spewing the superheated magma.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/323.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/323.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/323.png",
+                            male_gender_rate = 0f,
+                            name = "Camerupt",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 324,
+                            attack = 151.0,
+                            defense = 203.0,
+                            description = "Torkoal digs through mountains in search of coal. If it finds some, it fills hollow spaces on its shell with the coal and burns it. If it is attacked, this Pokémon spouts thick black smoke to beat a retreat.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/324.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png",
+                            male_gender_rate = 0f,
+                            name = "Torkoal",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 325,
+                            attack = 125.0,
+                            defense = 122.0,
+                            description = "Spoink bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this Pokémon cannot afford to stop bouncing—if it stops, its heart will stop.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/325.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/325.png",
+                            male_gender_rate = 0f,
+                            name = "Spoink",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 326,
+                            attack = 171.0,
+                            defense = 188.0,
+                            description = "Grumpig uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this Pokémon uses its special power, its snorting breath grows labored.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/326.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/326.png",
+                            male_gender_rate = 0f,
+                            name = "Grumpig",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 327,
+                            attack = 116.0,
+                            defense = 116.0,
+                            description = "All the Spinda that exist in the world are said to have utterly unique spot patterns. The shaky, tottering steps of this Pokémon give it the appearance of dancing.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/327.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/327.png",
+                            male_gender_rate = 0f,
+                            name = "Spinda",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 328,
+                            attack = 162.0,
+                            defense = 78.0,
+                            description = "Trapinch's nest is a sloped, bowl-like pit dug in sand. This Pokémon patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/328.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/328.png",
+                            male_gender_rate = 0f,
+                            name = "Trapinch",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 329,
+                            attack = 134.0,
+                            defense = 99.0,
+                            description = "To make prey faint, Vibrava generates ultrasonic waves by vigorously making its two wings vibrate. This Pokémon's ultrasonic waves are so powerful, they can bring on headaches in people.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/329.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/329.png",
+                            male_gender_rate = 0f,
+                            name = "Vibrava",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 330,
+                            attack = 205.0,
+                            defense = 168.0,
+                            description = "Flygon is nicknamed “the elemental spirit of the desert.” Because its flapping wings whip up a cloud of sand, this Pokémon is always enveloped in a sandstorm while flying.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/330.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/330.png",
+                            male_gender_rate = 0f,
+                            name = "Flygon",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 331,
+                            attack = 156.0,
+                            defense = 74.0,
+                            description = "Cacnea lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this Pokémon shoots sharp thorns from its body to bring the victim down.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/331.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/331.png",
+                            male_gender_rate = 0f,
+                            name = "Cacnea",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 332,
+                            attack = 221.0,
+                            defense = 115.0,
+                            description = "During the daytime, Cacturne remains unmoving so that it does not lose any moisture to the harsh desert sun. This Pokémon becomes active at night when the temperature drops.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/332.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/332.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/332.png",
+                            male_gender_rate = 0f,
+                            name = "Cacturne",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 333,
+                            attack = 76.0,
+                            defense = 132.0,
+                            description = "Swablu has light and fluffy wings that are like cottony clouds. This Pokémon is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/333.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/333.png",
+                            male_gender_rate = 0f,
+                            name = "Swablu",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 334,
+                            attack = 141.0,
+                            defense = 201.0,
+                            description = "Altaria dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this Pokémon makes its listeners experience dreamy wonderment.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/334.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png",
+                            male_gender_rate = 0f,
+                            name = "Altaria",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 335,
+                            attack = 222.0,
+                            defense = 124.0,
+                            description = "Memories of battling its archrival Seviper are etched into every cell of Zangoose's body. This Pokémon adroitly dodges attacks with incredible agility.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/335.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/335.png",
+                            male_gender_rate = 0f,
+                            name = "Zangoose",
+                            rarity = "common",
+                            stamina = 177.0
+                        },
+                        new
+                        {
+                            num_pokedex = 336,
+                            attack = 196.0,
+                            defense = 118.0,
+                            description = "Seviper shares a generations-long feud with Zangoose. The scars on its body are evidence of vicious battles. This Pokémon attacks using its sword-edged tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/336.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/336.png",
+                            male_gender_rate = 0f,
+                            name = "Seviper",
+                            rarity = "common",
+                            stamina = 177.0
+                        },
+                        new
+                        {
+                            num_pokedex = 337,
+                            attack = 178.0,
+                            defense = 153.0,
+                            description = "Lunatone was discovered at a location where a meteoroid fell. As a result, some people theorize that this Pokémon came from space. However, no one has been able to prove this theory so far.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/337.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/337.png",
+                            male_gender_rate = 0f,
+                            name = "Lunatone",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 338,
+                            attack = 178.0,
+                            defense = 153.0,
+                            description = "Solrock is a new species of Pokémon that is said to have fallen from space. It floats in air and moves silently. In battle, this Pokémon releases intensely bright light.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/338.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/338.png",
+                            male_gender_rate = 0f,
+                            name = "Solrock",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 339,
+                            attack = 93.0,
+                            defense = 82.0,
+                            description = "Barboach's sensitive whiskers serve as a superb radar system. This Pokémon hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/339.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/339.png",
+                            male_gender_rate = 0f,
+                            name = "Barboach",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 340,
+                            attack = 151.0,
+                            defense = 141.0,
+                            description = "Whiscash is extremely territorial. Just one of these Pokémon will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/340.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/340.png",
+                            male_gender_rate = 0f,
+                            name = "Whiscash",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 341,
+                            attack = 141.0,
+                            defense = 99.0,
+                            description = "Corphish were originally foreign Pokémon that were imported as pets. They eventually turned up in the wild. This Pokémon is very hardy and has greatly increased its population.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/341.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png",
+                            male_gender_rate = 0f,
+                            name = "Corphish",
+                            rarity = "common",
+                            stamina = 125.0
+                        },
+                        new
+                        {
+                            num_pokedex = 342,
+                            attack = 224.0,
+                            defense = 142.0,
+                            description = "Crawdaunt has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this Pokémon, making them desolate places.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/342.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/342.png",
+                            male_gender_rate = 0f,
+                            name = "Crawdaunt",
+                            rarity = "common",
+                            stamina = 160.0
+                        },
+                        new
+                        {
+                            num_pokedex = 343,
+                            attack = 77.0,
+                            defense = 124.0,
+                            description = "Baltoy moves while spinning around on its one foot. Primitive wall paintings depicting this Pokémon living among people were discovered in some ancient ruins.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/343.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/343.png",
+                            male_gender_rate = 0f,
+                            name = "Baltoy",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 344,
+                            attack = 140.0,
+                            defense = 229.0,
+                            description = "Claydol are said to be dolls of mud made by primitive humans and brought to life by exposure to a mysterious ray. This Pokémon moves about while levitating.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/344.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/344.png",
+                            male_gender_rate = 0f,
+                            name = "Claydol",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 345,
+                            attack = 105.0,
+                            defense = 150.0,
+                            description = "Lileep became extinct approximately a hundred million years ago. This ancient Pokémon attaches itself to a rock on the seafloor and catches approaching prey using tentacles shaped like flower petals.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/345.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/345.png",
+                            male_gender_rate = 0f,
+                            name = "Lileep",
+                            rarity = "common",
+                            stamina = 165.0
+                        },
+                        new
+                        {
+                            num_pokedex = 346,
+                            attack = 152.0,
+                            defense = 194.0,
+                            description = "Cradily roams around the ocean floor in search of food. This Pokémon freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/346.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/346.png",
+                            male_gender_rate = 0f,
+                            name = "Cradily",
+                            rarity = "common",
+                            stamina = 200.0
+                        },
+                        new
+                        {
+                            num_pokedex = 347,
+                            attack = 176.0,
+                            defense = 100.0,
+                            description = "Anorith was regenerated from a prehistoric fossil. This primitive Pokémon once lived in warm seas. It grips its prey firmly between its two large claws.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/347.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/347.png",
+                            male_gender_rate = 0f,
+                            name = "Anorith",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 348,
+                            attack = 222.0,
+                            defense = 174.0,
+                            description = "Armaldo's tough armor makes all attacks bounce off. This Pokémon's two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/348.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/348.png",
+                            male_gender_rate = 0f,
+                            name = "Armaldo",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 349,
+                            attack = 29.0,
+                            defense = 85.0,
+                            description = "Feebas's fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this Pokémon is largely ignored. It is capable of living in both the sea and in rivers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/349.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/349.png",
+                            male_gender_rate = 0f,
+                            name = "Feebas",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 350,
+                            attack = 192.0,
+                            defense = 219.0,
+                            description = "Milotic is said to be the most beautiful of all the Pokémon. It has the power to becalm such emotions as anger and hostility to quell bitter feuding.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/350.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/350.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/350.png",
+                            male_gender_rate = 0f,
+                            name = "Milotic",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 351,
+                            attack = 139.0,
+                            defense = 139.0,
+                            description = "Castform's appearance changes with the weather. This Pokémon gained the ability to use the vast power of nature to protect its tiny body.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/351.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png",
+                            male_gender_rate = 0f,
+                            name = "Castform",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 352,
+                            attack = 161.0,
+                            defense = 189.0,
+                            description = "Kecleon is capable of changing its body colors at will to blend in with its surroundings. There is one exception—this Pokémon can't change the zigzag pattern on its belly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/352.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/352.png",
+                            male_gender_rate = 0f,
+                            name = "Kecleon",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 353,
+                            attack = 138.0,
+                            defense = 65.0,
+                            description = "Shuppet is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this Pokémon will appear in a swarm and line up beneath the eaves of that person's home.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/353.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/353.png",
+                            male_gender_rate = 0f,
+                            name = "Shuppet",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 354,
+                            attack = 218.0,
+                            defense = 126.0,
+                            description = "Banette generates energy for laying strong curses by sticking pins into its own body. This Pokémon was originally a pitiful plush doll that was thrown away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/354.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png",
+                            male_gender_rate = 0f,
+                            name = "Banette",
+                            rarity = "common",
+                            stamina = 162.0
+                        },
+                        new
+                        {
+                            num_pokedex = 355,
+                            attack = 70.0,
+                            defense = 162.0,
+                            description = "Duskull can pass through any wall no matter how thick it may be. Once this Pokémon chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/355.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
+                            male_gender_rate = 0f,
+                            name = "Duskull",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 356,
+                            attack = 124.0,
+                            defense = 234.0,
+                            description = "Dusclops's body is completely hollow—there is nothing at all inside. It is said that its body is like a black hole. This Pokémon will absorb anything into its body, but nothing will ever come back out.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/356.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/356.png",
+                            male_gender_rate = 0f,
+                            name = "Dusclops",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 357,
+                            attack = 136.0,
+                            defense = 163.0,
+                            description = "The bunches of fruit around Tropius's neck are very popular with children. This Pokémon loves fruit, and eats it continuously. Apparently, its love for fruit resulted in its own outgrowth of fruit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/357.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/357.png",
+                            male_gender_rate = 0f,
+                            name = "Tropius",
+                            rarity = "common",
+                            stamina = 223.0
+                        },
+                        new
+                        {
+                            num_pokedex = 358,
+                            attack = 175.0,
+                            defense = 170.0,
+                            description = "Chimecho makes its cries echo inside its hollow body. When this Pokémon becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/358.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/358.png",
+                            male_gender_rate = 0f,
+                            name = "Chimecho",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 359,
+                            attack = 246.0,
+                            defense = 120.0,
+                            description = "Every time Absol appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/359.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
+                            male_gender_rate = 0f,
+                            name = "Absol",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 360,
+                            attack = 41.0,
+                            defense = 86.0,
+                            description = "Wynaut can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this Pokémon will be slapping the ground with its tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/360.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png",
+                            male_gender_rate = 0f,
+                            name = "Wynaut",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 361,
+                            attack = 95.0,
+                            defense = 95.0,
+                            description = "Snorunt live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this Pokémon steals away to live quietly among stalactites and stalagmites deep in caverns.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/361.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/361.png",
+                            male_gender_rate = 0f,
+                            name = "Snorunt",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 362,
+                            attack = 162.0,
+                            defense = 162.0,
+                            description = "Glalie has a body made of rock, which it hardens with an armor of ice. This Pokémon has the ability to freeze moisture in the atmosphere into any shape it desires.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/362.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png",
+                            male_gender_rate = 0f,
+                            name = "Glalie",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 363,
+                            attack = 95.0,
+                            defense = 90.0,
+                            description = "Spheal is much faster rolling than walking to get around. When groups of this Pokémon eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/363.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png",
+                            male_gender_rate = 0f,
+                            name = "Spheal",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 364,
+                            attack = 137.0,
+                            defense = 132.0,
+                            description = "Sealeo has the habit of always juggling on the tip of its nose anything it sees for the first time. This Pokémon occasionally entertains itself by balancing and rolling a Spheal on its nose.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/364.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/364.png",
+                            male_gender_rate = 0f,
+                            name = "Sealeo",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 365,
+                            attack = 182.0,
+                            defense = 176.0,
+                            description = "Walrein's two massively developed tusks can totally shatter blocks of ice weighing 10 tons with one blow. This Pokémon's thick coat of blubber insulates it from subzero temperatures.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/365.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/365.png",
+                            male_gender_rate = 0f,
+                            name = "Walrein",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 366,
+                            attack = 133.0,
+                            defense = 135.0,
+                            description = "Clamperl's sturdy shell is not only good for protection—it is also used for clamping and catching prey. A fully grown Clamperl's shell will be scored with nicks and scratches all over.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/366.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/366.png",
+                            male_gender_rate = 0f,
+                            name = "Clamperl",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 367,
+                            attack = 197.0,
+                            defense = 179.0,
+                            description = "Huntail's presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This Pokémon's eyes can see clearly even in the murky dark depths of the ocean.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/367.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/367.png",
+                            male_gender_rate = 0f,
+                            name = "Huntail",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 368,
+                            attack = 211.0,
+                            defense = 179.0,
+                            description = "Gorebyss lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this Pokémon's body is unharmed by ordinary attacks.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/368.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/368.png",
+                            male_gender_rate = 0f,
+                            name = "Gorebyss",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 369,
+                            attack = 162.0,
+                            defense = 203.0,
+                            description = "Relicanth is a Pokémon species that existed for a hundred million years without ever changing its form. This ancient Pokémon feeds on microscopic organisms with its toothless mouth.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/369.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/369.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/369.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/369.png",
+                            male_gender_rate = 0f,
+                            name = "Relicanth",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 370,
+                            attack = 81.0,
+                            defense = 128.0,
+                            description = "Luvdisc live in shallow seas in the tropics. This heart-shaped Pokémon earned its name by swimming after loving couples it spotted in the ocean's waves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/370.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/370.png",
+                            male_gender_rate = 0f,
+                            name = "Luvdisc",
+                            rarity = "common",
+                            stamina = 125.0
+                        },
+                        new
+                        {
+                            num_pokedex = 371,
+                            attack = 134.0,
+                            defense = 93.0,
+                            description = "Bagon has a dream of one day soaring in the sky. In doomed efforts to fly, this Pokémon hurls itself off cliffs. As a result of its dives, its head has grown tough and as hard as tempered steel.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/371.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png",
+                            male_gender_rate = 0f,
+                            name = "Bagon",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 372,
+                            attack = 172.0,
+                            defense = 155.0,
+                            description = "Inside Shelgon's armor-like shell, cells are in the midst of transformation to create an entirely new body. This Pokémon's shell is extremely heavy, making its movements sluggish.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/372.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/372.png",
+                            male_gender_rate = 0f,
+                            name = "Shelgon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 373,
+                            attack = 277.0,
+                            defense = 168.0,
+                            description = "Salamence came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this Pokémon's cells, causing it to sprout its magnificent wings.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/373.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png",
+                            male_gender_rate = 0f,
+                            name = "Salamence",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 374,
+                            attack = 96.0,
+                            defense = 132.0,
+                            description = "Instead of blood, a powerful magnetic force courses throughout Beldum's body. This Pokémon communicates with others by sending controlled pulses of magnetism.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/374.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
+                            male_gender_rate = 0f,
+                            name = "Beldum",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 375,
+                            attack = 138.0,
+                            defense = 176.0,
+                            description = "When two Beldum fuse together, Metang is formed. The brains of the Beldum are joined by a magnetic nervous system. By linking its brains magnetically, this Pokémon generates strong psychokinetic power.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/375.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png",
+                            male_gender_rate = 0f,
+                            name = "Metang",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 376,
+                            attack = 257.0,
+                            defense = 228.0,
+                            description = "Metagross has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This Pokémon can float in the air by tucking in its four legs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/376.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png",
+                            male_gender_rate = 0f,
+                            name = "Metagross",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 377,
+                            attack = 179.0,
+                            defense = 309.0,
+                            description = "Regirock was sealed away by people long ago. If this Pokémon's body is damaged in battle, it is said to seek out suitable rocks on its own to repair itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/377.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/377.png",
+                            male_gender_rate = 0f,
+                            name = "Regirock",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 378,
+                            attack = 179.0,
+                            defense = 309.0,
+                            description = "Regice's body was made during an ice age. The deep-frozen body can't be melted, even by fire. This Pokémon controls frigid air of -328 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/378.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/378.png",
+                            male_gender_rate = 0f,
+                            name = "Regice",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 379,
+                            attack = 143.0,
+                            defense = 285.0,
+                            description = "Registeel has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this Pokémon eats.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/379.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png",
+                            male_gender_rate = 0f,
+                            name = "Registeel",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 380,
+                            attack = 228.0,
+                            defense = 246.0,
+                            description = "Latias is highly sensitive to the emotions of people. If it senses any hostility, this Pokémon ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/380.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/380.png",
+                            male_gender_rate = 0f,
+                            name = "Latias",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 381,
+                            attack = 268.0,
+                            defense = 212.0,
+                            description = "Latios has the ability to make others see an image of what it has seen or imagines in its head. This Pokémon is intelligent and understands human speech.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/381.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/381.png",
+                            male_gender_rate = 0f,
+                            name = "Latios",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 382,
+                            attack = 270.0,
+                            defense = 228.0,
+                            description = "Through Primal Reversion and with nature's full power, it will take back its true form. It can summon storms that cause the sea levels to rise.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/382.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/382.png",
+                            male_gender_rate = 0f,
+                            name = "Kyogre",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 383,
+                            attack = 270.0,
+                            defense = 228.0,
+                            description = "Groudon is said to be the personification of the land itself. Legends tell of its many clashes against Kyogre, as each sought to gain the power of nature.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/383.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png",
+                            male_gender_rate = 0f,
+                            name = "Groudon",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 384,
+                            attack = 284.0,
+                            defense = 170.0,
+                            description = "Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/384.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png",
+                            male_gender_rate = 0f,
+                            name = "Rayquaza",
+                            rarity = "Legendary",
+                            stamina = 213.0
+                        },
+                        new
+                        {
+                            num_pokedex = 385,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "A legend states that Jirachi will make true any wish that is written on notes attached to its head when it awakens. If this Pokémon senses danger, it will fight without awakening.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/385.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/385.png",
+                            male_gender_rate = 0f,
+                            name = "Jirachi",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 387,
+                            attack = 119.0,
+                            defense = 110.0,
+                            description = "It undertakes photosynthesis with its body, making oxygen. The leaf on its head wilts if it is thirsty.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/387.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png",
+                            male_gender_rate = 0f,
+                            name = "Turtwig",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 388,
+                            attack = 157.0,
+                            defense = 143.0,
+                            description = "It knows where pure water wells up. It carries fellow Pokémon there on its back.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/388.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/388.png",
+                            male_gender_rate = 0f,
+                            name = "Grotle",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 389,
+                            attack = 202.0,
+                            defense = 188.0,
+                            description = "Small Pokémon occasionally gather on its unmoving back to begin building their nests.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/389.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/389.png",
+                            male_gender_rate = 0f,
+                            name = "Torterra",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 390,
+                            attack = 113.0,
+                            defense = 86.0,
+                            description = "The gas made in its belly burns from its rear end. The fire burns weakly when it feels sick.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/390.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png",
+                            male_gender_rate = 0f,
+                            name = "Chimchar",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 391,
+                            attack = 158.0,
+                            defense = 105.0,
+                            description = "It uses ceilings and walls to launch aerial attacks. Its fiery tail is but one weapon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/391.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/391.png",
+                            male_gender_rate = 0f,
+                            name = "Monferno",
+                            rarity = "common",
+                            stamina = 162.0
+                        },
+                        new
+                        {
+                            num_pokedex = 392,
+                            attack = 222.0,
+                            defense = 151.0,
+                            description = "It tosses its enemies around with agility. It uses all its limbs to fight in its own unique style.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/392.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png",
+                            male_gender_rate = 0f,
+                            name = "Infernape",
+                            rarity = "common",
+                            stamina = 183.0
+                        },
+                        new
+                        {
+                            num_pokedex = 393,
+                            attack = 112.0,
+                            defense = 102.0,
+                            description = "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/393.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/393.png",
+                            male_gender_rate = 0f,
+                            name = "Piplup",
+                            rarity = "common",
+                            stamina = 142.0
+                        },
+                        new
+                        {
+                            num_pokedex = 394,
+                            attack = 150.0,
+                            defense = 139.0,
+                            description = "It lives a solitary life. Its wings deliver wicked blows that can snap even the thickest of trees.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/394.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/394.png",
+                            male_gender_rate = 0f,
+                            name = "Prinplup",
+                            rarity = "common",
+                            stamina = 162.0
+                        },
+                        new
+                        {
+                            num_pokedex = 395,
+                            attack = 210.0,
+                            defense = 186.0,
+                            description = "The three horns that extend from its beak attest to its power. The leader has the biggest horns.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/395.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/395.png",
+                            male_gender_rate = 0f,
+                            name = "Empoleon",
+                            rarity = "common",
+                            stamina = 197.0
+                        },
+                        new
+                        {
+                            num_pokedex = 396,
+                            attack = 101.0,
+                            defense = 58.0,
+                            description = "They flock around mountains and fields, chasing after bug Pokémon. Their singing is noisy and annoying.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/396.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/396.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/396.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/396.png",
+                            male_gender_rate = 0f,
+                            name = "Starly",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 397,
+                            attack = 142.0,
+                            defense = 94.0,
+                            description = "It lives in forests and fields. Squabbles over territory occur when flocks collide.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/397.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/397.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/397.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/397.png",
+                            male_gender_rate = 0f,
+                            name = "Staravia",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 398,
+                            attack = 234.0,
+                            defense = 140.0,
+                            description = "When Staravia evolve into Staraptor, they leave the flock to live alone. They have sturdy wings.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/398.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/398.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/398.png",
+                            male_gender_rate = 0f,
+                            name = "Staraptor",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 399,
+                            attack = 80.0,
+                            defense = 73.0,
+                            description = "It constantly gnaws on logs and rocks to whittle down its front teeth. It nests alongside water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/399.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/399.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/399.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/399.png",
+                            male_gender_rate = 0f,
+                            name = "Bidoof",
+                            rarity = "common",
+                            stamina = 153.0
+                        },
+                        new
+                        {
+                            num_pokedex = 400,
+                            attack = 162.0,
+                            defense = 119.0,
+                            description = "It makes its nest by damming streams with bark and mud. It is known as an industrious worker.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/400.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/400.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/400.png",
+                            male_gender_rate = 0f,
+                            name = "Bibarel",
+                            rarity = "common",
+                            stamina = 188.0
+                        },
+                        new
+                        {
+                            num_pokedex = 401,
+                            attack = 45.0,
+                            defense = 74.0,
+                            description = "When its antennae hit each other, it sounds like the music of a xylophone.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/401.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/401.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/401.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/401.png",
+                            male_gender_rate = 0f,
+                            name = "Kricketot",
+                            rarity = "common",
+                            stamina = 114.0
+                        },
+                        new
+                        {
+                            num_pokedex = 402,
+                            attack = 160.0,
+                            defense = 100.0,
+                            description = "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/402.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/402.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/402.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/402.png",
+                            male_gender_rate = 0f,
+                            name = "Kricketune",
+                            rarity = "common",
+                            stamina = 184.0
+                        },
+                        new
+                        {
+                            num_pokedex = 403,
+                            attack = 117.0,
+                            defense = 64.0,
+                            description = "All of its fur dazzles if danger is sensed. It flees while the foe is momentarily blinded.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/403.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/403.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/403.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/403.png",
+                            male_gender_rate = 0f,
+                            name = "Shinx",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 404,
+                            attack = 159.0,
+                            defense = 95.0,
+                            description = "Strong electricity courses through the tips of its sharp claws. A light scratch causes fainting in foes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/404.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/404.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/404.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/404.png",
+                            male_gender_rate = 0f,
+                            name = "Luxio",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 405,
+                            attack = 232.0,
+                            defense = 156.0,
+                            description = "Luxray's ability to see through objects comes in handy when it's scouting for danger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/405.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/405.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/405.png",
+                            male_gender_rate = 0f,
+                            name = "Luxray",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 406,
+                            attack = 91.0,
+                            defense = 109.0,
+                            description = "Over the winter, it closes its bud and endures the cold. In spring, the bud opens and releases pollen.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/406.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/406.png",
+                            male_gender_rate = 0f,
+                            name = "Budew",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 407,
+                            attack = 243.0,
+                            defense = 185.0,
+                            description = "With the movements of a dancer, it strikes with whips that are densely lined with poison thorns.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/407.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/407.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/407.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/407.png",
+                            male_gender_rate = 0f,
+                            name = "Roserade",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 408,
+                            attack = 218.0,
+                            defense = 71.0,
+                            description = "Its hard skull is its distinguishing feature. It snapped trees by headbutting them, and then it fed on their ripe berries.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/408.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/408.png",
+                            male_gender_rate = 0f,
+                            name = "Cranidos",
+                            rarity = "common",
+                            stamina = 167.0
+                        },
+                        new
+                        {
+                            num_pokedex = 409,
+                            attack = 295.0,
+                            defense = 109.0,
+                            description = "This ancient Pokémon used headbutts skillfully. Its brain was really small, so some theories suggest that its stupidity led to its extinction.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/409.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/409.png",
+                            male_gender_rate = 0f,
+                            name = "Rampardos",
+                            rarity = "common",
+                            stamina = 219.0
+                        },
+                        new
+                        {
+                            num_pokedex = 410,
+                            attack = 76.0,
+                            defense = 195.0,
+                            description = "Although its fossils can be found in layers of primeval rock, nothing but its face has ever been discovered.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/410.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/410.png",
+                            male_gender_rate = 0f,
+                            name = "Shieldon",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 411,
+                            attack = 94.0,
+                            defense = 286.0,
+                            description = "This Pokémon is from roughly 100 million years ago. Its terrifyingly tough face is harder than steel.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/411.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/411.png",
+                            male_gender_rate = 0f,
+                            name = "Bastiodon",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 412,
+                            attack = 53.0,
+                            defense = 83.0,
+                            description = "If its cloak is broken in battle, it quickly remakes the cloak with materials nearby.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/412.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/412.png",
+                            male_gender_rate = 0f,
+                            name = "Burmy",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 413,
+                            attack = 141.0,
+                            defense = 180.0,
+                            description = "When Burmy evolved, its cloak became a part of this Pokémon's body. The cloak is never shed.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/413.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/413.png",
+                            male_gender_rate = 0f,
+                            name = "Wormadam",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 414,
+                            attack = 185.0,
+                            defense = 98.0,
+                            description = "It flutters around at night and steals honey from the Combee hive.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/414.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/414.png",
+                            male_gender_rate = 0f,
+                            name = "Mothim",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 415,
+                            attack = 59.0,
+                            defense = 83.0,
+                            description = "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/415.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/415.png",
+                            male_gender_rate = 0f,
+                            name = "Combee",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 416,
+                            attack = 149.0,
+                            defense = 190.0,
+                            description = "Its abdomen is a honeycomb for grubs. It raises its grubs on honey collected by Combee.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/416.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/416.png",
+                            male_gender_rate = 0f,
+                            name = "Vespiquen",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 417,
+                            attack = 94.0,
+                            defense = 172.0,
+                            description = "A pair may be seen rubbing their cheek pouches together in an effort to share stored electricity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/417.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/417.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/417.png",
+                            male_gender_rate = 0f,
+                            name = "Pachirisu",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 418,
+                            attack = 132.0,
+                            defense = 67.0,
+                            description = "It inflates the flotation sac around its neck and pokes its head out of the water to see what is going on.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/418.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/418.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/418.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/418.png",
+                            male_gender_rate = 0f,
+                            name = "Buizel",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 419,
+                            attack = 221.0,
+                            defense = 114.0,
+                            description = "Its flotation sac developed as a result of pursuing aquatic prey. It can double as a rubber raft.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/419.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/419.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/419.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/419.png",
+                            male_gender_rate = 0f,
+                            name = "Floatzel",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 420,
+                            attack = 108.0,
+                            defense = 92.0,
+                            description = "It evolves by sucking the energy out of the small ball where it had been storing nutrients.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/420.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/420.png",
+                            male_gender_rate = 0f,
+                            name = "Cherubi",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 421,
+                            attack = 170.0,
+                            defense = 153.0,
+                            description = "If it senses strong sunlight, it opens its folded petals to absorb the sun's rays with its whole body.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/421.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/421.png",
+                            male_gender_rate = 0f,
+                            name = "Cherrim",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 424,
+                            attack = 205.0,
+                            defense = 143.0,
+                            description = "It uses its tails for everything. If it wraps both of its tails around you and gives you a squeeze, that's proof it really likes you.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/424.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/424.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/424.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/424.png",
+                            male_gender_rate = 0f,
+                            name = "Ambipom",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 425,
+                            attack = 117.0,
+                            defense = 80.0,
+                            description = "Wandering souls gathered together to form this Pokémon. When trying to make friends with children, Drifloon grabs them by the hand.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/425.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png",
+                            male_gender_rate = 0f,
+                            name = "Drifloon",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 426,
+                            attack = 180.0,
+                            defense = 102.0,
+                            description = "The raw material for the gas inside its body is souls. When its body starts to deflate, it's thought to carry away people and Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/426.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/426.png",
+                            male_gender_rate = 0f,
+                            name = "Drifblim",
+                            rarity = "common",
+                            stamina = 312.0
+                        },
+                        new
+                        {
+                            num_pokedex = 427,
+                            attack = 130.0,
+                            defense = 105.0,
+                            description = "The reason it keeps one ear rolled up is so it can launch a swift counterattack if it's attacked by an enemy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/427.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/427.png",
+                            male_gender_rate = 0f,
+                            name = "Buneary",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 428,
+                            attack = 156.0,
+                            defense = 194.0,
+                            description = "It's notably wary and has a dislike of fighting, but at the same time, it can deliver powerful kicks with its lithe legs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/428.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/428.png",
+                            male_gender_rate = 0f,
+                            name = "Lopunny",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 429,
+                            attack = 211.0,
+                            defense = 187.0,
+                            description = "Its muttered curses can cause awful headaches or terrifying visions that torment others.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/429.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png",
+                            male_gender_rate = 0f,
+                            name = "Mismagius",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 430,
+                            attack = 243.0,
+                            defense = 103.0,
+                            description = "Its goons take care of most of the fighting for it. The only time it dirties its own hands is in delivering a final blow to finish off an opponent.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/430.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/430.png",
+                            male_gender_rate = 0f,
+                            name = "Honchkrow",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 431,
+                            attack = 109.0,
+                            defense = 82.0,
+                            description = "When it's happy, Glameow demonstrates beautiful movements of its tail, like a dancing ribbon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/431.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/431.png",
+                            male_gender_rate = 0f,
+                            name = "Glameow",
+                            rarity = "common",
+                            stamina = 135.0
+                        },
+                        new
+                        {
+                            num_pokedex = 432,
+                            attack = 172.0,
+                            defense = 133.0,
+                            description = "To make itself appear intimidatingly beefy, it tightly cinches its waist with its twin tails.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/432.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/432.png",
+                            male_gender_rate = 0f,
+                            name = "Purugly",
+                            rarity = "common",
+                            stamina = 174.0
+                        },
+                        new
+                        {
+                            num_pokedex = 433,
+                            attack = 114.0,
+                            defense = 94.0,
+                            description = "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/433.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/433.png",
+                            male_gender_rate = 0f,
+                            name = "Chingling",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 434,
+                            attack = 121.0,
+                            defense = 90.0,
+                            description = "It protects itself by spraying a noxious fluid from its rear. The stench lingers for 24 hours.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/434.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/434.png",
+                            male_gender_rate = 0f,
+                            name = "Stunky",
+                            rarity = "common",
+                            stamina = 160.0
+                        },
+                        new
+                        {
+                            num_pokedex = 435,
+                            attack = 184.0,
+                            defense = 132.0,
+                            description = "It sprays a stinky fluid from its tail. The fluid smells worse the longer it is allowed to fester.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/435.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/435.png",
+                            male_gender_rate = 0f,
+                            name = "Skuntank",
+                            rarity = "common",
+                            stamina = 230.0
+                        },
+                        new
+                        {
+                            num_pokedex = 436,
+                            attack = 43.0,
+                            defense = 154.0,
+                            description = "Implements shaped like it were discovered in ancient tombs. It is unknown if they are related.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/436.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/436.png",
+                            male_gender_rate = 0f,
+                            name = "Bronzor",
+                            rarity = "common",
+                            stamina = 149.0
+                        },
+                        new
+                        {
+                            num_pokedex = 437,
+                            attack = 161.0,
+                            defense = 213.0,
+                            description = "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/437.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/437.png",
+                            male_gender_rate = 0f,
+                            name = "Bronzong",
+                            rarity = "common",
+                            stamina = 167.0
+                        },
+                        new
+                        {
+                            num_pokedex = 438,
+                            attack = 124.0,
+                            defense = 133.0,
+                            description = "If its body gets too damp, it will die. So, in a process reminiscent of sweating, its eyes expel moisture.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/438.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/438.png",
+                            male_gender_rate = 0f,
+                            name = "Bonsly",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 439,
+                            attack = 125.0,
+                            defense = 142.0,
+                            description = "When this gifted mimic surprises an opponent, Mime Jr. feels so happy that it ends up forgetting it was imitating something.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/439.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/439.png",
+                            male_gender_rate = 0f,
+                            name = "Mime Jr.",
+                            rarity = "common",
+                            stamina = 85.0
+                        },
+                        new
+                        {
+                            num_pokedex = 440,
+                            attack = 25.0,
+                            defense = 77.0,
+                            description = "When it sees something round and white, Happiny puts it into the pouch on its stomach. It sometimes becomes overloaded and can't move.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/440.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/440.png",
+                            male_gender_rate = 0f,
+                            name = "Happiny",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 441,
+                            attack = 183.0,
+                            defense = 91.0,
+                            description = "It can learn and speak human words. If they gather, they all learn the same saying.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/441.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/441.png",
+                            male_gender_rate = 0f,
+                            name = "Chatot",
+                            rarity = "common",
+                            stamina = 183.0
+                        },
+                        new
+                        {
+                            num_pokedex = 442,
+                            attack = 169.0,
+                            defense = 199.0,
+                            description = "It was bound to a fissure in an odd keystone as punishment for misdeeds 500 years ago.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/442.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/442.png",
+                            male_gender_rate = 0f,
+                            name = "Spiritomb",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 443,
+                            attack = 124.0,
+                            defense = 84.0,
+                            description = "Its original home is an area much hotter than Alola. If you're planning to live with one, your heating bill will soar.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/443.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/443.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/443.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/443.png",
+                            male_gender_rate = 0f,
+                            name = "Gible",
+                            rarity = "common",
+                            stamina = 151.0
+                        },
+                        new
+                        {
+                            num_pokedex = 444,
+                            attack = 172.0,
+                            defense = 125.0,
+                            description = "It sheds its skin and gradually grows larger. Its scales can be ground into a powder and used as raw materials for traditional medicine.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/444.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/444.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/444.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/444.png",
+                            male_gender_rate = 0f,
+                            name = "Gabite",
+                            rarity = "common",
+                            stamina = 169.0
+                        },
+                        new
+                        {
+                            num_pokedex = 445,
+                            attack = 261.0,
+                            defense = 193.0,
+                            description = "Its fine scales don't just reduce wind resistance—their sharp edges also cause injury to any opponent who attacks it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/445.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/445.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/445.png",
+                            male_gender_rate = 0f,
+                            name = "Garchomp",
+                            rarity = "common",
+                            stamina = 239.0
+                        },
+                        new
+                        {
+                            num_pokedex = 446,
+                            attack = 137.0,
+                            defense = 117.0,
+                            description = "Anything that looks edible, Munchlax will go on and swallow whole. Its stomach is tough enough to handle it even if the food has gone rotten.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/446.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/446.png",
+                            male_gender_rate = 0f,
+                            name = "Munchlax",
+                            rarity = "common",
+                            stamina = 286.0
+                        },
+                        new
+                        {
+                            num_pokedex = 447,
+                            attack = 127.0,
+                            defense = 78.0,
+                            description = "It uses waves called auras to communicate with others of its kind. It doesn't make any noise during this time, so its enemies can't detect it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/447.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/447.png",
+                            male_gender_rate = 0f,
+                            name = "Riolu",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 448,
+                            attack = 236.0,
+                            defense = 144.0,
+                            description = "Lucario reads its opponent's feelings with its aura waves. It finds out things it would rather not know, so it gets stressed out easily.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/448.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png",
+                            male_gender_rate = 0f,
+                            name = "Lucario",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 449,
+                            attack = 124.0,
+                            defense = 118.0,
+                            description = "It enshrouds itself with sand to protect itself from germs. It does not enjoy getting wet.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/449.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/449.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/449.png",
+                            male_gender_rate = 0f,
+                            name = "Hippopotas",
+                            rarity = "common",
+                            stamina = 169.0
+                        },
+                        new
+                        {
+                            num_pokedex = 450,
+                            attack = 201.0,
+                            defense = 191.0,
+                            description = "It blasts internally stored sand from ports on its body to create a towering twister for attack.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/450.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/450.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/450.png",
+                            male_gender_rate = 0f,
+                            name = "Hippowdon",
+                            rarity = "common",
+                            stamina = 239.0
+                        },
+                        new
+                        {
+                            num_pokedex = 451,
+                            attack = 93.0,
+                            defense = 151.0,
+                            description = "It burrows under the sand to lie in wait for prey. Its tail claws can inject its prey with a savage poison.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/451.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/451.png",
+                            male_gender_rate = 0f,
+                            name = "Skorupi",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 452,
+                            attack = 180.0,
+                            defense = 202.0,
+                            description = "It has the power in its clawed arms to make scrap of a car. The tips of its claws release poison.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/452.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/452.png",
+                            male_gender_rate = 0f,
+                            name = "Drapion",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 453,
+                            attack = 116.0,
+                            defense = 76.0,
+                            description = "Inflating its poison sacs, it fills the area with an odd sound and hits flinching opponents with a poison jab.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/453.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/453.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/453.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/453.png",
+                            male_gender_rate = 0f,
+                            name = "Croagunk",
+                            rarity = "common",
+                            stamina = 134.0
+                        },
+                        new
+                        {
+                            num_pokedex = 454,
+                            attack = 211.0,
+                            defense = 133.0,
+                            description = "Its knuckle claws secrete a toxin so vile that even a scratch could prove fatal.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/454.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/454.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/454.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/454.png",
+                            male_gender_rate = 0f,
+                            name = "Toxicroak",
+                            rarity = "common",
+                            stamina = 195.0
+                        },
+                        new
+                        {
+                            num_pokedex = 455,
+                            attack = 187.0,
+                            defense = 136.0,
+                            description = "It binds itself to trees in marshes. It attracts prey with its sweet-smelling drool and gulps them down.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/455.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/455.png",
+                            male_gender_rate = 0f,
+                            name = "Carnivine",
+                            rarity = "common",
+                            stamina = 179.0
+                        },
+                        new
+                        {
+                            num_pokedex = 456,
+                            attack = 96.0,
+                            defense = 116.0,
+                            description = "It lures in prey with its shining tail fins. It stays near the surface during the day and moves to the depths when night falls.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/456.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/456.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/456.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/456.png",
+                            male_gender_rate = 0f,
+                            name = "Finneon",
+                            rarity = "common",
+                            stamina = 135.0
+                        },
+                        new
+                        {
+                            num_pokedex = 457,
+                            attack = 142.0,
+                            defense = 170.0,
+                            description = "They traverse the deep waters as if crawling over the seafloor. The fantastic lights of its fins shine like stars in the night sky.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/457.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/457.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/457.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/457.png",
+                            male_gender_rate = 0f,
+                            name = "Lumineon",
+                            rarity = "common",
+                            stamina = 170.0
+                        },
+                        new
+                        {
+                            num_pokedex = 458,
+                            attack = 105.0,
+                            defense = 179.0,
+                            description = "Mantyke are friendly toward people and will approach boats closely. The patterns on their backs differ depending on their habitat.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/458.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/458.png",
+                            male_gender_rate = 0f,
+                            name = "Mantyke",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 459,
+                            attack = 115.0,
+                            defense = 105.0,
+                            description = "In the spring, it grows berries with the texture of frozen treats around its belly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/459.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/459.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/459.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/459.png",
+                            male_gender_rate = 0f,
+                            name = "Snover",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 460,
+                            attack = 178.0,
+                            defense = 158.0,
+                            description = "It lives a quiet life on mountains that are perpetually covered in snow. It hides itself by whipping up blizzards.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/460.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/460.png",
+                            male_gender_rate = 0f,
+                            name = "Abomasnow",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 461,
+                            attack = 243.0,
+                            defense = 171.0,
+                            description = "Thanks to its increased intelligence, scrapping over food is a thing of the past. A scratch from its claws will give you a case of frostbite!",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/461.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/461.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/461.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/461.png",
+                            male_gender_rate = 0f,
+                            name = "Weavile",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 462,
+                            attack = 238.0,
+                            defense = 205.0,
+                            description = "There are still people who believe that this Pokémon came from outer space. It emanates a powerful magnetic field.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/462.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png",
+                            male_gender_rate = 0f,
+                            name = "Magnezone",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 463,
+                            attack = 161.0,
+                            defense = 181.0,
+                            description = "It uses its tongue much more skillfully than its hands or its feet. It can deftly pick up a single small bean with its tongue.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/463.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/463.png",
+                            male_gender_rate = 0f,
+                            name = "Lickilicky",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 464,
+                            attack = 241.0,
+                            defense = 190.0,
+                            description = "It puts rocks in holes in its palms and uses its muscles to shoot them. Geodude are shot at rare times.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/464.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/464.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/464.png",
+                            male_gender_rate = 0f,
+                            name = "Rhyperior",
+                            rarity = "common",
+                            stamina = 251.0
+                        },
+                        new
+                        {
+                            num_pokedex = 465,
+                            attack = 207.0,
+                            defense = 184.0,
+                            description = "Its vines grow so profusely that, in the warm season, you can't even see its eyes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/465.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/465.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/465.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/465.png",
+                            male_gender_rate = 0f,
+                            name = "Tangrowth",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 466,
+                            attack = 249.0,
+                            defense = 163.0,
+                            description = "A single Electivire can provide enough electricity for all the buildings in a big city for a year.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/466.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/466.png",
+                            male_gender_rate = 0f,
+                            name = "Electivire",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 467,
+                            attack = 247.0,
+                            defense = 172.0,
+                            description = "Magmortar takes down its enemies by shooting fireballs, which burn them to a blackened crisp. It avoids this method when hunting prey.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/467.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/467.png",
+                            male_gender_rate = 0f,
+                            name = "Magmortar",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 468,
+                            attack = 225.0,
+                            defense = 217.0,
+                            description = "It shares many blessings with people who respect one another's rights and avoid needless strife.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/468.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/468.png",
+                            male_gender_rate = 0f,
+                            name = "Togekiss",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 469,
+                            attack = 231.0,
+                            defense = 156.0,
+                            description = "This six-legged Pokémon is easily capable of transporting an adult in flight. The wings on its tail help it stay balanced.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/469.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/469.png",
+                            male_gender_rate = 0f,
+                            name = "Yanmega",
+                            rarity = "common",
+                            stamina = 200.0
+                        },
+                        new
+                        {
+                            num_pokedex = 470,
+                            attack = 216.0,
+                            defense = 219.0,
+                            description = "It gets its nutrition from photosynthesis. It lives a quiet life deep in forests where clean rivers flow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/470.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png",
+                            male_gender_rate = 0f,
+                            name = "Leafeon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 471,
+                            attack = 238.0,
+                            defense = 205.0,
+                            description = "It can instantaneously freeze any moisture that's around it, creating ice pellets to shoot at its prey.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/471.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png",
+                            male_gender_rate = 0f,
+                            name = "Glaceon",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 472,
+                            attack = 185.0,
+                            defense = 222.0,
+                            description = "Its flight is soundless. It uses its lengthy tail to carry off its prey... Then its elongated fangs do the rest.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/472.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/472.png",
+                            male_gender_rate = 0f,
+                            name = "Gliscor",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 473,
+                            attack = 247.0,
+                            defense = 146.0,
+                            description = "Its impressive tusks are made of ice. The population thinned when it turned warm after the ice age.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/473.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/473.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/473.png",
+                            male_gender_rate = 0f,
+                            name = "Mamoswine",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 474,
+                            attack = 264.0,
+                            defense = 150.0,
+                            description = "A faulty update was added to its programming. Its behavior is noticeably strange, so the experiment may have been a failure.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/474.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png",
+                            male_gender_rate = 0f,
+                            name = "Porygon-Z",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 475,
+                            attack = 237.0,
+                            defense = 195.0,
+                            description = "A master of courtesy and swordsmanship, it fights using extending swords on its elbows.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/475.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png",
+                            male_gender_rate = 0f,
+                            name = "Gallade",
+                            rarity = "common",
+                            stamina = 169.0
+                        },
+                        new
+                        {
+                            num_pokedex = 476,
+                            attack = 135.0,
+                            defense = 275.0,
+                            description = "It uses three small units to catch prey and battle enemies. The main body mostly just gives orders.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/476.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/476.png",
+                            male_gender_rate = 0f,
+                            name = "Probopass",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 477,
+                            attack = 180.0,
+                            defense = 254.0,
+                            description = "The antenna on its head captures radio waves from the world of spirits that command it to take people there.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/477.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/477.png",
+                            male_gender_rate = 0f,
+                            name = "Dusknoir",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 478,
+                            attack = 171.0,
+                            defense = 150.0,
+                            description = "It's said that on nights of terrible blizzards, it comes down to human settlements. If you hear it knocking at your door, do not open it!",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/478.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png",
+                            male_gender_rate = 0f,
+                            name = "Froslass",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 479,
+                            attack = 185.0,
+                            defense = 159.0,
+                            description = "Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/479.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png",
+                            male_gender_rate = 0f,
+                            name = "Rotom",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 480,
+                            attack = 156.0,
+                            defense = 270.0,
+                            description = "It is said that its emergence gave humans the intelligence to improve their quality of life.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/480.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/480.png",
+                            male_gender_rate = 0f,
+                            name = "Uxie",
+                            rarity = "Legendary",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 481,
+                            attack = 212.0,
+                            defense = 212.0,
+                            description = "It sleeps at the bottom of a lake. Its spirit is said to leave its body to fly on the lake's surface.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/481.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/481.png",
+                            male_gender_rate = 0f,
+                            name = "Mesprit",
+                            rarity = "Legendary",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 482,
+                            attack = 270.0,
+                            defense = 151.0,
+                            description = "It is thought that Uxie, Mesprit, and Azelf all came from the same egg.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/482.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/482.png",
+                            male_gender_rate = 0f,
+                            name = "Azelf",
+                            rarity = "Legendary",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 483,
+                            attack = 275.0,
+                            defense = 211.0,
+                            description = "It has the power to control time. It appears in Sinnoh-region myths as an ancient deity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/483.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/483.png",
+                            male_gender_rate = 0f,
+                            name = "Dialga",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 484,
+                            attack = 280.0,
+                            defense = 215.0,
+                            description = "It has the ability to distort space. It is described as a deity in Sinnoh-region mythology.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/484.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png",
+                            male_gender_rate = 0f,
+                            name = "Palkia",
+                            rarity = "Legendary",
+                            stamina = 189.0
+                        },
+                        new
+                        {
+                            num_pokedex = 485,
+                            attack = 251.0,
+                            defense = 213.0,
+                            description = "Boiling blood, like magma, circulates through its body. It makes its dwelling place in volcanic caves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/485.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/485.png",
+                            male_gender_rate = 0f,
+                            name = "Heatran",
+                            rarity = "Legendary",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 486,
+                            attack = 287.0,
+                            defense = 210.0,
+                            description = "There is an enduring legend that states this Pokémon towed continents with ropes.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/486.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/486.png",
+                            male_gender_rate = 0f,
+                            name = "Regigigas",
+                            rarity = "Legendary",
+                            stamina = 221.0
+                        },
+                        new
+                        {
+                            num_pokedex = 487,
+                            attack = 187.0,
+                            defense = 225.0,
+                            description = "It was banished for its violence. It silently gazed upon the old world from the Distortion World.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/487.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png",
+                            male_gender_rate = 0f,
+                            name = "Giratina",
+                            rarity = "Legendary",
+                            stamina = 284.0
+                        },
+                        new
+                        {
+                            num_pokedex = 488,
+                            attack = 152.0,
+                            defense = 258.0,
+                            description = "Those who sleep holding Cresselia's feather are assured of joyful dreams. It is said to represent the crescent moon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/488.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/488.png",
+                            male_gender_rate = 0f,
+                            name = "Cresselia",
+                            rarity = "Legendary",
+                            stamina = 260.0
+                        },
+                        new
+                        {
+                            num_pokedex = 489,
+                            attack = 162.0,
+                            defense = 162.0,
+                            description = "It drifts in warm seas. It always returns to where it was born, no matter how far it may have drifted.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/489.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/489.png",
+                            male_gender_rate = 0f,
+                            name = "Phione",
+                            rarity = "Mythical",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 490,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "It starts its life with a wondrous power that permits it to bond with any kind of Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/490.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/490.png",
+                            male_gender_rate = 0f,
+                            name = "Manaphy",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 491,
+                            attack = 285.0,
+                            defense = 198.0,
+                            description = "It can lull people to sleep and make them dream. It is active during nights of the new moon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/491.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/491.png",
+                            male_gender_rate = 0f,
+                            name = "Darkrai",
+                            rarity = "Mythical",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 492,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "The blooming of Gracidea flowers confers the power of flight upon it. Feelings of gratitude are the message it delivers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/492.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png",
+                            male_gender_rate = 0f,
+                            name = "Shaymin",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 494,
+                            attack = 210.0,
+                            defense = 210.0,
+                            description = "When it shares the infinite energy it creates, that being's entire body will be overflowing with power.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/494.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png",
+                            male_gender_rate = 0f,
+                            name = "Victini",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 495,
+                            attack = 88.0,
+                            defense = 107.0,
+                            description = "They photosynthesize by bathing their tails in sunlight. When they are not feeling well, their tails droop.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/495.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/495.png",
+                            male_gender_rate = 0f,
+                            name = "Snivy",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 496,
+                            attack = 122.0,
+                            defense = 152.0,
+                            description = "When it gets dirty, its leaves can't be used in photosynthesis, so it always keeps itself clean.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/496.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/496.png",
+                            male_gender_rate = 0f,
+                            name = "Servine",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 497,
+                            attack = 161.0,
+                            defense = 204.0,
+                            description = "It can stop its opponents' movements with just a glare. It takes in solar energy and boosts it internally.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/497.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/497.png",
+                            male_gender_rate = 0f,
+                            name = "Serperior",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 498,
+                            attack = 115.0,
+                            defense = 85.0,
+                            description = "It loves to eat roasted berries, but sometimes it gets too excited and burns them to a crisp.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/498.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/498.png",
+                            male_gender_rate = 0f,
+                            name = "Tepig",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 499,
+                            attack = 173.0,
+                            defense = 106.0,
+                            description = "When its internal fire flares up, its movements grow sharper and faster. When in trouble, it emits smoke.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/499.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png",
+                            male_gender_rate = 0f,
+                            name = "Pignite",
+                            rarity = "common",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 500,
+                            attack = 235.0,
+                            defense = 127.0,
+                            description = "It has mastered fast and powerful fighting moves. It grows a beard of fire.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/500.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/500.png",
+                            male_gender_rate = 0f,
+                            name = "Emboar",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 501,
+                            attack = 117.0,
+                            defense = 85.0,
+                            description = "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/501.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/501.png",
+                            male_gender_rate = 0f,
+                            name = "Oshawott",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 502,
+                            attack = 159.0,
+                            defense = 116.0,
+                            description = "As a result of strict training, each Dewott learns different forms for using the scalchops.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/502.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/502.png",
+                            male_gender_rate = 0f,
+                            name = "Dewott",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 503,
+                            attack = 212.0,
+                            defense = 157.0,
+                            description = "One swing of the sword incorporated in its armor can fell an opponent. A simple glare from one of them quiets everybody.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/503.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
+                            male_gender_rate = 0f,
+                            name = "Samurott",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 504,
+                            attack = 98.0,
+                            defense = 73.0,
+                            description = "Extremely cautious, one of them will always be on the lookout, but it won't notice a foe coming from behind.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/504.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/504.png",
+                            male_gender_rate = 0f,
+                            name = "Patrat",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 505,
+                            attack = 165.0,
+                            defense = 139.0,
+                            description = "When they see an enemy, their tails stand high, and they spit the seeds of berries stored in their cheek pouches.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/505.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/505.png",
+                            male_gender_rate = 0f,
+                            name = "Watchog",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 506,
+                            attack = 107.0,
+                            defense = 86.0,
+                            description = "This Pokémon is popular with beginners because it's intelligent, obedient to its Trainer's commands, and easy to raise.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/506.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/506.png",
+                            male_gender_rate = 0f,
+                            name = "Lillipup",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 507,
+                            attack = 145.0,
+                            defense = 126.0,
+                            description = "It has been living with people for so long that portrayals of it can be found on the walls of caves from long, long ago.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/507.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/507.png",
+                            male_gender_rate = 0f,
+                            name = "Herdier",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 508,
+                            attack = 206.0,
+                            defense = 182.0,
+                            description = "Its fur is long and thick. A long time ago in cold regions, every household kept a Stoutland.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/508.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/508.png",
+                            male_gender_rate = 0f,
+                            name = "Stoutland",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 509,
+                            attack = 98.0,
+                            defense = 73.0,
+                            description = "They steal from people for fun, but their victims can't help but forgive them. Their deceptively cute act is perfect.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/509.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png",
+                            male_gender_rate = 0f,
+                            name = "Purrloin",
+                            rarity = "common",
+                            stamina = 121.0
+                        },
+                        new
+                        {
+                            num_pokedex = 510,
+                            attack = 187.0,
+                            defense = 106.0,
+                            description = "Stealthily, it sneaks up on its target, striking from behind before its victim has a chance to react.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/510.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/510.png",
+                            male_gender_rate = 0f,
+                            name = "Liepard",
+                            rarity = "common",
+                            stamina = 162.0
+                        },
+                        new
+                        {
+                            num_pokedex = 511,
+                            attack = 104.0,
+                            defense = 94.0,
+                            description = "It's good at finding berries and gathers them from all over. It's kind enough to share them with friends.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/511.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/511.png",
+                            male_gender_rate = 0f,
+                            name = "Pansage",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 512,
+                            attack = 206.0,
+                            defense = 133.0,
+                            description = "Ill tempered, it fights by swinging its barbed tail around wildly. The leaf growing on its head is very bitter.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/512.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/512.png",
+                            male_gender_rate = 0f,
+                            name = "Simisage",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 513,
+                            attack = 104.0,
+                            defense = 94.0,
+                            description = "This Pokémon lives in caves in volcanoes. The fire within the tuft on its head can reach 600 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/513.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/513.png",
+                            male_gender_rate = 0f,
+                            name = "Pansear",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 514,
+                            attack = 206.0,
+                            defense = 133.0,
+                            description = "When it gets excited, embers rise from its head and tail and it gets hot. For some reason, it loves sweets.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/514.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/514.png",
+                            male_gender_rate = 0f,
+                            name = "Simisear",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 515,
+                            attack = 104.0,
+                            defense = 94.0,
+                            description = "The water stored inside the tuft on its head is full of nutrients. Plants that receive its water grow large.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/515.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/515.png",
+                            male_gender_rate = 0f,
+                            name = "Panpour",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 516,
+                            attack = 206.0,
+                            defense = 133.0,
+                            description = "It prefers places with clean water. When its tuft runs low, it replenishes it by siphoning up water with its tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/516.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/516.png",
+                            male_gender_rate = 0f,
+                            name = "Simipour",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 517,
+                            attack = 111.0,
+                            defense = 92.0,
+                            description = "It eats the dreams of people and Pokémon. When it eats a pleasant dream, it expels pink-colored mist.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/517.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/517.png",
+                            male_gender_rate = 0f,
+                            name = "Munna",
+                            rarity = "common",
+                            stamina = 183.0
+                        },
+                        new
+                        {
+                            num_pokedex = 518,
+                            attack = 183.0,
+                            defense = 166.0,
+                            description = "The dream mist coming from its forehead changes into many different colors depending on the dream that was eaten.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/518.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/518.png",
+                            male_gender_rate = 0f,
+                            name = "Musharna",
+                            rarity = "common",
+                            stamina = 253.0
+                        },
+                        new
+                        {
+                            num_pokedex = 519,
+                            attack = 98.0,
+                            defense = 80.0,
+                            description = "These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/519.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png",
+                            male_gender_rate = 0f,
+                            name = "Pidove",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 520,
+                            attack = 144.0,
+                            defense = 107.0,
+                            description = "No matter where in the world it goes, it knows where its nest is, so it never gets separated from its Trainer.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/520.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png",
+                            male_gender_rate = 0f,
+                            name = "Tranquill",
+                            rarity = "common",
+                            stamina = 158.0
+                        },
+                        new
+                        {
+                            num_pokedex = 521,
+                            attack = 226.0,
+                            defense = 146.0,
+                            description = "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/521.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/521.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/521.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/521.png",
+                            male_gender_rate = 0f,
+                            name = "Unfezant",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 522,
+                            attack = 118.0,
+                            defense = 64.0,
+                            description = "Its mane shines when it discharges electricity. They use the frequency and rhythm of these flashes to communicate.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/522.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/522.png",
+                            male_gender_rate = 0f,
+                            name = "Blitzle",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 523,
+                            attack = 211.0,
+                            defense = 136.0,
+                            description = "They have lightning-like movements. When Zebstrika run at full speed, the sound of thunder reverberates.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/523.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/523.png",
+                            male_gender_rate = 0f,
+                            name = "Zebstrika",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 524,
+                            attack = 121.0,
+                            defense = 110.0,
+                            description = "It was found in a fissure in a layer of exposed rock. The material that makes up its body is dirt from several hundred years ago.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/524.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/524.png",
+                            male_gender_rate = 0f,
+                            name = "Roggenrola",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 525,
+                            attack = 174.0,
+                            defense = 143.0,
+                            description = "Its orange crystals are lumps of powerful energy. They're valuable, so Boldore is sometimes targeted for them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/525.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/525.png",
+                            male_gender_rate = 0f,
+                            name = "Boldore",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 526,
+                            attack = 226.0,
+                            defense = 201.0,
+                            description = "It absorbs rays of sunlight and shoots out energy. It's usually lurking deep beneath the surface.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/526.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/526.png",
+                            male_gender_rate = 0f,
+                            name = "Gigalith",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 527,
+                            attack = 107.0,
+                            defense = 85.0,
+                            description = "The heart-shaped mark left on a body after a Woobat has been attached to it is said to bring good fortune.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/527.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/527.png",
+                            male_gender_rate = 0f,
+                            name = "Woobat",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 528,
+                            attack = 161.0,
+                            defense = 119.0,
+                            description = "Anyone who comes into contact with the ultrasonic waves emitted by a courting male experiences a positive mood shift.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/528.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/528.png",
+                            male_gender_rate = 0f,
+                            name = "Swoobat",
+                            rarity = "common",
+                            stamina = 167.0
+                        },
+                        new
+                        {
+                            num_pokedex = 529,
+                            attack = 154.0,
+                            defense = 85.0,
+                            description = "By spinning its body, it can dig straight through the ground at a speed of 30 mph.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/529.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/529.png",
+                            male_gender_rate = 0f,
+                            name = "Drilbur",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 530,
+                            attack = 255.0,
+                            defense = 129.0,
+                            description = "More than 300 feet below the surface, they build mazelike nests. Their activity can be destructive to subway tunnels.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/530.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png",
+                            male_gender_rate = 0f,
+                            name = "Excadrill",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 531,
+                            attack = 114.0,
+                            defense = 163.0,
+                            description = "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/531.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png",
+                            male_gender_rate = 0f,
+                            name = "Audino",
+                            rarity = "common",
+                            stamina = 230.0
+                        },
+                        new
+                        {
+                            num_pokedex = 532,
+                            attack = 134.0,
+                            defense = 87.0,
+                            description = "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/532.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/532.png",
+                            male_gender_rate = 0f,
+                            name = "Timburr",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 533,
+                            attack = 180.0,
+                            defense = 134.0,
+                            description = "This Pokémon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/533.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/533.png",
+                            male_gender_rate = 0f,
+                            name = "Gurdurr",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 534,
+                            attack = 243.0,
+                            defense = 158.0,
+                            description = "Rather than rely on force, they master moves that utilize the centrifugal force of spinning concrete.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/534.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png",
+                            male_gender_rate = 0f,
+                            name = "Conkeldurr",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 535,
+                            attack = 98.0,
+                            defense = 78.0,
+                            description = "By vibrating its cheeks, it emits sound waves imperceptible to humans. It uses the rhythm of these sounds to talk.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/535.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/535.png",
+                            male_gender_rate = 0f,
+                            name = "Tympole",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 536,
+                            attack = 128.0,
+                            defense = 109.0,
+                            description = "It lives in the water and on land. It uses its long, sticky tongue to immobilize its opponents.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/536.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png",
+                            male_gender_rate = 0f,
+                            name = "Palpitoad",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 537,
+                            attack = 188.0,
+                            defense = 150.0,
+                            description = "They shoot paralyzing liquid from their head bumps. They use vibration to hurt their opponents.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/537.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/537.png",
+                            male_gender_rate = 0f,
+                            name = "Seismitoad",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 538,
+                            attack = 172.0,
+                            defense = 160.0,
+                            description = "When it encounters a foe bigger than itself, it wants to throw it. It changes belts as it gets stronger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/538.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/538.png",
+                            male_gender_rate = 0f,
+                            name = "Throh",
+                            rarity = "common",
+                            stamina = 260.0
+                        },
+                        new
+                        {
+                            num_pokedex = 539,
+                            attack = 231.0,
+                            defense = 153.0,
+                            description = "Tying their belts gets them pumped and makes their punches more destructive. Disturbing their training angers them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/539.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/539.png",
+                            male_gender_rate = 0f,
+                            name = "Sawk",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 540,
+                            attack = 96.0,
+                            defense = 124.0,
+                            description = "Since this Pokémon makes its own clothes out of leaves, it is a popular mascot for fashion designers.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/540.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png",
+                            male_gender_rate = 0f,
+                            name = "Sewaddle",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 541,
+                            attack = 115.0,
+                            defense = 162.0,
+                            description = "It protects itself from the cold by wrapping up in leaves. It stays on the move, eating leaves in forests.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/541.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/541.png",
+                            male_gender_rate = 0f,
+                            name = "Swadloon",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 542,
+                            attack = 205.0,
+                            defense = 165.0,
+                            description = "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/542.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/542.png",
+                            male_gender_rate = 0f,
+                            name = "Leavanny",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 543,
+                            attack = 83.0,
+                            defense = 99.0,
+                            description = "Its bite injects a potent poison, enough to paralyze large bird Pokémon that try to prey on it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/543.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/543.png",
+                            male_gender_rate = 0f,
+                            name = "Venipede",
+                            rarity = "common",
+                            stamina = 102.0
+                        },
+                        new
+                        {
+                            num_pokedex = 544,
+                            attack = 100.0,
+                            defense = 173.0,
+                            description = "It is usually motionless, but when attacked, it rotates at high speed and then crashes into its opponent.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/544.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png",
+                            male_gender_rate = 0f,
+                            name = "Whirlipede",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 545,
+                            attack = 203.0,
+                            defense = 175.0,
+                            description = "With quick movements, it chases down its foes, attacking relentlessly with its horns until it prevails.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/545.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/545.png",
+                            male_gender_rate = 0f,
+                            name = "Scolipede",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 546,
+                            attack = 71.0,
+                            defense = 111.0,
+                            description = "When attacked, it expels cotton from its body to create a diversion. The cotton it loses grows back in quickly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/546.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/546.png",
+                            male_gender_rate = 0f,
+                            name = "Cottonee",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 547,
+                            attack = 164.0,
+                            defense = 176.0,
+                            description = "Whimsicott doesn't live in a fixed location. It floats around on whirling winds, appearing all over the place to perform its mischief.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/547.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/547.png",
+                            male_gender_rate = 0f,
+                            name = "Whimsicott",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 548,
+                            attack = 119.0,
+                            defense = 91.0,
+                            description = "They prefer clean water and soil. When the environment they live in turns bad, the whole bunch will up and move to a new area.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/548.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/548.png",
+                            male_gender_rate = 0f,
+                            name = "Petilil",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 549,
+                            attack = 214.0,
+                            defense = 155.0,
+                            description = "It's well liked by other Pokémon because of its beauty. The flower on its head needs constant care, or it will soon wither and rot.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/549.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png",
+                            male_gender_rate = 0f,
+                            name = "Lilligant",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 550,
+                            attack = 189.0,
+                            defense = 129.0,
+                            description = "When a school of Basculin appears in a lake, everything else disappears, except for Corphish and Crawdaunt. That's how violent Basculin are.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/550.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png",
+                            male_gender_rate = 0f,
+                            name = "Basculin",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 551,
+                            attack = 132.0,
+                            defense = 69.0,
+                            description = "Sandile's still not good at hunting, so it mostly eats things that have collapsed in the desert. It's called “the cleaner of the desert.\"",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/551.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/551.png",
+                            male_gender_rate = 0f,
+                            name = "Sandile",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 552,
+                            attack = 155.0,
+                            defense = 90.0,
+                            description = "It buries some of its prey in the sand to use as emergency meals when its hunts are unsuccessful.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/552.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png",
+                            male_gender_rate = 0f,
+                            name = "Krokorok",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 553,
+                            attack = 229.0,
+                            defense = 158.0,
+                            description = "It conceals itself in sandstorms that Flygon whip up and waits patiently for prey to appear.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/553.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png",
+                            male_gender_rate = 0f,
+                            name = "Krookodile",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 554,
+                            attack = 153.0,
+                            defense = 86.0,
+                            description = "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/554.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png",
+                            male_gender_rate = 0f,
+                            name = "Darumaka",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 555,
+                            attack = 263.0,
+                            defense = 114.0,
+                            description = "Its internal fire burns at 2,500 degrees Fahrenheit, making enough power that it can destroy a dump truck with one punch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/555.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
+                            male_gender_rate = 0f,
+                            name = "Darmanitan",
+                            rarity = "common",
+                            stamina = 233.0
+                        },
+                        new
+                        {
+                            num_pokedex = 556,
+                            attack = 201.0,
+                            defense = 130.0,
+                            description = "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/556.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/556.png",
+                            male_gender_rate = 0f,
+                            name = "Maractus",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 557,
+                            attack = 118.0,
+                            defense = 128.0,
+                            description = "When it finds a stone of a suitable size, it secretes a liquid from its mouth to open up a hole to crawl into.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/557.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/557.png",
+                            male_gender_rate = 0f,
+                            name = "Dwebble",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 558,
+                            attack = 188.0,
+                            defense = 200.0,
+                            description = "Competing for territory, Crustle fight viciously. The one whose boulder is broken is the loser of the battle.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/558.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/558.png",
+                            male_gender_rate = 0f,
+                            name = "Crustle",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 559,
+                            attack = 132.0,
+                            defense = 132.0,
+                            description = "It stretches its saggy skin up to its neck to protect itself. The saggier their skin, the more respect they garner.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/559.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/559.png",
+                            male_gender_rate = 0f,
+                            name = "Scraggy",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 560,
+                            attack = 163.0,
+                            defense = 222.0,
+                            description = "It taunts its opponents by spitting. It has a certain territory that it never leaves its whole life long.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/560.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png",
+                            male_gender_rate = 0f,
+                            name = "Scrafty",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 561,
+                            attack = 204.0,
+                            defense = 167.0,
+                            description = "The guardians of an ancient city, they always fly the same route while keeping watch for invaders.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/561.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/561.png",
+                            male_gender_rate = 0f,
+                            name = "Sigilyph",
+                            rarity = "common",
+                            stamina = 176.0
+                        },
+                        new
+                        {
+                            num_pokedex = 562,
+                            attack = 95.0,
+                            defense = 141.0,
+                            description = "Each of them carries a mask that used to be its face when it was human. Sometimes they look at it and cry.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/562.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png",
+                            male_gender_rate = 0f,
+                            name = "Yamask",
+                            rarity = "common",
+                            stamina = 116.0
+                        },
+                        new
+                        {
+                            num_pokedex = 563,
+                            attack = 163.0,
+                            defense = 237.0,
+                            description = "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/563.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png",
+                            male_gender_rate = 0f,
+                            name = "Cofagrigus",
+                            rarity = "common",
+                            stamina = 151.0
+                        },
+                        new
+                        {
+                            num_pokedex = 564,
+                            attack = 134.0,
+                            defense = 146.0,
+                            description = "Its hunting grounds encompassed a broad area, from the land to more than half a mile deep in the ocean.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/564.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/564.png",
+                            male_gender_rate = 0f,
+                            name = "Tirtouga",
+                            rarity = "common",
+                            stamina = 144.0
+                        },
+                        new
+                        {
+                            num_pokedex = 565,
+                            attack = 192.0,
+                            defense = 197.0,
+                            description = "Carracosta eats every last bit of the prey it catches, even the shells and bones, to further strengthen its sturdy shell.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/565.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/565.png",
+                            male_gender_rate = 0f,
+                            name = "Carracosta",
+                            rarity = "common",
+                            stamina = 179.0
+                        },
+                        new
+                        {
+                            num_pokedex = 566,
+                            attack = 213.0,
+                            defense = 89.0,
+                            description = "Restored from a fossil, this ancient bird Pokémon has wings but can't yet fly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/566.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/566.png",
+                            male_gender_rate = 0f,
+                            name = "Archen",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 567,
+                            attack = 292.0,
+                            defense = 139.0,
+                            description = "Said to be an ancestor of bird Pokémon, the muscles it uses to flap its wings are still weak, so it needs a long runway in order to take off.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/567.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/567.png",
+                            male_gender_rate = 0f,
+                            name = "Archeops",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 568,
+                            attack = 96.0,
+                            defense = 122.0,
+                            description = "If a young Pokémon or child breathes in the toxic gas that Trubbish belches out, it could be a life-threatening situation.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/568.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/568.png",
+                            male_gender_rate = 0f,
+                            name = "Trubbish",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 569,
+                            attack = 181.0,
+                            defense = 164.0,
+                            description = "Some say the reason Garbodor in Alola are a little stronger than their counterparts elsewhere is the presence of Muk, their natural enemy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/569.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png",
+                            male_gender_rate = 0f,
+                            name = "Garbodor",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 570,
+                            attack = 153.0,
+                            defense = 78.0,
+                            description = "If a normally talkative child suddenly stops talking, it may have been replaced by Zorua.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/570.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/570.png",
+                            male_gender_rate = 0f,
+                            name = "Zorua",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 571,
+                            attack = 250.0,
+                            defense = 127.0,
+                            description = "If it thinks humans are going to discover its den, Zoroark shows them visions that make them wander around in the woods.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/571.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png",
+                            male_gender_rate = 0f,
+                            name = "Zoroark",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 572,
+                            attack = 98.0,
+                            defense = 80.0,
+                            description = "When its tail has gotten dirty from self-cleaning or from cleaning its nest, Minccino spends a whole day washing its tail in clean spring water.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/572.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/572.png",
+                            male_gender_rate = 0f,
+                            name = "Minccino",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 573,
+                            attack = 198.0,
+                            defense = 130.0,
+                            description = "The oil that seeps from its body is really smooth. For people troubled by bad skin, this oil is an effective treatment.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/573.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
+                            male_gender_rate = 0f,
+                            name = "Cinccino",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 574,
+                            attack = 98.0,
+                            defense = 112.0,
+                            description = "They intently observe both Trainers and Pokémon. Apparently, they are looking at something that only Gothita can see.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/574.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/574.png",
+                            male_gender_rate = 0f,
+                            name = "Gothita",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 575,
+                            attack = 137.0,
+                            defense = 153.0,
+                            description = "According to many old tales, it creates friends for itself by controlling sleeping children on starry nights.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/575.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png",
+                            male_gender_rate = 0f,
+                            name = "Gothorita",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 576,
+                            attack = 176.0,
+                            defense = 205.0,
+                            description = "They can predict the future from the placement and movement of the stars. They can see Trainers' life spans.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/576.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
+                            male_gender_rate = 0f,
+                            name = "Gothitelle",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 577,
+                            attack = 170.0,
+                            defense = 83.0,
+                            description = "They drive away attackers by unleashing psychic power. They can use telepathy to talk with others.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/577.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/577.png",
+                            male_gender_rate = 0f,
+                            name = "Solosis",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 578,
+                            attack = 208.0,
+                            defense = 103.0,
+                            description = "When their two divided brains think the same thoughts, their psychic power is maximized.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/578.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/578.png",
+                            male_gender_rate = 0f,
+                            name = "Duosion",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 579,
+                            attack = 214.0,
+                            defense = 148.0,
+                            description = "When Reuniclus shake hands, a network forms between their brains, increasing their psychic power.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/579.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/579.png",
+                            male_gender_rate = 0f,
+                            name = "Reuniclus",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 580,
+                            attack = 84.0,
+                            defense = 96.0,
+                            description = "They are better at swimming than flying, and they happily eat their favorite food, peat moss, as they dive underwater.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/580.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/580.png",
+                            male_gender_rate = 0f,
+                            name = "Ducklett",
+                            rarity = "common",
+                            stamina = 158.0
+                        },
+                        new
+                        {
+                            num_pokedex = 581,
+                            attack = 182.0,
+                            defense = 132.0,
+                            description = "Swanna start to dance at dusk. The one dancing in the middle is the leader of the flock.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/581.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/581.png",
+                            male_gender_rate = 0f,
+                            name = "Swanna",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 582,
+                            attack = 118.0,
+                            defense = 106.0,
+                            description = "When the morning sun hit an icicle, it wished not to melt, and thus Vanillite was born. At night, it buries itself in snow to sleep.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/582.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/582.png",
+                            male_gender_rate = 0f,
+                            name = "Vanillite",
+                            rarity = "common",
+                            stamina = 113.0
+                        },
+                        new
+                        {
+                            num_pokedex = 583,
+                            attack = 151.0,
+                            defense = 138.0,
+                            description = "This hearty Pokémon survived the Ice Age. It's incredibly popular in very hot regions.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/583.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/583.png",
+                            male_gender_rate = 0f,
+                            name = "Vanillish",
+                            rarity = "common",
+                            stamina = 139.0
+                        },
+                        new
+                        {
+                            num_pokedex = 584,
+                            attack = 218.0,
+                            defense = 184.0,
+                            description = "Vanilluxe is born when two Vanillish, half-melted by the day's light, stick to each other and freeze together in the cold return of night.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/584.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/584.png",
+                            male_gender_rate = 0f,
+                            name = "Vanilluxe",
+                            rarity = "common",
+                            stamina = 174.0
+                        },
+                        new
+                        {
+                            num_pokedex = 585,
+                            attack = 115.0,
+                            defense = 100.0,
+                            description = "The turning of the seasons changes the color and scent of this Pokémon's fur. People use it to mark the seasons.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/585.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/585.png",
+                            male_gender_rate = 0f,
+                            name = "Deerling",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 586,
+                            attack = 198.0,
+                            defense = 146.0,
+                            description = "They migrate according to the seasons, so some people call Sawsbuck the harbingers of spring.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/586.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/586.png",
+                            male_gender_rate = 0f,
+                            name = "Sawsbuck",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 587,
+                            attack = 158.0,
+                            defense = 127.0,
+                            description = "As it flies, it scatters electricity around, so bird Pokémon keep their distance. That's why Emolga can keep all its food to itself.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/587.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/587.png",
+                            male_gender_rate = 0f,
+                            name = "Emolga",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 588,
+                            attack = 137.0,
+                            defense = 87.0,
+                            description = "For some reason they evolve when they receive electrical energy while they are attacking Shelmet.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/588.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/588.png",
+                            male_gender_rate = 0f,
+                            name = "Karrablast",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 589,
+                            attack = 223.0,
+                            defense = 187.0,
+                            description = "These Pokémon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/589.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png",
+                            male_gender_rate = 0f,
+                            name = "Escavalier",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 590,
+                            attack = 97.0,
+                            defense = 91.0,
+                            description = "It lures Pokémon with its pattern that looks just like a Poké Ball, then releases poison spores.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/590.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/590.png",
+                            male_gender_rate = 0f,
+                            name = "Foongus",
+                            rarity = "common",
+                            stamina = 170.0
+                        },
+                        new
+                        {
+                            num_pokedex = 591,
+                            attack = 155.0,
+                            defense = 139.0,
+                            description = "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/591.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/591.png",
+                            male_gender_rate = 0f,
+                            name = "Amoonguss",
+                            rarity = "common",
+                            stamina = 249.0
+                        },
+                        new
+                        {
+                            num_pokedex = 592,
+                            attack = 115.0,
+                            defense = 134.0,
+                            description = "Using the invisible poison spikes on its veillike arms and legs, it paralyzes its enemies and causes them to drown.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/592.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/592.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/592.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/592.png",
+                            male_gender_rate = 0f,
+                            name = "Frillish",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 593,
+                            attack = 159.0,
+                            defense = 178.0,
+                            description = "Fishermen are terrified of Jellicent. It's rumored to drag them into the sea and steal their lives away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/593.png",
+                            img_back_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/593.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
+                            img_front_female = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/593.png",
+                            male_gender_rate = 0f,
+                            name = "Jellicent",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 594,
+                            attack = 138.0,
+                            defense = 131.0,
+                            description = "The reason it helps Pokémon in a weakened condition is that any Pokémon coming after them may also attack Alomomola.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/594.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/594.png",
+                            male_gender_rate = 0f,
+                            name = "Alomomola",
+                            rarity = "common",
+                            stamina = 338.0
+                        },
+                        new
+                        {
+                            num_pokedex = 595,
+                            attack = 110.0,
+                            defense = 98.0,
+                            description = "They attach themselves to large-bodied Pokémon and absorb static electricity, which they store in an electric pouch.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/595.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/595.png",
+                            male_gender_rate = 0f,
+                            name = "Joltik",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 596,
+                            attack = 201.0,
+                            defense = 128.0,
+                            description = "When attacked, they create an electric barrier by spitting out many electrically charged threads.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/596.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/596.png",
+                            male_gender_rate = 0f,
+                            name = "Galvantula",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 597,
+                            attack = 82.0,
+                            defense = 155.0,
+                            description = "It absorbs the iron it finds in the rock while clinging to the ceiling. It shoots spikes when in danger.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/597.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png",
+                            male_gender_rate = 0f,
+                            name = "Ferroseed",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 598,
+                            attack = 158.0,
+                            defense = 223.0,
+                            description = "They attach themselves to cave ceilings, firing steel spikes at targets passing beneath them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/598.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/598.png",
+                            male_gender_rate = 0f,
+                            name = "Ferrothorn",
+                            rarity = "common",
+                            stamina = 179.0
+                        },
+                        new
+                        {
+                            num_pokedex = 599,
+                            attack = 98.0,
+                            defense = 121.0,
+                            description = "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/599.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/599.png",
+                            male_gender_rate = 0f,
+                            name = "Klink",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 600,
+                            attack = 150.0,
+                            defense = 174.0,
+                            description = "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn't return, it will die.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/600.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png",
+                            male_gender_rate = 0f,
+                            name = "Klang",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 601,
+                            attack = 199.0,
+                            defense = 214.0,
+                            description = "Its red core functions as an energy tank. It fires the charged energy through its spikes into an area.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/601.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png",
+                            male_gender_rate = 0f,
+                            name = "Klinklang",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 602,
+                            attack = 105.0,
+                            defense = 78.0,
+                            description = "One alone can emit only a trickle of electricity, so a group of them gathers to unleash a powerful electric shock.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/602.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png",
+                            male_gender_rate = 0f,
+                            name = "Tynamo",
+                            rarity = "common",
+                            stamina = 111.0
+                        },
+                        new
+                        {
+                            num_pokedex = 603,
+                            attack = 156.0,
+                            defense = 130.0,
+                            description = "These Pokémon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/603.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/603.png",
+                            male_gender_rate = 0f,
+                            name = "Eelektrik",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 604,
+                            attack = 217.0,
+                            defense = 152.0,
+                            description = "They crawl out of the ocean using their arms. They will attack prey on shore and immediately drag it into the ocean.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/604.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/604.png",
+                            male_gender_rate = 0f,
+                            name = "Eelektross",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 605,
+                            attack = 148.0,
+                            defense = 100.0,
+                            description = "This Pokémon is shrouded in mystery. It's said to have appeared from a UFO that fell from the sky about 50 years ago.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/605.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/605.png",
+                            male_gender_rate = 0f,
+                            name = "Elgyem",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 606,
+                            attack = 221.0,
+                            defense = 163.0,
+                            description = "It has strong psychic powers. Using its fingers that flash three different colors, it controls its opponents and rewrites their memories.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/606.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/606.png",
+                            male_gender_rate = 0f,
+                            name = "Beheeyem",
+                            rarity = "common",
+                            stamina = 181.0
+                        },
+                        new
+                        {
+                            num_pokedex = 607,
+                            attack = 108.0,
+                            defense = 98.0,
+                            description = "Litwick shines a light that absorbs the life energy of people and Pokémon, which becomes the fuel that it burns.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/607.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/607.png",
+                            male_gender_rate = 0f,
+                            name = "Litwick",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 608,
+                            attack = 169.0,
+                            defense = 115.0,
+                            description = "It arrives near the moment of death and steals spirit from the body.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/608.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/608.png",
+                            male_gender_rate = 0f,
+                            name = "Lampent",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 609,
+                            attack = 271.0,
+                            defense = 182.0,
+                            description = "The spirits burned up in its ominous flame lose their way and wander this world forever.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/609.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png",
+                            male_gender_rate = 0f,
+                            name = "Chandelure",
+                            rarity = "common",
+                            stamina = 155.0
+                        },
+                        new
+                        {
+                            num_pokedex = 610,
+                            attack = 154.0,
+                            defense = 101.0,
+                            description = "They mark their territory by leaving gashes in trees with their tusks. If a tusk breaks, a new one grows in quickly.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/610.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
+                            male_gender_rate = 0f,
+                            name = "Axew",
+                            rarity = "common",
+                            stamina = 130.0
+                        },
+                        new
+                        {
+                            num_pokedex = 611,
+                            attack = 212.0,
+                            defense = 123.0,
+                            description = "A broken tusk will not grow back, so it diligently sharpens its tusks on river rocks after the end of a battle.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/611.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/611.png",
+                            male_gender_rate = 0f,
+                            name = "Fraxure",
+                            rarity = "common",
+                            stamina = 165.0
+                        },
+                        new
+                        {
+                            num_pokedex = 612,
+                            attack = 284.0,
+                            defense = 172.0,
+                            description = "Their sturdy tusks will stay sharp even if used to cut steel beams. These Pokémon are covered in hard armor.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/612.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/612.png",
+                            male_gender_rate = 0f,
+                            name = "Haxorus",
+                            rarity = "common",
+                            stamina = 183.0
+                        },
+                        new
+                        {
+                            num_pokedex = 613,
+                            attack = 128.0,
+                            defense = 74.0,
+                            description = "Their snot is a barometer of health. When healthy, their snot is sticky and the power of their ice moves increases.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/613.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/613.png",
+                            male_gender_rate = 0f,
+                            name = "Cubchoo",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 614,
+                            attack = 233.0,
+                            defense = 152.0,
+                            description = "It freezes its breath to create fangs and claws of ice to fight with. Cold northern areas are its habitat.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/614.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png",
+                            male_gender_rate = 0f,
+                            name = "Beartic",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 615,
+                            attack = 190.0,
+                            defense = 218.0,
+                            description = "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/615.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/615.png",
+                            male_gender_rate = 0f,
+                            name = "Cryogonal",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 616,
+                            attack = 72.0,
+                            defense = 140.0,
+                            description = "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/616.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/616.png",
+                            male_gender_rate = 0f,
+                            name = "Shelmet",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 617,
+                            attack = 220.0,
+                            defense = 120.0,
+                            description = "When its body dries out, it weakens. So, to prevent dehydration, it wraps itself in many layers of thin membrane.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/617.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/617.png",
+                            male_gender_rate = 0f,
+                            name = "Accelgor",
+                            rarity = "common",
+                            stamina = 190.0
+                        },
+                        new
+                        {
+                            num_pokedex = 618,
+                            attack = 144.0,
+                            defense = 171.0,
+                            description = "It conceals itself in the mud of the seashore. Then it waits. When prey touch it, it delivers a jolt of electricity.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/618.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png",
+                            male_gender_rate = 0f,
+                            name = "Stunfisk",
+                            rarity = "common",
+                            stamina = 240.0
+                        },
+                        new
+                        {
+                            num_pokedex = 619,
+                            attack = 160.0,
+                            defense = 98.0,
+                            description = "They seclude themselves in the mountains and devote themselves to training. The form of their kicks and chops differs from pack to pack.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/619.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/619.png",
+                            male_gender_rate = 0f,
+                            name = "Mienfoo",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 620,
+                            attack = 258.0,
+                            defense = 127.0,
+                            description = "When Mienshao lets out a bizarre wail, you're in danger. A flurry of kicks and chops too fast to see is about to be unleashed!",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/620.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/620.png",
+                            male_gender_rate = 0f,
+                            name = "Mienshao",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 621,
+                            attack = 213.0,
+                            defense = 170.0,
+                            description = "It infiltrates tunnels that Pokémon like Diglett and Dugtrio have dug and quietly waits for prey to pass through.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/621.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/621.png",
+                            male_gender_rate = 0f,
+                            name = "Druddigon",
+                            rarity = "common",
+                            stamina = 184.0
+                        },
+                        new
+                        {
+                            num_pokedex = 622,
+                            attack = 127.0,
+                            defense = 92.0,
+                            description = "Although ancient people apparently built it by working with clay, the source of its energy is unclear.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/622.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/622.png",
+                            male_gender_rate = 0f,
+                            name = "Golett",
+                            rarity = "common",
+                            stamina = 153.0
+                        },
+                        new
+                        {
+                            num_pokedex = 623,
+                            attack = 222.0,
+                            defense = 154.0,
+                            description = "When the seal on its chest is removed, it rages indiscriminately, turning the whole town around it into a mountain of rubble.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/623.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/623.png",
+                            male_gender_rate = 0f,
+                            name = "Golurk",
+                            rarity = "common",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 624,
+                            attack = 154.0,
+                            defense = 114.0,
+                            description = "It follows Bisharp's orders to a tee when it attacks enemies. After slashing an opponent, Pawniard clangs both of its blades together.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/624.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png",
+                            male_gender_rate = 0f,
+                            name = "Pawniard",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 625,
+                            attack = 232.0,
+                            defense = 176.0,
+                            description = "It leads a group of Pawniard. Bisharp doesn't even change its expression when it deals the finishing blow to an opponent.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/625.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/625.png",
+                            male_gender_rate = 0f,
+                            name = "Bisharp",
+                            rarity = "common",
+                            stamina = 163.0
+                        },
+                        new
+                        {
+                            num_pokedex = 626,
+                            attack = 195.0,
+                            defense = 182.0,
+                            description = "Their fluffy fur absorbs damage, even if they strike foes with a fierce headbutt.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/626.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png",
+                            male_gender_rate = 0f,
+                            name = "Bouffalant",
+                            rarity = "common",
+                            stamina = 216.0
+                        },
+                        new
+                        {
+                            num_pokedex = 627,
+                            attack = 150.0,
+                            defense = 97.0,
+                            description = "Known as a natural-born warrior, soon after its hatching, it will challenge its parent to a fight in order to gain their acceptance.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/627.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/627.png",
+                            male_gender_rate = 0f,
+                            name = "Rufflet",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 628,
+                            attack = 232.0,
+                            defense = 152.0,
+                            description = "Known as “the hero of the skies,\" this Pokémon is so proud and so brave that it will never retreat, even when it's injured.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/628.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/628.png",
+                            male_gender_rate = 0f,
+                            name = "Braviary",
+                            rarity = "common",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 629,
+                            attack = 105.0,
+                            defense = 139.0,
+                            description = "Its healthy appetite leads to visible growth spurts. It often has to replace the bones it wears as its size increases.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/629.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/629.png",
+                            male_gender_rate = 0f,
+                            name = "Vullaby",
+                            rarity = "common",
+                            stamina = 172.0
+                        },
+                        new
+                        {
+                            num_pokedex = 630,
+                            attack = 129.0,
+                            defense = 205.0,
+                            description = "It's always searching for food for Vullaby. When it finds a weak Pokémon, Mandibuzz swoops it right off to its nest.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/630.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/630.png",
+                            male_gender_rate = 0f,
+                            name = "Mandibuzz",
+                            rarity = "common",
+                            stamina = 242.0
+                        },
+                        new
+                        {
+                            num_pokedex = 631,
+                            attack = 204.0,
+                            defense = 129.0,
+                            description = "It draws in air through its tail, transforms it into fire, and uses it like a tongue. It melts Durant and eats them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/631.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/631.png",
+                            male_gender_rate = 0f,
+                            name = "Heatmor",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 632,
+                            attack = 217.0,
+                            defense = 188.0,
+                            description = "They attack in groups, covering themselves in steel armor to protect themselves from Heatmor.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/632.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/632.png",
+                            male_gender_rate = 0f,
+                            name = "Durant",
+                            rarity = "common",
+                            stamina = 151.0
+                        },
+                        new
+                        {
+                            num_pokedex = 633,
+                            attack = 116.0,
+                            defense = 93.0,
+                            description = "Lacking sight, it's unaware of its surroundings, so it bumps into things and eats anything that moves.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/633.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png",
+                            male_gender_rate = 0f,
+                            name = "Deino",
+                            rarity = "common",
+                            stamina = 141.0
+                        },
+                        new
+                        {
+                            num_pokedex = 634,
+                            attack = 159.0,
+                            defense = 135.0,
+                            description = "After it has eaten up all the food in its territory, it moves to another area. Its two heads do not get along.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/634.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/634.png",
+                            male_gender_rate = 0f,
+                            name = "Zweilous",
+                            rarity = "common",
+                            stamina = 176.0
+                        },
+                        new
+                        {
+                            num_pokedex = 635,
+                            attack = 256.0,
+                            defense = 188.0,
+                            description = "It responds to movement by attacking. This scary, three-headed Pokémon devours everything in its path!",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/635.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png",
+                            male_gender_rate = 0f,
+                            name = "Hydreigon",
+                            rarity = "common",
+                            stamina = 211.0
+                        },
+                        new
+                        {
+                            num_pokedex = 636,
+                            attack = 156.0,
+                            defense = 107.0,
+                            description = "It protects itself with flame. Long years ago, people believed Larvesta had a nest on the sun.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/636.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/636.png",
+                            male_gender_rate = 0f,
+                            name = "Larvesta",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 637,
+                            attack = 264.0,
+                            defense = 189.0,
+                            description = "According to legends, it was hatched from a flaming cocoon to save people and Pokémon that were suffering from the cold.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/637.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png",
+                            male_gender_rate = 0f,
+                            name = "Volcarona",
+                            rarity = "common",
+                            stamina = 198.0
+                        },
+                        new
+                        {
+                            num_pokedex = 638,
+                            attack = 192.0,
+                            defense = 229.0,
+                            description = "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/638.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/638.png",
+                            male_gender_rate = 0f,
+                            name = "Cobalion",
+                            rarity = "Legendary",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 639,
+                            attack = 260.0,
+                            defense = 192.0,
+                            description = "Spoken of in legend, this Pokémon used its phenomenal power to destroy a castle in its effort to protect Pokémon.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/639.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/639.png",
+                            male_gender_rate = 0f,
+                            name = "Terrakion",
+                            rarity = "Legendary",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 640,
+                            attack = 192.0,
+                            defense = 229.0,
+                            description = "Legends say this Pokémon confounded opponents with its swift movements.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/640.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/640.png",
+                            male_gender_rate = 0f,
+                            name = "Virizion",
+                            rarity = "Legendary",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 641,
+                            attack = 266.0,
+                            defense = 164.0,
+                            description = "Tornadus expels massive energy from its tail, causing severe storms. Its power is great enough to blow houses away.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/641.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
+                            male_gender_rate = 0f,
+                            name = "Tornadus",
+                            rarity = "Legendary",
+                            stamina = 188.0
+                        },
+                        new
+                        {
+                            num_pokedex = 642,
+                            attack = 266.0,
+                            defense = 164.0,
+                            description = "As it flies around, it shoots lightning all over the place and causes forest fires. It is therefore disliked.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/642.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
+                            male_gender_rate = 0f,
+                            name = "Thundurus",
+                            rarity = "Legendary",
+                            stamina = 188.0
+                        },
+                        new
+                        {
+                            num_pokedex = 643,
+                            attack = 275.0,
+                            defense = 211.0,
+                            description = "When Reshiram's tail flares, the heat energy moves the atmosphere and changes the world's weather.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/643.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png",
+                            male_gender_rate = 0f,
+                            name = "Reshiram",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 644,
+                            attack = 275.0,
+                            defense = 211.0,
+                            description = "Concealing itself in lightning clouds, it flies throughout the Unova region. It creates electricity in its tail.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/644.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/644.png",
+                            male_gender_rate = 0f,
+                            name = "Zekrom",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 645,
+                            attack = 261.0,
+                            defense = 182.0,
+                            description = "From the forces of lightning and wind, it creates energy to give nutrients to the soil and make the land abundant.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/645.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
+                            male_gender_rate = 0f,
+                            name = "Landorus",
+                            rarity = "Legendary",
+                            stamina = 205.0
+                        },
+                        new
+                        {
+                            num_pokedex = 646,
+                            attack = 246.0,
+                            defense = 170.0,
+                            description = "It generates a powerful, freezing energy inside itself, but its body became frozen when the energy leaked out.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/646.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/646.png",
+                            male_gender_rate = 0f,
+                            name = "Kyurem",
+                            rarity = "Legendary",
+                            stamina = 245.0
+                        },
+                        new
+                        {
+                            num_pokedex = 647,
+                            attack = 260.0,
+                            defense = 192.0,
+                            description = "When it is resolute, its body fills with power and it becomes swifter. Its jumps are then too fast to follow.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/647.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
+                            male_gender_rate = 0f,
+                            name = "Keldeo",
+                            rarity = "Mythical",
+                            stamina = 209.0
+                        },
+                        new
+                        {
+                            num_pokedex = 648,
+                            attack = 250.0,
+                            defense = 225.0,
+                            description = "Its melodies are sung with a special vocalization method that can control the feelings of those who hear it.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/648.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png",
+                            male_gender_rate = 0f,
+                            name = "Meloetta",
+                            rarity = "Mythical",
+                            stamina = 225.0
+                        },
+                        new
+                        {
+                            num_pokedex = 650,
+                            attack = 110.0,
+                            defense = 106.0,
+                            description = "The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/650.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
+                            male_gender_rate = 0f,
+                            name = "Chespin",
+                            rarity = "common",
+                            stamina = 148.0
+                        },
+                        new
+                        {
+                            num_pokedex = 651,
+                            attack = 146.0,
+                            defense = 156.0,
+                            description = "It relies on its sturdy shell to deflect predators' attacks. It counterattacks with its sharp quills.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/651.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/651.png",
+                            male_gender_rate = 0f,
+                            name = "Quilladin",
+                            rarity = "common",
+                            stamina = 156.0
+                        },
+                        new
+                        {
+                            num_pokedex = 653,
+                            attack = 116.0,
+                            defense = 102.0,
+                            description = "Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/653.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/653.png",
+                            male_gender_rate = 0f,
+                            name = "Fennekin",
+                            rarity = "common",
+                            stamina = 120.0
+                        },
+                        new
+                        {
+                            num_pokedex = 656,
+                            attack = 122.0,
+                            defense = 84.0,
+                            description = "It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/656.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png",
+                            male_gender_rate = 0f,
+                            name = "Froakie",
+                            rarity = "common",
+                            stamina = 121.0
+                        },
+                        new
+                        {
+                            num_pokedex = 658,
+                            attack = 223.0,
+                            defense = 152.0,
+                            description = "It creates throwing stars out of compressed water. When it spins them and throws them at high speed, these stars can split metal in two.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/658.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png",
+                            male_gender_rate = 0f,
+                            name = "Greninja",
+                            rarity = "common",
+                            stamina = 176.0
+                        },
+                        new
+                        {
+                            num_pokedex = 659,
+                            attack = 68.0,
+                            defense = 72.0,
+                            description = "They use their large ears to dig burrows. They will dig the whole night through.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/659.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png",
+                            male_gender_rate = 0f,
+                            name = "Bunnelby",
+                            rarity = "common",
+                            stamina = 116.0
+                        },
+                        new
+                        {
+                            num_pokedex = 663,
+                            attack = 176.0,
+                            defense = 155.0,
+                            description = "In the fever of an exciting battle, it showers embers from the gaps between its feathers and takes to the air.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/663.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png",
+                            male_gender_rate = 0f,
+                            name = "Talonflame",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 665,
+                            attack = 48.0,
+                            defense = 89.0,
+                            description = "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/665.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png",
+                            male_gender_rate = 0f,
+                            name = "Spewpa",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 667,
+                            attack = 139.0,
+                            defense = 112.0,
+                            description = "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/667.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
+                            male_gender_rate = 0f,
+                            name = "Litleo",
+                            rarity = "common",
+                            stamina = 158.0
+                        },
+                        new
+                        {
+                            num_pokedex = 672,
+                            attack = 123.0,
+                            defense = 102.0,
+                            description = "Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/672.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/672.png",
+                            male_gender_rate = 0f,
+                            name = "Skiddo",
+                            rarity = "common",
+                            stamina = 165.0
+                        },
+                        new
+                        {
+                            num_pokedex = 674,
+                            attack = 145.0,
+                            defense = 107.0,
+                            description = "It does its best to be taken seriously by its enemies, but its glare is not sufficiently intimidating. Chewing on a leaf is its trademark.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/674.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/674.png",
+                            male_gender_rate = 0f,
+                            name = "Pancham",
+                            rarity = "common",
+                            stamina = 167.0
+                        },
+                        new
+                        {
+                            num_pokedex = 677,
+                            attack = 120.0,
+                            defense = 114.0,
+                            description = "The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/677.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png",
+                            male_gender_rate = 0f,
+                            name = "Espurr",
+                            rarity = "common",
+                            stamina = 158.0
+                        },
+                        new
+                        {
+                            num_pokedex = 682,
+                            attack = 110.0,
+                            defense = 113.0,
+                            description = "It emits a scent that enraptures those who smell it. This fragrance changes depending on what it has eaten.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/682.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/682.png",
+                            male_gender_rate = 0f,
+                            name = "Spritzee",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 683,
+                            attack = 173.0,
+                            defense = 150.0,
+                            description = "It devises various scents, pleasant and unpleasant, and emits scents that its enemies dislike in order to gain an edge in battle.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/683.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png",
+                            male_gender_rate = 0f,
+                            name = "Aromatisse",
+                            rarity = "common",
+                            stamina = 226.0
+                        },
+                        new
+                        {
+                            num_pokedex = 684,
+                            attack = 109.0,
+                            defense = 119.0,
+                            description = "To entangle its opponents in battle, it extrudes white threads as sweet and sticky as cotton candy.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/684.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/684.png",
+                            male_gender_rate = 0f,
+                            name = "Swirlix",
+                            rarity = "common",
+                            stamina = 158.0
+                        },
+                        new
+                        {
+                            num_pokedex = 685,
+                            attack = 168.0,
+                            defense = 163.0,
+                            description = "It can distinguish the faintest of scents. It puts its sensitive sense of smell to use by helping pastry chefs in their work.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/685.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png",
+                            male_gender_rate = 0f,
+                            name = "Slurpuff",
+                            rarity = "common",
+                            stamina = 193.0
+                        },
+                        new
+                        {
+                            num_pokedex = 688,
+                            attack = 96.0,
+                            defense = 120.0,
+                            description = "Two Binacle live together on one rock. When they fight, one of them will move to a different rock.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/688.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/688.png",
+                            male_gender_rate = 0f,
+                            name = "Binacle",
+                            rarity = "common",
+                            stamina = 123.0
+                        },
+                        new
+                        {
+                            num_pokedex = 690,
+                            attack = 109.0,
+                            defense = 109.0,
+                            description = "Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/690.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
+                            male_gender_rate = 0f,
+                            name = "Skrelp",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 692,
+                            attack = 108.0,
+                            defense = 117.0,
+                            description = "They knock down flying prey by firing compressed water from their massive claws like shooting a pistol.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/692.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/692.png",
+                            male_gender_rate = 0f,
+                            name = "Clauncher",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 694,
+                            attack = 115.0,
+                            defense = 78.0,
+                            description = "They make their home in deserts. They can generate their energy from basking in the sun, so eating food is not a requirement.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/694.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/694.png",
+                            male_gender_rate = 0f,
+                            name = "Helioptile",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 697,
+                            attack = 227.0,
+                            defense = 191.0,
+                            description = "Thanks to its gargantuan jaws, which could shred thick metal plates as if they were paper, it was invincible in the ancient world it once inhabited.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/697.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/697.png",
+                            male_gender_rate = 0f,
+                            name = "Tyrantrum",
+                            rarity = "common",
+                            stamina = 193.0
+                        },
+                        new
+                        {
+                            num_pokedex = 701,
+                            attack = 195.0,
+                            defense = 153.0,
+                            description = "Although its body is small, its proficient fighting skills enable it to keep up with big bruisers like Machamp and Hariyama.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/701.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png",
+                            male_gender_rate = 0f,
+                            name = "Hawlucha",
+                            rarity = "common",
+                            stamina = 186.0
+                        },
+                        new
+                        {
+                            num_pokedex = 702,
+                            attack = 164.0,
+                            defense = 134.0,
+                            description = "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/702.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/702.png",
+                            male_gender_rate = 0f,
+                            name = "Dedenne",
+                            rarity = "common",
+                            stamina = 167.0
+                        },
+                        new
+                        {
+                            num_pokedex = 703,
+                            attack = 95.0,
+                            defense = 285.0,
+                            description = "Born from the temperatures and pressures deep underground, it fires beams from the stone in its head.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/703.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/703.png",
+                            male_gender_rate = 0f,
+                            name = "Carbink",
+                            rarity = "common",
+                            stamina = 137.0
+                        },
+                        new
+                        {
+                            num_pokedex = 704,
+                            attack = 101.0,
+                            defense = 112.0,
+                            description = "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn't dry out.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/704.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png",
+                            male_gender_rate = 0f,
+                            name = "Goomy",
+                            rarity = "common",
+                            stamina = 128.0
+                        },
+                        new
+                        {
+                            num_pokedex = 707,
+                            attack = 160.0,
+                            defense = 179.0,
+                            description = "These key collectors threaten any attackers by fiercely jingling their keys at them.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/707.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png",
+                            male_gender_rate = 0f,
+                            name = "Klefki",
+                            rarity = "common",
+                            stamina = 149.0
+                        },
+                        new
+                        {
+                            num_pokedex = 708,
+                            attack = 125.0,
+                            defense = 103.0,
+                            description = "These Pokémon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/708.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/708.png",
+                            male_gender_rate = 0f,
+                            name = "Phantump",
+                            rarity = "common",
+                            stamina = 125.0
+                        },
+                        new
+                        {
+                            num_pokedex = 710,
+                            attack = 122.0,
+                            defense = 124.0,
+                            description = "The pumpkin body is inhabited by a spirit trapped in this world. As the sun sets, it becomes restless and active.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/710.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png",
+                            male_gender_rate = 0f,
+                            name = "Pumpkaboo",
+                            rarity = "common",
+                            stamina = 127.0
+                        },
+                        new
+                        {
+                            num_pokedex = 712,
+                            attack = 117.0,
+                            defense = 120.0,
+                            description = "It blocks opponents' attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/712.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/712.png",
+                            male_gender_rate = 0f,
+                            name = "Bergmite",
+                            rarity = "common",
+                            stamina = 146.0
+                        },
+                        new
+                        {
+                            num_pokedex = 720,
+                            attack = 261.0,
+                            defense = 187.0,
+                            description = "In its true form, it possess a huge amount of power. Legends of its avarice tell how it once carried off an entire castle to gain the treasure hidden within.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/720.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/720.png",
+                            male_gender_rate = 0f,
+                            name = "Hoopa",
+                            rarity = "Mythical",
+                            stamina = 173.0
+                        },
+                        new
+                        {
+                            num_pokedex = 802,
+                            attack = 265.0,
+                            defense = 190.0,
+                            description = "It sinks into the shadows of people and Pokémon, where it can understand their feelings and copy their capabilities.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/802.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/802.png",
+                            male_gender_rate = 0f,
+                            name = "Marshadow",
+                            rarity = "Mythical",
+                            stamina = 207.0
+                        },
+                        new
+                        {
+                            num_pokedex = 803,
+                            attack = 1.0,
+                            defense = 1.0,
+                            description = "An Ultra Beast that lives in a different world, it cackles wildly as it sprays its opponents with poison from the needles on its head.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/803.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/803.png",
+                            male_gender_rate = 0f,
+                            name = "Poipole",
+                            rarity = "common",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 804,
+                            attack = 1.0,
+                            defense = 1.0,
+                            description = "One kind of Ultra Beast, it fires a glowing, venomous liquid from its needles. This liquid is also immensely adhesive.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/804.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/804.png",
+                            male_gender_rate = 0f,
+                            name = "Naganadel",
+                            rarity = "common",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 805,
+                            attack = 1.0,
+                            defense = 1.0,
+                            description = "When stone walls started moving and attacking, the brute's true identity was this mysterious life-form, which brings to mind an Ultra Beast.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/805.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/805.png",
+                            male_gender_rate = 0f,
+                            name = "Stakataka",
+                            rarity = "common",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 806,
+                            attack = 1.0,
+                            defense = 1.0,
+                            description = "A UB that appeared from an Ultra Wormhole, it causes explosions, then takes advantage of opponents' surprise to rob them of their vitality.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/806.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/806.png",
+                            male_gender_rate = 0f,
+                            name = "Blacephalon",
+                            rarity = "common",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 807,
+                            attack = 1.0,
+                            defense = 1.0,
+                            description = "It approaches its enemies at the speed of lightning, then tears them limb from limb with its sharp claws.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/807.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/807.png",
+                            male_gender_rate = 0f,
+                            name = "Zeraora",
+                            rarity = "Mythical",
+                            stamina = 1.0
+                        },
+                        new
+                        {
+                            num_pokedex = 808,
+                            attack = 118.0,
+                            defense = 99.0,
+                            description = "It melts particles of iron and other metals found in the subsoil, so it can absorb them into its body of molten steel.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/808.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/808.png",
+                            male_gender_rate = 0f,
+                            name = "Meltan",
+                            rarity = "Mythical",
+                            stamina = 130.0
+                        },
+                        new
+                        {
+                            num_pokedex = 809,
+                            attack = 226.0,
+                            defense = 190.0,
+                            description = "Revered long ago for its capacity to create iron from nothing, for some reason it has come back to life after 3,000 years.",
+                            female_gender_rate = 0f,
+                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/809.png",
+                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png",
+                            male_gender_rate = 0f,
+                            name = "Melmetal",
+                            rarity = "Mythical",
+                            stamina = 264.0
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
@@ -1020,7 +10755,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("ex_owner");
 
-                    b.ToTable("Pokemon_exchange", (string)null);
+                    b.ToTable("Pokemon_exchange");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
@@ -1039,7 +10774,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("pokemon_level");
 
-                    b.ToTable("Pokemon_level", (string)null);
+                    b.ToTable("Pokemon_level");
 
                     b.HasData(
                         new
@@ -1636,7 +11371,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Pokemon_owned", (string)null);
+                    b.ToTable("Pokemon_owned");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
@@ -1666,7 +11401,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Pokemon_register", (string)null);
+                    b.ToTable("Pokemon_register");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
@@ -1680,7 +11415,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("location");
 
-                    b.ToTable("PokeStop", (string)null);
+                    b.ToTable("PokeStop");
 
                     b.HasData(
                         new
@@ -3491,7 +13226,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("receptor");
 
-                    b.ToTable("Present", (string)null);
+                    b.ToTable("Present");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -3510,7 +13245,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("boss");
 
-                    b.ToTable("Raid", (string)null);
+                    b.ToTable("Raid");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
@@ -3530,7 +13265,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Raid_participants", (string)null);
+                    b.ToTable("Raid_participants");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -3548,7 +13283,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Team", (string)null);
+                    b.ToTable("Team");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
@@ -3566,7 +13301,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("affected_element");
 
-                    b.ToTable("Type_table", (string)null);
+                    b.ToTable("Type_table");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
@@ -3605,7 +13340,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -3826,13 +13561,6 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
-                {
-                    b.HasOne("PokemonGolotEF.Model.Egg", null)
-                        .WithMany("PokemonPool")
-                        .HasForeignKey("Eggkm_egg");
-                });
-
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
                 {
                     b.HasOne("PokemonGolotEF.Model.User", "ExOwner")
@@ -4007,11 +13735,6 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Player");
 
                     b.Navigation("Team");
-                });
-
-            modelBuilder.Entity("PokemonGolotEF.Model.Egg", b =>
-                {
-                    b.Navigation("PokemonPool");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
