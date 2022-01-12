@@ -8,7 +8,7 @@
         
         Title="MainWindow" Height="720" Width="1280" ResizeMode="NoResize">
 
-
+  
     <Grid Height="720" VerticalAlignment="Center" HorizontalAlignment="Center" Width="1280" InputScope="Url" Uid="Email">
         <Grid.Background>
             <ImageBrush ImageSource="/background.jpg"/>
@@ -38,5 +38,7 @@
         <TextBlock HorizontalAlignment="Left" Height="33" Margin="368,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28"><Run Language="es-es" Text="CONTRASENYA"/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Height="46" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="34" Foreground="White"><Run Language="es-es" Text="POKEMON GOLOT"/><LineBreak/><Run Language="es-es"/></TextBlock>
 
+        <Frame x:Name="FrameInici" Width="1280" Height="720" Margin="0,-10,0,10" NavigationUIVisibility="Hidden"/>
     </Grid>
+
 </Window>

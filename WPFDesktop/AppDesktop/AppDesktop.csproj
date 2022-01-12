@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="background.jpg" />
     <None Remove="cancel.png" />
+    <None Remove="edit.png" />
     <None Remove="logo.png" />
     <None Remove="logo2.png" />
     <None Remove="logout.png" />
@@ -18,6 +19,7 @@
   <ItemGroup>
     <Resource Include="background.jpg" />
     <Resource Include="cancel.png" />
+    <Resource Include="edit.png" />
     <Resource Include="logo.png" />
     <Resource Include="logo2.png" />
     <Resource Include="logout.png" />

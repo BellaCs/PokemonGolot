@@ -14,9 +14,10 @@ namespace AppDesktop
 
         private void Login_OnClick(object sender, RoutedEventArgs e)
         {
-            Pokemons objSecondWindow = new Pokemons();
+            Pokemons pokemonmenu = new Pokemons();
             this.Visibility = Visibility.Hidden;
-            objSecondWindow.Show();
+            pokemonmenu.Show();
+
         }
     }
 }

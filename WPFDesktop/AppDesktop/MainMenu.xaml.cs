@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace AppDesktop
 {
     /// <summary>
@@ -20,28 +21,29 @@ namespace AppDesktop
     /// </summary>
     public partial class MainMenu : Window
     {
-        PageAdmin pageAdmin = new PageAdmin();
-        PagePlayers pagePlayers = new PagePlayers();
-        PagePokemons pagePokemons = new PagePokemons();
+
+        //AdminPage adminpage = new AdminPage();
+        //PlayerPage playerpage = new PlayerPage();
+        //PokemomPage pokemonpage = new PokemonPage();
 
 
 
         public MainMenu()
         {
             InitializeComponent();
-            FrameContent.NavigationService.Navigate(pageAdmin);
+
 
         }
 
         private void ButtonPlayers_Click(object sender, RoutedEventArgs e)
         {
-            FrameContent.NavigationService.Navigate(pagePlayers);
-
+            //FrameContent.NavigationService.Navigate(pagePlayers);
+           
         }
 
         private void ButtonPokemons_Click(object sender, RoutedEventArgs e)
         {
-            FrameContent.NavigationService.Navigate(pagePokemons);
+            //FrameContent.NavigationService.Navigate(pagePokemons);
         }
 
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)

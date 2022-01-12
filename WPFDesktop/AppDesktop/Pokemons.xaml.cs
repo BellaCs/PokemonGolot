@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
 
 
 
@@ -9,6 +12,9 @@ namespace AppDesktop
     /// </summary>
     public partial class Pokemons : Window
     {
+
+   
+
         public Pokemons()
         {
             InitializeComponent();
@@ -23,11 +29,9 @@ namespace AppDesktop
 
         private void ButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
-
-            Admin objSecondWindow = new Admin();
+            Admin adminmenu = new Admin();
             this.Visibility = Visibility.Hidden;
-            objSecondWindow.Show();
-
+            adminmenu.Show();
         }
 
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)
