@@ -19,6 +19,7 @@ namespace PokemonGolotEF.Library
             LoadPokemonLevels().Wait();
             LoadElement().Wait();
             LoadPokestops();
+            LoadMovement().Wait();
             LoadGyms();
         }
 
@@ -175,5 +176,26 @@ namespace PokemonGolotEF.Library
             }
         }
 
+        public async Task LoadMovement()
+        {
+            Movement actual;
+            String fastMovementsJson = await getMovement.getFastMovements();
+            String chargedMovementsJson = await getMovement.getChargedMovements();
+            JToken rawFastMovements = JToken.Parse(fastMovementsJson);
+            JToken rawChargedMovements = JToken.Parse(chargedMovementsJson);
+            foreach (JToken fastMovement in rawFastMovements)
+            {
+                actual = new Movement(fastMovement);
+                pokemonGolot.moves.Add(actual);
+
+            }
+
+            foreach (JToken chargedMovement in rawChargedMovements)
+            {
+                actual = new Movement(chargedMovement);
+                pokemonGolot.moves.Add(actual);
+
+            }
+        }
     }
 }

@@ -127,6 +127,11 @@ namespace PokemonGolotEF.Data
             model.Entity<Gym>()
                 .HasData(data.pokemonGolot.gyms);
 
+            // Movements
+
+            model.Entity<Movement>()
+                .HasData(data.pokemonGolot.moves);
+
             // Pokemon
 
             model.Entity<Pokemon>()
