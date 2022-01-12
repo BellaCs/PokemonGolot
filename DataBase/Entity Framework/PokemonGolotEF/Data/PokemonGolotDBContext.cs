@@ -130,6 +130,8 @@ namespace PokemonGolotEF.Data
             // Movements
 
             model.Entity<Movement>()
+                .HasKey(nameof(Movement.name), nameof(Movement.element));
+            model.Entity<Movement>()
                 .HasData(data.pokemonGolot.moves);
 
             // Pokemon
@@ -162,7 +164,7 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<EvolutionChain> Evolution_chain { get; set; }
         public virtual DbSet<Egg> Egg { get; set; }
         public virtual DbSet<PackageOffer> Package_offer { get; set; }
-        public virtual DbSet<Movement> Movement { get; set; }
+        public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Present> Present { get; set; }
         public virtual DbSet<RaidParticipant> Raid_participants { get; set; }
         public virtual DbSet<PokemonOwned> Pokemon_owned { get; set; }

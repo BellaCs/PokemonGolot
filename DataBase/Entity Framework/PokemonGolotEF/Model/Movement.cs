@@ -8,17 +8,23 @@ namespace PokemonGolotEF.Model
     class Movement
     {
         public Movement() { }
-        public Movement(JToken movementJson)
+        public Movement(JToken movementJson, List<Element> elements)
         {
             this.name = (string)movementJson["name"];
-            this.element = (string)movementJson["type"];
             this.power = (int)movementJson["power"];
             this.duration = (int)movementJson["duration"];
             this.energy = (double)movementJson["energy"];
             this.isCharged = (int)movementJson["isQuickMove"] == 0;
+            foreach (var element in elements) {
+                if (element.name.ToLower().Equals((string)movementJson["type"])) 
+                {
+                    
+                    this.element = element.name;
+                }
+            }
         }
 
-        [Key]
+        [Required]
         public string name { get; set; }
         [ForeignKey("Element")]
         [Required]

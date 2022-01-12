@@ -814,28 +814,2116 @@ namespace PokemonGolotEF.Migrations
                     b.Property<string>("name")
                         .HasColumnType("text");
 
+                    b.Property<string>("element")
+                        .HasColumnType("text");
+
                     b.Property<int>("duration")
                         .HasColumnType("integer");
-
-                    b.Property<string>("element")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<double>("energy")
                         .HasColumnType("double precision");
 
+                    b.Property<bool>("isCharged")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("power")
                         .HasColumnType("integer");
 
-                    b.Property<string>("type")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("name");
+                    b.HasKey("name", "element");
 
                     b.HasIndex("element");
 
-                    b.ToTable("Movement");
+                    b.ToTable("Movements");
+
+                    b.HasData(
+                        new
+                        {
+                            name = "Acid",
+                            element = "poison",
+                            duration = 800,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 9
+                        },
+                        new
+                        {
+                            name = "Air Slash",
+                            element = "flying",
+                            duration = 1200,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 14
+                        },
+                        new
+                        {
+                            name = "Astonish",
+                            element = "ghost",
+                            duration = 1100,
+                            energy = 14.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Bite",
+                            element = "dark",
+                            duration = 500,
+                            energy = 4.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Bubble",
+                            element = "water",
+                            duration = 1200,
+                            energy = 14.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Bug Bite",
+                            element = "bug",
+                            duration = 500,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Bullet Punch",
+                            element = "steel",
+                            duration = 900,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 9
+                        },
+                        new
+                        {
+                            name = "Bullet Seed",
+                            element = "grass",
+                            duration = 1100,
+                            energy = 14.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Charge Beam",
+                            element = "electric",
+                            duration = 1100,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Charm",
+                            element = "fairy",
+                            duration = 1500,
+                            energy = 11.0,
+                            isCharged = false,
+                            power = 20
+                        },
+                        new
+                        {
+                            name = "Confusion",
+                            element = "psychic",
+                            duration = 1600,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 20
+                        },
+                        new
+                        {
+                            name = "Counter",
+                            element = "fighting",
+                            duration = 900,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Cut",
+                            element = "normal",
+                            duration = 500,
+                            energy = 5.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Dragon Breath",
+                            element = "dragon",
+                            duration = 500,
+                            energy = 4.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Dragon Tail",
+                            element = "dragon",
+                            duration = 1100,
+                            energy = 9.0,
+                            isCharged = false,
+                            power = 15
+                        },
+                        new
+                        {
+                            name = "Ember",
+                            element = "fire",
+                            duration = 1000,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Extrasensory",
+                            element = "psychic",
+                            duration = 1100,
+                            energy = 12.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Feint Attack",
+                            element = "dark",
+                            duration = 900,
+                            energy = 9.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Fire Fang",
+                            element = "fire",
+                            duration = 900,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Fire Spin",
+                            element = "fire",
+                            duration = 1100,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 14
+                        },
+                        new
+                        {
+                            name = "Frost Breath",
+                            element = "ice",
+                            duration = 900,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Fury Cutter",
+                            element = "bug",
+                            duration = 400,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 3
+                        },
+                        new
+                        {
+                            name = "Gust",
+                            element = "flying",
+                            duration = 2000,
+                            energy = 20.0,
+                            isCharged = false,
+                            power = 25
+                        },
+                        new
+                        {
+                            name = "Hex",
+                            element = "ghost",
+                            duration = 1200,
+                            energy = 16.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Hidden Power",
+                            element = "normal",
+                            duration = 1500,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 15
+                        },
+                        new
+                        {
+                            name = "Ice Fang",
+                            element = "ice",
+                            duration = 1500,
+                            energy = 20.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Ice Shard",
+                            element = "ice",
+                            duration = 1200,
+                            energy = 12.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Incinerate",
+                            element = "fire",
+                            duration = 2300,
+                            energy = 20.0,
+                            isCharged = false,
+                            power = 29
+                        },
+                        new
+                        {
+                            name = "Infestation",
+                            element = "bug",
+                            duration = 1100,
+                            energy = 14.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Iron Tail",
+                            element = "steel",
+                            duration = 1100,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 15
+                        },
+                        new
+                        {
+                            name = "Karate Chop",
+                            element = "fighting",
+                            duration = 800,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Lick",
+                            element = "ghost",
+                            duration = 500,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Lock-On",
+                            element = "normal",
+                            duration = 300,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 1
+                        },
+                        new
+                        {
+                            name = "Low Kick",
+                            element = "fighting",
+                            duration = 600,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Metal Claw",
+                            element = "steel",
+                            duration = 700,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Mud Shot",
+                            element = "ground",
+                            duration = 600,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Mud-Slap",
+                            element = "ground",
+                            duration = 1400,
+                            energy = 12.0,
+                            isCharged = false,
+                            power = 18
+                        },
+                        new
+                        {
+                            name = "Peck",
+                            element = "flying",
+                            duration = 1000,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Poison Jab",
+                            element = "poison",
+                            duration = 800,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Poison Sting",
+                            element = "poison",
+                            duration = 600,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Pound",
+                            element = "normal",
+                            duration = 600,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 7
+                        },
+                        new
+                        {
+                            name = "Powder Snow",
+                            element = "ice",
+                            duration = 1000,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Present",
+                            element = "normal",
+                            duration = 1300,
+                            energy = 20.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Psycho Cut",
+                            element = "psychic",
+                            duration = 600,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Quick Attack",
+                            element = "normal",
+                            duration = 800,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Razor Leaf",
+                            element = "grass",
+                            duration = 1000,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 13
+                        },
+                        new
+                        {
+                            name = "Rock Smash",
+                            element = "fighting",
+                            duration = 1300,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 15
+                        },
+                        new
+                        {
+                            name = "Rock Throw",
+                            element = "rock",
+                            duration = 900,
+                            energy = 7.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Scratch",
+                            element = "normal",
+                            duration = 500,
+                            energy = 4.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Shadow Claw",
+                            element = "ghost",
+                            duration = 700,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 9
+                        },
+                        new
+                        {
+                            name = "Smack Down",
+                            element = "rock",
+                            duration = 1200,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 16
+                        },
+                        new
+                        {
+                            name = "Snarl",
+                            element = "dark",
+                            duration = 1100,
+                            energy = 14.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Spark",
+                            element = "electric",
+                            duration = 700,
+                            energy = 9.0,
+                            isCharged = false,
+                            power = 6
+                        },
+                        new
+                        {
+                            name = "Splash",
+                            element = "water",
+                            duration = 1730,
+                            energy = 20.0,
+                            isCharged = false,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Steel Wing",
+                            element = "steel",
+                            duration = 800,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 11
+                        },
+                        new
+                        {
+                            name = "Struggle Bug",
+                            element = "bug",
+                            duration = 1500,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 15
+                        },
+                        new
+                        {
+                            name = "Sucker Punch",
+                            element = "dark",
+                            duration = 700,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 7
+                        },
+                        new
+                        {
+                            name = "Tackle",
+                            element = "normal",
+                            duration = 500,
+                            energy = 5.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Take Down",
+                            element = "normal",
+                            duration = 1200,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Thunder Fang",
+                            element = "electric",
+                            duration = 1200,
+                            energy = 16.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Thunder Shock",
+                            element = "electric",
+                            duration = 600,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Transform",
+                            element = "normal",
+                            duration = 2230,
+                            energy = 0.0,
+                            isCharged = false,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Vine Whip",
+                            element = "grass",
+                            duration = 600,
+                            energy = 6.0,
+                            isCharged = false,
+                            power = 7
+                        },
+                        new
+                        {
+                            name = "Volt Switch",
+                            element = "electric",
+                            duration = 1600,
+                            energy = 21.0,
+                            isCharged = false,
+                            power = 14
+                        },
+                        new
+                        {
+                            name = "Water Gun",
+                            element = "water",
+                            duration = 500,
+                            energy = 5.0,
+                            isCharged = false,
+                            power = 5
+                        },
+                        new
+                        {
+                            name = "Waterfall",
+                            element = "water",
+                            duration = 1200,
+                            energy = 8.0,
+                            isCharged = false,
+                            power = 16
+                        },
+                        new
+                        {
+                            name = "Wing Attack",
+                            element = "flying",
+                            duration = 800,
+                            energy = 9.0,
+                            isCharged = false,
+                            power = 8
+                        },
+                        new
+                        {
+                            name = "Yawn",
+                            element = "normal",
+                            duration = 1700,
+                            energy = 15.0,
+                            isCharged = false,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Zen Headbutt",
+                            element = "psychic",
+                            duration = 1100,
+                            energy = 10.0,
+                            isCharged = false,
+                            power = 12
+                        },
+                        new
+                        {
+                            name = "Acid Spray",
+                            element = "poison",
+                            duration = 3000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 20
+                        },
+                        new
+                        {
+                            name = "Aerial Ace",
+                            element = "flying",
+                            duration = 2400,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Aeroblast",
+                            element = "flying",
+                            duration = 3400,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 180
+                        },
+                        new
+                        {
+                            name = "Air Cutter",
+                            element = "flying",
+                            duration = 2700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Ancient Power",
+                            element = "rock",
+                            duration = 3500,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Aqua Jet",
+                            element = "water",
+                            duration = 2600,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Aqua Tail",
+                            element = "water",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Aura Sphere",
+                            element = "fighting",
+                            duration = 1800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Aurora Beam",
+                            element = "ice",
+                            duration = 3550,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Avalanche",
+                            element = "ice",
+                            duration = 2700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Blast Burn",
+                            element = "fire",
+                            duration = 3300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Blaze Kick",
+                            element = "fire",
+                            duration = 1200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Blizzard",
+                            element = "ice",
+                            duration = 3100,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Body Slam",
+                            element = "normal",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Bone Club",
+                            element = "ground",
+                            duration = 1600,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Brave Bird",
+                            element = "flying",
+                            duration = 2000,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Brick Break",
+                            element = "fighting",
+                            duration = 1600,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Brine",
+                            element = "water",
+                            duration = 2300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Bubble Beam",
+                            element = "water",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Bug Buzz",
+                            element = "bug",
+                            duration = 3700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Bulldoze",
+                            element = "ground",
+                            duration = 3500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Close Combat",
+                            element = "fighting",
+                            duration = 2300,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Crabhammer",
+                            element = "water",
+                            duration = 1900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 85
+                        },
+                        new
+                        {
+                            name = "Cross Chop",
+                            element = "fighting",
+                            duration = 1500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Cross Poison",
+                            element = "poison",
+                            duration = 1500,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Crunch",
+                            element = "dark",
+                            duration = 3200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Crush Claw",
+                            element = "normal",
+                            duration = 1900,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Dark Pulse",
+                            element = "dark",
+                            duration = 3000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Dazzling Gleam",
+                            element = "fairy",
+                            duration = 3500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Dig",
+                            element = "ground",
+                            duration = 4700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Disarming Voice",
+                            element = "fairy",
+                            duration = 3900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Discharge",
+                            element = "electric",
+                            duration = 2500,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 65
+                        },
+                        new
+                        {
+                            name = "Doom Desire",
+                            element = "steel",
+                            duration = 1700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Draco Meteor",
+                            element = "dragon",
+                            duration = 3600,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 150
+                        },
+                        new
+                        {
+                            name = "Dragon Claw",
+                            element = "dragon",
+                            duration = 1700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Dragon Pulse",
+                            element = "dragon",
+                            duration = 3600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Drain Punch",
+                            element = "fighting",
+                            duration = 2400,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Draining Kiss",
+                            element = "fairy",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Drill Peck",
+                            element = "flying",
+                            duration = 2300,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 65
+                        },
+                        new
+                        {
+                            name = "Drill Run",
+                            element = "ground",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Dynamic Punch",
+                            element = "fighting",
+                            duration = 2700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Earth Power",
+                            element = "ground",
+                            duration = 3600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Earthquake",
+                            element = "ground",
+                            duration = 3600,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 140
+                        },
+                        new
+                        {
+                            name = "Energy Ball",
+                            element = "grass",
+                            duration = 3900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Feather Dance",
+                            element = "flying",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 35
+                        },
+                        new
+                        {
+                            name = "Fell Stinger",
+                            element = "bug",
+                            duration = 2200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Fire Blast",
+                            element = "fire",
+                            duration = 4200,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 140
+                        },
+                        new
+                        {
+                            name = "Fire Punch",
+                            element = "fire",
+                            duration = 2200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Fissure",
+                            element = "ground",
+                            duration = 2800,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Flame Burst",
+                            element = "fire",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Flame Charge",
+                            element = "fire",
+                            duration = 3800,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Flame Wheel",
+                            element = "fire",
+                            duration = 2700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Flamethrower",
+                            element = "fire",
+                            duration = 2200,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Flash Cannon",
+                            element = "steel",
+                            duration = 2700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Fly",
+                            element = "flying",
+                            duration = 1800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Flying Press",
+                            element = "fighting",
+                            duration = 2300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Focus Blast",
+                            element = "fighting",
+                            duration = 3500,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 140
+                        },
+                        new
+                        {
+                            name = "Foul Play",
+                            element = "dark",
+                            duration = 2000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Frenzy Plant",
+                            element = "grass",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Frustration",
+                            element = "normal",
+                            duration = 2000,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 10
+                        },
+                        new
+                        {
+                            name = "Future Sight",
+                            element = "psychic",
+                            duration = 2700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 120
+                        },
+                        new
+                        {
+                            name = "Giga Drain",
+                            element = "grass",
+                            duration = 3900,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Giga Impact",
+                            element = "normal",
+                            duration = 4700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 200
+                        },
+                        new
+                        {
+                            name = "Grass Knot",
+                            element = "grass",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Gunk Shot",
+                            element = "poison",
+                            duration = 3100,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Gyro Ball",
+                            element = "steel",
+                            duration = 3300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Heart Stamp",
+                            element = "psychic",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Heat Wave",
+                            element = "fire",
+                            duration = 3000,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 95
+                        },
+                        new
+                        {
+                            name = "Heavy Slam",
+                            element = "steel",
+                            duration = 2100,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Horn Attack",
+                            element = "normal",
+                            duration = 1850,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Horn Drill",
+                            element = "normal",
+                            duration = 1900,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Hurricane",
+                            element = "flying",
+                            duration = 2700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Hydro Cannon",
+                            element = "water",
+                            duration = 1900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Hydro Pump",
+                            element = "water",
+                            duration = 3300,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Hyper Beam",
+                            element = "normal",
+                            duration = 3800,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 150
+                        },
+                        new
+                        {
+                            name = "Hyper Fang",
+                            element = "normal",
+                            duration = 2500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Ice Beam",
+                            element = "ice",
+                            duration = 3300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Ice Punch",
+                            element = "ice",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Icy Wind",
+                            element = "ice",
+                            duration = 3300,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Iron Head",
+                            element = "steel",
+                            duration = 1900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Last Resort",
+                            element = "normal",
+                            duration = 2900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Leaf Blade",
+                            element = "grass",
+                            duration = 2400,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Leaf Storm",
+                            element = "grass",
+                            duration = 2500,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Leaf Tornado",
+                            element = "grass",
+                            duration = 3100,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Leech Life",
+                            element = "bug",
+                            duration = 2500,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 0
+                        },
+                        new
+                        {
+                            name = "Low Sweep",
+                            element = "fighting",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Lunge",
+                            element = "bug",
+                            duration = 2900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Magnet Bomb",
+                            element = "steel",
+                            duration = 2800,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Mega Drain",
+                            element = "grass",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 25
+                        },
+                        new
+                        {
+                            name = "Megahorn",
+                            element = "bug",
+                            duration = 2200,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Meteor Mash",
+                            element = "steel",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Mirror Coat",
+                            element = "psychic",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Mirror Shot",
+                            element = "steel",
+                            duration = 2400,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Moonblast",
+                            element = "fairy",
+                            duration = 3900,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Mud Bomb",
+                            element = "ground",
+                            duration = 2300,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Muddy Water",
+                            element = "water",
+                            duration = 2200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Night Shade",
+                            element = "ghost",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Night Slash",
+                            element = "dark",
+                            duration = 2200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Octazooka",
+                            element = "water",
+                            duration = 2300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Ominous Wind",
+                            element = "ghost",
+                            duration = 2300,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Origin Pulse",
+                            element = "water",
+                            duration = 1700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Outrage",
+                            element = "dragon",
+                            duration = 3900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Overheat",
+                            element = "fire",
+                            duration = 4000,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 160
+                        },
+                        new
+                        {
+                            name = "Parabolic Charge",
+                            element = "electric",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 25
+                        },
+                        new
+                        {
+                            name = "Payback",
+                            element = "dark",
+                            duration = 2200,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Petal Blizzard",
+                            element = "grass",
+                            duration = 2600,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Play Rough",
+                            element = "fairy",
+                            duration = 2900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Poison Fang",
+                            element = "poison",
+                            duration = 1700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 35
+                        },
+                        new
+                        {
+                            name = "Power Gem",
+                            element = "rock",
+                            duration = 2900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Power Whip",
+                            element = "grass",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Power-Up Punch",
+                            element = "fighting",
+                            duration = 2000,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Precipice Blades",
+                            element = "ground",
+                            duration = 1700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Psybeam",
+                            element = "psychic",
+                            duration = 3200,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Psychic",
+                            element = "psychic",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Psychic Fangs",
+                            element = "psychic",
+                            duration = 1200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 30
+                        },
+                        new
+                        {
+                            name = "Psycho Boost",
+                            element = "psychic",
+                            duration = 4000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Psyshock",
+                            element = "psychic",
+                            duration = 2700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 65
+                        },
+                        new
+                        {
+                            name = "Psystrike",
+                            element = "psychic",
+                            duration = 2300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Razor Shell",
+                            element = "water",
+                            duration = 1300,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Rest",
+                            element = "normal",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Return",
+                            element = "normal",
+                            duration = 700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 35
+                        },
+                        new
+                        {
+                            name = "Rock Blast",
+                            element = "rock",
+                            duration = 2100,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Rock Slide",
+                            element = "rock",
+                            duration = 2700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Rock Tomb",
+                            element = "rock",
+                            duration = 3200,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Rock Wrecker",
+                            element = "rock",
+                            duration = 3600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Sacred Sword",
+                            element = "fighting",
+                            duration = 1200,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Sand Tomb",
+                            element = "ground",
+                            duration = 4000,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Scald",
+                            element = "water",
+                            duration = 3700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Seed Bomb",
+                            element = "grass",
+                            duration = 2100,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Shadow Ball",
+                            element = "ghost",
+                            duration = 3000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Shadow Bone",
+                            element = "ghost",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Shadow Punch",
+                            element = "ghost",
+                            duration = 1700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 40
+                        },
+                        new
+                        {
+                            name = "Shadow Sneak",
+                            element = "ghost",
+                            duration = 2900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Signal Beam",
+                            element = "bug",
+                            duration = 2900,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 75
+                        },
+                        new
+                        {
+                            name = "Silver Wind",
+                            element = "bug",
+                            duration = 3700,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Skull Bash",
+                            element = "normal",
+                            duration = 3100,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 130
+                        },
+                        new
+                        {
+                            name = "Sky Attack",
+                            element = "flying",
+                            duration = 2000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Sludge",
+                            element = "poison",
+                            duration = 2100,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 50
+                        },
+                        new
+                        {
+                            name = "Sludge Bomb",
+                            element = "poison",
+                            duration = 2300,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Sludge Wave",
+                            element = "poison",
+                            duration = 3200,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 110
+                        },
+                        new
+                        {
+                            name = "Solar Beam",
+                            element = "grass",
+                            duration = 4900,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 180
+                        },
+                        new
+                        {
+                            name = "Stomp",
+                            element = "normal",
+                            duration = 1700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Stone Edge",
+                            element = "rock",
+                            duration = 2300,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Struggle",
+                            element = "normal",
+                            duration = 2200,
+                            energy = 0.0,
+                            isCharged = true,
+                            power = 35
+                        },
+                        new
+                        {
+                            name = "Submission",
+                            element = "fighting",
+                            duration = 2200,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Superpower",
+                            element = "fighting",
+                            duration = 3000,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 85
+                        },
+                        new
+                        {
+                            name = "Surf",
+                            element = "water",
+                            duration = 1700,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 65
+                        },
+                        new
+                        {
+                            name = "Swift",
+                            element = "normal",
+                            duration = 2800,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "Synchronoise",
+                            element = "psychic",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Techno Blast",
+                            element = "normal",
+                            duration = 2000,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 120
+                        },
+                        new
+                        {
+                            name = "Thunder",
+                            element = "electric",
+                            duration = 2400,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 100
+                        },
+                        new
+                        {
+                            name = "Thunder Punch",
+                            element = "electric",
+                            duration = 1800,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Thunderbolt",
+                            element = "electric",
+                            duration = 2500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 80
+                        },
+                        new
+                        {
+                            name = "Tri Attack",
+                            element = "normal",
+                            duration = 2500,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 75
+                        },
+                        new
+                        {
+                            name = "Twister",
+                            element = "dragon",
+                            duration = 2800,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "V-create",
+                            element = "fire",
+                            duration = 2800,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 95
+                        },
+                        new
+                        {
+                            name = "Vise Grip",
+                            element = "normal",
+                            duration = 1900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 35
+                        },
+                        new
+                        {
+                            name = "Water Pulse",
+                            element = "water",
+                            duration = 3200,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 70
+                        },
+                        new
+                        {
+                            name = "Weather Ball",
+                            element = "fire",
+                            duration = 1600,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 55
+                        },
+                        new
+                        {
+                            name = "Wild Charge",
+                            element = "electric",
+                            duration = 2600,
+                            energy = 50.0,
+                            isCharged = true,
+                            power = 90
+                        },
+                        new
+                        {
+                            name = "Wrap",
+                            element = "normal",
+                            duration = 2900,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 60
+                        },
+                        new
+                        {
+                            name = "X-Scissor",
+                            element = "bug",
+                            duration = 1600,
+                            energy = 33.0,
+                            isCharged = true,
+                            power = 45
+                        },
+                        new
+                        {
+                            name = "Zap Cannon",
+                            element = "electric",
+                            duration = 3700,
+                            energy = 100.0,
+                            isCharged = true,
+                            power = 140
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Object", b =>

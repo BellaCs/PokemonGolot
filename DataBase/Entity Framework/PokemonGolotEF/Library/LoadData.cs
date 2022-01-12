@@ -183,17 +183,45 @@ namespace PokemonGolotEF.Library
             String chargedMovementsJson = await getMovement.getChargedMovements();
             JToken rawFastMovements = JToken.Parse(fastMovementsJson);
             JToken rawChargedMovements = JToken.Parse(chargedMovementsJson);
+            bool isIn = false;
             foreach (JToken fastMovement in rawFastMovements)
             {
-                actual = new Movement(fastMovement);
-                pokemonGolot.moves.Add(actual);
+                actual = new Movement(fastMovement, pokemonGolot.elements);
+
+                foreach (Movement move in pokemonGolot.moves)
+                {
+                    if (move.name == actual.name && move.isCharged == actual.isCharged)
+                    {
+                        isIn = true;
+                        break;
+                    }
+                }
+                if (!isIn)
+                {
+                    pokemonGolot.moves.Add(actual);
+                }
+                isIn = false;
+                
 
             }
 
             foreach (JToken chargedMovement in rawChargedMovements)
             {
-                actual = new Movement(chargedMovement);
-                pokemonGolot.moves.Add(actual);
+
+                actual = new Movement(chargedMovement, pokemonGolot.elements);
+                foreach (Movement move in pokemonGolot.moves)
+                {
+                    if (move.name == actual.name && move.isCharged == actual.isCharged)
+                    {
+                        isIn = true;
+                        break;
+                    }
+                }
+                if (!isIn)
+                {
+                    pokemonGolot.moves.Add(actual);
+                }
+                isIn = false;
 
             }
         }
