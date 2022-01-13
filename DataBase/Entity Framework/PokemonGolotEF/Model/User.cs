@@ -22,26 +22,20 @@ namespace PokemonGolotEF.Model
         }
 
         [Key]
+        [ForeignKey("Player")]
         [StringLength(20)]
         public string user_name { get; set; }
-        [Index(IsUnique =true)]
-        [Required]
-        public string email { get; set; }
-        [Required]
-        public string name { get; set; }
-        [Required]
-        public string password { get; set; }
         [ForeignKey("Team")]
-        public string team { get; set; }
-        public char gender { get; set; }
+        public string team { get; set; }       
         [Required]
         [ForeignKey("Level")]
         public short level { get; set; }
-        public DateTime birth_date { get; set; }
         [Required]
         public int inventory_capacity { get; set; }
         [Required]
-        public int remaining_experience { get; set; }
+        public int current_level_experience { get; set; }
+        [Required]
+        public int experience { get; set; }
         [Required]
         public int pokemon_slots { get; set; }
         public int won_battles { get; set; }
@@ -56,6 +50,8 @@ namespace PokemonGolotEF.Model
         public virtual Team Team { get; set; }
         [ForeignKey("level")]
         public virtual Level Level { get; set; }
+        [ForeignKey("user_name")]
+        public virtual Player Player { get; set; }
 
         public virtual ICollection<Present> recivedPresents { get; set; }
         public virtual ICollection<Present> presentsToSend { get; set; }

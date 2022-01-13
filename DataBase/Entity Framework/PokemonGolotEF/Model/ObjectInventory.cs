@@ -7,17 +7,17 @@ namespace PokemonGolotEF.Model
     internal class ObjectInventory
     {
         [ForeignKey("Object")]
-        public string objectName { get; set; }
-        [ForeignKey("User")]
-        public string user { get; set; }
+        public string object_name { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
         [Required]
         public int quantity { get; set; }
 
 
-        [ForeignKey("objectName")]
+        [ForeignKey("object_name")]
         public virtual Object Object { get; set; }
-        [ForeignKey("user")]
-        public virtual User User { get; set; }
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }
 
     }
 }

@@ -8,14 +8,14 @@ namespace PokemonGolotEF.Model
     {
         [ForeignKey("Gym")]
         public string gym { get; set; }
-        [ForeignKey("User")]
-        public string user { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
 
 
 
         [ForeignKey("gym")]
         public virtual Gym Gym { get; set; }
-        [ForeignKey("user")]
-        public virtual User User { get; set; }
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }
     }
 }

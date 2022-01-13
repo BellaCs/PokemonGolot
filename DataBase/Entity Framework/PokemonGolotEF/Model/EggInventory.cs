@@ -8,13 +8,13 @@ namespace PokemonGolotEF.Model
     {
         [ForeignKey("Egg")]
         public double egg { get; set; }
-        [ForeignKey("User")]
-        public string user { get; set; }
-        public double remainingKm { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
+        public double remaining_km { get; set; }
 
 
-        [ForeignKey("user")]
-        public virtual User User { get; set; }
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }
         [ForeignKey("egg")]
         public virtual Egg Egg { get; set; }
     }

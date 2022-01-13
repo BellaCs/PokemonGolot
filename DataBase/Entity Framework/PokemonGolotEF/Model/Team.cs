@@ -7,7 +7,7 @@ namespace PokemonGolotEF.Model
     {
         public Team()
         {
-            Users = new HashSet<User>();
+            Players = new HashSet<User>();
             Gyms = new HashSet<Gym>();
         }
 
@@ -19,7 +19,7 @@ namespace PokemonGolotEF.Model
         public string image { get; set; }
 
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<User> Players { get; set; }
         public virtual ICollection<Gym> Gyms { get; set; }
     }
 }

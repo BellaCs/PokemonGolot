@@ -8,8 +8,8 @@ namespace PokemonGolotEF.Model
     {
         [ForeignKey("Gym")]
         public string gym { get; set; }
-        [ForeignKey("User")]
-        public string user { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
         public int fights_won { get; set; }
         public int pokemon_time { get; set; } // in seconds
         public int times_feeded { get; set; }
@@ -18,7 +18,7 @@ namespace PokemonGolotEF.Model
 
         [ForeignKey("gym")]
         public virtual Gym Gym { get; set; }
-        [ForeignKey("user")]
-        public virtual User User { get; set; }
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }
     }
 }

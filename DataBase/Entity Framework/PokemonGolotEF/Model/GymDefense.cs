@@ -10,8 +10,8 @@ namespace PokemonGolotEF.Model
         public string gym { get; set; }  
         [ForeignKey("Pokemon")]
         public int pokemon { get; set; }
-        public int defenseTime { get; set; }
-        public int timesFeeded { get; set; }
+        public int defense_time { get; set; } // seconds
+        public int times_feeded { get; set; }
         
 
         [ForeignKey("gym")]

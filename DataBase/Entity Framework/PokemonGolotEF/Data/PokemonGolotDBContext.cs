@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PokemonGolotEF.Model;
+using PokemonGolotEF.Library;
+
 
 namespace PokemonGolotEF.Data
 {
     class PokemonGolotDBContext : DbContext
     {
+        LoadData data = new LoadData();
         public PokemonGolotDBContext()
         { 
         }
@@ -34,7 +37,7 @@ namespace PokemonGolotEF.Data
             // Raid Participant
 
             model.Entity<RaidParticipant>()
-                .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.user));
+                .HasKey(nameof(RaidParticipant.gym), nameof(RaidParticipant.player));
 
             // LevelUp Reward
 
@@ -49,7 +52,7 @@ namespace PokemonGolotEF.Data
             // Friendship
 
             model.Entity<Friendship>()
-                .HasKey(nameof(Friendship.user), nameof(Friendship.friend));
+                .HasKey(nameof(Friendship.player), nameof(Friendship.friend));
 
             model.Entity<Friendship>()
                 .HasOne(f => f.Friend)
@@ -63,12 +66,12 @@ namespace PokemonGolotEF.Data
             // Pokemon Register
 
             model.Entity<PokemonRegister>()
-                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.user), nameof(PokemonRegister.gender));
+                .HasKey(nameof(PokemonRegister.pokemon), nameof(PokemonRegister.player), nameof(PokemonRegister.gender));
 
             // Egg Inventory
 
             model.Entity<EggInventory>()
-                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.user));
+                .HasKey(nameof(EggInventory.egg), nameof(EggInventory.player));
 
             // Package Bought 
 
@@ -78,17 +81,68 @@ namespace PokemonGolotEF.Data
             // Object Inventory
 
             model.Entity<ObjectInventory>()
-                .HasKey(nameof(ObjectInventory.objectName), nameof(ObjectInventory.user));
+                .HasKey(nameof(ObjectInventory.object_name), nameof(ObjectInventory.player));
 
             // Package items
 
             model.Entity<PackageItems>()
-                .HasKey(nameof(PackageItems.objectName), nameof(PackageItems.package));
+                .HasKey(nameof(PackageItems.object_name), nameof(PackageItems.package));
 
             // Trophys
 
             model.Entity<GymTrophy>()
-                .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.user));
+                .HasKey(nameof(GymTrophy.gym), nameof(GymTrophy.player));
+
+            // Pokemon Exchange
+
+            model.Entity<PokemonExchange>()
+                .HasKey(nameof(PokemonExchange.pokemon), nameof(PokemonExchange.ex_owner));
+
+            // User Level
+
+            model.Entity<Level>()
+                .HasData(data.pokemonGolot.userLevels);
+
+            // Pokemon Level
+
+            model.Entity<PokemonLevel>()
+                .HasData(data.pokemonGolot.pokemonsLevels);
+
+            // Element
+
+            model.Entity<Element>()
+                .HasData(data.pokemonGolot.elements);
+
+            // Egg Pokemon Pool
+
+            model.Entity<EggPokemonPool>()
+                .HasKey(nameof(EggPokemonPool.pokemon), nameof(EggPokemonPool.egg));
+
+            // Pokestop
+            model.Entity<PokeStop>()
+                .HasData(data.pokemonGolot.pokestops);
+
+            // Gyms
+            
+            model.Entity<Gym>()
+                .HasData(data.pokemonGolot.gyms);
+
+            // Movements
+
+            model.Entity<Movement>()
+                .HasKey(nameof(Movement.name), nameof(Movement.element));
+            model.Entity<Movement>()
+                .HasData(data.pokemonGolot.moves);
+
+            // Pokemon
+
+            model.Entity<Pokemon>()
+                .HasData(data.pokemonGolot.pokemons);
+
+            // Pokemon Element
+
+            model.Entity<PokemonElement>()
+                .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -96,10 +150,12 @@ namespace PokemonGolotEF.Data
             if (!optionsBuilder.IsConfigured)
             {
                 string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
+                //string con = "Host=192.168.1.249;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
                 optionsBuilder.UseNpgsql(con);
             }
         }
 
+        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Object> Object { get; set; }
@@ -112,7 +168,7 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<EvolutionChain> Evolution_chain { get; set; }
         public virtual DbSet<Egg> Egg { get; set; }
         public virtual DbSet<PackageOffer> Package_offer { get; set; }
-        public virtual DbSet<Movement> Movement { get; set; }
+        public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Present> Present { get; set; }
         public virtual DbSet<RaidParticipant> Raid_participants { get; set; }
         public virtual DbSet<PokemonOwned> Pokemon_owned { get; set; }
@@ -126,5 +182,8 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<ObjectInventory> Object_inventories { get; set; }
         public virtual DbSet<PackageItems> Package_items { get; set; }
         public virtual DbSet<GymTrophy> Gym_trophies { get; set; }
+        public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
+        public virtual DbSet<EggPokemonPool> Egg_pokemon_pool { get; set; }
+        public virtual DbSet<PokemonElement> Pokemon_element { get; set; }
     }
 }

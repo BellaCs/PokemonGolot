@@ -6,13 +6,13 @@ namespace PokemonGolotEF.Model
 {
     internal class Friendship
     {
-        [ForeignKey("User")]
-        public string user { get; set; }
+        [ForeignKey("Player")]
+        public string player { get; set; }
         [ForeignKey("Friend")]
         public string friend { get; set; }
 
-        [ForeignKey("user")]
-        public virtual User User { get; set; }
+        [ForeignKey("player")]
+        public virtual User Player { get; set; }
         [ForeignKey("friend")]
         public virtual User Friend { get; set; }
     }
