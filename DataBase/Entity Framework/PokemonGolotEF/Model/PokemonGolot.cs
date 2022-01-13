@@ -10,16 +10,17 @@ namespace PokemonGolotEF.Model
     {
         public List<Pokemon> pokemons { get; set; }
         public List<Movement> moves { get; set; }
-        public List<EvolutionChain> evolutions { get; set; }
+        public List<EvolutionChain> evolutions { get; set; }  //to do
         public List<Element> elements { get; set; }
         public List<PokemonLevel> pokemonsLevels { get; set; }
         public List<Level> userLevels { get; set; }
         public List<Gym> gyms { get; set; }
         public List<PokeStop> pokestops { get; set; }
-        public List<Object> objects { get; set; }
-        public List<LevelupObjectReward> levelupObjects { get; set; }
-        public List<TypeTable> typeTable { get; set; }
-        public List<Egg> eggs { get; set; }
+        public List<Object> objects { get; set; }  // to do
+        public List<LevelupObjectReward> levelupObjects { get; set; } // to do
+        public List<TypeTable> typeTable { get; set; }  // to do
+        public List<Egg> eggs { get; set; }  // to do
+        public List<PokemonElement> pokemonElements { get; set; } // to do
 
         public PokemonGolot() 
         {

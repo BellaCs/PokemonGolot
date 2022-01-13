@@ -47,6 +47,8 @@ namespace PokemonGolotEF.Model
         public float male_gender_rate { get; set; } //%
         [Required]
         public float female_gender_rate { get; set; }  //%
+        [Required]
+        public bool isActive { get; set; }
 
 
         public virtual ICollection<PokemonOwned> Owners { get; set; }
@@ -63,6 +65,7 @@ namespace PokemonGolotEF.Model
         {
             rarity = (int)pokemonDetails["isMythical"] == 1 ? "Mythical" : (int)pokemonDetails["isLegendary"] == 1 ? "Legendary" : "common";
             description = (string)pokemonDetails["description"];
+            isActive = (int)pokemonDetails["isAvailable"] == 1;
         }
 
         public void setGenders(List<float?> genders) 
