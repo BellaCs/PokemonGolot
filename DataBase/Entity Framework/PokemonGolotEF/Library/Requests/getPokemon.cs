@@ -102,6 +102,33 @@ namespace PokemonGolotEF.Library.Requests
                 return null;
             }
 
+        }
+
+        public static async Task<String> getPokemonGenders()
+        {
+
+            string sURL;
+            sURL = "https://pogoapi.net/api/v1/pokemon_genders.json";
+            var request = new HttpRequestMessage(HttpMethod.Get, sURL);
+            request.Headers.Add("Accept", "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await client.SendAsync(request);
+
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                return responseBody;
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message : {0} ", e.Message);
+
+                return null;
+            }
+
 
         }
     }

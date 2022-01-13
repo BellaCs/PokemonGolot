@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PokemonGolotEF.Model
 {
-    class Egg
+    internal class Egg
     {
         public Egg() 
         {

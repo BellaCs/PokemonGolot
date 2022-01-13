@@ -139,6 +139,10 @@ namespace PokemonGolotEF.Data
             model.Entity<Pokemon>()
                 .HasData(data.pokemonGolot.pokemons);
 
+            // Pokemon Element
+
+            model.Entity<PokemonElement>()
+                .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -180,5 +184,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<GymTrophy> Gym_trophies { get; set; }
         public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
         public virtual DbSet<EggPokemonPool> Egg_pokemon_pool { get; set; }
+        public virtual DbSet<PokemonElement> Pokemon_element { get; set; }
     }
 }

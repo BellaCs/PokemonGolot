@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace PokemonGolotEF.Model
 {
-    class Pokemon
+    internal class Pokemon
     {
         public Pokemon() 
         {
@@ -59,12 +59,17 @@ namespace PokemonGolotEF.Model
             img_back_female = (string)pokemonImages["back_female"];
         }
 
-        public void setDetails(JToken pokemonDetails, List<int> genders) 
+        public void setDetails(JToken pokemonDetails) 
         {
             rarity = (int)pokemonDetails["isMythical"] == 1 ? "Mythical" : (int)pokemonDetails["isLegendary"] == 1 ? "Legendary" : "common";
             description = (string)pokemonDetails["description"];
-            male_gender_rate = 0;
-            female_gender_rate = 0;
+        }
+
+        public void setGenders(List<float?> genders) 
+        {
+            this.male_gender_rate = (float)genders[0];
+            this.female_gender_rate = (float)genders[1];
+            
         }
     }
 }
