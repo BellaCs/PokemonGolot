@@ -185,5 +185,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
         public virtual DbSet<EggPokemonPool> Egg_pokemon_pool { get; set; }
         public virtual DbSet<PokemonElement> Pokemon_element { get; set; }
+        public virtual DbSet<PlayerRol> Player_rols { get; set; }
     }
 }

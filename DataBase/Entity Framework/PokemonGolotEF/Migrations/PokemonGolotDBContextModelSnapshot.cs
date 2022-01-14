@@ -3043,6 +3043,16 @@ namespace PokemonGolotEF.Migrations
                     b.ToTable("Player");
                 });
 
+            modelBuilder.Entity("PokemonGolotEF.Model.PlayerRol", b =>
+                {
+                    b.Property<string>("rol")
+                        .HasColumnType("text");
+
+                    b.HasKey("rol");
+
+                    b.ToTable("Player_rols");
+                });
+
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
                 {
                     b.Property<int>("num_pokedex")
@@ -3886,36 +3896,6 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 52,
-                            attack = 92.0,
-                            defense = 78.0,
-                            description = "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/52.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Meowth",
-                            rarity = "common",
-                            stamina = 120.0
-                        },
-                        new
-                        {
-                            num_pokedex = 53,
-                            attack = 150.0,
-                            defense = 136.0,
-                            description = "Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/53.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Persian",
-                            rarity = "common",
-                            stamina = 163.0
-                        },
-                        new
-                        {
                             num_pokedex = 54,
                             attack = 122.0,
                             defense = 95.0,
@@ -4352,21 +4332,6 @@ namespace PokemonGolotEF.Migrations
                             name = "Magneton",
                             rarity = "common",
                             stamina = 137.0
-                        },
-                        new
-                        {
-                            num_pokedex = 83,
-                            attack = 124.0,
-                            defense = 115.0,
-                            description = "Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/83.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Farfetch'd",
-                            rarity = "common",
-                            stamina = 141.0
                         },
                         new
                         {
@@ -4951,21 +4916,6 @@ namespace PokemonGolotEF.Migrations
                             name = "Starmie",
                             rarity = "common",
                             stamina = 155.0
-                        },
-                        new
-                        {
-                            num_pokedex = 122,
-                            attack = 192.0,
-                            defense = 205.0,
-                            description = "Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/122.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Mr. Mime",
-                            rarity = "common",
-                            stamina = 120.0
                         },
                         new
                         {
@@ -7121,36 +7071,6 @@ namespace PokemonGolotEF.Migrations
                             name = "Mightyena",
                             rarity = "common",
                             stamina = 172.0
-                        },
-                        new
-                        {
-                            num_pokedex = 263,
-                            attack = 58.0,
-                            defense = 80.0,
-                            description = "Zigzagoon restlessly wanders everywhere at all times. This Pokémon does so because it is very curious. It becomes interested in anything that it happens to see.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/263.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Zigzagoon",
-                            rarity = "common",
-                            stamina = 116.0
-                        },
-                        new
-                        {
-                            num_pokedex = 264,
-                            attack = 142.0,
-                            defense = 128.0,
-                            description = "Linoone always runs full speed and only in straight lines. If facing an obstacle, it makes a right-angle turn to evade it. This Pokémon is very challenged by gently curving roads.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/264.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Linoone",
-                            rarity = "common",
-                            stamina = 186.0
                         },
                         new
                         {
@@ -9776,21 +9696,6 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 439,
-                            attack = 125.0,
-                            defense = 142.0,
-                            description = "When this gifted mimic surprises an opponent, Mime Jr. feels so happy that it ends up forgetting it was imitating something.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/439.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/439.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Mime Jr.",
-                            rarity = "common",
-                            stamina = 85.0
-                        },
-                        new
-                        {
                             num_pokedex = 440,
                             attack = 25.0,
                             defense = 77.0,
@@ -11634,36 +11539,6 @@ namespace PokemonGolotEF.Migrations
                             name = "Sigilyph",
                             rarity = "common",
                             stamina = 176.0
-                        },
-                        new
-                        {
-                            num_pokedex = 562,
-                            attack = 95.0,
-                            defense = 141.0,
-                            description = "Each of them carries a mask that used to be its face when it was human. Sometimes they look at it and cry.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/562.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Yamask",
-                            rarity = "common",
-                            stamina = 116.0
-                        },
-                        new
-                        {
-                            num_pokedex = 563,
-                            attack = 163.0,
-                            defense = 237.0,
-                            description = "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
-                            female_gender_rate = 0.5f,
-                            img_back = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/563.png",
-                            img_front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png",
-                            isActive = true,
-                            male_gender_rate = 0.5f,
-                            name = "Cofagrigus",
-                            rarity = "common",
-                            stamina = 151.0
                         },
                         new
                         {
