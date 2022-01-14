@@ -1,0 +1,37 @@
+[
+  {
+    "user_name": "tortillissius",
+    "name": "Aitor",
+    "surname": "Burgos Correa",
+    "email": "aburgos8@boscdelacoma.cat",
+    "role": "admin"
+  },
+  {
+    "user_name": "ElEloiLo",
+    "name": "Eloi",
+    "surname": "Lòpez Verges",
+    "email": "elopez160@boscdelacoma.cat",
+    "role": "admin"
+  },
+  {
+    "user_name": "padronuri",
+    "name": "Nuria",
+    "surname": "Padrosa Ortiz",
+    "email": "npadrosa331@boscdelacoma.cat",
+    "role": "admin"
+  },
+  {
+    "user_name": "BellaCs",
+    "name": "Marc",
+    "surname": "Bellavista Fàbrega",
+    "email": "mbellavista8@boscdelacoma.cat",
+    "role": "admin"
+  },
+  {
+    "user_name": "GinkGoChito",
+    "name": "Ginkgo",
+    "surname": "Biloba Cobaya",
+    "email": "gbiloba@boscdelacoma.cat",
+    "role": "Jugador"
+  }
+]

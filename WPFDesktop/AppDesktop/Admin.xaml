@@ -40,39 +40,18 @@
             </Button.Effect>
         </Button>
 
-        <Grid HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
-            <Grid x:Name="AdminTables" Background="White" Opacity="0.98">
-                <Rectangle x:Name="TableHeader" HorizontalAlignment="Center" Height="40" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1220" Fill="Black"/>
-                <Label x:Name="AdminName" Content="Nom" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" BorderBrush="Black" Foreground="White"/>
-                <Label x:Name="Surname" Content="Cognoms" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White"/>
-                <Label x:Name="Email" Content="Correu" HorizontalAlignment="Left" Margin="500,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White"/>
-                <Label x:Name="Role" Content="Rol" HorizontalAlignment="Left" Margin="850,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White"/>
-                <!-- Table Datas -->
-                <Label x:Name="Name_number" Content="Nuria" HorizontalAlignment="Left" Height="30" Margin="50,60,0,0" VerticalAlignment="Top" Width="170" FontSize="18"/>
-                <Label x:Name="Surname_number" Content="Padrosa Ortiz" HorizontalAlignment="Left" Height="30" Margin="250,60,0,0" VerticalAlignment="Top" Width="230" FontSize="18"/>
-                <Label x:Name="Email_number" Content="npadrosa331@boscdelacoma.net" HorizontalAlignment="Left" Height="30" Margin="500,60,0,0" VerticalAlignment="Top" Width="330" FontSize="18"/>
-                <Label x:Name="Role_number" Content="Administrador" HorizontalAlignment="Left" Height="30" Margin="850,60,0,0" VerticalAlignment="Top" Width="190" FontSize="18"/>
-                <Button x:Name="edit_number" HorizontalAlignment="Left" Margin="1070,65,0,0" VerticalAlignment="Top" Width="95" Height="30" HorizontalContentAlignment="Right" BorderBrush="Black" Foreground="Black" BorderThickness="2,2,2,2" Background="White">
-                    <Image x:Name="editImage" Height="22" Width="33" Source="/edit.png">
-                        <Image.OpacityMask>
-                            <ImageBrush ImageSource="/edit.png"/>
-                        </Image.OpacityMask>
-                    </Image>
-                </Button>
-                <Label Content="Editar" Margin="1074,65,120,415" RenderTransformOrigin="0.5,0.5">
-                    <Label.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleX="-1.228"/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-1.179"/>
-                        </TransformGroup>
-                    </Label.RenderTransform>
-                </Label>
+        <Grid x:Name="GridAdmins" HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Opacity="0.98" Cursor="Hand" Grid.Row="20" Background="White">
+            <DataGrid x:Name="DataGridAdmins" Margin="0,0,0,61" AutoGenerateColumns="False" ItemsSource="{Binding DataGridAdmins}"  Loaded="DataGridAdmins_Loaded" FontFamily="Caladea" FontSize="20" Background="White" FontWeight="Bold" BorderBrush="#FF37B2E5" HorizontalAlignment="Center">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Name}" Width="210" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Cognoms" Binding="{Binding Surname}" Width="250" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="280" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Rol" Binding="{Binding Role}" Width="170" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Accions" Binding="{Binding ButtonEdit}" Width="250" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
-            </Grid>
-            <Button Content="Registrar Usuari" HorizontalAlignment="Left" Height="49" Margin="1012,410,0,0" VerticalAlignment="Top" Width="149" Click="ButtonCreateAdmin_Click"/>
-
+            <Button Content="Registrar Usuari" HorizontalAlignment="Left" Height="49" Margin="1050,456,0,0" VerticalAlignment="Top" Width="149" Click="ButtonCreateAdmin_Click"/>
         </Grid>
 
 

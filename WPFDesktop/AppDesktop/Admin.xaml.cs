@@ -1,4 +1,22 @@
-﻿using System.Windows;
+﻿using System;
+
+using System.IO;
+using System.Windows;
+using System.Data;
+using System.Text;
+using System.Text.Json;
+using Newtonsoft.Json;
+
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using Newtonsoft.Json.Linq;
+using System.Windows.Controls;
+
+
+using System.ComponentModel;
+using System.Drawing;
+
 
 namespace AppDesktop
 {
@@ -44,6 +62,49 @@ namespace AppDesktop
                     objSecondWindow.Show();
                     break;
             }
+        }
+
+        class TableAdmins
+        {
+            public string Name { get; set; }
+            public string Surname { get; set; }
+            public string Email { get; set; }
+            public string Role { get; set; }
+            public Button ButtonEdit { get; set; }
+
+        }
+
+        void DataGridForAdmins()
+        {
+
+            // Read json Document **** Canviar RUTA ***
+            StreamReader r = new StreamReader("C:/Users/Nuria/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
+            string jsonString = r.ReadToEnd();
+            JToken usersList = JToken.Parse(jsonString);
+
+            List<TableAdmins> adminsList = new List<TableAdmins>();
+
+            foreach (JObject admin in usersList)
+            {
+                TableAdmins actual = new TableAdmins();
+                // Generate button
+                Button b = new Button();
+                b.Name = (string)admin["user_name"];
+
+                actual.Name = (string)admin["name"];
+                actual.Surname = (string)admin["surname"];
+                actual.Email = (string)admin["email"];
+                actual.Role = (string)admin["role"];
+                actual.ButtonEdit = b;
+
+                adminsList.Add(actual);
+            }
+            DataGridAdmins.ItemsSource = adminsList;
+        }
+
+        private void DataGridAdmins_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataGridForAdmins();
         }
     }
 
