@@ -34,6 +34,14 @@ namespace AppDesktop
             adminmenu.Show();
         }
 
+        private void ButtonAddPokemon_Click(object sender, RoutedEventArgs e)
+        {
+            AddPokemons addpokemons = new AddPokemons();
+            this.Visibility = Visibility.Hidden;
+            addpokemons.Show();
+
+        }
+
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = System.Windows.MessageBox.Show("Vols tancar la sessió?", "Tancar sessió", MessageBoxButton.YesNo);

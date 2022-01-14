@@ -1,0 +1,102 @@
+﻿<Window x:Class="AppDesktop.AddPokemons2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppDesktop"
+        mc:Ignorable="d"
+        Title="AddPokemons" Height="720" Width="1280">
+    <Window.Background>
+        <ImageBrush ImageSource="background.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="90" VerticalAlignment="Top" Width="1274" Margin="0,0,-0.4,0" Background="Black" Opacity="0.75">
+            <Image x:Name="PokemonLogo" HorizontalAlignment="Left" Height="75" Margin="18,5,0,0" VerticalAlignment="Top" Width="75" Source="/logo2.png"/>
+            <Label x:Name="PokemonGolot" Content="POKEMON GOLOT" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontSize="48" FontFamily="Caladea" FontWeight="Bold" Foreground="White" OpacityMask="White"/>
+            <Button HorizontalAlignment="Right" Margin="0,0,17,0" VerticalAlignment="Center" Height="75"  Width="75" Click="ButtonCloseSession_Click" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush ImageSource="/logout.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border  Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+        <Button x:Name="ButonPokemonData" Content="Dades básiques" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White" Click="ButtonPokemonData_Click">
+
+        </Button>
+        <Button x:Name="ButtonOtherPokemonData" Content="Altres dades" HorizontalAlignment="Left" Margin="335,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22"  Background="White" BorderBrush="White" Opacity="0.98" OpacityMask="Black" Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="ButtonEvolutions"  Content="Cadena d'evolucions" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonEvolutions_Click"  Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White"/>
+
+        <Grid HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="PokemonName" HorizontalAlignment="Left" Height="33" Margin="78,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28" FontWeight="Bold" Grid.ColumnSpan="2"><Run Language="es-es" Text="Descripció"/><LineBreak/></TextBlock>
+            <TextBox x:Name="PokemonNameEntry" HorizontalAlignment="Left" Margin="78,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="510" Height="202" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="PokemonGender" HorizontalAlignment="Left" Height="33" Margin="698,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28" FontWeight="Bold" Grid.ColumnSpan="2"><Run Language="es-es" Text="Evolucions"/><LineBreak/></TextBlock>
+            <CheckBox Margin="739,287,445,177" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <ComboBox Margin="698,430,69,53" Grid.ColumnSpan="2">
+                <ComboBoxItem Content="ComboBox Item #1"/>
+                <ComboBoxItem IsSelected="True" Content="ComboBox Item #2"/>
+                <ComboBoxItem Content="ComboBox Item #3"/>
+            </ComboBox>
+            <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="1" Margin="698,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="473"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="78,238,0,0" Stroke="Black" VerticalAlignment="Top" Width="510" Grid.Column="1"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="81,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="507" Grid.Column="1"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="690,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="481" Grid.Column="1"/>
+
+
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="718,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" FontSize="20"><Run Text="És una evol"/><Run Text="uci"/><Run Language="es-es" Text="ó"/></TextBlock>
+        <TextBlock x:Name="PokemonImage" HorizontalAlignment="Left" Height="38" Margin="224,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28" FontWeight="Bold"><Run Text="Imat"/><Run Language="es-es" Text="ge per davant"/><LineBreak/></TextBlock>
+        <TextBox x:Name="PokemonStardust" HorizontalAlignment="Left" Margin="907,442,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="106" Height="36" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
+        <TextBlock x:Name="PokemonImage2" HorizontalAlignment="Left" Height="38" Margin="818,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28" FontWeight="Bold"><Run Text="Imat"/><Run Text="ge per "/><Run Text="darrer"/><Run Language="es-es" Text="a"/><LineBreak/></TextBlock>
+
+        <TextBox x:Name="PokemonCandy" HorizontalAlignment="Left" Margin="1088,442,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="104" Height="36" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="1088,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" FontSize="20"><Run Language="es-es" Text="Pols estelar"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="914,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" FontSize="20"><Run Language="es-es" Text="Caramels"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="718,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"><Run Language="es-es" Text="Evoluciona de (antecesor)"/></TextBlock>
+
+        <StackPanel Name="ImagePanel" Drop="ImagePanel_Drop" AllowDrop="true" Margin="101,228,670,387" Background="#FFC9C9C9">
+
+        </StackPanel>
+
+        <StackPanel Name="ImagePanel2" Drop="ImagePanel_Drop" AllowDrop="true" Margin="708,228,88,387" Background="#FFC9C9C9">
+
+        </StackPanel>
+
+
+
+
+
+
+    </Grid>
+</Window>
