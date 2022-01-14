@@ -46,9 +46,22 @@
             <TextBlock x:Name="RepeatPassowrdBox" HorizontalAlignment="Left" Height="33" Margin="856,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="REPETIR CONTRASENYA"/></TextBlock>
             <TextBox x:Name="NameEntr" HorizontalAlignment="Center" Margin="0,467,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"/>
             <TextBox x:Name="SurnameEntry" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="50" BorderThickness="3,3,3,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" Margin="110,467,0,0" FontSize="22"/>
-            <TextBlock x:Name="SurnameBox" HorizontalAlignment="Left" Height="33" Margin="480,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="COGNOMS"/></TextBlock>
-            <TextBlock x:Name="NameBox" HorizontalAlignment="Left" Height="33" Margin="110,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="NOM"/></TextBlock>
-            <TextBlock x:Name="AdminBox" HorizontalAlignment="Left" Height="33" Margin="856,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" FontSize="28" FontWeight="Bold" RenderTransformOrigin="-0.053,0.547"><Run Text="ADMINISTRADOR"/><Run Language="es-es" Text="?"/></TextBlock>
+            <TextBlock x:Name="SurnameBox" HorizontalAlignment="Center" Height="33" Margin="0,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontSize="28" FontWeight="Bold"><Run Text="NO"/><Run Language="es-es" Text="M I COGNOMS"/></TextBlock>
+            <TextBlock x:Name="NameBox" HorizontalAlignment="Left" Height="33" Margin="110,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="28" FontWeight="Bold"><Run Language="es-es" Text="NOM D'USUARI"/></TextBlock>
+            <TextBlock x:Name="AdminBox" HorizontalAlignment="Left" Height="33" Margin="856,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" FontSize="28" FontWeight="Bold" RenderTransformOrigin="-0.053,0.547"><Run Language="es-es" Text="ROL"/></TextBlock>
+            <ComboBox Margin="854,467,102,187">
+                <ComboBoxItem Content="ComboBox Item #1"/>
+                <ComboBoxItem IsSelected="True" Content="ComboBox Item #2"/>
+                <ComboBoxItem Content="ComboBox Item #3"/>
+            </ComboBox>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="110,304,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+            <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,304,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="856,304,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="110,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="856,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+            <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="320"/>
+
+
 
             <Button HorizontalAlignment="Right" Margin="0,565,727,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
                 <Button.Background>
@@ -88,12 +101,6 @@
                     </Style>
                 </Button.Style>
             </Button>
-
-            <CheckBox Margin="1130,465,64,162">
-                <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="3" ScaleY="3" />
-                </CheckBox.LayoutTransform>
-            </CheckBox>
         </Grid>
 
 

@@ -7,11 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddPokemons2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CreateAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddPokemons2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin.xaml">
       <SubType>Designer</SubType>
     </Page>
