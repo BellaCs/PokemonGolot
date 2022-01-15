@@ -22,5 +22,9 @@ namespace PokemonGolotEF.Model
         public string password { get; set; }
         public char gender { get; set; }
         public DateTime birth_date { get; set; }
+        [ForeignKey("Rol")]
+        public string rol { get; set; }
+        [ForeignKey("rol")]
+        public virtual PlayerRol Rol { get; set; }
     }
 }

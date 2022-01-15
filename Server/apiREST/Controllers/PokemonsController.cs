@@ -30,15 +30,16 @@ namespace apiREST.Controllers
         }
 
         // GET: api/Pokemons/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Pokemon>> GetPokemon(int? id)
+        [HttpGet("{numPokedex}")]
+        public async Task<ActionResult<Pokemon>> GetPokemon(int numPokedex)
         {
-            var pokemon = await _context.Pokemon.FindAsync(id);
+            var pokemon = await _context.Pokemon.FindAsync(numPokedex);
 
             if (pokemon == null)
             {
                 return NotFound();
             }
+            
 
             return pokemon;
         }

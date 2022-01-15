@@ -37,7 +37,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("km_egg");
 
-                    b.ToTable("Egg", (string)null);
+                    b.ToTable("Egg");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -55,7 +55,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Egg_inventory", (string)null);
+                    b.ToTable("Egg_inventory");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggPokemonPool", b =>
@@ -70,7 +70,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("egg");
 
-                    b.ToTable("Egg_pokemon_pool", (string)null);
+                    b.ToTable("Egg_pokemon_pool");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Element", b =>
@@ -83,7 +83,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Element", (string)null);
+                    b.ToTable("Element");
 
                     b.HasData(
                         new
@@ -183,7 +183,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon_evolved");
 
-                    b.ToTable("Evolution_chain", (string)null);
+                    b.ToTable("Evolution_chain");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Friendship", b =>
@@ -198,7 +198,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("friend");
 
-                    b.ToTable("Friendships", (string)null);
+                    b.ToTable("Friendships");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Gym", b =>
@@ -213,7 +213,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("Gym", (string)null);
+                    b.ToTable("Gym");
 
                     b.HasData(
                         new
@@ -496,7 +496,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Gym_defensors", (string)null);
+                    b.ToTable("Gym_defensors");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.GymTrophy", b =>
@@ -520,7 +520,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Gym_trophies", (string)null);
+                    b.ToTable("Gym_trophies");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Level", b =>
@@ -536,7 +536,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("level");
 
-                    b.ToTable("Level", (string)null);
+                    b.ToTable("Level");
 
                     b.HasData(
                         new
@@ -806,7 +806,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("object_name");
 
-                    b.ToTable("Levelup_object_rewards", (string)null);
+                    b.ToTable("Levelup_object_rewards");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Movement", b =>
@@ -833,7 +833,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("element");
 
-                    b.ToTable("Movements", (string)null);
+                    b.ToTable("Movements");
 
                     b.HasData(
                         new
@@ -2941,7 +2941,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Object", (string)null);
+                    b.ToTable("Object");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.ObjectInventory", b =>
@@ -2959,7 +2959,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Object_inventories", (string)null);
+                    b.ToTable("Object_inventories");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageItems", b =>
@@ -2977,7 +2977,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("package");
 
-                    b.ToTable("Package_items", (string)null);
+                    b.ToTable("Package_items");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOffer", b =>
@@ -2993,7 +2993,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Package_offer", (string)null);
+                    b.ToTable("Package_offer");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PackageOfferBought", b =>
@@ -3011,7 +3011,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("user");
 
-                    b.ToTable("Package_offers_bought", (string)null);
+                    b.ToTable("Package_offers_bought");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
@@ -3038,9 +3038,14 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("rol")
+                        .HasColumnType("text");
+
                     b.HasKey("user_name");
 
-                    b.ToTable("Player", (string)null);
+                    b.HasIndex("rol");
+
+                    b.ToTable("Player");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PlayerRol", b =>
@@ -3050,7 +3055,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("rol");
 
-                    b.ToTable("Player_rols", (string)null);
+                    b.ToTable("Player_rols");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>
@@ -3107,7 +3112,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("num_pokedex");
 
-                    b.ToTable("Pokemon", (string)null);
+                    b.ToTable("Pokemon");
 
                     b.HasData(
                         new
@@ -3896,7 +3901,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 54,
+                            num_pokedex = 52,
                             attack = 122.0,
                             defense = 95.0,
                             description = "Psyduck uses a mysterious power. When it does so, this Pokémon generates brain waves that are supposedly only seen in sleepers. This discovery spurred controversy among scholars.",
@@ -3911,7 +3916,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 55,
+                            num_pokedex = 53,
                             attack = 191.0,
                             defense = 162.0,
                             description = "The webbed flippers on its forelegs and hind legs and the streamlined body of Golduck give it frightening speed. This Pokémon is definitely much faster than even the most athletic swimmer.",
@@ -3926,7 +3931,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 56,
+                            num_pokedex = 54,
                             attack = 148.0,
                             defense = 82.0,
                             description = "When Mankey starts shaking and its nasal breathing turns rough, it's a sure sign that it is becoming angry. However, because it goes into a towering rage almost instantly, it is impossible for anyone to flee its wrath.",
@@ -3941,7 +3946,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 57,
+                            num_pokedex = 55,
                             attack = 207.0,
                             defense = 138.0,
                             description = "When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger. However, it also becomes much less intelligent at the same time.",
@@ -3956,7 +3961,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 58,
+                            num_pokedex = 56,
                             attack = 136.0,
                             defense = 93.0,
                             description = "Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what. It uses its advanced olfactory sense to determine the emotions of other living things.",
@@ -3971,7 +3976,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 59,
+                            num_pokedex = 57,
                             attack = 227.0,
                             defense = 166.0,
                             description = "Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.",
@@ -3986,7 +3991,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 60,
+                            num_pokedex = 58,
                             attack = 101.0,
                             defense = 82.0,
                             description = "Poliwag has a very thin skin. It is possible to see the Pokémon's spiral innards right through the skin. Despite its thinness, however, the skin is also very flexible. Even sharp fangs bounce right off it.",
@@ -4001,7 +4006,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 61,
+                            num_pokedex = 59,
                             attack = 130.0,
                             defense = 123.0,
                             description = "The surface of Poliwhirl's body is always wet and slick with a slimy fluid. Because of this slippery covering, it can easily slip and slide out of the clutches of any enemy in battle.",
@@ -4016,7 +4021,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 62,
+                            num_pokedex = 60,
                             attack = 182.0,
                             defense = 184.0,
                             description = "Poliwrath's highly developed, brawny muscles never grow fatigued, however much it exercises. It is so tirelessly strong, this Pokémon can swim back and forth across the ocean without effort.",
@@ -4031,7 +4036,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 63,
+                            num_pokedex = 61,
                             attack = 195.0,
                             defense = 82.0,
                             description = "Abra sleeps for 18 hours a day. However, it can sense the presence of foes even while it is sleeping. In such a situation, this Pokémon immediately teleports to safety.",
@@ -4046,7 +4051,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 64,
+                            num_pokedex = 62,
                             attack = 232.0,
                             defense = 117.0,
                             description = "Kadabra emits a peculiar alpha wave if it develops a headache. Only those people with a particularly strong psyche can hope to become a Trainer of this Pokémon.",
@@ -4063,7 +4068,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 65,
+                            num_pokedex = 63,
                             attack = 271.0,
                             defense = 167.0,
                             description = "Alakazam's brain continually grows, making its head far too heavy to support with its neck. This Pokémon holds its head up using its psychokinetic power instead.",
@@ -4080,7 +4085,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 66,
+                            num_pokedex = 64,
                             attack = 137.0,
                             defense = 82.0,
                             description = "Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.",
@@ -4095,7 +4100,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 67,
+                            num_pokedex = 65,
                             attack = 177.0,
                             defense = 125.0,
                             description = "Machoke's thoroughly toned muscles possess the hardness of steel. This Pokémon has so much strength, it can easily hold aloft a sumo wrestler on just one finger.",
@@ -4110,7 +4115,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 68,
+                            num_pokedex = 66,
                             attack = 234.0,
                             defense = 159.0,
                             description = "Machamp has the power to hurl anything aside. However, trying to do any work requiring care and dexterity causes its arms to get tangled. This Pokémon tends to leap into action before it thinks.",
@@ -4125,7 +4130,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 69,
+                            num_pokedex = 67,
                             attack = 139.0,
                             defense = 61.0,
                             description = "Bellsprout's thin and flexible body lets it bend and sway to avoid any attack, however strong it may be. From its mouth, this Pokémon spits a corrosive fluid that melts even iron.",
@@ -4140,7 +4145,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 70,
+                            num_pokedex = 68,
                             attack = 172.0,
                             defense = 92.0,
                             description = "Weepinbell has a large hook on its rear end. At night, the Pokémon hooks on to a tree branch and goes to sleep. If it moves around in its sleep, it may wake up to find itself on the ground.",
@@ -4155,7 +4160,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 71,
+                            num_pokedex = 69,
                             attack = 207.0,
                             defense = 135.0,
                             description = "Victreebel has a long vine that extends from its head. This vine is waved and flicked about as if it were an animal to attract prey. When an unsuspecting prey draws near, this Pokémon swallows it whole.",
@@ -4170,7 +4175,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 72,
+                            num_pokedex = 70,
                             attack = 97.0,
                             defense = 149.0,
                             description = "Tentacool's body is largely composed of water. If it is removed from the sea, it dries up like parchment. If this Pokémon happens to become dehydrated, put it back into the sea.",
@@ -4185,7 +4190,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 73,
+                            num_pokedex = 71,
                             attack = 166.0,
                             defense = 209.0,
                             description = "Tentacruel has large red orbs on its head. The orbs glow before lashing the vicinity with a harsh ultrasonic blast. This Pokémon's outburst creates rough waves around it.",
@@ -4200,7 +4205,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 74,
+                            num_pokedex = 72,
                             attack = 132.0,
                             defense = 132.0,
                             description = "The longer a Geodude lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always.",
@@ -4215,7 +4220,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 75,
+                            num_pokedex = 73,
                             attack = 164.0,
                             defense = 164.0,
                             description = "Graveler grows by feeding on rocks. Apparently, it prefers to eat rocks that are covered in moss. This Pokémon eats its way through a ton of rocks on a daily basis.",
@@ -4230,7 +4235,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 76,
+                            num_pokedex = 74,
                             attack = 211.0,
                             defense = 198.0,
                             description = "Golem live up on mountains. If there is a large earthquake, these Pokémon will come rolling down off the mountains en masse to the foothills below.",
@@ -4245,7 +4250,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 77,
+                            num_pokedex = 75,
                             attack = 170.0,
                             defense = 127.0,
                             description = "Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent.",
@@ -4260,7 +4265,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 78,
+                            num_pokedex = 76,
                             attack = 207.0,
                             defense = 162.0,
                             description = "Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.",
@@ -4275,7 +4280,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 79,
+                            num_pokedex = 77,
                             attack = 109.0,
                             defense = 98.0,
                             description = "Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge.",
@@ -4290,7 +4295,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 80,
+                            num_pokedex = 78,
                             attack = 177.0,
                             defense = 180.0,
                             description = "Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This causes Slowbro to grudgingly swim and catch prey instead.",
@@ -4305,7 +4310,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 81,
+                            num_pokedex = 79,
                             attack = 165.0,
                             defense = 121.0,
                             description = "Magnemite attaches itself to power lines to feed on electricity. If your house has a power outage, check your circuit breakers. You may find a large number of this Pokémon clinging to the breaker box.",
@@ -4320,7 +4325,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 82,
+                            num_pokedex = 80,
                             attack = 223.0,
                             defense = 169.0,
                             description = "Magneton emits a powerful magnetic force that is fatal to mechanical devices. As a result, large cities sound sirens to warn citizens of large-scale outbreaks of this Pokémon.",
@@ -4335,7 +4340,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 84,
+                            num_pokedex = 81,
                             attack = 158.0,
                             defense = 83.0,
                             description = "Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.",
@@ -4352,7 +4357,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 85,
+                            num_pokedex = 82,
                             attack = 218.0,
                             defense = 140.0,
                             description = "Watch out if Dodrio's three heads are looking in three separate directions. It's a sure sign that it is on its guard. Don't go near this Pokémon if it's being wary—it may decide to peck you.",
@@ -4369,7 +4374,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 86,
+                            num_pokedex = 83,
                             attack = 85.0,
                             defense = 121.0,
                             description = "Seel hunts for prey in the frigid sea underneath sheets of ice. When it needs to breathe, it punches a hole through the ice with the sharply protruding section of its head.",
@@ -4384,7 +4389,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 87,
+                            num_pokedex = 84,
                             attack = 139.0,
                             defense = 177.0,
                             description = "Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago.",
@@ -4399,7 +4404,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 88,
+                            num_pokedex = 85,
                             attack = 135.0,
                             defense = 90.0,
                             description = "Grimer's sludgy and rubbery body can be forced through any opening, however small it may be. This Pokémon enters sewer pipes to drink filthy wastewater.",
@@ -4414,7 +4419,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 89,
+                            num_pokedex = 86,
                             attack = 190.0,
                             defense = 172.0,
                             description = "From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.",
@@ -4429,7 +4434,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 90,
+                            num_pokedex = 87,
                             attack = 116.0,
                             defense = 134.0,
                             description = "At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.",
@@ -4444,7 +4449,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 91,
+                            num_pokedex = 88,
                             attack = 186.0,
                             defense = 256.0,
                             description = "Cloyster is capable of swimming in the sea. It does so by swallowing water, then jetting it out toward the rear. This Pokémon shoots spikes from its shell using the same system.",
@@ -4459,7 +4464,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 92,
+                            num_pokedex = 89,
                             attack = 186.0,
                             defense = 67.0,
                             description = "Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away. Groups of this Pokémon cluster under the eaves of houses to escape the ravages of wind.",
@@ -4474,7 +4479,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 93,
+                            num_pokedex = 90,
                             attack = 223.0,
                             defense = 107.0,
                             description = "Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away.",
@@ -4489,7 +4494,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 94,
+                            num_pokedex = 91,
                             attack = 261.0,
                             defense = 149.0,
                             description = "Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.",
@@ -4504,7 +4509,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 95,
+                            num_pokedex = 92,
                             attack = 85.0,
                             defense = 232.0,
                             description = "Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.",
@@ -4519,7 +4524,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 96,
+                            num_pokedex = 93,
                             attack = 89.0,
                             defense = 136.0,
                             description = "If your nose becomes itchy while you are sleeping, it's a sure sign that one of these Pokémon is standing above your pillow and trying to eat your dream through your nostrils.",
@@ -4534,7 +4539,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 97,
+                            num_pokedex = 94,
                             attack = 144.0,
                             defense = 193.0,
                             description = "Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis. While this Pokémon searches for prey, it polishes the pendulum.",
@@ -4551,7 +4556,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 98,
+                            num_pokedex = 95,
                             attack = 181.0,
                             defense = 124.0,
                             description = "Krabby live on beaches, burrowed inside holes dug into the sand. On sandy beaches with little in the way of food, these Pokémon can be seen squabbling with each other over territory.",
@@ -4566,7 +4571,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 99,
+                            num_pokedex = 96,
                             attack = 240.0,
                             defense = 181.0,
                             description = "Kingler has an enormous, oversized claw. It waves this huge claw in the air to communicate with others. However, because the claw is so heavy, the Pokémon quickly tires.",
@@ -4581,7 +4586,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 100,
+                            num_pokedex = 97,
                             attack = 109.0,
                             defense = 111.0,
                             description = "Voltorb was first sighted at a company that manufactures Poké Balls. The link between that sighting and the fact that this Pokémon looks very similar to a Poké Ball remains a mystery.",
@@ -4596,7 +4601,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 101,
+                            num_pokedex = 98,
                             attack = 173.0,
                             defense = 173.0,
                             description = "Electrode eats electricity in the atmosphere. On days when lightning strikes, you can see this Pokémon exploding all over the place from eating too much electricity.",
@@ -4611,7 +4616,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 102,
+                            num_pokedex = 99,
                             attack = 107.0,
                             defense = 125.0,
                             description = "This Pokémon consists of six eggs that form a closely knit cluster. The six eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution.",
@@ -4626,7 +4631,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 103,
+                            num_pokedex = 100,
                             attack = 233.0,
                             defense = 149.0,
                             description = "Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.",
@@ -4641,7 +4646,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 104,
+                            num_pokedex = 101,
                             attack = 90.0,
                             defense = 144.0,
                             description = "Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds.",
@@ -4656,7 +4661,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 105,
+                            num_pokedex = 102,
                             attack = 144.0,
                             defense = 186.0,
                             description = "Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokémon's tempered and hardened spirit is not easily broken.",
@@ -4671,7 +4676,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 106,
+                            num_pokedex = 103,
                             attack = 224.0,
                             defense = 181.0,
                             description = "Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs and loosens the muscles to overcome fatigue.",
@@ -4686,7 +4691,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 107,
+                            num_pokedex = 104,
                             attack = 193.0,
                             defense = 197.0,
                             description = "Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.",
@@ -4701,7 +4706,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 108,
+                            num_pokedex = 105,
                             attack = 108.0,
                             defense = 137.0,
                             description = "Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.",
@@ -4716,7 +4721,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 109,
+                            num_pokedex = 106,
                             attack = 119.0,
                             defense = 141.0,
                             description = "If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.",
@@ -4731,7 +4736,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 110,
+                            num_pokedex = 107,
                             attack = 174.0,
                             defense = 197.0,
                             description = "Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.",
@@ -4746,7 +4751,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 111,
+                            num_pokedex = 108,
                             attack = 140.0,
                             defense = 127.0,
                             description = "Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel. This Pokémon may feel some pain from the collision the next day, however.",
@@ -4763,7 +4768,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 112,
+                            num_pokedex = 109,
                             attack = 222.0,
                             defense = 171.0,
                             description = "Rhydon's horn can crush even uncut diamonds. One sweeping blow of its tail can topple a building. This Pokémon's hide is extremely tough. Even direct cannon hits don't leave a scratch.",
@@ -4780,7 +4785,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 113,
+                            num_pokedex = 110,
                             attack = 60.0,
                             defense = 128.0,
                             description = "Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.",
@@ -4795,7 +4800,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 114,
+                            num_pokedex = 111,
                             attack = 183.0,
                             defense = 169.0,
                             description = "Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.",
@@ -4810,7 +4815,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 115,
+                            num_pokedex = 112,
                             attack = 181.0,
                             defense = 165.0,
                             description = "If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.",
@@ -4825,7 +4830,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 116,
+                            num_pokedex = 113,
                             attack = 129.0,
                             defense = 103.0,
                             description = "Horsea eats small insects and moss off of rocks. If the ocean current turns fast, this Pokémon anchors itself by wrapping its tail around rocks or coral to prevent being washed away.",
@@ -4840,7 +4845,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 117,
+                            num_pokedex = 114,
                             attack = 187.0,
                             defense = 156.0,
                             description = "Seadra sleeps after wriggling itself between the branches of coral. Those trying to harvest coral are occasionally stung by this Pokémon's poison barbs if they fail to notice it.",
@@ -4855,7 +4860,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 118,
+                            num_pokedex = 115,
                             attack = 123.0,
                             defense = 110.0,
                             description = "Goldeen is a very beautiful Pokémon with fins that billow elegantly in water. However, don't let your guard down around this Pokémon—it could ram you powerfully with its horn.",
@@ -4872,7 +4877,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 119,
+                            num_pokedex = 116,
                             attack = 175.0,
                             defense = 147.0,
                             description = "In the autumn, Seaking males can be seen performing courtship dances in riverbeds to woo females. During this season, this Pokémon's body coloration is at its most beautiful.",
@@ -4889,7 +4894,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 120,
+                            num_pokedex = 117,
                             attack = 137.0,
                             defense = 112.0,
                             description = "Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.",
@@ -4904,7 +4909,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 121,
+                            num_pokedex = 118,
                             attack = 210.0,
                             defense = 184.0,
                             description = "Starmie's center section—the core—glows brightly in seven colors. Because of its luminous nature, this Pokémon has been given the nickname “the gem of the sea.”",
@@ -4919,7 +4924,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 123,
+                            num_pokedex = 119,
                             attack = 218.0,
                             defense = 170.0,
                             description = "Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.",
@@ -4936,7 +4941,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 124,
+                            num_pokedex = 120,
                             attack = 223.0,
                             defense = 151.0,
                             description = "Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.",
@@ -4951,7 +4956,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 125,
+                            num_pokedex = 121,
                             attack = 198.0,
                             defense = 158.0,
                             description = "When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.",
@@ -4966,7 +4971,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 126,
+                            num_pokedex = 122,
                             attack = 206.0,
                             defense = 154.0,
                             description = "In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.",
@@ -4981,7 +4986,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 127,
+                            num_pokedex = 123,
                             attack = 238.0,
                             defense = 182.0,
                             description = "Pinsir is astoundingly strong. It can grip a foe weighing twice its weight in its horns and easily lift it. This Pokémon's movements turn sluggish in cold places.",
@@ -4996,7 +5001,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 128,
+                            num_pokedex = 124,
                             attack = 198.0,
                             defense = 183.0,
                             description = "This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.",
@@ -5011,7 +5016,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 129,
+                            num_pokedex = 125,
                             attack = 29.0,
                             defense = 85.0,
                             description = "Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it.",
@@ -5028,7 +5033,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 130,
+                            num_pokedex = 126,
                             attack = 237.0,
                             defense = 186.0,
                             description = "When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.",
@@ -5045,7 +5050,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 131,
+                            num_pokedex = 127,
                             attack = 165.0,
                             defense = 174.0,
                             description = "People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.",
@@ -5060,7 +5065,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 132,
+                            num_pokedex = 128,
                             attack = 91.0,
                             defense = 91.0,
                             description = "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
@@ -5075,7 +5080,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 133,
+                            num_pokedex = 129,
                             attack = 104.0,
                             defense = 114.0,
                             description = "Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.",
@@ -5090,7 +5095,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 134,
+                            num_pokedex = 130,
                             attack = 205.0,
                             defense = 161.0,
                             description = "Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.",
@@ -5105,7 +5110,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 135,
+                            num_pokedex = 131,
                             attack = 232.0,
                             defense = 182.0,
                             description = "Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.",
@@ -5120,7 +5125,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 136,
+                            num_pokedex = 132,
                             attack = 246.0,
                             defense = 179.0,
                             description = "Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.",
@@ -5135,7 +5140,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 137,
+                            num_pokedex = 133,
                             attack = 153.0,
                             defense = 136.0,
                             description = "Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.",
@@ -5150,7 +5155,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 138,
+                            num_pokedex = 134,
                             attack = 155.0,
                             defense = 153.0,
                             description = "Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.",
@@ -5165,7 +5170,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 139,
+                            num_pokedex = 135,
                             attack = 207.0,
                             defense = 201.0,
                             description = "Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.",
@@ -5180,7 +5185,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 140,
+                            num_pokedex = 136,
                             attack = 148.0,
                             defense = 140.0,
                             description = "Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.",
@@ -5195,7 +5200,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 141,
+                            num_pokedex = 137,
                             attack = 220.0,
                             defense = 186.0,
                             description = "Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land as evident from the beginnings of change in its gills and legs.",
@@ -5210,7 +5215,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 142,
+                            num_pokedex = 138,
                             attack = 221.0,
                             defense = 159.0,
                             description = "Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from genetic material extracted from amber. It is imagined to have been the king of the skies in ancient times.",
@@ -5225,7 +5230,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 143,
+                            num_pokedex = 139,
                             attack = 190.0,
                             defense = 169.0,
                             description = "Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its expansive belly as a place to play.",
@@ -5240,7 +5245,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 144,
+                            num_pokedex = 140,
                             attack = 192.0,
                             defense = 236.0,
                             description = "Articuno is a Legendary Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall.",
@@ -5255,7 +5260,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 145,
+                            num_pokedex = 141,
                             attack = 253.0,
                             defense = 185.0,
                             description = "Zapdos is a Legendary Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts.",
@@ -5270,7 +5275,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 146,
+                            num_pokedex = 142,
                             attack = 251.0,
                             defense = 181.0,
                             description = "Moltres is a Legendary Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.",
@@ -5285,7 +5290,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 147,
+                            num_pokedex = 143,
                             attack = 119.0,
                             defense = 91.0,
                             description = "Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels.",
@@ -5300,7 +5305,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 148,
+                            num_pokedex = 144,
                             attack = 163.0,
                             defense = 135.0,
                             description = "Dragonair stores an enormous amount of energy inside its body. It is said to alter weather conditions in its vicinity by discharging energy from the crystals on its neck and tail.",
@@ -5315,7 +5320,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 149,
+                            num_pokedex = 145,
                             attack = 263.0,
                             defense = 198.0,
                             description = "Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.",
@@ -5330,7 +5335,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 150,
+                            num_pokedex = 146,
                             attack = 300.0,
                             defense = 182.0,
                             description = "Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.",
@@ -5345,7 +5350,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 151,
+                            num_pokedex = 147,
                             attack = 210.0,
                             defense = 210.0,
                             description = "Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.",
@@ -5360,7 +5365,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 152,
+                            num_pokedex = 148,
                             attack = 92.0,
                             defense = 122.0,
                             description = "In battle, Chikorita waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling Pokémon and creating a cozy, friendly atmosphere all around.",
@@ -5375,7 +5380,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 153,
+                            num_pokedex = 149,
                             attack = 122.0,
                             defense = 155.0,
                             description = "Bayleef's neck is ringed by curled-up leaves. Inside each tubular leaf is a small shoot of a tree. The fragrance of this shoot makes people peppy.",
@@ -5390,7 +5395,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 154,
+                            num_pokedex = 150,
                             attack = 168.0,
                             defense = 202.0,
                             description = "The fragrance of Meganium's flower soothes and calms emotions. In battle, this Pokémon gives off more of its becalming scent to blunt the foe's fighting spirit.",
@@ -5407,7 +5412,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 155,
+                            num_pokedex = 151,
                             attack = 116.0,
                             defense = 93.0,
                             description = "Cyndaquil protects itself by flaring up the flames on its back. The flames are vigorous if the Pokémon is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.",
@@ -5422,7 +5427,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 156,
+                            num_pokedex = 152,
                             attack = 158.0,
                             defense = 126.0,
                             description = "Quilava keeps its foes at bay with the intensity of its flames and gusts of superheated air. This Pokémon applies its outstanding nimbleness to dodge attacks even while scorching the foe with flames.",
@@ -5437,7 +5442,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 157,
+                            num_pokedex = 153,
                             attack = 223.0,
                             defense = 173.0,
                             description = "Typhlosion obscures itself behind a shimmering heat haze that it creates using its intensely hot flames. This Pokémon creates blazing explosive blasts that burn everything to cinders.",
@@ -5452,7 +5457,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 158,
+                            num_pokedex = 154,
                             attack = 117.0,
                             defense = 109.0,
                             description = "Despite the smallness of its body, Totodile's jaws are very powerful. While the Pokémon may think it is just playfully nipping, its bite has enough power to cause serious injury.",
@@ -5467,7 +5472,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 159,
+                            num_pokedex = 155,
                             attack = 150.0,
                             defense = 142.0,
                             description = "Once Croconaw has clamped its jaws on its foe, it will absolutely not let go. Because the tips of its fangs are forked back like barbed fishhooks, they become impossible to remove when they have sunk in.",
@@ -5482,7 +5487,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 160,
+                            num_pokedex = 156,
                             attack = 205.0,
                             defense = 188.0,
                             description = "Feraligatr intimidates its foes by opening its huge mouth. In battle, it will kick the ground hard with its thick and powerful hind legs to charge at the foe at an incredible speed.",
@@ -5497,7 +5502,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 161,
+                            num_pokedex = 157,
                             attack = 79.0,
                             defense = 73.0,
                             description = "When Sentret sleeps, it does so while another stands guard. The sentry wakes the others at the first sign of danger. When this Pokémon becomes separated from its pack, it becomes incapable of sleep due to fear.",
@@ -5512,7 +5517,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 162,
+                            num_pokedex = 158,
                             attack = 148.0,
                             defense = 125.0,
                             description = "Furret has a very slim build. When under attack, it can slickly squirm through narrow spaces and get away. In spite of its short limbs, this Pokémon is very nimble and fleet.",
@@ -5527,7 +5532,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 163,
+                            num_pokedex = 159,
                             attack = 67.0,
                             defense = 88.0,
                             description = "Hoothoot has an internal organ that senses and tracks the earth's rotation. Using this special organ, this Pokémon begins hooting at precisely the same time every day.",
@@ -5542,7 +5547,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 164,
+                            num_pokedex = 160,
                             attack = 145.0,
                             defense = 156.0,
                             description = "Noctowl never fails at catching prey in darkness. This Pokémon owes its success to its superior vision that allows it to see in minimal light, and to its soft, supple wings that make no sound in flight.",
@@ -5557,7 +5562,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 165,
+                            num_pokedex = 161,
                             attack = 72.0,
                             defense = 118.0,
                             description = "Ledyba secretes an aromatic fluid from where its legs join its body. This fluid is used for communicating with others. This Pokémon conveys its feelings to others by altering the fluid's scent.",
@@ -5574,7 +5579,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 166,
+                            num_pokedex = 162,
                             attack = 107.0,
                             defense = 179.0,
                             description = "It is said that in lands with clean air, where the stars fill the sky, there live Ledian in countless numbers. There is a good reason for this—the Pokémon uses the light of the stars as its energy.",
@@ -5591,7 +5596,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 167,
+                            num_pokedex = 163,
                             attack = 105.0,
                             defense = 73.0,
                             description = "The web spun by Spinarak can be considered its second nervous system. It is said that this Pokémon can determine what kind of prey is touching its web just by the tiny vibrations it feels through the web's strands.",
@@ -5606,7 +5611,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 168,
+                            num_pokedex = 164,
                             attack = 161.0,
                             defense = 124.0,
                             description = "Ariados's feet are tipped with tiny hooked claws that enable it to scuttle on ceilings and vertical walls. This Pokémon constricts the foe with thin and strong silk webbing.",
@@ -5621,7 +5626,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 169,
+                            num_pokedex = 165,
                             attack = 194.0,
                             defense = 178.0,
                             description = "If this Pokémon is flying by fluttering only a pair of wings on either the forelegs or hind legs, it's proof that Crobat has been flying a long distance. It switches the wings it uses if it is tired.",
@@ -5636,7 +5641,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 170,
+                            num_pokedex = 166,
                             attack = 106.0,
                             defense = 97.0,
                             description = "Chinchou lets loose positive and negative electrical charges from its two antennas to make its prey faint. This Pokémon flashes its electric lights to exchange signals with others.",
@@ -5651,7 +5656,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 171,
+                            num_pokedex = 167,
                             attack = 146.0,
                             defense = 137.0,
                             description = "Lanturn is nicknamed “the deep-sea star” for its illuminated antenna. This Pokémon produces light by causing a chemical reaction between bacteria and its bodily fluids inside the antenna.",
@@ -5666,7 +5671,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 172,
+                            num_pokedex = 168,
                             attack = 77.0,
                             defense = 53.0,
                             description = "Pichu charges itself with electricity more easily on days with thunderclouds or when the air is very dry. You can hear the crackling of static electricity coming off this Pokémon.",
@@ -5681,7 +5686,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 173,
+                            num_pokedex = 169,
                             attack = 75.0,
                             defense = 79.0,
                             description = "On nights with many shooting stars, Cleffa can be seen dancing in a ring. They dance through the night and stop only at the break of day, when these Pokémon quench their thirst with the morning dew.",
@@ -5696,7 +5701,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 174,
+                            num_pokedex = 170,
                             attack = 69.0,
                             defense = 32.0,
                             description = "Igglybuff's vocal cords are not sufficiently developed. It would hurt its throat if it were to sing too much. This Pokémon gargles with freshwater from a clean stream.",
@@ -5711,7 +5716,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 175,
+                            num_pokedex = 171,
                             attack = 67.0,
                             defense = 116.0,
                             description = "As its energy, Togepi uses the positive emotions of compassion and pleasure exuded by people and Pokémon. This Pokémon stores up feelings of happiness inside its shell, then shares them with others.",
@@ -5726,7 +5731,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 176,
+                            num_pokedex = 172,
                             attack = 139.0,
                             defense = 181.0,
                             description = "Togetic is said to be a Pokémon that brings good fortune. When the Pokémon spots someone who is pure of heart, it is said to appear and share its happiness with that person.",
@@ -5741,7 +5746,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 177,
+                            num_pokedex = 173,
                             attack = 134.0,
                             defense = 89.0,
                             description = "Natu cannot fly because its wings are not yet fully grown. If your eyes meet with this Pokémon's eyes, it will stare back intently at you. But if you move even slightly, it will hop away to safety.",
@@ -5756,7 +5761,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 178,
+                            num_pokedex = 174,
                             attack = 192.0,
                             defense = 146.0,
                             description = "Xatu stands rooted and still in one spot all day long. People believe that this Pokémon does so out of fear of the terrible things it has foreseen in the future.",
@@ -5773,7 +5778,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 179,
+                            num_pokedex = 175,
                             attack = 114.0,
                             defense = 79.0,
                             description = "Mareep's fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail glows.",
@@ -5788,7 +5793,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 180,
+                            num_pokedex = 176,
                             attack = 145.0,
                             defense = 109.0,
                             description = "Flaaffy's wool quality changes so that it can generate a high amount of static electricity with a small amount of wool. The bare and slick parts of its hide are shielded against electricity.",
@@ -5803,7 +5808,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 181,
+                            num_pokedex = 177,
                             attack = 211.0,
                             defense = 169.0,
                             description = "Ampharos gives off so much light that it can be seen even from space. People in the old days used the light of this Pokémon to send signals back and forth with others far away.",
@@ -5818,7 +5823,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 182,
+                            num_pokedex = 178,
                             attack = 169.0,
                             defense = 186.0,
                             description = "When Bellossom gets exposed to plenty of sunlight, the leaves ringing its body begin to spin around. This Pokémon's dancing is renowned in the southern lands.",
@@ -5833,7 +5838,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 183,
+                            num_pokedex = 179,
                             attack = 37.0,
                             defense = 93.0,
                             description = "Marill's oil-filled tail acts much like a life preserver. If you see just its tail bobbing on the water's surface, it's a sure indication that this Pokémon is diving beneath the water to feed on aquatic plants.",
@@ -5848,7 +5853,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 184,
+                            num_pokedex = 180,
                             attack = 112.0,
                             defense = 152.0,
                             description = "Azumarill's long ears are indispensable sensors. By focusing its hearing, this Pokémon can identify what kinds of prey are around, even in rough and fast-running rivers.",
@@ -5863,7 +5868,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 185,
+                            num_pokedex = 181,
                             attack = 167.0,
                             defense = 176.0,
                             description = "Sudowoodo camouflages itself as a tree to avoid being attacked by enemies. However, because its hands remain green throughout the year, the Pokémon is easily identified as a fake during the winter.",
@@ -5880,7 +5885,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 186,
+                            num_pokedex = 182,
                             attack = 174.0,
                             defense = 179.0,
                             description = "The curled hair on Politoed's head is proof of its status as a king. It is said that the longer and more curled the hair, the more respect this Pokémon earns from its peers.",
@@ -5897,7 +5902,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 187,
+                            num_pokedex = 183,
                             attack = 67.0,
                             defense = 94.0,
                             description = "This Pokémon drifts and floats with the wind. If it senses the approach of strong winds, Hoppip links its leaves with other Hoppip to prepare against being blown away.",
@@ -5912,7 +5917,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 188,
+                            num_pokedex = 184,
                             attack = 91.0,
                             defense = 120.0,
                             description = "Skiploom's flower blossoms when the temperature rises above 64 degrees Fahrenheit. How much the flower opens depends on the temperature. For that reason, this Pokémon is sometimes used as a thermometer.",
@@ -5927,7 +5932,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 189,
+                            num_pokedex = 185,
                             attack = 118.0,
                             defense = 183.0,
                             description = "Jumpluff rides warm southern winds to cross the sea and fly to foreign lands. The Pokémon descends to the ground when it encounters cold air while it is floating.",
@@ -5942,7 +5947,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 190,
+                            num_pokedex = 186,
                             attack = 136.0,
                             defense = 112.0,
                             description = "Aipom's tail ends in a hand-like appendage that can be cleverly manipulated. However, because the Pokémon uses its tail so much, its real hands have become rather clumsy.",
@@ -5959,7 +5964,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 191,
+                            num_pokedex = 187,
                             attack = 55.0,
                             defense = 55.0,
                             description = "Sunkern tries to move as little as it possibly can. It does so because it tries to conserve all the nutrients it has stored in its body for its evolution. It will not eat a thing, subsisting only on morning dew.",
@@ -5974,7 +5979,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 192,
+                            num_pokedex = 188,
                             attack = 185.0,
                             defense = 135.0,
                             description = "Sunflora converts solar energy into nutrition. It moves around actively in the daytime when it is warm. It stops moving as soon as the sun goes down for the night.",
@@ -5989,7 +5994,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 193,
+                            num_pokedex = 189,
                             attack = 154.0,
                             defense = 94.0,
                             description = "Yanma is capable of seeing 360 degrees without having to move its eyes. It is a great flier that is adept at making sudden stops and turning midair. This Pokémon uses its flying ability to quickly chase down targeted prey.",
@@ -6004,7 +6009,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 194,
+                            num_pokedex = 190,
                             attack = 75.0,
                             defense = 66.0,
                             description = "Wooper usually lives in water. However, it occasionally comes out onto land in search of food. On land, it coats its body with a gooey, toxic film.",
@@ -6021,7 +6026,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 195,
+                            num_pokedex = 191,
                             attack = 152.0,
                             defense = 143.0,
                             description = "Quagsire hunts for food by leaving its mouth wide open in water and waiting for its prey to blunder in unaware. Because the Pokémon does not move, it does not get very hungry.",
@@ -6038,7 +6043,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 196,
+                            num_pokedex = 192,
                             attack = 261.0,
                             defense = 175.0,
                             description = "Espeon is extremely loyal to any Trainer it considers to be worthy. It is said that this Pokémon developed its precognitive powers to protect its Trainer from harm.",
@@ -6053,7 +6058,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 197,
+                            num_pokedex = 193,
                             attack = 126.0,
                             defense = 240.0,
                             description = "Umbreon evolved as a result of exposure to the moon's waves. It hides silently in darkness and waits for its foes to make a move. The rings on its body glow when it leaps to attack.",
@@ -6068,7 +6073,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 198,
+                            num_pokedex = 194,
                             attack = 175.0,
                             defense = 87.0,
                             description = "Murkrow was feared and loathed as the alleged bearer of ill fortune. This Pokémon shows strong interest in anything that sparkles or glitters. It will even try to steal rings from women.",
@@ -6085,7 +6090,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 199,
+                            num_pokedex = 195,
                             attack = 177.0,
                             defense = 180.0,
                             description = "Slowking undertakes research every day in an effort to solve the mysteries of the world. However, this Pokémon apparently forgets everything it has learned if the Shellder on its head comes off.",
@@ -6100,7 +6105,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 200,
+                            num_pokedex = 196,
                             attack = 167.0,
                             defense = 154.0,
                             description = "Misdreavus frightens people with a creepy, sobbing cry. The Pokémon apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition.",
@@ -6115,7 +6120,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 201,
+                            num_pokedex = 197,
                             attack = 136.0,
                             defense = 91.0,
                             description = "This Pokémon is shaped like ancient writing. It is a mystery as to which came first, the ancient writings or the various Unown. Research into this topic is ongoing but nothing is known.",
@@ -6130,7 +6135,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 202,
+                            num_pokedex = 198,
                             attack = 60.0,
                             defense = 106.0,
                             description = "If two or more Wobbuffet meet, they will turn competitive and try to outdo each other's endurance. However, they may try to see which one can endure the longest without food. Trainers need to beware of this habit.",
@@ -6146,7 +6151,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 203,
+                            num_pokedex = 199,
                             attack = 182.0,
                             defense = 133.0,
                             description = "Girafarig's rear head also has a brain, but it is small. The rear head attacks in response to smells and sounds. Approaching this Pokémon from behind can cause the rear head to suddenly lash out and bite.",
@@ -6163,7 +6168,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 204,
+                            num_pokedex = 200,
                             attack = 108.0,
                             defense = 122.0,
                             description = "Pineco hangs from a tree branch and patiently waits for prey to come along. If the Pokémon is disturbed while eating by someone shaking its tree, it drops down to the ground and explodes with no warning.",
@@ -6178,7 +6183,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 205,
+                            num_pokedex = 201,
                             attack = 161.0,
                             defense = 205.0,
                             description = "Forretress conceals itself inside its hardened steel shell. The shell is opened when the Pokémon is catching prey, but it does so at such a quick pace that the shell's inside cannot be seen.",
@@ -6193,7 +6198,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 206,
+                            num_pokedex = 202,
                             attack = 131.0,
                             defense = 128.0,
                             description = "Dunsparce has a drill for its tail. It uses this tail to burrow into the ground backward. This Pokémon is known to make its nest in complex shapes deep under the ground.",
@@ -6208,7 +6213,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 207,
+                            num_pokedex = 203,
                             attack = 143.0,
                             defense = 184.0,
                             description = "Gligar glides through the air without a sound as if it were sliding. This Pokémon hangs on to the face of its foe using its clawed hind legs and the large pincers on its forelegs, then injects the prey with its poison barb.",
@@ -6225,7 +6230,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 208,
+                            num_pokedex = 204,
                             attack = 148.0,
                             defense = 272.0,
                             description = "Steelix lives even further underground than Onix. This Pokémon is known to dig toward the earth's core. There are records of this Pokémon reaching a depth of over six-tenths of a mile underground.",
@@ -6242,7 +6247,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 209,
+                            num_pokedex = 205,
                             attack = 137.0,
                             defense = 85.0,
                             description = "By baring its fangs and making a scary face, Snubbull sends smaller Pokémon scurrying away in terror. However, this Pokémon seems a little sad at making its foes flee.",
@@ -6257,7 +6262,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 210,
+                            num_pokedex = 206,
                             attack = 212.0,
                             defense = 131.0,
                             description = "Granbull has a particularly well-developed lower jaw. The enormous fangs are heavy, causing the Pokémon to tip its head back for balance. Unless it is startled, it will not try to bite indiscriminately.",
@@ -6272,7 +6277,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 211,
+                            num_pokedex = 207,
                             attack = 184.0,
                             defense = 138.0,
                             description = "Qwilfish sucks in water, inflating itself. This Pokémon uses the pressure of the water it swallowed to shoot toxic quills all at once from all over its body. It finds swimming somewhat challenging.",
@@ -6287,7 +6292,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 212,
+                            num_pokedex = 208,
                             attack = 236.0,
                             defense = 181.0,
                             description = "Scizor has a body with the hardness of steel. It is not easily fazed by ordinary sorts of attacks. This Pokémon flaps its wings to regulate its body temperature.",
@@ -6304,7 +6309,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 213,
+                            num_pokedex = 209,
                             attack = 17.0,
                             defense = 396.0,
                             description = "Shuckle quietly hides itself under rocks, keeping its body concealed inside its hard shell while eating berries it has stored away. The berries mix with its body fluids to become a juice.",
@@ -6319,7 +6324,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 214,
+                            num_pokedex = 210,
                             attack = 234.0,
                             defense = 179.0,
                             description = "Heracross charges in a straight line at its foe, slips beneath the foe's grasp, and then scoops up and hurls the opponent with its mighty horn. This Pokémon even has enough power to topple a massive tree.",
@@ -6336,7 +6341,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 215,
+                            num_pokedex = 211,
                             attack = 189.0,
                             defense = 146.0,
                             description = "Sneasel scales trees by punching its hooked claws into the bark. This Pokémon seeks out unguarded nests and steals eggs for food while the parents are away.",
@@ -6353,7 +6358,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 216,
+                            num_pokedex = 212,
                             attack = 142.0,
                             defense = 93.0,
                             description = "This Pokémon likes to lick its palms that are sweetened by being soaked in honey. Teddiursa concocts its own honey by blending fruits and pollen collected by Beedrill.",
@@ -6368,7 +6373,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 217,
+                            num_pokedex = 213,
                             attack = 236.0,
                             defense = 144.0,
                             description = "In the forests inhabited by Ursaring, it is said that there are many streams and towering trees where they gather food. This Pokémon walks through its forest gathering food every day.",
@@ -6385,7 +6390,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 218,
+                            num_pokedex = 214,
                             attack = 118.0,
                             defense = 71.0,
                             description = "Molten magma courses throughout Slugma's circulatory system. If this Pokémon is chilled, the magma cools and hardens. Its body turns brittle and chunks fall off, reducing its size.",
@@ -6400,7 +6405,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 219,
+                            num_pokedex = 215,
                             attack = 139.0,
                             defense = 191.0,
                             description = "Magcargo's shell is actually its skin that hardened as a result of cooling. Its shell is very brittle and fragile—just touching it causes it to crumble apart. This Pokémon returns to its original size by dipping itself in magma.",
@@ -6415,7 +6420,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 220,
+                            num_pokedex = 216,
                             attack = 90.0,
                             defense = 69.0,
                             description = "Swinub roots for food by rubbing its snout against the ground. Its favorite food is a mushroom that grows under the cover of dead grass. This Pokémon occasionally roots out hot springs.",
@@ -6430,7 +6435,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 221,
+                            num_pokedex = 217,
                             attack = 181.0,
                             defense = 138.0,
                             description = "Piloswine is covered by a thick coat of long hair that enables it to endure the freezing cold. This Pokémon uses its tusks to dig up food that has been buried under ice.",
@@ -6447,7 +6452,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 222,
+                            num_pokedex = 218,
                             attack = 118.0,
                             defense = 156.0,
                             description = "Corsola's branches glitter very beautifully in seven colors when they catch sunlight. If any branch breaks off, this Pokémon grows it back in just one night.",
@@ -6462,7 +6467,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 223,
+                            num_pokedex = 219,
                             attack = 127.0,
                             defense = 69.0,
                             description = "Remoraid sucks in water, then expels it at high velocity using its abdominal muscles to shoot down flying prey. When evolution draws near, this Pokémon travels downstream from rivers.",
@@ -6477,7 +6482,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 224,
+                            num_pokedex = 220,
                             attack = 197.0,
                             defense = 141.0,
                             description = "Octillery grabs onto its foe using its tentacles. This Pokémon tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, Octillery spews ink to escape.",
@@ -6494,7 +6499,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 225,
+                            num_pokedex = 221,
                             attack = 128.0,
                             defense = 90.0,
                             description = "Delibird carries its food bundled up in its tail. There once was a famous explorer who managed to reach the peak of the world's highest mountain, thanks to one of these Pokémon sharing its food.",
@@ -6509,7 +6514,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 226,
+                            num_pokedex = 222,
                             attack = 148.0,
                             defense = 226.0,
                             description = "On sunny days, schools of Mantine can be seen elegantly leaping over the sea's waves. This Pokémon is not bothered by the Remoraid that hitches rides.",
@@ -6524,7 +6529,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 227,
+                            num_pokedex = 223,
                             attack = 148.0,
                             defense = 226.0,
                             description = "Skarmory is entirely encased in hard, protective armor. This Pokémon flies at close to 190 mph. It slashes foes with its wings that possess swordlike cutting edges.",
@@ -6539,7 +6544,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 228,
+                            num_pokedex = 224,
                             attack = 152.0,
                             defense = 83.0,
                             description = "Houndour hunt as a coordinated pack. They communicate with each other using a variety of cries to corner their prey. This Pokémon's remarkable teamwork is unparalleled.",
@@ -6554,7 +6559,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 229,
+                            num_pokedex = 225,
                             attack = 224.0,
                             defense = 144.0,
                             description = "In a Houndoom pack, the one with its horns raked sharply toward the back serves a leadership role. These Pokémon choose their leader by fighting among themselves.",
@@ -6571,7 +6576,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 230,
+                            num_pokedex = 226,
                             attack = 194.0,
                             defense = 194.0,
                             description = "Kingdra lives at extreme ocean depths that are otherwise uninhabited. It has long been believed that the yawning of this Pokémon creates spiraling ocean currents.",
@@ -6586,7 +6591,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 231,
+                            num_pokedex = 227,
                             attack = 107.0,
                             defense = 98.0,
                             description = "For its nest, Phanpy digs a vertical pit in the ground at the edge of a river. It marks the area around its nest with its trunk to let the others know that the area has been claimed.",
@@ -6601,7 +6606,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 232,
+                            num_pokedex = 228,
                             attack = 214.0,
                             defense = 185.0,
                             description = "Donphan's favorite attack is curling its body into a ball, then charging at its foe while rolling at high speed. Once it starts rolling, this Pokémon can't stop very easily.",
@@ -6618,7 +6623,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 233,
+                            num_pokedex = 229,
                             attack = 198.0,
                             defense = 180.0,
                             description = "Porygon2 was created by humans using the power of science. The man-made Pokémon has been endowed with artificial intelligence that enables it to learn new gestures and emotions on its own.",
@@ -6633,7 +6638,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 234,
+                            num_pokedex = 230,
                             attack = 192.0,
                             defense = 131.0,
                             description = "Stantler's magnificent antlers were traded at high prices as works of art. As a result, this Pokémon was hunted close to extinction by those who were after the priceless antlers.",
@@ -6648,7 +6653,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 235,
+                            num_pokedex = 231,
                             attack = 40.0,
                             defense = 83.0,
                             description = "Smeargle marks the boundaries of its territory using a body fluid that leaks out from the tip of its tail. Over 5,000 different marks left by this Pokémon have been found.",
@@ -6663,7 +6668,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 236,
+                            num_pokedex = 232,
                             attack = 64.0,
                             defense = 64.0,
                             description = "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
@@ -6678,7 +6683,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 237,
+                            num_pokedex = 233,
                             attack = 173.0,
                             defense = 207.0,
                             description = "Hitmontop spins on its head at high speed, all the while delivering kicks. This technique is a remarkable mix of both offense and defense at the same time. The Pokémon travels faster spinning than it does walking.",
@@ -6693,7 +6698,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 238,
+                            num_pokedex = 234,
                             attack = 153.0,
                             defense = 91.0,
                             description = "Smoochum actively runs about, but also falls quite often. Whenever the chance arrives, it will look for its reflection to make sure its face hasn't become dirty.",
@@ -6708,7 +6713,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 239,
+                            num_pokedex = 235,
                             attack = 135.0,
                             defense = 101.0,
                             description = "Elekid stores electricity in its body. If it touches metal and accidentally discharges all its built-up electricity, this Pokémon begins swinging its arms in circles to recharge itself.",
@@ -6723,7 +6728,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 240,
+                            num_pokedex = 236,
                             attack = 151.0,
                             defense = 99.0,
                             description = "Magby's state of health is determined by observing the fire it breathes. If the Pokémon is spouting yellow flames from its mouth, it is in good health. When it is fatigued, black smoke will be mixed in with the flames.",
@@ -6738,7 +6743,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 241,
+                            num_pokedex = 237,
                             attack = 157.0,
                             defense = 193.0,
                             description = "Miltank gives over five gallons of milk on a daily basis. Its sweet milk is enjoyed by children and grown-ups alike. People who can't drink milk turn it into yogurt and eat it instead.",
@@ -6753,7 +6758,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 242,
+                            num_pokedex = 238,
                             attack = 129.0,
                             defense = 169.0,
                             description = "Blissey senses sadness with its fluffy coat of fur. If it does so, this Pokémon will rush over to a sad person, no matter how far away, to share a Lucky Egg that brings a smile to any face.",
@@ -6768,7 +6773,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 243,
+                            num_pokedex = 239,
                             attack = 241.0,
                             defense = 195.0,
                             description = "Raikou embodies the speed of lightning. The roars of this Pokémon send shock waves shuddering through the air and shake the ground as if lightning bolts had come crashing down.",
@@ -6783,7 +6788,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 244,
+                            num_pokedex = 240,
                             attack = 235.0,
                             defense = 171.0,
                             description = "Entei embodies the passion of magma. This Pokémon is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
@@ -6798,7 +6803,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 245,
+                            num_pokedex = 241,
                             attack = 180.0,
                             defense = 235.0,
                             description = "Suicune embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This Pokémon has the power to purify dirty water.",
@@ -6813,7 +6818,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 246,
+                            num_pokedex = 242,
                             attack = 115.0,
                             defense = 93.0,
                             description = "Larvitar is born deep under the ground. To come up to the surface, this Pokémon must eat its way through the soil above. Until it does so, Larvitar cannot see its parents.",
@@ -6828,7 +6833,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 247,
+                            num_pokedex = 243,
                             attack = 155.0,
                             defense = 133.0,
                             description = "Pupitar creates a gas inside its body that it compresses and forcefully ejects to propel itself like a jet. The body is very durable—it avoids damage even if it hits solid steel.",
@@ -6843,7 +6848,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 248,
+                            num_pokedex = 244,
                             attack = 251.0,
                             defense = 207.0,
                             description = "Tyranitar is so overwhelmingly powerful, it can bring down a whole mountain to make its nest. This Pokémon wanders about in mountains seeking new opponents to fight.",
@@ -6858,7 +6863,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 249,
+                            num_pokedex = 245,
                             attack = 193.0,
                             defense = 310.0,
                             description = "Lugia's wings pack devastating power—a light fluttering of its wings can blow apart regular houses. As a result, this Pokémon chooses to live out of sight deep under the sea.",
@@ -6873,7 +6878,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 250,
+                            num_pokedex = 246,
                             attack = 239.0,
                             defense = 244.0,
                             description = "Ho-Oh's feathers glow in seven colors depending on the angle at which they are struck by light. These feathers are said to bring happiness to the bearers. This Pokémon is said to live at the foot of a rainbow.",
@@ -6888,7 +6893,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 251,
+                            num_pokedex = 247,
                             attack = 210.0,
                             defense = 210.0,
                             description = "This Pokémon came from the future by crossing over time. It is thought that so long as Celebi appears, a bright and shining future awaits us.",
@@ -6903,7 +6908,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 252,
+                            num_pokedex = 248,
                             attack = 124.0,
                             defense = 94.0,
                             description = "Treecko has small hooks on the bottom of its feet that enable it to scale vertical walls. This Pokémon attacks by slamming foes with its thick tail.",
@@ -6918,7 +6923,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 253,
+                            num_pokedex = 249,
                             attack = 172.0,
                             defense = 120.0,
                             description = "The leaves growing out of Grovyle's body are convenient for camouflaging it from enemies in the forest. This Pokémon is a master at climbing trees in jungles.",
@@ -6933,7 +6938,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 254,
+                            num_pokedex = 250,
                             attack = 223.0,
                             defense = 169.0,
                             description = "The leaves growing on Sceptile's body are very sharp edged. This Pokémon is very agile—it leaps all over the branches of trees and jumps on its foe from above or behind.",
@@ -6948,7 +6953,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 255,
+                            num_pokedex = 251,
                             attack = 130.0,
                             defense = 87.0,
                             description = "Torchic sticks with its Trainer, following behind with unsteady steps. This Pokémon breathes fire of over 1,800 degrees Fahrenheit, including fireballs that leave the foe scorched black.",
@@ -6965,7 +6970,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 256,
+                            num_pokedex = 252,
                             attack = 163.0,
                             defense = 115.0,
                             description = "Combusken toughens up its legs and thighs by running through fields and mountains. This Pokémon's legs possess both speed and power, enabling it to dole out 10 kicks in one second.",
@@ -6982,7 +6987,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 257,
+                            num_pokedex = 253,
                             attack = 240.0,
                             defense = 141.0,
                             description = "In battle, Blaziken blows out intense flames from its wrists and attacks foes courageously. The stronger the foe, the more intensely this Pokémon's wrists burn.",
@@ -6999,7 +7004,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 258,
+                            num_pokedex = 254,
                             attack = 126.0,
                             defense = 93.0,
                             description = "The fin on Mudkip's head acts as highly sensitive radar. Using this fin to sense movements of water and air, this Pokémon can determine what is taking place around it without using its eyes.",
@@ -7014,7 +7019,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 259,
+                            num_pokedex = 255,
                             attack = 156.0,
                             defense = 133.0,
                             description = "The surface of Marshtomp's body is enveloped by a thin, sticky film that enables it to live on land. This Pokémon plays in mud on beaches when the ocean tide is low.",
@@ -7029,7 +7034,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 260,
+                            num_pokedex = 256,
                             attack = 208.0,
                             defense = 175.0,
                             description = "Swampert is very strong. It has enough power to easily drag a boulder weighing more than a ton. This Pokémon also has powerful vision that lets it see even in murky water.",
@@ -7044,7 +7049,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 261,
+                            num_pokedex = 257,
                             attack = 96.0,
                             defense = 61.0,
                             description = "At first sight, Poochyena takes a bite at anything that moves. This Pokémon chases after prey until the victim becomes exhausted. However, it may turn tail if the prey strikes back.",
@@ -7059,7 +7064,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 262,
+                            num_pokedex = 258,
                             attack = 171.0,
                             defense = 132.0,
                             description = "Mightyena gives obvious signals when it is preparing to attack. It starts to growl deeply and then flattens its body. This Pokémon will bite savagely with its sharply pointed fangs.",
@@ -7074,7 +7079,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 265,
+                            num_pokedex = 259,
                             attack = 75.0,
                             defense = 59.0,
                             description = "Using the spikes on its rear end, Wurmple peels the bark off trees and feeds on the sap that oozes out. This Pokémon's feet are tipped with suction pads that allow it to cling to glass without slipping.",
@@ -7089,7 +7094,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 266,
+                            num_pokedex = 260,
                             attack = 60.0,
                             defense = 77.0,
                             description = "Silcoon tethers itself to a tree branch using silk to keep from falling. There, this Pokémon hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.",
@@ -7104,7 +7109,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 267,
+                            num_pokedex = 261,
                             attack = 189.0,
                             defense = 98.0,
                             description = "Beautifly's favorite food is the sweet pollen of flowers. If you want to see this Pokémon, just leave a potted flower by an open window. Beautifly is sure to come looking for pollen.",
@@ -7121,7 +7126,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 268,
+                            num_pokedex = 262,
                             attack = 60.0,
                             defense = 77.0,
                             description = "Cascoon makes its protective cocoon by wrapping its body entirely with a fine silk from its mouth. Once the silk goes around its body, it hardens. This Pokémon prepares for its evolution inside the cocoon.",
@@ -7136,7 +7141,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 269,
+                            num_pokedex = 263,
                             attack = 98.0,
                             defense = 162.0,
                             description = "Dustox is instinctively drawn to light. Swarms of this Pokémon are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.",
@@ -7153,7 +7158,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 270,
+                            num_pokedex = 264,
                             attack = 71.0,
                             defense = 77.0,
                             description = "Lotad live in ponds and lakes, where they float on the surface. It grows weak if its broad leaf dies. On rare occasions, this Pokémon travels on land in search of clean water.",
@@ -7168,7 +7173,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 271,
+                            num_pokedex = 265,
                             attack = 112.0,
                             defense = 119.0,
                             description = "Lombre is nocturnal—it will get active after dusk. It is also a mischief maker. When this Pokémon spots anglers, it tugs on their fishing lines from beneath the surface and enjoys their consternation.",
@@ -7183,7 +7188,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 272,
+                            num_pokedex = 266,
                             attack = 173.0,
                             defense = 176.0,
                             description = "Ludicolo begins dancing as soon as it hears cheerful, festive music. This Pokémon is said to appear when it hears the singing of children on hiking outings.",
@@ -7200,7 +7205,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 273,
+                            num_pokedex = 267,
                             attack = 71.0,
                             defense = 77.0,
                             description = "Seedot attaches itself to a tree branch using the top of its head. It sucks moisture from the tree while hanging off the branch. The more water it drinks, the glossier this Pokémon's body becomes.",
@@ -7215,7 +7220,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 274,
+                            num_pokedex = 268,
                             attack = 134.0,
                             defense = 78.0,
                             description = "Nuzleaf live in densely overgrown forests. They occasionally venture out of the forest to startle people. This Pokémon dislikes having its long nose pinched.",
@@ -7232,7 +7237,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 275,
+                            num_pokedex = 269,
                             attack = 200.0,
                             defense = 121.0,
                             description = "Shiftry is a mysterious Pokémon that is said to live atop towering trees dating back over a thousand years. It creates terrific windstorms with the fans it holds.",
@@ -7249,7 +7254,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 276,
+                            num_pokedex = 270,
                             attack = 106.0,
                             defense = 61.0,
                             description = "Taillow courageously stands its ground against foes, however strong they may be. This gutsy Pokémon will remain defiant even after a loss. On the other hand, it cries loudly if it becomes hungry.",
@@ -7264,7 +7269,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 277,
+                            num_pokedex = 271,
                             attack = 185.0,
                             defense = 124.0,
                             description = "Swellow flies high above our heads, making graceful arcs in the sky. This Pokémon dives at a steep angle as soon as it spots its prey. The hapless prey is tightly grasped by Swellow's clawed feet, preventing escape.",
@@ -7279,7 +7284,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 278,
+                            num_pokedex = 272,
                             attack = 106.0,
                             defense = 61.0,
                             description = "Wingull has the habit of carrying prey and valuables in its beak and hiding them in all sorts of locations. This Pokémon rides the winds and flies as if it were skating across the sky.",
@@ -7294,7 +7299,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 279,
+                            num_pokedex = 273,
                             attack = 175.0,
                             defense = 174.0,
                             description = "Pelipper is a flying transporter that carries small Pokémon and eggs inside its massive bill. This Pokémon builds its nest on steep cliffs facing the sea.",
@@ -7309,7 +7314,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 280,
+                            num_pokedex = 274,
                             attack = 79.0,
                             defense = 59.0,
                             description = "Ralts senses the emotions of people using the horns on its head. This Pokémon rarely appears before people. But when it does, it draws closer if it senses that the person has a positive disposition.",
@@ -7324,7 +7329,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 281,
+                            num_pokedex = 275,
                             attack = 117.0,
                             defense = 90.0,
                             description = "It is said that a Kirlia that is exposed to the positive emotions of its Trainer grows beautiful. This Pokémon controls psychokinetic powers with its highly developed brain.",
@@ -7339,7 +7344,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 282,
+                            num_pokedex = 276,
                             attack = 237.0,
                             defense = 195.0,
                             description = "Gardevoir has the ability to read the future. If it senses impending danger to its Trainer, this Pokémon is said to unleash its psychokinetic energy at full power.",
@@ -7354,7 +7359,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 283,
+                            num_pokedex = 277,
                             attack = 93.0,
                             defense = 87.0,
                             description = "From the tips of its feet, Surskit secretes an oil that enables it to walk on water as if it were skating. This Pokémon feeds on microscopic organisms in ponds and lakes.",
@@ -7369,7 +7374,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 284,
+                            num_pokedex = 278,
                             attack = 192.0,
                             defense = 150.0,
                             description = "Masquerain intimidates enemies with the eyelike patterns on its antennas. This Pokémon flaps its four wings to freely fly in any direction—even sideways and backwards—as if it were a helicopter.",
@@ -7384,7 +7389,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 285,
+                            num_pokedex = 279,
                             attack = 74.0,
                             defense = 110.0,
                             description = "Shroomish live in damp soil in the dark depths of forests. They are often found keeping still under fallen leaves. This Pokémon feeds on compost that is made up of fallen, rotted leaves.",
@@ -7399,7 +7404,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 286,
+                            num_pokedex = 280,
                             attack = 241.0,
                             defense = 144.0,
                             description = "Breloom closes in on its foe with light and sprightly footwork, then throws punches with its stretchy arms. This Pokémon's fighting technique puts boxers to shame.",
@@ -7414,7 +7419,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 287,
+                            num_pokedex = 281,
                             attack = 104.0,
                             defense = 92.0,
                             description = "Slakoth lolls around for over 20 hours every day. Because it moves so little, it does not need much food. This Pokémon's sole daily meal consists of just three leaves.",
@@ -7429,7 +7434,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 288,
+                            num_pokedex = 282,
                             attack = 159.0,
                             defense = 145.0,
                             description = "Vigoroth is always itching and agitated to go on a wild rampage. It simply can't tolerate sitting still for even a minute. This Pokémon's stress level rises if it can't be moving constantly.",
@@ -7444,7 +7449,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 289,
+                            num_pokedex = 283,
                             attack = 290.0,
                             defense = 166.0,
                             description = "Slaking spends all day lying down and lolling about. It eats grass growing within its reach. If it eats all the grass it can reach, this Pokémon reluctantly moves to another spot.",
@@ -7459,7 +7464,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 290,
+                            num_pokedex = 284,
                             attack = 80.0,
                             defense = 126.0,
                             description = "Nincada lives underground for many years in complete darkness. This Pokémon absorbs nutrients from the roots of trees. It stays motionless as it waits for evolution.",
@@ -7474,7 +7479,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 291,
+                            num_pokedex = 285,
                             attack = 199.0,
                             defense = 112.0,
                             description = "Ninjask moves around at such a high speed that it cannot be seen, even while its crying can be clearly heard. For that reason, this Pokémon was long believed to be invisible.",
@@ -7489,7 +7494,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 292,
+                            num_pokedex = 286,
                             attack = 153.0,
                             defense = 73.0,
                             description = "Shedinja's hard body doesn't move—not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this Pokémon will steal the spirit of anyone peering into its hollow body from its back.",
@@ -7504,7 +7509,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 293,
+                            num_pokedex = 287,
                             attack = 92.0,
                             defense = 42.0,
                             description = "Normally, Whismur's voice is very quiet—it is barely audible even if one is paying close attention. However, if this Pokémon senses danger, it starts crying at an earsplitting volume.",
@@ -7519,7 +7524,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 294,
+                            num_pokedex = 288,
                             attack = 134.0,
                             defense = 81.0,
                             description = "Loudred's bellowing can completely decimate a wood-frame house. It uses its voice to punish its foes. This Pokémon's round ears serve as loudspeakers.",
@@ -7534,7 +7539,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 295,
+                            num_pokedex = 289,
                             attack = 179.0,
                             defense = 137.0,
                             description = "Exploud triggers earthquakes with the tremors it creates by bellowing. If this Pokémon violently inhales from the ports on its body, it's a sign that it is preparing to let loose a huge bellow.",
@@ -7549,7 +7554,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 296,
+                            num_pokedex = 290,
                             attack = 99.0,
                             defense = 54.0,
                             description = "Makuhita is tenacious—it will keep getting up and attacking its foe however many times it is knocked down. Every time it gets back up, this Pokémon stores more energy in its body for evolving.",
@@ -7564,7 +7569,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 297,
+                            num_pokedex = 291,
                             attack = 209.0,
                             defense = 114.0,
                             description = "Hariyama practices its straight-arm slaps in any number of locations. One hit of this Pokémon's powerful, openhanded, straight-arm punches could snap a telephone pole in two.",
@@ -7579,7 +7584,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 298,
+                            num_pokedex = 292,
                             attack = 36.0,
                             defense = 71.0,
                             description = "Azurill spins its tail as if it were a lasso, then hurls it far. The momentum of the throw sends its body flying, too. Using this unique action, one of these Pokémon managed to hurl itself a record 33 feet.",
@@ -7594,7 +7599,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 299,
+                            num_pokedex = 293,
                             attack = 82.0,
                             defense = 215.0,
                             description = "Nosepass's magnetic nose is always pointed to the north. If two of these Pokémon meet, they cannot turn their faces to each other when they are close because their magnetic noses repel one another.",
@@ -7609,7 +7614,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 300,
+                            num_pokedex = 294,
                             attack = 84.0,
                             defense = 79.0,
                             description = "Skitty has the habit of becoming fascinated by moving objects and chasing them around. This Pokémon is known to chase after its own tail and become dizzy.",
@@ -7624,7 +7629,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 301,
+                            num_pokedex = 295,
                             attack = 132.0,
                             defense = 127.0,
                             description = "Delcatty prefers to live an unfettered existence in which it can do as it pleases at its own pace. Because this Pokémon eats and sleeps whenever it decides, its daily routines are completely random.",
@@ -7639,7 +7644,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 302,
+                            num_pokedex = 296,
                             attack = 141.0,
                             defense = 136.0,
                             description = "Sableye lead quiet lives deep inside caverns. They are feared, however, because these Pokémon are thought to steal the spirits of people when their eyes burn with a sinister glow in the darkness.",
@@ -7654,7 +7659,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 303,
+                            num_pokedex = 297,
                             attack = 155.0,
                             defense = 141.0,
                             description = "Mawile's huge jaws are actually steel horns that have been transformed. Its docile-looking face serves to lull its foe into letting down its guard. When the foe least expects it, Mawile chomps it with its gaping jaws.",
@@ -7669,7 +7674,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 304,
+                            num_pokedex = 298,
                             attack = 121.0,
                             defense = 141.0,
                             description = "This Pokémon has a body of steel. To make its body, Aron feeds on iron ore that it digs from mountains. Occasionally, it causes major trouble by eating bridges and rails.",
@@ -7684,7 +7689,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 305,
+                            num_pokedex = 299,
                             attack = 158.0,
                             defense = 198.0,
                             description = "Lairon tempers its steel body by drinking highly nutritious mineral springwater until it is bloated. This Pokémon makes its nest close to springs of delicious water.",
@@ -7699,7 +7704,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 306,
+                            num_pokedex = 300,
                             attack = 198.0,
                             defense = 257.0,
                             description = "Aggron claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This Pokémon vigilantly patrols its territory at all times.",
@@ -7714,7 +7719,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 307,
+                            num_pokedex = 301,
                             attack = 78.0,
                             defense = 107.0,
                             description = "Meditite undertakes rigorous mental training deep in the mountains. However, whenever it meditates, this Pokémon always loses its concentration and focus. As a result, its training never ends.",
@@ -7731,7 +7736,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 308,
+                            num_pokedex = 302,
                             attack = 121.0,
                             defense = 152.0,
                             description = "It is said that through meditation, Medicham heightens energy inside its body and sharpens its sixth sense. This Pokémon hides its presence by merging itself with fields and mountains.",
@@ -7748,7 +7753,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 309,
+                            num_pokedex = 303,
                             attack = 123.0,
                             defense = 78.0,
                             description = "Electrike stores electricity in its long body hair. This Pokémon stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
@@ -7763,7 +7768,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 310,
+                            num_pokedex = 304,
                             attack = 215.0,
                             defense = 127.0,
                             description = "Manectric is constantly discharging electricity from its mane. The sparks sometimes ignite forest fires. When it enters a battle, this Pokémon creates thunderclouds.",
@@ -7778,7 +7783,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 311,
+                            num_pokedex = 305,
                             attack = 167.0,
                             defense = 129.0,
                             description = "Plusle always acts as a cheerleader for its partners. Whenever a teammate puts out a good effort in battle, this Pokémon shorts out its body to create the crackling noises of sparks to show its joy.",
@@ -7793,7 +7798,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 312,
+                            num_pokedex = 306,
                             attack = 147.0,
                             defense = 150.0,
                             description = "Minun is more concerned about cheering on its partners than its own safety. It shorts out the electricity in its body to create brilliant showers of sparks to cheer on its teammates.",
@@ -7808,7 +7813,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 313,
+                            num_pokedex = 307,
                             attack = 143.0,
                             defense = 166.0,
                             description = "With the arrival of night, Volbeat emits light from its tail. It communicates with others by adjusting the intensity and flashing of its light. This Pokémon is attracted by the sweet aroma of Illumise.",
@@ -7823,7 +7828,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 314,
+                            num_pokedex = 308,
                             attack = 143.0,
                             defense = 166.0,
                             description = "Illumise attracts a swarm of Volbeat using a sweet fragrance. Once the Volbeat have gathered, this Pokémon leads the lit-up swarm in drawing geometric designs on the canvas of the night sky.",
@@ -7838,7 +7843,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 315,
+                            num_pokedex = 309,
                             attack = 186.0,
                             defense = 131.0,
                             description = "Roselia shoots sharp thorns as projectiles at any opponent that tries to steal the flowers on its arms. The aroma of this Pokémon brings serenity to living things.",
@@ -7855,7 +7860,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 316,
+                            num_pokedex = 310,
                             attack = 80.0,
                             defense = 99.0,
                             description = "Virtually all of Gulpin's body is its stomach. As a result, it can swallow something its own size. This Pokémon's stomach contains a special fluid that digests anything.",
@@ -7872,7 +7877,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 317,
+                            num_pokedex = 311,
                             attack = 140.0,
                             defense = 159.0,
                             description = "When Swalot spots prey, it spurts out a hideously toxic fluid from its pores and sprays the target. Once the prey has weakened, this Pokémon gulps it down whole with its cavernous mouth.",
@@ -7889,7 +7894,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 318,
+                            num_pokedex = 312,
                             attack = 171.0,
                             defense = 39.0,
                             description = "Carvanha's strongly developed jaws and its sharply pointed fangs pack the destructive power to rip out boat hulls. Many boats have been attacked and sunk by this Pokémon.",
@@ -7904,7 +7909,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 319,
+                            num_pokedex = 313,
                             attack = 243.0,
                             defense = 83.0,
                             description = "Nicknamed “the bully of the sea,” Sharpedo is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these Pokémon can thoroughly tear apart a supertanker.",
@@ -7919,7 +7924,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 320,
+                            num_pokedex = 314,
                             attack = 136.0,
                             defense = 68.0,
                             description = "Wailmer's nostrils are located above its eyes. This playful Pokémon loves to startle people by forcefully snorting out seawater it stores inside its body out of its nostrils.",
@@ -7934,7 +7939,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 321,
+                            num_pokedex = 315,
                             attack = 175.0,
                             defense = 87.0,
                             description = "Wailord is the largest of all identified Pokémon up to now. This giant Pokémon swims languorously in the vast open sea, eating massive amounts of food at once with its enormous mouth.",
@@ -7949,7 +7954,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 322,
+                            num_pokedex = 316,
                             attack = 119.0,
                             defense = 79.0,
                             description = "Numel is extremely dull witted—it doesn't notice being hit. However, it can't stand hunger for even a second. This Pokémon's body is a seething cauldron of boiling magma.",
@@ -7966,7 +7971,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 323,
+                            num_pokedex = 317,
                             attack = 194.0,
                             defense = 136.0,
                             description = "Camerupt has a volcano inside its body. Magma of 18,000 degrees Fahrenheit courses through its body. Occasionally, the humps on this Pokémon's back erupt, spewing the superheated magma.",
@@ -7983,7 +7988,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 324,
+                            num_pokedex = 318,
                             attack = 151.0,
                             defense = 203.0,
                             description = "Torkoal digs through mountains in search of coal. If it finds some, it fills hollow spaces on its shell with the coal and burns it. If it is attacked, this Pokémon spouts thick black smoke to beat a retreat.",
@@ -7998,7 +8003,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 325,
+                            num_pokedex = 319,
                             attack = 125.0,
                             defense = 122.0,
                             description = "Spoink bounces around on its tail. The shock of its bouncing makes its heart pump. As a result, this Pokémon cannot afford to stop bouncing—if it stops, its heart will stop.",
@@ -8013,7 +8018,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 326,
+                            num_pokedex = 320,
                             attack = 171.0,
                             defense = 188.0,
                             description = "Grumpig uses the black pearls on its body to amplify its psychic power waves for gaining total control over its foe. When this Pokémon uses its special power, its snorting breath grows labored.",
@@ -8028,7 +8033,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 327,
+                            num_pokedex = 321,
                             attack = 116.0,
                             defense = 116.0,
                             description = "All the Spinda that exist in the world are said to have utterly unique spot patterns. The shaky, tottering steps of this Pokémon give it the appearance of dancing.",
@@ -8043,7 +8048,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 328,
+                            num_pokedex = 322,
                             attack = 162.0,
                             defense = 78.0,
                             description = "Trapinch's nest is a sloped, bowl-like pit dug in sand. This Pokémon patiently waits for prey to tumble down the pit. Its giant jaws have enough strength to crush even boulders.",
@@ -8058,7 +8063,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 329,
+                            num_pokedex = 323,
                             attack = 134.0,
                             defense = 99.0,
                             description = "To make prey faint, Vibrava generates ultrasonic waves by vigorously making its two wings vibrate. This Pokémon's ultrasonic waves are so powerful, they can bring on headaches in people.",
@@ -8073,7 +8078,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 330,
+                            num_pokedex = 324,
                             attack = 205.0,
                             defense = 168.0,
                             description = "Flygon is nicknamed “the elemental spirit of the desert.” Because its flapping wings whip up a cloud of sand, this Pokémon is always enveloped in a sandstorm while flying.",
@@ -8088,7 +8093,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 331,
+                            num_pokedex = 325,
                             attack = 156.0,
                             defense = 74.0,
                             description = "Cacnea lives in arid locations such as deserts. It releases a strong aroma from its flower to attract prey. When prey comes near, this Pokémon shoots sharp thorns from its body to bring the victim down.",
@@ -8103,7 +8108,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 332,
+                            num_pokedex = 326,
                             attack = 221.0,
                             defense = 115.0,
                             description = "During the daytime, Cacturne remains unmoving so that it does not lose any moisture to the harsh desert sun. This Pokémon becomes active at night when the temperature drops.",
@@ -8119,7 +8124,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 333,
+                            num_pokedex = 327,
                             attack = 76.0,
                             defense = 132.0,
                             description = "Swablu has light and fluffy wings that are like cottony clouds. This Pokémon is not frightened of people. It lands on the heads of people and sits there like a cotton-fluff hat.",
@@ -8134,7 +8139,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 334,
+                            num_pokedex = 328,
                             attack = 141.0,
                             defense = 201.0,
                             description = "Altaria dances and wheels through the sky among billowing, cotton-like clouds. By singing melodies in its crystal-clear voice, this Pokémon makes its listeners experience dreamy wonderment.",
@@ -8149,7 +8154,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 335,
+                            num_pokedex = 329,
                             attack = 222.0,
                             defense = 124.0,
                             description = "Memories of battling its archrival Seviper are etched into every cell of Zangoose's body. This Pokémon adroitly dodges attacks with incredible agility.",
@@ -8164,7 +8169,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 336,
+                            num_pokedex = 330,
                             attack = 196.0,
                             defense = 118.0,
                             description = "Seviper shares a generations-long feud with Zangoose. The scars on its body are evidence of vicious battles. This Pokémon attacks using its sword-edged tail.",
@@ -8179,7 +8184,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 337,
+                            num_pokedex = 331,
                             attack = 178.0,
                             defense = 153.0,
                             description = "Lunatone was discovered at a location where a meteoroid fell. As a result, some people theorize that this Pokémon came from space. However, no one has been able to prove this theory so far.",
@@ -8194,7 +8199,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 338,
+                            num_pokedex = 332,
                             attack = 178.0,
                             defense = 153.0,
                             description = "Solrock is a new species of Pokémon that is said to have fallen from space. It floats in air and moves silently. In battle, this Pokémon releases intensely bright light.",
@@ -8209,7 +8214,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 339,
+                            num_pokedex = 333,
                             attack = 93.0,
                             defense = 82.0,
                             description = "Barboach's sensitive whiskers serve as a superb radar system. This Pokémon hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.",
@@ -8224,7 +8229,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 340,
+                            num_pokedex = 334,
                             attack = 151.0,
                             defense = 141.0,
                             description = "Whiscash is extremely territorial. Just one of these Pokémon will claim a large pond as its exclusive territory. If a foe approaches it, it thrashes about and triggers a massive earthquake.",
@@ -8239,7 +8244,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 341,
+                            num_pokedex = 335,
                             attack = 141.0,
                             defense = 99.0,
                             description = "Corphish were originally foreign Pokémon that were imported as pets. They eventually turned up in the wild. This Pokémon is very hardy and has greatly increased its population.",
@@ -8254,7 +8259,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 342,
+                            num_pokedex = 336,
                             attack = 224.0,
                             defense = 142.0,
                             description = "Crawdaunt has an extremely violent nature that compels it to challenge other living things to battle. Other life-forms refuse to live in ponds inhabited by this Pokémon, making them desolate places.",
@@ -8269,7 +8274,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 343,
+                            num_pokedex = 337,
                             attack = 77.0,
                             defense = 124.0,
                             description = "Baltoy moves while spinning around on its one foot. Primitive wall paintings depicting this Pokémon living among people were discovered in some ancient ruins.",
@@ -8284,7 +8289,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 344,
+                            num_pokedex = 338,
                             attack = 140.0,
                             defense = 229.0,
                             description = "Claydol are said to be dolls of mud made by primitive humans and brought to life by exposure to a mysterious ray. This Pokémon moves about while levitating.",
@@ -8299,7 +8304,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 345,
+                            num_pokedex = 339,
                             attack = 105.0,
                             defense = 150.0,
                             description = "Lileep became extinct approximately a hundred million years ago. This ancient Pokémon attaches itself to a rock on the seafloor and catches approaching prey using tentacles shaped like flower petals.",
@@ -8314,7 +8319,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 346,
+                            num_pokedex = 340,
                             attack = 152.0,
                             defense = 194.0,
                             description = "Cradily roams around the ocean floor in search of food. This Pokémon freely extends its tree trunk-like neck and captures unwary prey using its eight tentacles.",
@@ -8329,7 +8334,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 347,
+                            num_pokedex = 341,
                             attack = 176.0,
                             defense = 100.0,
                             description = "Anorith was regenerated from a prehistoric fossil. This primitive Pokémon once lived in warm seas. It grips its prey firmly between its two large claws.",
@@ -8344,7 +8349,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 348,
+                            num_pokedex = 342,
                             attack = 222.0,
                             defense = 174.0,
                             description = "Armaldo's tough armor makes all attacks bounce off. This Pokémon's two enormous claws can be freely extended or contracted. They have the power to punch right through a steel slab.",
@@ -8359,7 +8364,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 349,
+                            num_pokedex = 343,
                             attack = 29.0,
                             defense = 85.0,
                             description = "Feebas's fins are ragged and tattered from the start of its life. Because of its shoddy appearance, this Pokémon is largely ignored. It is capable of living in both the sea and in rivers.",
@@ -8374,7 +8379,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 350,
+                            num_pokedex = 344,
                             attack = 192.0,
                             defense = 219.0,
                             description = "Milotic is said to be the most beautiful of all the Pokémon. It has the power to becalm such emotions as anger and hostility to quell bitter feuding.",
@@ -8391,7 +8396,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 351,
+                            num_pokedex = 345,
                             attack = 139.0,
                             defense = 139.0,
                             description = "Castform's appearance changes with the weather. This Pokémon gained the ability to use the vast power of nature to protect its tiny body.",
@@ -8406,7 +8411,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 352,
+                            num_pokedex = 346,
                             attack = 161.0,
                             defense = 189.0,
                             description = "Kecleon is capable of changing its body colors at will to blend in with its surroundings. There is one exception—this Pokémon can't change the zigzag pattern on its belly.",
@@ -8421,7 +8426,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 353,
+                            num_pokedex = 347,
                             attack = 138.0,
                             defense = 65.0,
                             description = "Shuppet is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this Pokémon will appear in a swarm and line up beneath the eaves of that person's home.",
@@ -8436,7 +8441,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 354,
+                            num_pokedex = 348,
                             attack = 218.0,
                             defense = 126.0,
                             description = "Banette generates energy for laying strong curses by sticking pins into its own body. This Pokémon was originally a pitiful plush doll that was thrown away.",
@@ -8451,7 +8456,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 355,
+                            num_pokedex = 349,
                             attack = 70.0,
                             defense = 162.0,
                             description = "Duskull can pass through any wall no matter how thick it may be. Once this Pokémon chooses a target, it will doggedly pursue the intended victim until the break of dawn.",
@@ -8466,7 +8471,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 356,
+                            num_pokedex = 350,
                             attack = 124.0,
                             defense = 234.0,
                             description = "Dusclops's body is completely hollow—there is nothing at all inside. It is said that its body is like a black hole. This Pokémon will absorb anything into its body, but nothing will ever come back out.",
@@ -8481,7 +8486,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 357,
+                            num_pokedex = 351,
                             attack = 136.0,
                             defense = 163.0,
                             description = "The bunches of fruit around Tropius's neck are very popular with children. This Pokémon loves fruit, and eats it continuously. Apparently, its love for fruit resulted in its own outgrowth of fruit.",
@@ -8496,7 +8501,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 358,
+                            num_pokedex = 352,
                             attack = 175.0,
                             defense = 170.0,
                             description = "Chimecho makes its cries echo inside its hollow body. When this Pokémon becomes enraged, its cries result in ultrasonic waves that have the power to knock foes flying.",
@@ -8511,7 +8516,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 359,
+                            num_pokedex = 353,
                             attack = 246.0,
                             defense = 120.0,
                             description = "Every time Absol appears before people, it is followed by a disaster such as an earthquake or a tidal wave. As a result, it came to be known as the disaster Pokémon.",
@@ -8526,7 +8531,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 360,
+                            num_pokedex = 354,
                             attack = 41.0,
                             defense = 86.0,
                             description = "Wynaut can always be seen with a big, happy smile on its face. Look at its tail to determine if it is angry. When angered, this Pokémon will be slapping the ground with its tail.",
@@ -8541,7 +8546,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 361,
+                            num_pokedex = 355,
                             attack = 95.0,
                             defense = 95.0,
                             description = "Snorunt live in regions with heavy snowfall. In seasons without snow, such as spring and summer, this Pokémon steals away to live quietly among stalactites and stalagmites deep in caverns.",
@@ -8556,7 +8561,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 362,
+                            num_pokedex = 356,
                             attack = 162.0,
                             defense = 162.0,
                             description = "Glalie has a body made of rock, which it hardens with an armor of ice. This Pokémon has the ability to freeze moisture in the atmosphere into any shape it desires.",
@@ -8571,7 +8576,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 363,
+                            num_pokedex = 357,
                             attack = 95.0,
                             defense = 90.0,
                             description = "Spheal is much faster rolling than walking to get around. When groups of this Pokémon eat, they all clap at once to show their pleasure. Because of this, their mealtimes are noisy.",
@@ -8586,7 +8591,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 364,
+                            num_pokedex = 358,
                             attack = 137.0,
                             defense = 132.0,
                             description = "Sealeo has the habit of always juggling on the tip of its nose anything it sees for the first time. This Pokémon occasionally entertains itself by balancing and rolling a Spheal on its nose.",
@@ -8601,7 +8606,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 365,
+                            num_pokedex = 359,
                             attack = 182.0,
                             defense = 176.0,
                             description = "Walrein's two massively developed tusks can totally shatter blocks of ice weighing 10 tons with one blow. This Pokémon's thick coat of blubber insulates it from subzero temperatures.",
@@ -8616,7 +8621,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 366,
+                            num_pokedex = 360,
                             attack = 133.0,
                             defense = 135.0,
                             description = "Clamperl's sturdy shell is not only good for protection—it is also used for clamping and catching prey. A fully grown Clamperl's shell will be scored with nicks and scratches all over.",
@@ -8631,7 +8636,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 367,
+                            num_pokedex = 361,
                             attack = 197.0,
                             defense = 179.0,
                             description = "Huntail's presence went unnoticed by people for a long time because it lives at extreme depths in the sea. This Pokémon's eyes can see clearly even in the murky dark depths of the ocean.",
@@ -8646,7 +8651,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 368,
+                            num_pokedex = 362,
                             attack = 211.0,
                             defense = 179.0,
                             description = "Gorebyss lives in the southern seas at extreme depths. Its body is built to withstand the enormous pressure of water at incredible depths. Because of this, this Pokémon's body is unharmed by ordinary attacks.",
@@ -8661,7 +8666,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 369,
+                            num_pokedex = 363,
                             attack = 162.0,
                             defense = 203.0,
                             description = "Relicanth is a Pokémon species that existed for a hundred million years without ever changing its form. This ancient Pokémon feeds on microscopic organisms with its toothless mouth.",
@@ -8678,7 +8683,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 370,
+                            num_pokedex = 364,
                             attack = 81.0,
                             defense = 128.0,
                             description = "Luvdisc live in shallow seas in the tropics. This heart-shaped Pokémon earned its name by swimming after loving couples it spotted in the ocean's waves.",
@@ -8693,7 +8698,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 371,
+                            num_pokedex = 365,
                             attack = 134.0,
                             defense = 93.0,
                             description = "Bagon has a dream of one day soaring in the sky. In doomed efforts to fly, this Pokémon hurls itself off cliffs. As a result of its dives, its head has grown tough and as hard as tempered steel.",
@@ -8708,7 +8713,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 372,
+                            num_pokedex = 366,
                             attack = 172.0,
                             defense = 155.0,
                             description = "Inside Shelgon's armor-like shell, cells are in the midst of transformation to create an entirely new body. This Pokémon's shell is extremely heavy, making its movements sluggish.",
@@ -8723,7 +8728,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 373,
+                            num_pokedex = 367,
                             attack = 277.0,
                             defense = 168.0,
                             description = "Salamence came about as a result of a strong, long-held dream of growing wings. It is said that this powerful desire triggered a sudden mutation in this Pokémon's cells, causing it to sprout its magnificent wings.",
@@ -8738,7 +8743,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 374,
+                            num_pokedex = 368,
                             attack = 96.0,
                             defense = 132.0,
                             description = "Instead of blood, a powerful magnetic force courses throughout Beldum's body. This Pokémon communicates with others by sending controlled pulses of magnetism.",
@@ -8753,7 +8758,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 375,
+                            num_pokedex = 369,
                             attack = 138.0,
                             defense = 176.0,
                             description = "When two Beldum fuse together, Metang is formed. The brains of the Beldum are joined by a magnetic nervous system. By linking its brains magnetically, this Pokémon generates strong psychokinetic power.",
@@ -8768,7 +8773,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 376,
+                            num_pokedex = 370,
                             attack = 257.0,
                             defense = 228.0,
                             description = "Metagross has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This Pokémon can float in the air by tucking in its four legs.",
@@ -8783,7 +8788,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 377,
+                            num_pokedex = 371,
                             attack = 179.0,
                             defense = 309.0,
                             description = "Regirock was sealed away by people long ago. If this Pokémon's body is damaged in battle, it is said to seek out suitable rocks on its own to repair itself.",
@@ -8798,7 +8803,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 378,
+                            num_pokedex = 372,
                             attack = 179.0,
                             defense = 309.0,
                             description = "Regice's body was made during an ice age. The deep-frozen body can't be melted, even by fire. This Pokémon controls frigid air of -328 degrees Fahrenheit.",
@@ -8813,7 +8818,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 379,
+                            num_pokedex = 373,
                             attack = 143.0,
                             defense = 285.0,
                             description = "Registeel has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this Pokémon eats.",
@@ -8828,7 +8833,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 380,
+                            num_pokedex = 374,
                             attack = 228.0,
                             defense = 246.0,
                             description = "Latias is highly sensitive to the emotions of people. If it senses any hostility, this Pokémon ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
@@ -8843,7 +8848,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 381,
+                            num_pokedex = 375,
                             attack = 268.0,
                             defense = 212.0,
                             description = "Latios has the ability to make others see an image of what it has seen or imagines in its head. This Pokémon is intelligent and understands human speech.",
@@ -8858,7 +8863,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 382,
+                            num_pokedex = 376,
                             attack = 270.0,
                             defense = 228.0,
                             description = "Through Primal Reversion and with nature's full power, it will take back its true form. It can summon storms that cause the sea levels to rise.",
@@ -8873,7 +8878,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 383,
+                            num_pokedex = 377,
                             attack = 270.0,
                             defense = 228.0,
                             description = "Groudon is said to be the personification of the land itself. Legends tell of its many clashes against Kyogre, as each sought to gain the power of nature.",
@@ -8888,7 +8893,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 384,
+                            num_pokedex = 378,
                             attack = 284.0,
                             defense = 170.0,
                             description = "Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.",
@@ -8903,7 +8908,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 385,
+                            num_pokedex = 379,
                             attack = 210.0,
                             defense = 210.0,
                             description = "A legend states that Jirachi will make true any wish that is written on notes attached to its head when it awakens. If this Pokémon senses danger, it will fight without awakening.",
@@ -8918,7 +8923,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 387,
+                            num_pokedex = 380,
                             attack = 119.0,
                             defense = 110.0,
                             description = "It undertakes photosynthesis with its body, making oxygen. The leaf on its head wilts if it is thirsty.",
@@ -8933,7 +8938,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 388,
+                            num_pokedex = 381,
                             attack = 157.0,
                             defense = 143.0,
                             description = "It knows where pure water wells up. It carries fellow Pokémon there on its back.",
@@ -8948,7 +8953,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 389,
+                            num_pokedex = 382,
                             attack = 202.0,
                             defense = 188.0,
                             description = "Small Pokémon occasionally gather on its unmoving back to begin building their nests.",
@@ -8963,7 +8968,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 390,
+                            num_pokedex = 383,
                             attack = 113.0,
                             defense = 86.0,
                             description = "The gas made in its belly burns from its rear end. The fire burns weakly when it feels sick.",
@@ -8978,7 +8983,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 391,
+                            num_pokedex = 384,
                             attack = 158.0,
                             defense = 105.0,
                             description = "It uses ceilings and walls to launch aerial attacks. Its fiery tail is but one weapon.",
@@ -8993,7 +8998,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 392,
+                            num_pokedex = 385,
                             attack = 222.0,
                             defense = 151.0,
                             description = "It tosses its enemies around with agility. It uses all its limbs to fight in its own unique style.",
@@ -9008,7 +9013,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 393,
+                            num_pokedex = 386,
                             attack = 112.0,
                             defense = 102.0,
                             description = "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
@@ -9023,7 +9028,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 394,
+                            num_pokedex = 387,
                             attack = 150.0,
                             defense = 139.0,
                             description = "It lives a solitary life. Its wings deliver wicked blows that can snap even the thickest of trees.",
@@ -9038,7 +9043,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 395,
+                            num_pokedex = 388,
                             attack = 210.0,
                             defense = 186.0,
                             description = "The three horns that extend from its beak attest to its power. The leader has the biggest horns.",
@@ -9053,7 +9058,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 396,
+                            num_pokedex = 389,
                             attack = 101.0,
                             defense = 58.0,
                             description = "They flock around mountains and fields, chasing after bug Pokémon. Their singing is noisy and annoying.",
@@ -9070,7 +9075,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 397,
+                            num_pokedex = 390,
                             attack = 142.0,
                             defense = 94.0,
                             description = "It lives in forests and fields. Squabbles over territory occur when flocks collide.",
@@ -9087,7 +9092,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 398,
+                            num_pokedex = 391,
                             attack = 234.0,
                             defense = 140.0,
                             description = "When Staravia evolve into Staraptor, they leave the flock to live alone. They have sturdy wings.",
@@ -9103,7 +9108,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 399,
+                            num_pokedex = 392,
                             attack = 80.0,
                             defense = 73.0,
                             description = "It constantly gnaws on logs and rocks to whittle down its front teeth. It nests alongside water.",
@@ -9120,7 +9125,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 400,
+                            num_pokedex = 393,
                             attack = 162.0,
                             defense = 119.0,
                             description = "It makes its nest by damming streams with bark and mud. It is known as an industrious worker.",
@@ -9136,7 +9141,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 401,
+                            num_pokedex = 394,
                             attack = 45.0,
                             defense = 74.0,
                             description = "When its antennae hit each other, it sounds like the music of a xylophone.",
@@ -9153,7 +9158,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 402,
+                            num_pokedex = 395,
                             attack = 160.0,
                             defense = 100.0,
                             description = "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
@@ -9170,7 +9175,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 403,
+                            num_pokedex = 396,
                             attack = 117.0,
                             defense = 64.0,
                             description = "All of its fur dazzles if danger is sensed. It flees while the foe is momentarily blinded.",
@@ -9187,7 +9192,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 404,
+                            num_pokedex = 397,
                             attack = 159.0,
                             defense = 95.0,
                             description = "Strong electricity courses through the tips of its sharp claws. A light scratch causes fainting in foes.",
@@ -9204,7 +9209,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 405,
+                            num_pokedex = 398,
                             attack = 232.0,
                             defense = 156.0,
                             description = "Luxray's ability to see through objects comes in handy when it's scouting for danger.",
@@ -9221,7 +9226,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 406,
+                            num_pokedex = 399,
                             attack = 91.0,
                             defense = 109.0,
                             description = "Over the winter, it closes its bud and endures the cold. In spring, the bud opens and releases pollen.",
@@ -9236,7 +9241,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 407,
+                            num_pokedex = 400,
                             attack = 243.0,
                             defense = 185.0,
                             description = "With the movements of a dancer, it strikes with whips that are densely lined with poison thorns.",
@@ -9253,7 +9258,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 408,
+                            num_pokedex = 401,
                             attack = 218.0,
                             defense = 71.0,
                             description = "Its hard skull is its distinguishing feature. It snapped trees by headbutting them, and then it fed on their ripe berries.",
@@ -9268,7 +9273,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 409,
+                            num_pokedex = 402,
                             attack = 295.0,
                             defense = 109.0,
                             description = "This ancient Pokémon used headbutts skillfully. Its brain was really small, so some theories suggest that its stupidity led to its extinction.",
@@ -9283,7 +9288,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 410,
+                            num_pokedex = 403,
                             attack = 76.0,
                             defense = 195.0,
                             description = "Although its fossils can be found in layers of primeval rock, nothing but its face has ever been discovered.",
@@ -9298,7 +9303,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 411,
+                            num_pokedex = 404,
                             attack = 94.0,
                             defense = 286.0,
                             description = "This Pokémon is from roughly 100 million years ago. Its terrifyingly tough face is harder than steel.",
@@ -9313,7 +9318,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 412,
+                            num_pokedex = 405,
                             attack = 53.0,
                             defense = 83.0,
                             description = "If its cloak is broken in battle, it quickly remakes the cloak with materials nearby.",
@@ -9328,7 +9333,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 413,
+                            num_pokedex = 406,
                             attack = 141.0,
                             defense = 180.0,
                             description = "When Burmy evolved, its cloak became a part of this Pokémon's body. The cloak is never shed.",
@@ -9343,7 +9348,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 414,
+                            num_pokedex = 407,
                             attack = 185.0,
                             defense = 98.0,
                             description = "It flutters around at night and steals honey from the Combee hive.",
@@ -9358,7 +9363,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 415,
+                            num_pokedex = 408,
                             attack = 59.0,
                             defense = 83.0,
                             description = "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
@@ -9374,7 +9379,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 416,
+                            num_pokedex = 409,
                             attack = 149.0,
                             defense = 190.0,
                             description = "Its abdomen is a honeycomb for grubs. It raises its grubs on honey collected by Combee.",
@@ -9389,7 +9394,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 417,
+                            num_pokedex = 410,
                             attack = 94.0,
                             defense = 172.0,
                             description = "A pair may be seen rubbing their cheek pouches together in an effort to share stored electricity.",
@@ -9405,7 +9410,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 418,
+                            num_pokedex = 411,
                             attack = 132.0,
                             defense = 67.0,
                             description = "It inflates the flotation sac around its neck and pokes its head out of the water to see what is going on.",
@@ -9422,7 +9427,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 419,
+                            num_pokedex = 412,
                             attack = 221.0,
                             defense = 114.0,
                             description = "Its flotation sac developed as a result of pursuing aquatic prey. It can double as a rubber raft.",
@@ -9439,7 +9444,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 420,
+                            num_pokedex = 413,
                             attack = 108.0,
                             defense = 92.0,
                             description = "It evolves by sucking the energy out of the small ball where it had been storing nutrients.",
@@ -9454,7 +9459,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 421,
+                            num_pokedex = 414,
                             attack = 170.0,
                             defense = 153.0,
                             description = "If it senses strong sunlight, it opens its folded petals to absorb the sun's rays with its whole body.",
@@ -9469,7 +9474,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 424,
+                            num_pokedex = 415,
                             attack = 205.0,
                             defense = 143.0,
                             description = "It uses its tails for everything. If it wraps both of its tails around you and gives you a squeeze, that's proof it really likes you.",
@@ -9486,7 +9491,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 425,
+                            num_pokedex = 416,
                             attack = 117.0,
                             defense = 80.0,
                             description = "Wandering souls gathered together to form this Pokémon. When trying to make friends with children, Drifloon grabs them by the hand.",
@@ -9501,7 +9506,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 426,
+                            num_pokedex = 417,
                             attack = 180.0,
                             defense = 102.0,
                             description = "The raw material for the gas inside its body is souls. When its body starts to deflate, it's thought to carry away people and Pokémon.",
@@ -9516,7 +9521,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 427,
+                            num_pokedex = 418,
                             attack = 130.0,
                             defense = 105.0,
                             description = "The reason it keeps one ear rolled up is so it can launch a swift counterattack if it's attacked by an enemy.",
@@ -9531,7 +9536,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 428,
+                            num_pokedex = 419,
                             attack = 156.0,
                             defense = 194.0,
                             description = "It's notably wary and has a dislike of fighting, but at the same time, it can deliver powerful kicks with its lithe legs.",
@@ -9546,7 +9551,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 429,
+                            num_pokedex = 420,
                             attack = 211.0,
                             defense = 187.0,
                             description = "Its muttered curses can cause awful headaches or terrifying visions that torment others.",
@@ -9561,7 +9566,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 430,
+                            num_pokedex = 421,
                             attack = 243.0,
                             defense = 103.0,
                             description = "Its goons take care of most of the fighting for it. The only time it dirties its own hands is in delivering a final blow to finish off an opponent.",
@@ -9576,7 +9581,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 431,
+                            num_pokedex = 422,
                             attack = 109.0,
                             defense = 82.0,
                             description = "When it's happy, Glameow demonstrates beautiful movements of its tail, like a dancing ribbon.",
@@ -9591,7 +9596,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 432,
+                            num_pokedex = 423,
                             attack = 172.0,
                             defense = 133.0,
                             description = "To make itself appear intimidatingly beefy, it tightly cinches its waist with its twin tails.",
@@ -9606,7 +9611,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 433,
+                            num_pokedex = 424,
                             attack = 114.0,
                             defense = 94.0,
                             description = "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
@@ -9621,7 +9626,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 434,
+                            num_pokedex = 425,
                             attack = 121.0,
                             defense = 90.0,
                             description = "It protects itself by spraying a noxious fluid from its rear. The stench lingers for 24 hours.",
@@ -9636,7 +9641,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 435,
+                            num_pokedex = 426,
                             attack = 184.0,
                             defense = 132.0,
                             description = "It sprays a stinky fluid from its tail. The fluid smells worse the longer it is allowed to fester.",
@@ -9651,7 +9656,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 436,
+                            num_pokedex = 427,
                             attack = 43.0,
                             defense = 154.0,
                             description = "Implements shaped like it were discovered in ancient tombs. It is unknown if they are related.",
@@ -9666,7 +9671,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 437,
+                            num_pokedex = 428,
                             attack = 161.0,
                             defense = 213.0,
                             description = "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
@@ -9681,7 +9686,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 438,
+                            num_pokedex = 429,
                             attack = 124.0,
                             defense = 133.0,
                             description = "If its body gets too damp, it will die. So, in a process reminiscent of sweating, its eyes expel moisture.",
@@ -9696,7 +9701,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 440,
+                            num_pokedex = 430,
                             attack = 25.0,
                             defense = 77.0,
                             description = "When it sees something round and white, Happiny puts it into the pouch on its stomach. It sometimes becomes overloaded and can't move.",
@@ -9711,7 +9716,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 441,
+                            num_pokedex = 431,
                             attack = 183.0,
                             defense = 91.0,
                             description = "It can learn and speak human words. If they gather, they all learn the same saying.",
@@ -9726,7 +9731,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 442,
+                            num_pokedex = 432,
                             attack = 169.0,
                             defense = 199.0,
                             description = "It was bound to a fissure in an odd keystone as punishment for misdeeds 500 years ago.",
@@ -9741,7 +9746,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 443,
+                            num_pokedex = 433,
                             attack = 124.0,
                             defense = 84.0,
                             description = "Its original home is an area much hotter than Alola. If you're planning to live with one, your heating bill will soar.",
@@ -9758,7 +9763,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 444,
+                            num_pokedex = 434,
                             attack = 172.0,
                             defense = 125.0,
                             description = "It sheds its skin and gradually grows larger. Its scales can be ground into a powder and used as raw materials for traditional medicine.",
@@ -9775,7 +9780,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 445,
+                            num_pokedex = 435,
                             attack = 261.0,
                             defense = 193.0,
                             description = "Its fine scales don't just reduce wind resistance—their sharp edges also cause injury to any opponent who attacks it.",
@@ -9792,7 +9797,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 446,
+                            num_pokedex = 436,
                             attack = 137.0,
                             defense = 117.0,
                             description = "Anything that looks edible, Munchlax will go on and swallow whole. Its stomach is tough enough to handle it even if the food has gone rotten.",
@@ -9807,7 +9812,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 447,
+                            num_pokedex = 437,
                             attack = 127.0,
                             defense = 78.0,
                             description = "It uses waves called auras to communicate with others of its kind. It doesn't make any noise during this time, so its enemies can't detect it.",
@@ -9822,7 +9827,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 448,
+                            num_pokedex = 438,
                             attack = 236.0,
                             defense = 144.0,
                             description = "Lucario reads its opponent's feelings with its aura waves. It finds out things it would rather not know, so it gets stressed out easily.",
@@ -9837,7 +9842,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 449,
+                            num_pokedex = 439,
                             attack = 124.0,
                             defense = 118.0,
                             description = "It enshrouds itself with sand to protect itself from germs. It does not enjoy getting wet.",
@@ -9854,7 +9859,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 450,
+                            num_pokedex = 440,
                             attack = 201.0,
                             defense = 191.0,
                             description = "It blasts internally stored sand from ports on its body to create a towering twister for attack.",
@@ -9871,7 +9876,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 451,
+                            num_pokedex = 441,
                             attack = 93.0,
                             defense = 151.0,
                             description = "It burrows under the sand to lie in wait for prey. Its tail claws can inject its prey with a savage poison.",
@@ -9886,7 +9891,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 452,
+                            num_pokedex = 442,
                             attack = 180.0,
                             defense = 202.0,
                             description = "It has the power in its clawed arms to make scrap of a car. The tips of its claws release poison.",
@@ -9901,7 +9906,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 453,
+                            num_pokedex = 443,
                             attack = 116.0,
                             defense = 76.0,
                             description = "Inflating its poison sacs, it fills the area with an odd sound and hits flinching opponents with a poison jab.",
@@ -9918,7 +9923,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 454,
+                            num_pokedex = 444,
                             attack = 211.0,
                             defense = 133.0,
                             description = "Its knuckle claws secrete a toxin so vile that even a scratch could prove fatal.",
@@ -9935,7 +9940,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 455,
+                            num_pokedex = 445,
                             attack = 187.0,
                             defense = 136.0,
                             description = "It binds itself to trees in marshes. It attracts prey with its sweet-smelling drool and gulps them down.",
@@ -9950,7 +9955,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 456,
+                            num_pokedex = 446,
                             attack = 96.0,
                             defense = 116.0,
                             description = "It lures in prey with its shining tail fins. It stays near the surface during the day and moves to the depths when night falls.",
@@ -9967,7 +9972,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 457,
+                            num_pokedex = 447,
                             attack = 142.0,
                             defense = 170.0,
                             description = "They traverse the deep waters as if crawling over the seafloor. The fantastic lights of its fins shine like stars in the night sky.",
@@ -9984,7 +9989,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 458,
+                            num_pokedex = 448,
                             attack = 105.0,
                             defense = 179.0,
                             description = "Mantyke are friendly toward people and will approach boats closely. The patterns on their backs differ depending on their habitat.",
@@ -9999,7 +10004,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 459,
+                            num_pokedex = 449,
                             attack = 115.0,
                             defense = 105.0,
                             description = "In the spring, it grows berries with the texture of frozen treats around its belly.",
@@ -10016,7 +10021,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 460,
+                            num_pokedex = 450,
                             attack = 178.0,
                             defense = 158.0,
                             description = "It lives a quiet life on mountains that are perpetually covered in snow. It hides itself by whipping up blizzards.",
@@ -10032,7 +10037,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 461,
+                            num_pokedex = 451,
                             attack = 243.0,
                             defense = 171.0,
                             description = "Thanks to its increased intelligence, scrapping over food is a thing of the past. A scratch from its claws will give you a case of frostbite!",
@@ -10049,7 +10054,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 462,
+                            num_pokedex = 452,
                             attack = 238.0,
                             defense = 205.0,
                             description = "There are still people who believe that this Pokémon came from outer space. It emanates a powerful magnetic field.",
@@ -10064,7 +10069,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 463,
+                            num_pokedex = 453,
                             attack = 161.0,
                             defense = 181.0,
                             description = "It uses its tongue much more skillfully than its hands or its feet. It can deftly pick up a single small bean with its tongue.",
@@ -10079,7 +10084,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 464,
+                            num_pokedex = 454,
                             attack = 241.0,
                             defense = 190.0,
                             description = "It puts rocks in holes in its palms and uses its muscles to shoot them. Geodude are shot at rare times.",
@@ -10096,7 +10101,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 465,
+                            num_pokedex = 455,
                             attack = 207.0,
                             defense = 184.0,
                             description = "Its vines grow so profusely that, in the warm season, you can't even see its eyes.",
@@ -10113,7 +10118,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 466,
+                            num_pokedex = 456,
                             attack = 249.0,
                             defense = 163.0,
                             description = "A single Electivire can provide enough electricity for all the buildings in a big city for a year.",
@@ -10128,7 +10133,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 467,
+                            num_pokedex = 457,
                             attack = 247.0,
                             defense = 172.0,
                             description = "Magmortar takes down its enemies by shooting fireballs, which burn them to a blackened crisp. It avoids this method when hunting prey.",
@@ -10143,7 +10148,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 468,
+                            num_pokedex = 458,
                             attack = 225.0,
                             defense = 217.0,
                             description = "It shares many blessings with people who respect one another's rights and avoid needless strife.",
@@ -10158,7 +10163,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 469,
+                            num_pokedex = 459,
                             attack = 231.0,
                             defense = 156.0,
                             description = "This six-legged Pokémon is easily capable of transporting an adult in flight. The wings on its tail help it stay balanced.",
@@ -10173,7 +10178,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 470,
+                            num_pokedex = 460,
                             attack = 216.0,
                             defense = 219.0,
                             description = "It gets its nutrition from photosynthesis. It lives a quiet life deep in forests where clean rivers flow.",
@@ -10188,7 +10193,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 471,
+                            num_pokedex = 461,
                             attack = 238.0,
                             defense = 205.0,
                             description = "It can instantaneously freeze any moisture that's around it, creating ice pellets to shoot at its prey.",
@@ -10203,7 +10208,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 472,
+                            num_pokedex = 462,
                             attack = 185.0,
                             defense = 222.0,
                             description = "Its flight is soundless. It uses its lengthy tail to carry off its prey... Then its elongated fangs do the rest.",
@@ -10218,7 +10223,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 473,
+                            num_pokedex = 463,
                             attack = 247.0,
                             defense = 146.0,
                             description = "Its impressive tusks are made of ice. The population thinned when it turned warm after the ice age.",
@@ -10235,7 +10240,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 474,
+                            num_pokedex = 464,
                             attack = 264.0,
                             defense = 150.0,
                             description = "A faulty update was added to its programming. Its behavior is noticeably strange, so the experiment may have been a failure.",
@@ -10250,7 +10255,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 475,
+                            num_pokedex = 465,
                             attack = 237.0,
                             defense = 195.0,
                             description = "A master of courtesy and swordsmanship, it fights using extending swords on its elbows.",
@@ -10265,7 +10270,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 476,
+                            num_pokedex = 466,
                             attack = 135.0,
                             defense = 275.0,
                             description = "It uses three small units to catch prey and battle enemies. The main body mostly just gives orders.",
@@ -10280,7 +10285,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 477,
+                            num_pokedex = 467,
                             attack = 180.0,
                             defense = 254.0,
                             description = "The antenna on its head captures radio waves from the world of spirits that command it to take people there.",
@@ -10295,7 +10300,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 478,
+                            num_pokedex = 468,
                             attack = 171.0,
                             defense = 150.0,
                             description = "It's said that on nights of terrible blizzards, it comes down to human settlements. If you hear it knocking at your door, do not open it!",
@@ -10310,7 +10315,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 479,
+                            num_pokedex = 469,
                             attack = 185.0,
                             defense = 159.0,
                             description = "Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.",
@@ -10325,7 +10330,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 480,
+                            num_pokedex = 470,
                             attack = 156.0,
                             defense = 270.0,
                             description = "It is said that its emergence gave humans the intelligence to improve their quality of life.",
@@ -10340,7 +10345,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 481,
+                            num_pokedex = 471,
                             attack = 212.0,
                             defense = 212.0,
                             description = "It sleeps at the bottom of a lake. Its spirit is said to leave its body to fly on the lake's surface.",
@@ -10355,7 +10360,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 482,
+                            num_pokedex = 472,
                             attack = 270.0,
                             defense = 151.0,
                             description = "It is thought that Uxie, Mesprit, and Azelf all came from the same egg.",
@@ -10370,7 +10375,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 483,
+                            num_pokedex = 473,
                             attack = 275.0,
                             defense = 211.0,
                             description = "It has the power to control time. It appears in Sinnoh-region myths as an ancient deity.",
@@ -10385,7 +10390,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 484,
+                            num_pokedex = 474,
                             attack = 280.0,
                             defense = 215.0,
                             description = "It has the ability to distort space. It is described as a deity in Sinnoh-region mythology.",
@@ -10400,7 +10405,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 485,
+                            num_pokedex = 475,
                             attack = 251.0,
                             defense = 213.0,
                             description = "Boiling blood, like magma, circulates through its body. It makes its dwelling place in volcanic caves.",
@@ -10415,7 +10420,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 486,
+                            num_pokedex = 476,
                             attack = 287.0,
                             defense = 210.0,
                             description = "There is an enduring legend that states this Pokémon towed continents with ropes.",
@@ -10430,7 +10435,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 487,
+                            num_pokedex = 477,
                             attack = 187.0,
                             defense = 225.0,
                             description = "It was banished for its violence. It silently gazed upon the old world from the Distortion World.",
@@ -10445,7 +10450,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 488,
+                            num_pokedex = 478,
                             attack = 152.0,
                             defense = 258.0,
                             description = "Those who sleep holding Cresselia's feather are assured of joyful dreams. It is said to represent the crescent moon.",
@@ -10460,7 +10465,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 489,
+                            num_pokedex = 479,
                             attack = 162.0,
                             defense = 162.0,
                             description = "It drifts in warm seas. It always returns to where it was born, no matter how far it may have drifted.",
@@ -10475,7 +10480,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 490,
+                            num_pokedex = 480,
                             attack = 210.0,
                             defense = 210.0,
                             description = "It starts its life with a wondrous power that permits it to bond with any kind of Pokémon.",
@@ -10490,7 +10495,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 491,
+                            num_pokedex = 481,
                             attack = 285.0,
                             defense = 198.0,
                             description = "It can lull people to sleep and make them dream. It is active during nights of the new moon.",
@@ -10505,7 +10510,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 492,
+                            num_pokedex = 482,
                             attack = 210.0,
                             defense = 210.0,
                             description = "The blooming of Gracidea flowers confers the power of flight upon it. Feelings of gratitude are the message it delivers.",
@@ -10520,7 +10525,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 494,
+                            num_pokedex = 483,
                             attack = 210.0,
                             defense = 210.0,
                             description = "When it shares the infinite energy it creates, that being's entire body will be overflowing with power.",
@@ -10535,7 +10540,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 495,
+                            num_pokedex = 484,
                             attack = 88.0,
                             defense = 107.0,
                             description = "They photosynthesize by bathing their tails in sunlight. When they are not feeling well, their tails droop.",
@@ -10550,7 +10555,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 496,
+                            num_pokedex = 485,
                             attack = 122.0,
                             defense = 152.0,
                             description = "When it gets dirty, its leaves can't be used in photosynthesis, so it always keeps itself clean.",
@@ -10565,7 +10570,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 497,
+                            num_pokedex = 486,
                             attack = 161.0,
                             defense = 204.0,
                             description = "It can stop its opponents' movements with just a glare. It takes in solar energy and boosts it internally.",
@@ -10580,7 +10585,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 498,
+                            num_pokedex = 487,
                             attack = 115.0,
                             defense = 85.0,
                             description = "It loves to eat roasted berries, but sometimes it gets too excited and burns them to a crisp.",
@@ -10595,7 +10600,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 499,
+                            num_pokedex = 488,
                             attack = 173.0,
                             defense = 106.0,
                             description = "When its internal fire flares up, its movements grow sharper and faster. When in trouble, it emits smoke.",
@@ -10610,7 +10615,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 500,
+                            num_pokedex = 489,
                             attack = 235.0,
                             defense = 127.0,
                             description = "It has mastered fast and powerful fighting moves. It grows a beard of fire.",
@@ -10625,7 +10630,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 501,
+                            num_pokedex = 490,
                             attack = 117.0,
                             defense = 85.0,
                             description = "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
@@ -10640,7 +10645,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 502,
+                            num_pokedex = 491,
                             attack = 159.0,
                             defense = 116.0,
                             description = "As a result of strict training, each Dewott learns different forms for using the scalchops.",
@@ -10655,7 +10660,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 503,
+                            num_pokedex = 492,
                             attack = 212.0,
                             defense = 157.0,
                             description = "One swing of the sword incorporated in its armor can fell an opponent. A simple glare from one of them quiets everybody.",
@@ -10670,7 +10675,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 504,
+                            num_pokedex = 493,
                             attack = 98.0,
                             defense = 73.0,
                             description = "Extremely cautious, one of them will always be on the lookout, but it won't notice a foe coming from behind.",
@@ -10685,7 +10690,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 505,
+                            num_pokedex = 494,
                             attack = 165.0,
                             defense = 139.0,
                             description = "When they see an enemy, their tails stand high, and they spit the seeds of berries stored in their cheek pouches.",
@@ -10700,7 +10705,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 506,
+                            num_pokedex = 495,
                             attack = 107.0,
                             defense = 86.0,
                             description = "This Pokémon is popular with beginners because it's intelligent, obedient to its Trainer's commands, and easy to raise.",
@@ -10715,7 +10720,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 507,
+                            num_pokedex = 496,
                             attack = 145.0,
                             defense = 126.0,
                             description = "It has been living with people for so long that portrayals of it can be found on the walls of caves from long, long ago.",
@@ -10730,7 +10735,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 508,
+                            num_pokedex = 497,
                             attack = 206.0,
                             defense = 182.0,
                             description = "Its fur is long and thick. A long time ago in cold regions, every household kept a Stoutland.",
@@ -10745,7 +10750,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 509,
+                            num_pokedex = 498,
                             attack = 98.0,
                             defense = 73.0,
                             description = "They steal from people for fun, but their victims can't help but forgive them. Their deceptively cute act is perfect.",
@@ -10760,7 +10765,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 510,
+                            num_pokedex = 499,
                             attack = 187.0,
                             defense = 106.0,
                             description = "Stealthily, it sneaks up on its target, striking from behind before its victim has a chance to react.",
@@ -10775,7 +10780,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 511,
+                            num_pokedex = 500,
                             attack = 104.0,
                             defense = 94.0,
                             description = "It's good at finding berries and gathers them from all over. It's kind enough to share them with friends.",
@@ -10790,7 +10795,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 512,
+                            num_pokedex = 501,
                             attack = 206.0,
                             defense = 133.0,
                             description = "Ill tempered, it fights by swinging its barbed tail around wildly. The leaf growing on its head is very bitter.",
@@ -10805,7 +10810,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 513,
+                            num_pokedex = 502,
                             attack = 104.0,
                             defense = 94.0,
                             description = "This Pokémon lives in caves in volcanoes. The fire within the tuft on its head can reach 600 degrees Fahrenheit.",
@@ -10820,7 +10825,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 514,
+                            num_pokedex = 503,
                             attack = 206.0,
                             defense = 133.0,
                             description = "When it gets excited, embers rise from its head and tail and it gets hot. For some reason, it loves sweets.",
@@ -10835,7 +10840,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 515,
+                            num_pokedex = 504,
                             attack = 104.0,
                             defense = 94.0,
                             description = "The water stored inside the tuft on its head is full of nutrients. Plants that receive its water grow large.",
@@ -10850,7 +10855,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 516,
+                            num_pokedex = 505,
                             attack = 206.0,
                             defense = 133.0,
                             description = "It prefers places with clean water. When its tuft runs low, it replenishes it by siphoning up water with its tail.",
@@ -10865,7 +10870,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 517,
+                            num_pokedex = 506,
                             attack = 111.0,
                             defense = 92.0,
                             description = "It eats the dreams of people and Pokémon. When it eats a pleasant dream, it expels pink-colored mist.",
@@ -10880,7 +10885,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 518,
+                            num_pokedex = 507,
                             attack = 183.0,
                             defense = 166.0,
                             description = "The dream mist coming from its forehead changes into many different colors depending on the dream that was eaten.",
@@ -10895,7 +10900,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 519,
+                            num_pokedex = 508,
                             attack = 98.0,
                             defense = 80.0,
                             description = "These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
@@ -10910,7 +10915,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 520,
+                            num_pokedex = 509,
                             attack = 144.0,
                             defense = 107.0,
                             description = "No matter where in the world it goes, it knows where its nest is, so it never gets separated from its Trainer.",
@@ -10925,7 +10930,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 521,
+                            num_pokedex = 510,
                             attack = 226.0,
                             defense = 146.0,
                             description = "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
@@ -10942,7 +10947,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 522,
+                            num_pokedex = 511,
                             attack = 118.0,
                             defense = 64.0,
                             description = "Its mane shines when it discharges electricity. They use the frequency and rhythm of these flashes to communicate.",
@@ -10957,7 +10962,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 523,
+                            num_pokedex = 512,
                             attack = 211.0,
                             defense = 136.0,
                             description = "They have lightning-like movements. When Zebstrika run at full speed, the sound of thunder reverberates.",
@@ -10972,7 +10977,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 524,
+                            num_pokedex = 513,
                             attack = 121.0,
                             defense = 110.0,
                             description = "It was found in a fissure in a layer of exposed rock. The material that makes up its body is dirt from several hundred years ago.",
@@ -10987,7 +10992,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 525,
+                            num_pokedex = 514,
                             attack = 174.0,
                             defense = 143.0,
                             description = "Its orange crystals are lumps of powerful energy. They're valuable, so Boldore is sometimes targeted for them.",
@@ -11002,7 +11007,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 526,
+                            num_pokedex = 515,
                             attack = 226.0,
                             defense = 201.0,
                             description = "It absorbs rays of sunlight and shoots out energy. It's usually lurking deep beneath the surface.",
@@ -11017,7 +11022,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 527,
+                            num_pokedex = 516,
                             attack = 107.0,
                             defense = 85.0,
                             description = "The heart-shaped mark left on a body after a Woobat has been attached to it is said to bring good fortune.",
@@ -11032,7 +11037,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 528,
+                            num_pokedex = 517,
                             attack = 161.0,
                             defense = 119.0,
                             description = "Anyone who comes into contact with the ultrasonic waves emitted by a courting male experiences a positive mood shift.",
@@ -11047,7 +11052,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 529,
+                            num_pokedex = 518,
                             attack = 154.0,
                             defense = 85.0,
                             description = "By spinning its body, it can dig straight through the ground at a speed of 30 mph.",
@@ -11062,7 +11067,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 530,
+                            num_pokedex = 519,
                             attack = 255.0,
                             defense = 129.0,
                             description = "More than 300 feet below the surface, they build mazelike nests. Their activity can be destructive to subway tunnels.",
@@ -11077,7 +11082,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 531,
+                            num_pokedex = 520,
                             attack = 114.0,
                             defense = 163.0,
                             description = "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
@@ -11092,7 +11097,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 532,
+                            num_pokedex = 521,
                             attack = 134.0,
                             defense = 87.0,
                             description = "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
@@ -11107,7 +11112,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 533,
+                            num_pokedex = 522,
                             attack = 180.0,
                             defense = 134.0,
                             description = "This Pokémon is so muscular and strongly built that even a group of wrestlers could not make it budge an inch.",
@@ -11122,7 +11127,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 534,
+                            num_pokedex = 523,
                             attack = 243.0,
                             defense = 158.0,
                             description = "Rather than rely on force, they master moves that utilize the centrifugal force of spinning concrete.",
@@ -11137,7 +11142,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 535,
+                            num_pokedex = 524,
                             attack = 98.0,
                             defense = 78.0,
                             description = "By vibrating its cheeks, it emits sound waves imperceptible to humans. It uses the rhythm of these sounds to talk.",
@@ -11152,7 +11157,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 536,
+                            num_pokedex = 525,
                             attack = 128.0,
                             defense = 109.0,
                             description = "It lives in the water and on land. It uses its long, sticky tongue to immobilize its opponents.",
@@ -11167,7 +11172,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 537,
+                            num_pokedex = 526,
                             attack = 188.0,
                             defense = 150.0,
                             description = "They shoot paralyzing liquid from their head bumps. They use vibration to hurt their opponents.",
@@ -11182,7 +11187,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 538,
+                            num_pokedex = 527,
                             attack = 172.0,
                             defense = 160.0,
                             description = "When it encounters a foe bigger than itself, it wants to throw it. It changes belts as it gets stronger.",
@@ -11197,7 +11202,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 539,
+                            num_pokedex = 528,
                             attack = 231.0,
                             defense = 153.0,
                             description = "Tying their belts gets them pumped and makes their punches more destructive. Disturbing their training angers them.",
@@ -11212,7 +11217,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 540,
+                            num_pokedex = 529,
                             attack = 96.0,
                             defense = 124.0,
                             description = "Since this Pokémon makes its own clothes out of leaves, it is a popular mascot for fashion designers.",
@@ -11227,7 +11232,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 541,
+                            num_pokedex = 530,
                             attack = 115.0,
                             defense = 162.0,
                             description = "It protects itself from the cold by wrapping up in leaves. It stays on the move, eating leaves in forests.",
@@ -11242,7 +11247,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 542,
+                            num_pokedex = 531,
                             attack = 205.0,
                             defense = 165.0,
                             description = "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
@@ -11257,7 +11262,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 543,
+                            num_pokedex = 532,
                             attack = 83.0,
                             defense = 99.0,
                             description = "Its bite injects a potent poison, enough to paralyze large bird Pokémon that try to prey on it.",
@@ -11272,7 +11277,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 544,
+                            num_pokedex = 533,
                             attack = 100.0,
                             defense = 173.0,
                             description = "It is usually motionless, but when attacked, it rotates at high speed and then crashes into its opponent.",
@@ -11287,7 +11292,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 545,
+                            num_pokedex = 534,
                             attack = 203.0,
                             defense = 175.0,
                             description = "With quick movements, it chases down its foes, attacking relentlessly with its horns until it prevails.",
@@ -11302,7 +11307,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 546,
+                            num_pokedex = 535,
                             attack = 71.0,
                             defense = 111.0,
                             description = "When attacked, it expels cotton from its body to create a diversion. The cotton it loses grows back in quickly.",
@@ -11317,7 +11322,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 547,
+                            num_pokedex = 536,
                             attack = 164.0,
                             defense = 176.0,
                             description = "Whimsicott doesn't live in a fixed location. It floats around on whirling winds, appearing all over the place to perform its mischief.",
@@ -11332,7 +11337,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 548,
+                            num_pokedex = 537,
                             attack = 119.0,
                             defense = 91.0,
                             description = "They prefer clean water and soil. When the environment they live in turns bad, the whole bunch will up and move to a new area.",
@@ -11347,7 +11352,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 549,
+                            num_pokedex = 538,
                             attack = 214.0,
                             defense = 155.0,
                             description = "It's well liked by other Pokémon because of its beauty. The flower on its head needs constant care, or it will soon wither and rot.",
@@ -11362,7 +11367,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 550,
+                            num_pokedex = 539,
                             attack = 189.0,
                             defense = 129.0,
                             description = "When a school of Basculin appears in a lake, everything else disappears, except for Corphish and Crawdaunt. That's how violent Basculin are.",
@@ -11377,7 +11382,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 551,
+                            num_pokedex = 540,
                             attack = 132.0,
                             defense = 69.0,
                             description = "Sandile's still not good at hunting, so it mostly eats things that have collapsed in the desert. It's called “the cleaner of the desert.\"",
@@ -11392,7 +11397,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 552,
+                            num_pokedex = 541,
                             attack = 155.0,
                             defense = 90.0,
                             description = "It buries some of its prey in the sand to use as emergency meals when its hunts are unsuccessful.",
@@ -11407,7 +11412,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 553,
+                            num_pokedex = 542,
                             attack = 229.0,
                             defense = 158.0,
                             description = "It conceals itself in sandstorms that Flygon whip up and waits patiently for prey to appear.",
@@ -11422,7 +11427,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 554,
+                            num_pokedex = 543,
                             attack = 153.0,
                             defense = 86.0,
                             description = "When it sleeps, it pulls its limbs into its body and its internal fire goes down to 1,100 degrees Fahrenheit.",
@@ -11437,7 +11442,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 555,
+                            num_pokedex = 544,
                             attack = 263.0,
                             defense = 114.0,
                             description = "Its internal fire burns at 2,500 degrees Fahrenheit, making enough power that it can destroy a dump truck with one punch.",
@@ -11452,7 +11457,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 556,
+                            num_pokedex = 545,
                             attack = 201.0,
                             defense = 130.0,
                             description = "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
@@ -11467,7 +11472,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 557,
+                            num_pokedex = 546,
                             attack = 118.0,
                             defense = 128.0,
                             description = "When it finds a stone of a suitable size, it secretes a liquid from its mouth to open up a hole to crawl into.",
@@ -11482,7 +11487,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 558,
+                            num_pokedex = 547,
                             attack = 188.0,
                             defense = 200.0,
                             description = "Competing for territory, Crustle fight viciously. The one whose boulder is broken is the loser of the battle.",
@@ -11497,7 +11502,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 559,
+                            num_pokedex = 548,
                             attack = 132.0,
                             defense = 132.0,
                             description = "It stretches its saggy skin up to its neck to protect itself. The saggier their skin, the more respect they garner.",
@@ -11512,7 +11517,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 560,
+                            num_pokedex = 549,
                             attack = 163.0,
                             defense = 222.0,
                             description = "It taunts its opponents by spitting. It has a certain territory that it never leaves its whole life long.",
@@ -11527,7 +11532,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 561,
+                            num_pokedex = 550,
                             attack = 204.0,
                             defense = 167.0,
                             description = "The guardians of an ancient city, they always fly the same route while keeping watch for invaders.",
@@ -11542,7 +11547,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 564,
+                            num_pokedex = 551,
                             attack = 134.0,
                             defense = 146.0,
                             description = "Its hunting grounds encompassed a broad area, from the land to more than half a mile deep in the ocean.",
@@ -11557,7 +11562,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 565,
+                            num_pokedex = 552,
                             attack = 192.0,
                             defense = 197.0,
                             description = "Carracosta eats every last bit of the prey it catches, even the shells and bones, to further strengthen its sturdy shell.",
@@ -11572,7 +11577,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 566,
+                            num_pokedex = 553,
                             attack = 213.0,
                             defense = 89.0,
                             description = "Restored from a fossil, this ancient bird Pokémon has wings but can't yet fly.",
@@ -11587,7 +11592,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 567,
+                            num_pokedex = 554,
                             attack = 292.0,
                             defense = 139.0,
                             description = "Said to be an ancestor of bird Pokémon, the muscles it uses to flap its wings are still weak, so it needs a long runway in order to take off.",
@@ -11602,7 +11607,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 568,
+                            num_pokedex = 555,
                             attack = 96.0,
                             defense = 122.0,
                             description = "If a young Pokémon or child breathes in the toxic gas that Trubbish belches out, it could be a life-threatening situation.",
@@ -11617,7 +11622,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 569,
+                            num_pokedex = 556,
                             attack = 181.0,
                             defense = 164.0,
                             description = "Some say the reason Garbodor in Alola are a little stronger than their counterparts elsewhere is the presence of Muk, their natural enemy.",
@@ -11632,7 +11637,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 570,
+                            num_pokedex = 557,
                             attack = 153.0,
                             defense = 78.0,
                             description = "If a normally talkative child suddenly stops talking, it may have been replaced by Zorua.",
@@ -11647,7 +11652,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 571,
+                            num_pokedex = 558,
                             attack = 250.0,
                             defense = 127.0,
                             description = "If it thinks humans are going to discover its den, Zoroark shows them visions that make them wander around in the woods.",
@@ -11662,7 +11667,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 572,
+                            num_pokedex = 559,
                             attack = 98.0,
                             defense = 80.0,
                             description = "When its tail has gotten dirty from self-cleaning or from cleaning its nest, Minccino spends a whole day washing its tail in clean spring water.",
@@ -11677,7 +11682,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 573,
+                            num_pokedex = 560,
                             attack = 198.0,
                             defense = 130.0,
                             description = "The oil that seeps from its body is really smooth. For people troubled by bad skin, this oil is an effective treatment.",
@@ -11692,7 +11697,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 574,
+                            num_pokedex = 561,
                             attack = 98.0,
                             defense = 112.0,
                             description = "They intently observe both Trainers and Pokémon. Apparently, they are looking at something that only Gothita can see.",
@@ -11707,7 +11712,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 575,
+                            num_pokedex = 562,
                             attack = 137.0,
                             defense = 153.0,
                             description = "According to many old tales, it creates friends for itself by controlling sleeping children on starry nights.",
@@ -11722,7 +11727,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 576,
+                            num_pokedex = 563,
                             attack = 176.0,
                             defense = 205.0,
                             description = "They can predict the future from the placement and movement of the stars. They can see Trainers' life spans.",
@@ -11737,7 +11742,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 577,
+                            num_pokedex = 564,
                             attack = 170.0,
                             defense = 83.0,
                             description = "They drive away attackers by unleashing psychic power. They can use telepathy to talk with others.",
@@ -11752,7 +11757,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 578,
+                            num_pokedex = 565,
                             attack = 208.0,
                             defense = 103.0,
                             description = "When their two divided brains think the same thoughts, their psychic power is maximized.",
@@ -11767,7 +11772,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 579,
+                            num_pokedex = 566,
                             attack = 214.0,
                             defense = 148.0,
                             description = "When Reuniclus shake hands, a network forms between their brains, increasing their psychic power.",
@@ -11782,7 +11787,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 580,
+                            num_pokedex = 567,
                             attack = 84.0,
                             defense = 96.0,
                             description = "They are better at swimming than flying, and they happily eat their favorite food, peat moss, as they dive underwater.",
@@ -11797,7 +11802,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 581,
+                            num_pokedex = 568,
                             attack = 182.0,
                             defense = 132.0,
                             description = "Swanna start to dance at dusk. The one dancing in the middle is the leader of the flock.",
@@ -11812,7 +11817,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 582,
+                            num_pokedex = 569,
                             attack = 118.0,
                             defense = 106.0,
                             description = "When the morning sun hit an icicle, it wished not to melt, and thus Vanillite was born. At night, it buries itself in snow to sleep.",
@@ -11827,7 +11832,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 583,
+                            num_pokedex = 570,
                             attack = 151.0,
                             defense = 138.0,
                             description = "This hearty Pokémon survived the Ice Age. It's incredibly popular in very hot regions.",
@@ -11842,7 +11847,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 584,
+                            num_pokedex = 571,
                             attack = 218.0,
                             defense = 184.0,
                             description = "Vanilluxe is born when two Vanillish, half-melted by the day's light, stick to each other and freeze together in the cold return of night.",
@@ -11857,7 +11862,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 585,
+                            num_pokedex = 572,
                             attack = 115.0,
                             defense = 100.0,
                             description = "The turning of the seasons changes the color and scent of this Pokémon's fur. People use it to mark the seasons.",
@@ -11872,7 +11877,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 586,
+                            num_pokedex = 573,
                             attack = 198.0,
                             defense = 146.0,
                             description = "They migrate according to the seasons, so some people call Sawsbuck the harbingers of spring.",
@@ -11887,7 +11892,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 587,
+                            num_pokedex = 574,
                             attack = 158.0,
                             defense = 127.0,
                             description = "As it flies, it scatters electricity around, so bird Pokémon keep their distance. That's why Emolga can keep all its food to itself.",
@@ -11902,7 +11907,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 588,
+                            num_pokedex = 575,
                             attack = 137.0,
                             defense = 87.0,
                             description = "For some reason they evolve when they receive electrical energy while they are attacking Shelmet.",
@@ -11917,7 +11922,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 589,
+                            num_pokedex = 576,
                             attack = 223.0,
                             defense = 187.0,
                             description = "These Pokémon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.",
@@ -11932,7 +11937,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 590,
+                            num_pokedex = 577,
                             attack = 97.0,
                             defense = 91.0,
                             description = "It lures Pokémon with its pattern that looks just like a Poké Ball, then releases poison spores.",
@@ -11947,7 +11952,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 591,
+                            num_pokedex = 578,
                             attack = 155.0,
                             defense = 139.0,
                             description = "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
@@ -11962,7 +11967,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 592,
+                            num_pokedex = 579,
                             attack = 115.0,
                             defense = 134.0,
                             description = "Using the invisible poison spikes on its veillike arms and legs, it paralyzes its enemies and causes them to drown.",
@@ -11979,7 +11984,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 593,
+                            num_pokedex = 580,
                             attack = 159.0,
                             defense = 178.0,
                             description = "Fishermen are terrified of Jellicent. It's rumored to drag them into the sea and steal their lives away.",
@@ -11996,7 +12001,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 594,
+                            num_pokedex = 581,
                             attack = 138.0,
                             defense = 131.0,
                             description = "The reason it helps Pokémon in a weakened condition is that any Pokémon coming after them may also attack Alomomola.",
@@ -12011,7 +12016,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 595,
+                            num_pokedex = 582,
                             attack = 110.0,
                             defense = 98.0,
                             description = "They attach themselves to large-bodied Pokémon and absorb static electricity, which they store in an electric pouch.",
@@ -12026,7 +12031,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 596,
+                            num_pokedex = 583,
                             attack = 201.0,
                             defense = 128.0,
                             description = "When attacked, they create an electric barrier by spitting out many electrically charged threads.",
@@ -12041,7 +12046,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 597,
+                            num_pokedex = 584,
                             attack = 82.0,
                             defense = 155.0,
                             description = "It absorbs the iron it finds in the rock while clinging to the ceiling. It shoots spikes when in danger.",
@@ -12056,7 +12061,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 598,
+                            num_pokedex = 585,
                             attack = 158.0,
                             defense = 223.0,
                             description = "They attach themselves to cave ceilings, firing steel spikes at targets passing beneath them.",
@@ -12071,7 +12076,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 599,
+                            num_pokedex = 586,
                             attack = 98.0,
                             defense = 121.0,
                             description = "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
@@ -12086,7 +12091,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 600,
+                            num_pokedex = 587,
                             attack = 150.0,
                             defense = 174.0,
                             description = "A minigear and big gear comprise its body. If the minigear it launches at a foe doesn't return, it will die.",
@@ -12101,7 +12106,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 601,
+                            num_pokedex = 588,
                             attack = 199.0,
                             defense = 214.0,
                             description = "Its red core functions as an energy tank. It fires the charged energy through its spikes into an area.",
@@ -12116,7 +12121,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 602,
+                            num_pokedex = 589,
                             attack = 105.0,
                             defense = 78.0,
                             description = "One alone can emit only a trickle of electricity, so a group of them gathers to unleash a powerful electric shock.",
@@ -12131,7 +12136,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 603,
+                            num_pokedex = 590,
                             attack = 156.0,
                             defense = 130.0,
                             description = "These Pokémon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.",
@@ -12146,7 +12151,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 604,
+                            num_pokedex = 591,
                             attack = 217.0,
                             defense = 152.0,
                             description = "They crawl out of the ocean using their arms. They will attack prey on shore and immediately drag it into the ocean.",
@@ -12161,7 +12166,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 605,
+                            num_pokedex = 592,
                             attack = 148.0,
                             defense = 100.0,
                             description = "This Pokémon is shrouded in mystery. It's said to have appeared from a UFO that fell from the sky about 50 years ago.",
@@ -12176,7 +12181,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 606,
+                            num_pokedex = 593,
                             attack = 221.0,
                             defense = 163.0,
                             description = "It has strong psychic powers. Using its fingers that flash three different colors, it controls its opponents and rewrites their memories.",
@@ -12191,7 +12196,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 607,
+                            num_pokedex = 594,
                             attack = 108.0,
                             defense = 98.0,
                             description = "Litwick shines a light that absorbs the life energy of people and Pokémon, which becomes the fuel that it burns.",
@@ -12206,7 +12211,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 608,
+                            num_pokedex = 595,
                             attack = 169.0,
                             defense = 115.0,
                             description = "It arrives near the moment of death and steals spirit from the body.",
@@ -12221,7 +12226,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 609,
+                            num_pokedex = 596,
                             attack = 271.0,
                             defense = 182.0,
                             description = "The spirits burned up in its ominous flame lose their way and wander this world forever.",
@@ -12236,7 +12241,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 610,
+                            num_pokedex = 597,
                             attack = 154.0,
                             defense = 101.0,
                             description = "They mark their territory by leaving gashes in trees with their tusks. If a tusk breaks, a new one grows in quickly.",
@@ -12251,7 +12256,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 611,
+                            num_pokedex = 598,
                             attack = 212.0,
                             defense = 123.0,
                             description = "A broken tusk will not grow back, so it diligently sharpens its tusks on river rocks after the end of a battle.",
@@ -12266,7 +12271,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 612,
+                            num_pokedex = 599,
                             attack = 284.0,
                             defense = 172.0,
                             description = "Their sturdy tusks will stay sharp even if used to cut steel beams. These Pokémon are covered in hard armor.",
@@ -12281,7 +12286,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 613,
+                            num_pokedex = 600,
                             attack = 128.0,
                             defense = 74.0,
                             description = "Their snot is a barometer of health. When healthy, their snot is sticky and the power of their ice moves increases.",
@@ -12296,7 +12301,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 614,
+                            num_pokedex = 601,
                             attack = 233.0,
                             defense = 152.0,
                             description = "It freezes its breath to create fangs and claws of ice to fight with. Cold northern areas are its habitat.",
@@ -12311,7 +12316,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 615,
+                            num_pokedex = 602,
                             attack = 190.0,
                             defense = 218.0,
                             description = "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148 degrees Fahrenheit.",
@@ -12326,7 +12331,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 616,
+                            num_pokedex = 603,
                             attack = 72.0,
                             defense = 140.0,
                             description = "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
@@ -12341,7 +12346,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 617,
+                            num_pokedex = 604,
                             attack = 220.0,
                             defense = 120.0,
                             description = "When its body dries out, it weakens. So, to prevent dehydration, it wraps itself in many layers of thin membrane.",
@@ -12356,7 +12361,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 618,
+                            num_pokedex = 605,
                             attack = 144.0,
                             defense = 171.0,
                             description = "It conceals itself in the mud of the seashore. Then it waits. When prey touch it, it delivers a jolt of electricity.",
@@ -12371,7 +12376,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 619,
+                            num_pokedex = 606,
                             attack = 160.0,
                             defense = 98.0,
                             description = "They seclude themselves in the mountains and devote themselves to training. The form of their kicks and chops differs from pack to pack.",
@@ -12386,7 +12391,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 620,
+                            num_pokedex = 607,
                             attack = 258.0,
                             defense = 127.0,
                             description = "When Mienshao lets out a bizarre wail, you're in danger. A flurry of kicks and chops too fast to see is about to be unleashed!",
@@ -12401,7 +12406,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 621,
+                            num_pokedex = 608,
                             attack = 213.0,
                             defense = 170.0,
                             description = "It infiltrates tunnels that Pokémon like Diglett and Dugtrio have dug and quietly waits for prey to pass through.",
@@ -12416,7 +12421,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 622,
+                            num_pokedex = 609,
                             attack = 127.0,
                             defense = 92.0,
                             description = "Although ancient people apparently built it by working with clay, the source of its energy is unclear.",
@@ -12431,7 +12436,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 623,
+                            num_pokedex = 610,
                             attack = 222.0,
                             defense = 154.0,
                             description = "When the seal on its chest is removed, it rages indiscriminately, turning the whole town around it into a mountain of rubble.",
@@ -12446,7 +12451,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 624,
+                            num_pokedex = 611,
                             attack = 154.0,
                             defense = 114.0,
                             description = "It follows Bisharp's orders to a tee when it attacks enemies. After slashing an opponent, Pawniard clangs both of its blades together.",
@@ -12461,7 +12466,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 625,
+                            num_pokedex = 612,
                             attack = 232.0,
                             defense = 176.0,
                             description = "It leads a group of Pawniard. Bisharp doesn't even change its expression when it deals the finishing blow to an opponent.",
@@ -12476,7 +12481,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 626,
+                            num_pokedex = 613,
                             attack = 195.0,
                             defense = 182.0,
                             description = "Their fluffy fur absorbs damage, even if they strike foes with a fierce headbutt.",
@@ -12491,7 +12496,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 627,
+                            num_pokedex = 614,
                             attack = 150.0,
                             defense = 97.0,
                             description = "Known as a natural-born warrior, soon after its hatching, it will challenge its parent to a fight in order to gain their acceptance.",
@@ -12506,7 +12511,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 628,
+                            num_pokedex = 615,
                             attack = 232.0,
                             defense = 152.0,
                             description = "Known as “the hero of the skies,\" this Pokémon is so proud and so brave that it will never retreat, even when it's injured.",
@@ -12521,7 +12526,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 629,
+                            num_pokedex = 616,
                             attack = 105.0,
                             defense = 139.0,
                             description = "Its healthy appetite leads to visible growth spurts. It often has to replace the bones it wears as its size increases.",
@@ -12536,7 +12541,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 630,
+                            num_pokedex = 617,
                             attack = 129.0,
                             defense = 205.0,
                             description = "It's always searching for food for Vullaby. When it finds a weak Pokémon, Mandibuzz swoops it right off to its nest.",
@@ -12551,7 +12556,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 631,
+                            num_pokedex = 618,
                             attack = 204.0,
                             defense = 129.0,
                             description = "It draws in air through its tail, transforms it into fire, and uses it like a tongue. It melts Durant and eats them.",
@@ -12566,7 +12571,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 632,
+                            num_pokedex = 619,
                             attack = 217.0,
                             defense = 188.0,
                             description = "They attack in groups, covering themselves in steel armor to protect themselves from Heatmor.",
@@ -12581,7 +12586,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 633,
+                            num_pokedex = 620,
                             attack = 116.0,
                             defense = 93.0,
                             description = "Lacking sight, it's unaware of its surroundings, so it bumps into things and eats anything that moves.",
@@ -12596,7 +12601,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 634,
+                            num_pokedex = 621,
                             attack = 159.0,
                             defense = 135.0,
                             description = "After it has eaten up all the food in its territory, it moves to another area. Its two heads do not get along.",
@@ -12611,7 +12616,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 635,
+                            num_pokedex = 622,
                             attack = 256.0,
                             defense = 188.0,
                             description = "It responds to movement by attacking. This scary, three-headed Pokémon devours everything in its path!",
@@ -12626,7 +12631,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 636,
+                            num_pokedex = 623,
                             attack = 156.0,
                             defense = 107.0,
                             description = "It protects itself with flame. Long years ago, people believed Larvesta had a nest on the sun.",
@@ -12641,7 +12646,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 637,
+                            num_pokedex = 624,
                             attack = 264.0,
                             defense = 189.0,
                             description = "According to legends, it was hatched from a flaming cocoon to save people and Pokémon that were suffering from the cold.",
@@ -12656,7 +12661,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 638,
+                            num_pokedex = 625,
                             attack = 192.0,
                             defense = 229.0,
                             description = "It has a body and heart of steel. It worked with its allies to punish people when they hurt Pokémon.",
@@ -12671,7 +12676,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 639,
+                            num_pokedex = 626,
                             attack = 260.0,
                             defense = 192.0,
                             description = "Spoken of in legend, this Pokémon used its phenomenal power to destroy a castle in its effort to protect Pokémon.",
@@ -12686,7 +12691,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 640,
+                            num_pokedex = 627,
                             attack = 192.0,
                             defense = 229.0,
                             description = "Legends say this Pokémon confounded opponents with its swift movements.",
@@ -12701,7 +12706,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 641,
+                            num_pokedex = 628,
                             attack = 266.0,
                             defense = 164.0,
                             description = "Tornadus expels massive energy from its tail, causing severe storms. Its power is great enough to blow houses away.",
@@ -12716,7 +12721,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 642,
+                            num_pokedex = 629,
                             attack = 266.0,
                             defense = 164.0,
                             description = "As it flies around, it shoots lightning all over the place and causes forest fires. It is therefore disliked.",
@@ -12731,7 +12736,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 643,
+                            num_pokedex = 630,
                             attack = 275.0,
                             defense = 211.0,
                             description = "When Reshiram's tail flares, the heat energy moves the atmosphere and changes the world's weather.",
@@ -12746,7 +12751,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 644,
+                            num_pokedex = 631,
                             attack = 275.0,
                             defense = 211.0,
                             description = "Concealing itself in lightning clouds, it flies throughout the Unova region. It creates electricity in its tail.",
@@ -12761,7 +12766,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 645,
+                            num_pokedex = 632,
                             attack = 261.0,
                             defense = 182.0,
                             description = "From the forces of lightning and wind, it creates energy to give nutrients to the soil and make the land abundant.",
@@ -12776,7 +12781,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 646,
+                            num_pokedex = 633,
                             attack = 246.0,
                             defense = 170.0,
                             description = "It generates a powerful, freezing energy inside itself, but its body became frozen when the energy leaked out.",
@@ -12791,7 +12796,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 647,
+                            num_pokedex = 634,
                             attack = 260.0,
                             defense = 192.0,
                             description = "When it is resolute, its body fills with power and it becomes swifter. Its jumps are then too fast to follow.",
@@ -12806,7 +12811,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 648,
+                            num_pokedex = 635,
                             attack = 250.0,
                             defense = 225.0,
                             description = "Its melodies are sung with a special vocalization method that can control the feelings of those who hear it.",
@@ -12821,7 +12826,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 650,
+                            num_pokedex = 636,
                             attack = 110.0,
                             defense = 106.0,
                             description = "The quills on its head are usually soft. When it flexes them, the points become so hard and sharp that they can pierce rock.",
@@ -12836,7 +12841,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 651,
+                            num_pokedex = 637,
                             attack = 146.0,
                             defense = 156.0,
                             description = "It relies on its sturdy shell to deflect predators' attacks. It counterattacks with its sharp quills.",
@@ -12851,7 +12856,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 653,
+                            num_pokedex = 638,
                             attack = 116.0,
                             defense = 102.0,
                             description = "Eating a twig fills it with energy, and its roomy ears give vent to air hotter than 390 degrees Fahrenheit.",
@@ -12866,7 +12871,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 656,
+                            num_pokedex = 639,
                             attack = 122.0,
                             defense = 84.0,
                             description = "It secretes flexible bubbles from its chest and back. The bubbles reduce the damage it would otherwise take when attacked.",
@@ -12881,7 +12886,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 658,
+                            num_pokedex = 640,
                             attack = 223.0,
                             defense = 152.0,
                             description = "It creates throwing stars out of compressed water. When it spins them and throws them at high speed, these stars can split metal in two.",
@@ -12896,7 +12901,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 659,
+                            num_pokedex = 641,
                             attack = 68.0,
                             defense = 72.0,
                             description = "They use their large ears to dig burrows. They will dig the whole night through.",
@@ -12911,7 +12916,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 663,
+                            num_pokedex = 642,
                             attack = 176.0,
                             defense = 155.0,
                             description = "In the fever of an exciting battle, it showers embers from the gaps between its feathers and takes to the air.",
@@ -12926,7 +12931,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 665,
+                            num_pokedex = 643,
                             attack = 48.0,
                             defense = 89.0,
                             description = "It lives hidden within thicket shadows. When predators attack, it quickly bristles the fur covering its body in an effort to threaten them.",
@@ -12941,7 +12946,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 667,
+                            num_pokedex = 644,
                             attack = 139.0,
                             defense = 112.0,
                             description = "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
@@ -12956,7 +12961,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 672,
+                            num_pokedex = 645,
                             attack = 123.0,
                             defense = 102.0,
                             description = "Thought to be one of the first Pokémon to live in harmony with humans, it has a placid disposition.",
@@ -12971,7 +12976,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 674,
+                            num_pokedex = 646,
                             attack = 145.0,
                             defense = 107.0,
                             description = "It does its best to be taken seriously by its enemies, but its glare is not sufficiently intimidating. Chewing on a leaf is its trademark.",
@@ -12986,7 +12991,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 677,
+                            num_pokedex = 647,
                             attack = 120.0,
                             defense = 114.0,
                             description = "The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.",
@@ -13001,7 +13006,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 682,
+                            num_pokedex = 648,
                             attack = 110.0,
                             defense = 113.0,
                             description = "It emits a scent that enraptures those who smell it. This fragrance changes depending on what it has eaten.",
@@ -13016,7 +13021,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 683,
+                            num_pokedex = 649,
                             attack = 173.0,
                             defense = 150.0,
                             description = "It devises various scents, pleasant and unpleasant, and emits scents that its enemies dislike in order to gain an edge in battle.",
@@ -13031,7 +13036,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 684,
+                            num_pokedex = 650,
                             attack = 109.0,
                             defense = 119.0,
                             description = "To entangle its opponents in battle, it extrudes white threads as sweet and sticky as cotton candy.",
@@ -13046,7 +13051,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 685,
+                            num_pokedex = 651,
                             attack = 168.0,
                             defense = 163.0,
                             description = "It can distinguish the faintest of scents. It puts its sensitive sense of smell to use by helping pastry chefs in their work.",
@@ -13061,7 +13066,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 688,
+                            num_pokedex = 652,
                             attack = 96.0,
                             defense = 120.0,
                             description = "Two Binacle live together on one rock. When they fight, one of them will move to a different rock.",
@@ -13076,7 +13081,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 690,
+                            num_pokedex = 653,
                             attack = 109.0,
                             defense = 109.0,
                             description = "Camouflaged as rotten kelp, they spray liquid poison on prey that approaches unawares and then finish it off.",
@@ -13091,7 +13096,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 692,
+                            num_pokedex = 654,
                             attack = 108.0,
                             defense = 117.0,
                             description = "They knock down flying prey by firing compressed water from their massive claws like shooting a pistol.",
@@ -13106,7 +13111,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 694,
+                            num_pokedex = 655,
                             attack = 115.0,
                             defense = 78.0,
                             description = "They make their home in deserts. They can generate their energy from basking in the sun, so eating food is not a requirement.",
@@ -13121,7 +13126,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 697,
+                            num_pokedex = 656,
                             attack = 227.0,
                             defense = 191.0,
                             description = "Thanks to its gargantuan jaws, which could shred thick metal plates as if they were paper, it was invincible in the ancient world it once inhabited.",
@@ -13136,7 +13141,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 701,
+                            num_pokedex = 657,
                             attack = 195.0,
                             defense = 153.0,
                             description = "Although its body is small, its proficient fighting skills enable it to keep up with big bruisers like Machamp and Hariyama.",
@@ -13151,7 +13156,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 702,
+                            num_pokedex = 658,
                             attack = 164.0,
                             defense = 134.0,
                             description = "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
@@ -13166,7 +13171,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 703,
+                            num_pokedex = 659,
                             attack = 95.0,
                             defense = 285.0,
                             description = "Born from the temperatures and pressures deep underground, it fires beams from the stone in its head.",
@@ -13181,7 +13186,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 704,
+                            num_pokedex = 660,
                             attack = 101.0,
                             defense = 112.0,
                             description = "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn't dry out.",
@@ -13196,7 +13201,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 707,
+                            num_pokedex = 661,
                             attack = 160.0,
                             defense = 179.0,
                             description = "These key collectors threaten any attackers by fiercely jingling their keys at them.",
@@ -13211,7 +13216,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 708,
+                            num_pokedex = 662,
                             attack = 125.0,
                             defense = 103.0,
                             description = "These Pokémon are created when spirits possess rotten tree stumps. They prefer to live in abandoned forests.",
@@ -13226,7 +13231,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 710,
+                            num_pokedex = 663,
                             attack = 122.0,
                             defense = 124.0,
                             description = "The pumpkin body is inhabited by a spirit trapped in this world. As the sun sets, it becomes restless and active.",
@@ -13241,7 +13246,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 712,
+                            num_pokedex = 664,
                             attack = 117.0,
                             defense = 120.0,
                             description = "It blocks opponents' attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
@@ -13256,7 +13261,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 720,
+                            num_pokedex = 665,
                             attack = 261.0,
                             defense = 187.0,
                             description = "In its true form, it possess a huge amount of power. Legends of its avarice tell how it once carried off an entire castle to gain the treasure hidden within.",
@@ -13271,7 +13276,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 802,
+                            num_pokedex = 666,
                             attack = 265.0,
                             defense = 190.0,
                             description = "It sinks into the shadows of people and Pokémon, where it can understand their feelings and copy their capabilities.",
@@ -13286,7 +13291,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 803,
+                            num_pokedex = 667,
                             attack = 1.0,
                             defense = 1.0,
                             description = "An Ultra Beast that lives in a different world, it cackles wildly as it sprays its opponents with poison from the needles on its head.",
@@ -13301,7 +13306,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 804,
+                            num_pokedex = 668,
                             attack = 1.0,
                             defense = 1.0,
                             description = "One kind of Ultra Beast, it fires a glowing, venomous liquid from its needles. This liquid is also immensely adhesive.",
@@ -13316,7 +13321,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 805,
+                            num_pokedex = 669,
                             attack = 1.0,
                             defense = 1.0,
                             description = "When stone walls started moving and attacking, the brute's true identity was this mysterious life-form, which brings to mind an Ultra Beast.",
@@ -13331,7 +13336,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 806,
+                            num_pokedex = 670,
                             attack = 1.0,
                             defense = 1.0,
                             description = "A UB that appeared from an Ultra Wormhole, it causes explosions, then takes advantage of opponents' surprise to rob them of their vitality.",
@@ -13346,7 +13351,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 807,
+                            num_pokedex = 671,
                             attack = 1.0,
                             defense = 1.0,
                             description = "It approaches its enemies at the speed of lightning, then tears them limb from limb with its sharp claws.",
@@ -13361,7 +13366,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 808,
+                            num_pokedex = 672,
                             attack = 118.0,
                             defense = 99.0,
                             description = "It melts particles of iron and other metals found in the subsoil, so it can absorb them into its body of molten steel.",
@@ -13376,7 +13381,7 @@ namespace PokemonGolotEF.Migrations
                         },
                         new
                         {
-                            num_pokedex = 809,
+                            num_pokedex = 673,
                             attack = 226.0,
                             defense = 190.0,
                             description = "Revered long ago for its capacity to create iron from nothing, for some reason it has come back to life after 3,000 years.",
@@ -13401,7 +13406,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("pokemon", "element");
 
-                    b.ToTable("Pokemon_element", (string)null);
+                    b.ToTable("Pokemon_element");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>
@@ -13416,7 +13421,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("ex_owner");
 
-                    b.ToTable("Pokemon_exchange", (string)null);
+                    b.ToTable("Pokemon_exchange");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonLevel", b =>
@@ -13435,7 +13440,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("pokemon_level");
 
-                    b.ToTable("Pokemon_level", (string)null);
+                    b.ToTable("Pokemon_level");
 
                     b.HasData(
                         new
@@ -14032,7 +14037,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("pokemon");
 
-                    b.ToTable("Pokemon_owned", (string)null);
+                    b.ToTable("Pokemon_owned");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonRegister", b =>
@@ -14062,7 +14067,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Pokemon_register", (string)null);
+                    b.ToTable("Pokemon_register");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokeStop", b =>
@@ -14076,7 +14081,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("location");
 
-                    b.ToTable("PokeStop", (string)null);
+                    b.ToTable("PokeStop");
 
                     b.HasData(
                         new
@@ -15887,7 +15892,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("receptor");
 
-                    b.ToTable("Present", (string)null);
+                    b.ToTable("Present");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Raid", b =>
@@ -15906,7 +15911,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("boss");
 
-                    b.ToTable("Raid", (string)null);
+                    b.ToTable("Raid");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.RaidParticipant", b =>
@@ -15926,7 +15931,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("player");
 
-                    b.ToTable("Raid_participants", (string)null);
+                    b.ToTable("Raid_participants");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Team", b =>
@@ -15944,7 +15949,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasKey("name");
 
-                    b.ToTable("Team", (string)null);
+                    b.ToTable("Team");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.TypeTable", b =>
@@ -15962,7 +15967,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("affected_element");
 
-                    b.ToTable("Type_table", (string)null);
+                    b.ToTable("Type_table");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.User", b =>
@@ -16001,7 +16006,7 @@ namespace PokemonGolotEF.Migrations
 
                     b.HasIndex("team");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.EggInventory", b =>
@@ -16220,6 +16225,15 @@ namespace PokemonGolotEF.Migrations
                     b.Navigation("Package");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PokemonGolotEF.Model.Player", b =>
+                {
+                    b.HasOne("PokemonGolotEF.Model.PlayerRol", "Rol")
+                        .WithMany()
+                        .HasForeignKey("rol");
+
+                    b.Navigation("Rol");
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.PokemonExchange", b =>

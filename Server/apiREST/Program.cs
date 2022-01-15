@@ -1,3 +1,4 @@
+using apiREST.Data;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -8,6 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddScoped<pokemonGolotApi, pokemonGolotApi>();
+
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+});
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -36,6 +44,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+
 
 app.MapControllers();
 

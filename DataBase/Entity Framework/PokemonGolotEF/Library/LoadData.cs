@@ -27,7 +27,7 @@ namespace PokemonGolotEF.Library
         {
             Pokemon actual;
             bool isIn = false;
-           
+            int numpokedex = 1;
 
             for (var gen = 1; gen <= 7; gen++) 
             {
@@ -40,7 +40,7 @@ namespace PokemonGolotEF.Library
 
                     foreach (Pokemon poke in pokemonGolot.pokemons) 
                     {
-                        if (poke.num_pokedex == actual.num_pokedex) 
+                        if (poke.name == actual.name) 
                         {
                             isIn = true;
                             break;
@@ -51,10 +51,14 @@ namespace PokemonGolotEF.Library
                         LoadPokemonImages(actual).Wait();
                         LoadPokemonDetails(actual).Wait();                        
                         actual.setGenders(GetPokemonGender(genderRawJson, actual));
-                        Console.WriteLine(actual.name + " " + actual.num_pokedex.ToString());
-                        Console.WriteLine(actual.female_gender_rate.ToString() + " " + actual.male_gender_rate.ToString());
+                        Console.WriteLine(actual.name + ", Old pokedex num: " + actual.num_pokedex.ToString());
+
                         if (actual.description != null && actual.img_back != null && actual.img_front != null)
+                        {
+                            actual.num_pokedex = numpokedex++;
+                            Console.WriteLine(actual.name + ", New pokedex num: " + actual.num_pokedex.ToString());
                             pokemonGolot.pokemons.Add(actual);
+                        }
                     }
                     isIn = false;
                 }
