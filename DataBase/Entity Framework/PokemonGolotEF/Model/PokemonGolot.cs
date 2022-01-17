@@ -21,6 +21,7 @@ namespace PokemonGolotEF.Model
         public List<TypeTable> typeTable { get; set; }  // to do
         public List<Egg> eggs { get; set; }  // to do
         public List<PokemonElement> pokemonElements { get; set; } // to do
+        public List<PlayerRol> rols { get; set; }
 
         public PokemonGolot() 
         {
@@ -36,6 +37,7 @@ namespace PokemonGolotEF.Model
             levelupObjects = new List<LevelupObjectReward>();
             typeTable = new List<TypeTable>();
             eggs = new List<Egg>();
+            rols = new List<PlayerRol>();
         }
 
     }

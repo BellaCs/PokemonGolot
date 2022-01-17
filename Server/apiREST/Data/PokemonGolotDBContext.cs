@@ -118,5 +118,6 @@ namespace apiREST.Data
         public DbSet<User> User { get; set; }
         public DbSet<Player> Player { get; set; }
         public DbSet<Pokemon> Pokemon { get; set; }
+        public DbSet<apiREST.Model.Egg> Egg { get; set; }
     }
 }

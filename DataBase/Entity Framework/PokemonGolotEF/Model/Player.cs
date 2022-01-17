@@ -20,7 +20,7 @@ namespace PokemonGolotEF.Model
         public string name { get; set; }
         [Required]
         public string password { get; set; }
-        public char gender { get; set; }
+        public string gender { get; set; }
         public DateTime birth_date { get; set; }
         [ForeignKey("Rol")]
         public string rol { get; set; }

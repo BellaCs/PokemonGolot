@@ -144,6 +144,11 @@ namespace PokemonGolotEF.Data
             model.Entity<PokemonElement>()
                 .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
+            // Player Rols
+
+            model.Entity<PlayerRol>()
+                .HasData(data.pokemonGolot.rols);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,16 +1,13 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiREST.Data;
 using apiREST.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apiREST.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PokemonsController : ControllerBase
@@ -22,11 +19,16 @@ namespace apiREST.Controllers
             _context = context;
         }
 
-        // GET: api/Pokemons
+        /// <summary>
+        /// Return all pokemons ordered by pokedex num
+        /// </summary>
+        /// <remarks></remarks>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">Server error</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemon()
         {
-            return await _context.Pokemon.ToListAsync();
+            return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();
         }
 
         // GET: api/Pokemons/5

@@ -3027,8 +3027,8 @@ namespace PokemonGolotEF.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<char>("gender")
-                        .HasColumnType("character(1)");
+                    b.Property<string>("gender")
+                        .HasColumnType("text");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -3056,6 +3056,16 @@ namespace PokemonGolotEF.Migrations
                     b.HasKey("rol");
 
                     b.ToTable("Player_rols");
+
+                    b.HasData(
+                        new
+                        {
+                            rol = "Player"
+                        },
+                        new
+                        {
+                            rol = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("PokemonGolotEF.Model.Pokemon", b =>

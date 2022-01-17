@@ -21,6 +21,7 @@ namespace PokemonGolotEF.Library
             LoadPokestops();
             LoadMovement().Wait();
             LoadGyms();
+            LoadRols();
         }
 
         public async Task LoadPokemon() 
@@ -266,6 +267,18 @@ namespace PokemonGolotEF.Library
                 }
                 isIn = false;
 
+            }
+        }
+
+        public void LoadRols() 
+        {
+            string RolJson = readRolsJson.readRolsData();
+            JToken RolsList = JToken.Parse(RolJson);
+
+            foreach (JToken rol in RolsList) 
+            {
+                PlayerRol actual = new PlayerRol(rol);
+                pokemonGolot.rols.Add(actual);
             }
         }
     }
