@@ -22,17 +22,25 @@ namespace apiREST.Controllers
         /// <summary>
         /// Return all pokemons ordered by pokedex num
         /// </summary>
-        /// <remarks></remarks>
-        /// <response code="401">Unauthorized</response>
-        /// <response code="500">Server error</response>
+        /// <remarks> Return pokemons with short info format </remarks>
+        /// <response code="401"> Unauthorized </response>
+        /// <response code="500"> Server error </response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemon()
         {
             return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();
         }
 
-        // GET: api/Pokemon/5
-        [HttpGet("{numPokedex}")]
+
+        /// <summary>
+        /// Return concret pokemon by pokedex number
+        /// </summary>
+        /// <remarks> Return pokemon with full info </remarks>
+        /// <param name="numPokedex"> The number of pokemon in the pokedex </param>
+        /// <response code="401"> Unauthorized </response>
+        /// <response code="404"> Pokemon not found </response>
+        /// <response code="500"> Server error </response>
+        [HttpGet("detail/{numPokedex}")]
         public async Task<ActionResult<Pokemon>> GetPokemon(int numPokedex)
         {
             var pokemon = await _context.Pokemon.FindAsync(numPokedex);

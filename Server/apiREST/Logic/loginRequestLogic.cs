@@ -15,13 +15,13 @@ namespace apiREST.Logic
             _encryptLogic = new encryptLogic();
         }
 
-        public async Task<Player?> UserExist(PlayerLogin? loginInfo)
+        public async Task<User?> UserExist(UserLogin? loginInfo)
         {
             if (loginInfo == null)
                 return null;
 
             //Player? player = await _context.Player.FindAsync(_encryptLogic.EncryptUser(loginInfo!.user_name!));
-            Player? player = await _context.Player.FindAsync(loginInfo!.user_name!);
+            User? player = await _context.User.FindAsync(loginInfo!.user_name!.ToLower());
 
             if (player == null)
             {               

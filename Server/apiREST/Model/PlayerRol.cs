@@ -9,6 +9,6 @@ namespace apiREST.Model
         public string? rol { get; set; }
         
 
-        ICollection<Player>? players { get; set; }
+        ICollection<User>? players { get; set; }
     }
 }

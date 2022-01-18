@@ -7,7 +7,7 @@ namespace apiREST.Model
     {
         public Team()
         {
-            Players = new HashSet<User>();
+            Players = new HashSet<Player>();
             Gyms = new HashSet<Gym>();
         }
 
@@ -19,7 +19,7 @@ namespace apiREST.Model
         public string? image { get; set; }
 
 
-        public virtual ICollection<User> Players { get; set; }
+        public virtual ICollection<Player> Players { get; set; }
         public virtual ICollection<Gym> Gyms { get; set; }
     }
 }

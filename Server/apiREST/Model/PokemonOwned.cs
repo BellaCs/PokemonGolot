@@ -28,7 +28,7 @@ namespace apiREST.Model
         [ForeignKey("pokemon")]
         public virtual Pokemon? Pokemon { get; set; }
         [ForeignKey("owner")]
-        public virtual User? Owner { get; set; }
+        public virtual Player? Owner { get; set; }
         [ForeignKey("level")]
         public virtual PokemonLevel? Level { get; set; }
 

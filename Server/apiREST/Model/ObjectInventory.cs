@@ -17,7 +17,7 @@ namespace apiREST.Model
         [ForeignKey("object_name")]
         public virtual Objects? Object { get; set; }
         [ForeignKey("player")]
-        public virtual User? Player { get; set; }
+        public virtual Player? Player { get; set; }
 
     }
 }

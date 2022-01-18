@@ -14,7 +14,7 @@ namespace PokemonGolotEF.Library
 
         public LoadData()
         {
-            LoadPokemon().Wait();
+            //LoadPokemon().Wait();
             LoadLevel().Wait();
             LoadPokemonLevels().Wait();
             LoadElement().Wait();

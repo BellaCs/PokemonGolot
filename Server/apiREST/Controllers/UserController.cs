@@ -11,18 +11,18 @@ namespace apiREST.Controllers
     [AllowAnonymous]
     [Route("player")]
     [ApiController]
-    public class PlayerController : ControllerBase
+    public class UserController : ControllerBase
     {
 
         private readonly pokemonGolotApi _context;
         private readonly registerLogic _registerLogic;
-        private readonly playerLogic _playerLogic;
+        private readonly userLogic _playerLogic;
 
-        public PlayerController(pokemonGolotApi context)
+        public UserController(pokemonGolotApi context)
         {
             _context = context;
             _registerLogic = new registerLogic();
-            _playerLogic = new playerLogic();
+            _playerLogic = new userLogic();
         }
 
 
@@ -34,11 +34,11 @@ namespace apiREST.Controllers
         /// <returns></returns>
         [Route("public")]
         [HttpPost]
-        public async Task<ActionResult<ResponsePlayer>> RegisterNewPlayer(PlayerRegister newPlayer)
+        public async Task<ActionResult<ResponsePlayer>> RegisterNewUser(UserRegister newPlayer)
         {
-            Player player =  _registerLogic.publicRegister(newPlayer);
+            User player =  _registerLogic.publicRegister(newPlayer);
 
-            _context.Player.Add(player);
+            _context.User.Add(player);
 
             try
             {
@@ -46,7 +46,7 @@ namespace apiREST.Controllers
             }
             catch (DbUpdateException)
             {
-                if (PlayerExists(player.user_name))
+                if (UserExists(player.user_name))
                 {
                     return Conflict();
                 }
@@ -58,9 +58,9 @@ namespace apiREST.Controllers
 
             return Ok(_playerLogic.toDecryptedPlayer(player));
         }
-        private bool PlayerExists(string? user_name)
+        private bool UserExists(string? user_name)
         {
-            return _context.Player.Any(p => p.user_name == user_name);
+            return _context.User.Any(p => p.user_name == user_name);
         }
 
     }

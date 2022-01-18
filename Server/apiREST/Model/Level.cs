@@ -7,7 +7,7 @@ namespace apiREST.Model
 
         public Level()
         {
-            users = new HashSet<User>();
+            users = new HashSet<Player>();
             rewards = new HashSet<LevelupObjectReward>();
         }
 
@@ -18,7 +18,7 @@ namespace apiREST.Model
 
 
 
-        public virtual ICollection<User> users { get; set; }
+        public virtual ICollection<Player> users { get; set; }
         public virtual ICollection<LevelupObjectReward> rewards { get; set; }
 
     }

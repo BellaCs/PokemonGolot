@@ -1,66 +1,64 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace apiREST.Model
 {
     public class User
     {
-        public User() 
-        {
-            recivedPresents = new HashSet<Present>();
-            presentsToSend = new HashSet<Present>();
-            raidsParticipated = new HashSet<RaidParticipant>();
-            pokemons = new HashSet<PokemonOwned>();
-            friends = new HashSet<Friendship>();
-            pokedex = new HashSet<PokemonRegister>();
-            eggs = new HashSet<EggInventory>();
-            packagesOfferBought = new HashSet<PackageOfferBought>();
-            inventory = new HashSet<ObjectInventory>();
-            trophys = new HashSet<GymTrophy>();
-        }
-
         [Key]
-        [ForeignKey("Player")]
         [StringLength(20)]
+        [Required]
         public string? user_name { get; set; }
-        [ForeignKey("Team")]
-        public string? team { get; set; }       
         [Required]
-        [ForeignKey("Level")]
-        public short? level { get; set; }
+        public string? email { get; set; }
         [Required]
-        public int? inventory_capacity { get; set; }
+        public string? name { get; set; }
         [Required]
-        public int? current_level_experience { get; set; }
-        [Required]
-        public int? experience { get; set; }
-        [Required]
-        public int? pokemon_slots { get; set; }
-        public int? won_battles { get; set; }
-        public int? caputred_pokemon { get; set; }
-
-
-
-
-
-
-        [ForeignKey("team")]
-        public virtual Team? Team { get; set; }
-        [ForeignKey("level")]
-        public virtual Level? Level { get; set; }
-        [ForeignKey("user_name")]
-        public virtual Player? Player { get; set; }
-
-        public virtual ICollection<Present> recivedPresents { get; set; }
-        public virtual ICollection<Present> presentsToSend { get; set; }
-        public virtual ICollection<RaidParticipant> raidsParticipated { get; set; }
-        public virtual ICollection<PokemonOwned> pokemons { get; set; }
-        public virtual ICollection<Friendship> friends { get; set; }
-        public virtual ICollection<PokemonRegister> pokedex { get; set; }
-        public virtual ICollection<EggInventory> eggs { get; set; }
-        public virtual ICollection<PackageOfferBought> packagesOfferBought { get; set; }
-        public virtual ICollection<ObjectInventory> inventory { get; set; }
-        public virtual ICollection<GymTrophy> trophys { get; set; }
-
+        public string? password { get; set; }
+        public string? gender { get; set; }
+        public DateTime birth_date { get; set; }
+        [ForeignKey("Rol")]
+        public string? rol { get; set; }
+        [ForeignKey("rol")]
+        public virtual PlayerRol? Rol { get; set; }
     }
+
+    public class UserLogin
+    {
+        [Required]
+        public string? user_name { get; set; }
+        [Required]
+        public string? password { get; set; }
+    }
+
+    public class UserRegister 
+    {
+        [Required]
+        public string? user_name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public string? name { get; set; }
+        [Required]
+        public string? password { get; set; }
+        public string? gender { get; set; }
+        public DateTime birth_date { get; set; }
+    }
+
+    public class ResponsePlayer 
+    {
+        [Key]
+        [StringLength(20)]
+        [Required]
+        public string? user_name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public string? name { get; set; }
+        public string? gender { get; set; }
+        public DateTime birth_date { get; set; }
+        public string? rol { get; set; }
+    }
+
 }

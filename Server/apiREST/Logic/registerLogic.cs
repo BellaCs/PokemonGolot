@@ -13,12 +13,12 @@ namespace apiREST.Logic
             _enctypt = new encryptLogic();
         }
 
-        public Player publicRegister(PlayerRegister newPlayer) 
+        public User publicRegister(UserRegister newPlayer) 
         {
-            Player  newFullPlayer = new();
+            User  newFullPlayer = new();
 
             //newFullPlayer.user_name = _enctypt.EncryptUser(newPlayer.user_name!);
-            newFullPlayer.user_name = newPlayer.user_name;
+            newFullPlayer.user_name = newPlayer.user_name!.ToLower();
             newFullPlayer.email = newPlayer.email;
             newFullPlayer.name = newPlayer.name;
             newFullPlayer.password = _enctypt.CreatePasswordHash(newPlayer.password!);
@@ -29,7 +29,7 @@ namespace apiREST.Logic
             return newFullPlayer;
         }
 
-        public void privateRegister(Player newPlayer)
+        public void privateRegister(User newPlayer)
         {
 
         }
