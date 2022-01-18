@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Authorization;
 namespace apiREST.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/pokemon")]
     [ApiController]
-    public class PokemonsController : ControllerBase
+    public class PokemonController : ControllerBase
     {
         private readonly pokemonGolotApi _context;
 
-        public PokemonsController(pokemonGolotApi context)
+        public PokemonController(pokemonGolotApi context)
         {
             _context = context;
         }
@@ -31,7 +31,7 @@ namespace apiREST.Controllers
             return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();
         }
 
-        // GET: api/Pokemons/5
+        // GET: api/Pokemon/5
         [HttpGet("{numPokedex}")]
         public async Task<ActionResult<Pokemon>> GetPokemon(int numPokedex)
         {

@@ -7,12 +7,12 @@ namespace apiREST.Logic
     public class loginLogic
     {
         private readonly pokemonGolotApi _context;
-        //private readonly encryptLogic _encryptLogic;
+        private readonly encryptLogic _encryptLogic;
 
         public loginLogic(pokemonGolotApi context)
         {
             _context = context;
-            //_encryptLogic = new encryptLogic();
+            _encryptLogic = new encryptLogic();
         }
 
         public async Task<Player?> UserExist(PlayerLogin? loginInfo)
@@ -27,8 +27,8 @@ namespace apiREST.Logic
             {               
                 return null;                
             } 
-            //else if (player.password != _encryptLogic.CreatePasswordHash(loginInfo.password!))
-            else if (player.password != loginInfo.password!)
+            else if (player.password != _encryptLogic.CreatePasswordHash(loginInfo.password!))
+            //else if (player.password != loginInfo.password!)
             {
                return null;
             }

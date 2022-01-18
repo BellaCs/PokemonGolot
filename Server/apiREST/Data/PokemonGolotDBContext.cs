@@ -108,8 +108,8 @@ namespace apiREST.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
-                string con = "Host=192.168.1.249;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
+                string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
+                //string con = "Host=192.168.1.249;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
                 optionsBuilder.UseNpgsql(con);
             }
         }

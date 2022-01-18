@@ -15,14 +15,13 @@ namespace apiREST.Logic
 
         public Player publicRegister(PlayerRegister newPlayer) 
         {
-            Player  newFullPlayer = new Player();
+            Player  newFullPlayer = new();
 
             //newFullPlayer.user_name = _enctypt.EncryptUser(newPlayer.user_name!);
             newFullPlayer.user_name = newPlayer.user_name;
             newFullPlayer.email = newPlayer.email;
             newFullPlayer.name = newPlayer.name;
-            //newFullPlayer.password = _enctypt.CreatePasswordHash(newPlayer.password!);
-            newFullPlayer.password = newPlayer.password;
+            newFullPlayer.password = _enctypt.CreatePasswordHash(newPlayer.password!);
             newFullPlayer.gender = newPlayer.gender;
             newFullPlayer.birth_date = newPlayer.birth_date;
             newFullPlayer.rol = "Player";

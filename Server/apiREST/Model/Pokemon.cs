@@ -8,8 +8,6 @@ namespace apiREST.Model
         {
             
         }
-
-      
         [Key]
         public int? num_pokedex { get; set; }
         [Required]
@@ -36,7 +34,5 @@ namespace apiREST.Model
         public float? female_gender_rate { get; set; }  //%
         [Required]
         public bool? isActive { get; set; }
-
-
     }
 }

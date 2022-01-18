@@ -8,7 +8,7 @@ namespace CreateRsaPrivateKey
         {
             RSA asymmetryckey = RSA.Create();
             // Directory.CreateDirectory("/PublicKey");
-            StreamWriter sw = new StreamWriter("F:\\PokemonGolotPublicKey\\AssymetricKeyFile", false);
+            StreamWriter sw = new StreamWriter("C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\AssymetricKeyFile");
             sw.Write(asymmetryckey.ToXmlString(true));
             sw.Close();
         }

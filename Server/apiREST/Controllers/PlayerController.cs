@@ -9,16 +9,16 @@ using Microsoft.EntityFrameworkCore;
 namespace apiREST.Controllers
 {
     [AllowAnonymous]
-    [Route("[controller]")]
+    [Route("player")]
     [ApiController]
-    public class RegisterController : ControllerBase
+    public class PlayerController : ControllerBase
     {
 
         private readonly pokemonGolotApi _context;
         private readonly registerLogic _registerLogic;
         private readonly playerLogic _playerLogic;
 
-        public RegisterController(pokemonGolotApi context)
+        public PlayerController(pokemonGolotApi context)
         {
             _context = context;
             _registerLogic = new registerLogic();
@@ -26,9 +26,15 @@ namespace apiREST.Controllers
         }
 
 
-        [Route("player")]
+
+        /// <summary>
+        /// Register new user with 'player' rol
+        /// </summary>
+        /// <remarks>Return a new player object with full info</remarks>
+        /// <returns></returns>
+        [Route("public")]
         [HttpPost]
-        public async Task<IActionResult> RegisterNewPlayer(PlayerRegister newPlayer)
+        public async Task<ActionResult<ResponsePlayer>> RegisterNewPlayer(PlayerRegister newPlayer)
         {
             Player player =  _registerLogic.publicRegister(newPlayer);
 
