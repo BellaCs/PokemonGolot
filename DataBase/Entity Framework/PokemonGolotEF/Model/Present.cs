@@ -24,11 +24,11 @@ namespace PokemonGolotEF.Model
 
 
         [ForeignKey("owner")]
-        public virtual User Owner { get; set; }
+        public virtual Player Owner { get; set; }
         [ForeignKey("pokestop")]
         public virtual PokeStop PokeStop { get; set; }
         [ForeignKey("receptor")]
-        public virtual User Receptor { get; set; }
+        public virtual Player Receptor { get; set; }
 
     }
 }

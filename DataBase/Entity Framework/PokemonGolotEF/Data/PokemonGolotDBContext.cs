@@ -160,8 +160,8 @@ namespace PokemonGolotEF.Data
             }
         }
 
-        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Object> Object { get; set; }
         public virtual DbSet<Pokemon> Pokemon { get; set; }

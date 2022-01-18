@@ -6,7 +6,11 @@ namespace PokemonGolotEF.Model
 {
     public class PlayerRol
     {
-        public PlayerRol() { }
+        public PlayerRol() 
+        {
+            users = new HashSet<User>();
+        }
+
         public PlayerRol(JToken newRol) 
         {
             this.rol = newRol["name"].ToString();
@@ -16,6 +20,6 @@ namespace PokemonGolotEF.Model
         public string rol { get; set; }
         
 
-        ICollection<Player> players { get; set; }
+        ICollection<User> users { get; set; }
     }
 }

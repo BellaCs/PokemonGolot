@@ -16,6 +16,6 @@ namespace PokemonGolotEF.Model
         [ForeignKey("gym")]
         public virtual Gym Gym { get; set; }
         [ForeignKey("player")]
-        public virtual User Player { get; set; }
+        public virtual Player Player { get; set; }
     }
 }
