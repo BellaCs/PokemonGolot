@@ -4,14 +4,10 @@ using apiREST.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace apiREST.Controllers
 {
@@ -43,7 +39,7 @@ namespace apiREST.Controllers
         /// <response code="500">Server error</response>
         [HttpPost]
         [Route("authenticate")]
-        public async Task<IActionResult> Authenticate(PlayerLogin? _login)
+        public async Task<ActionResult<LoginOut>> Authenticate(PlayerLogin? _login)
         {
 
             if (_login != null)

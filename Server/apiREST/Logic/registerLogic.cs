@@ -21,8 +21,8 @@ namespace apiREST.Logic
             newFullPlayer.user_name = newPlayer.user_name;
             newFullPlayer.email = newPlayer.email;
             newFullPlayer.name = newPlayer.name;
-            //newFullPlayer.password = _enctypt.CreatePasswordHash(newPlayer.password!);
-            newFullPlayer.password = newPlayer.password;
+            newFullPlayer.password = _enctypt.CreatePasswordHash(newPlayer.password!);
+            //newFullPlayer.password = newPlayer.password;
             newFullPlayer.gender = newPlayer.gender;
             newFullPlayer.birth_date = newPlayer.birth_date;
             newFullPlayer.rol = "Player";

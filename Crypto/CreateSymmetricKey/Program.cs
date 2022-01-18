@@ -21,7 +21,7 @@ namespace CreateSymmetricKey
             try
             {
                 //Set reader on Public key file
-                StreamReader sr = new StreamReader("F:\\PokemonGolotPublicKey\\PublicKeyFile");
+                StreamReader sr = new StreamReader("C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\PublicKeyFile");
 
                 // Create, initializate and set key on RSACryptoServiceProvider instance
                 
@@ -56,7 +56,7 @@ namespace CreateSymmetricKey
             int lIV = aes.IV.Length;
             LenIV = BitConverter.GetBytes(lIV);
 
-            using (FileStream outFs = new FileStream("F:\\PokemonGolotPublicKey\\SymmetricKey", FileMode.Create))
+            using (FileStream outFs = new FileStream("C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\SymmetricKey", FileMode.Create))
             {
 
                 outFs.Write(LenK, 0, 4);

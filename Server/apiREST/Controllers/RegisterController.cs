@@ -28,7 +28,7 @@ namespace apiREST.Controllers
 
         [Route("player")]
         [HttpPost]
-        public async Task<IActionResult> RegisterNewPlayer(PlayerRegister newPlayer)
+        public async Task<ActionResult<ResponsePlayer>> RegisterNewPlayer(PlayerRegister newPlayer)
         {
             Player player =  _registerLogic.publicRegister(newPlayer);
 

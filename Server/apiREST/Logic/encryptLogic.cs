@@ -6,45 +6,43 @@ namespace apiREST.Logic
     public class encryptLogic
     {
 
-        Aes aes = Aes.Create();
-
         public string CreatePasswordHash(String password)
         {
-            UnicodeEncoding ue = new UnicodeEncoding();
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in GetHash(password))
+                sb.Append(b.ToString("X2"));
 
-            RSACryptoServiceProvider rsa = AsymmetricKeyImport("F:\\PokemonGolotPublicKey\\AssymetricKeyFile");
+            return sb.ToString();
+        }
 
-            byte[] messageBytes = ue.GetBytes(password);
-
-            RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(rsa);
-
-            rsaFormatter.SetHashAlgorithm("SHA256");
-
-            return Encoding.Default.GetString(rsaFormatter.CreateSignature(messageBytes));
+        public static byte[] GetHash(string inputString)
+        {
+            using (HashAlgorithm algorithm = SHA256.Create())
+                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
 
         public string EncryptUser(string userName)
         {
-            string symmetricKeyFile = "F:\\PokemonGolotPublicKey\\SymmetricKey";
-            string asymmetricKeyFile = "F:\\PokemonGolotPublicKey\\AssymetricKeyFile";
+            string symmetricKeyFile = "C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\SymmetricKey";
+            string asymmetricKeyFile = "C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\AssymetricKeyFile";
 
-            //string key = DecryptSymmetricKey(symmetricKeyFile, AsymmetricKeyImport(asymmetricKeyFile));
+            
 
-            return EncryptStringToBytes_Aes(userName, aes.Key, aes.IV);
+            return EncryptStringToBytes_Aes(userName, DecryptSymmetricKey(symmetricKeyFile, AsymmetricKeyImport(asymmetricKeyFile), Aes.Create()));
         }
 
         public string DecryptUser(string userName)
         {
-            string symmetricKeyFile = "F:\\PokemonGolotPublicKey\\SymmetricKey";
-            string asymmetricKeyFile = "F:\\PokemonGolotPublicKey\\AssymetricKeyFile";
+            string symmetricKeyFile = "C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\SymmetricKey";
+            string asymmetricKeyFile = "C:\\Users\\Marc\\Desktop\\Portfolio\\PokemonGolot\\CryptoKeys\\AssymetricKeyFile";
 
-            //string key = DecryptSymmetricKey(symmetricKeyFile, AsymmetricKeyImport(asymmetricKeyFile));
             
-            string key = Encoding.Default.GetString(aes.Key);
-            return DecryptString(key, userName);
+            
+            //string key = Encoding.Default.GetString(aes.Key);
+            return DecryptString(DecryptSymmetricKey(symmetricKeyFile, AsymmetricKeyImport(asymmetricKeyFile), Aes.Create()), userName);
         }
 
-        private static string DecryptSymmetricKey(string inFile, RSACryptoServiceProvider rsa)
+        private static ICryptoTransform DecryptSymmetricKey(string inFile, RSACryptoServiceProvider rsa, Aes aes)
         {
 
             byte[] LenK = new byte[4];
@@ -56,9 +54,9 @@ namespace apiREST.Logic
 
                 inFs.Seek(0, SeekOrigin.Begin);
                 inFs.Seek(0, SeekOrigin.Begin);
-                inFs.Read(LenK, 0, 3);
+                inFs.Read(LenK, 0, 4);
                 inFs.Seek(4, SeekOrigin.Begin);
-                inFs.Read(LenIV, 0, 3);
+                inFs.Read(LenIV, 0, 4);
 
                 // Convert the lengths to integer values.
                 int lenK = BitConverter.ToInt32(LenK, 0);
@@ -89,20 +87,23 @@ namespace apiREST.Logic
                 byte[] KeyDecrypted = rsa.Decrypt(KeyEncrypted, false);
 
                 // Decrypt the key.
+                ICryptoTransform transform = aes.CreateDecryptor(KeyDecrypted, IV);
+
+
 
                 inFs.Close();
 
-                return Encoding.Default.GetString(KeyDecrypted);
+                return transform;
             }
         }
 
         private static RSACryptoServiceProvider AsymmetricKeyImport(string keyFilePath)
         {
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            RSACryptoServiceProvider rsa = new();
             try
             {
                 //Set reader on Public key file
-                StreamReader sr = new StreamReader(keyFilePath);
+                StreamReader sr = new(keyFilePath);
                 // Create, initializate and set key on RSACryptoServiceProvider instance
                 string keytxt = sr.ReadToEnd();
                 rsa.FromXmlString(keytxt);
@@ -117,27 +118,9 @@ namespace apiREST.Logic
             }
         }
 
-        static string EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
+        static string EncryptStringToBytes_Aes(string plainText, ICryptoTransform encryptor)
         {
-            // Check arguments.
-            if (plainText == null || plainText.Length <= 0)
-                throw new ArgumentNullException("plainText");
-            if (Key == null || Key.Length <= 0)
-                throw new ArgumentNullException("Key");
-            if (IV == null || IV.Length <= 0)
-                throw new ArgumentNullException("IV");
             byte[] encrypted;
-
-            // Create an Aes object
-            // with the specified key and IV.
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create an encryptor to perform the stream transform.
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-
                 // Create the streams used for encryption.
                 using (MemoryStream msEncrypt = new MemoryStream())
                 {
@@ -151,34 +134,25 @@ namespace apiREST.Logic
                         encrypted = msEncrypt.ToArray();
                     }
                 }
-            }
-
             // Return the encrypted bytes from the memory stream.
             return Encoding.Default.GetString(encrypted);
         }
 
-        public static string DecryptString(string key, string cipherText)
+        public static string DecryptString(ICryptoTransform decryptor, string cipherText)
         {
-            byte[] iv = new byte[16];
-            byte[] buffer = Convert.FromBase64String(cipherText);
+           byte[] buffer = Convert.FromBase64String(cipherText);        
 
-            using (Aes aes = Aes.Create())
-            {
-                aes.Key = Encoding.UTF8.GetBytes(key);
-                aes.IV = iv;
-                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-
-                using (MemoryStream memoryStream = new MemoryStream(buffer))
-                {
-                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
-                        {
-                            return streamReader.ReadToEnd();
-                        }
-                    }
-                }
-            }
+           using (MemoryStream memoryStream = new MemoryStream(buffer))
+           {
+               using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
+               {
+                  using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
+                  {
+                     return streamReader.ReadToEnd();
+                  }
+               }
+           }
+            
         }
     }
 }
