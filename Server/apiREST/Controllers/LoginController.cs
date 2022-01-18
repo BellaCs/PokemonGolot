@@ -15,12 +15,13 @@ namespace apiREST.Controllers
     /// Login controller class for authenticate users
     /// </summary>
     [AllowAnonymous]
-    [Route("[controller]")]
+    [Route("login")]
     [ApiController]
     public class LoginController : ControllerBase
     {
         private readonly pokemonGolotApi _context;
         private readonly loginLogic _logic;
+        private readonly playerLogic _playerLogic;
         public IConfiguration _configuration;
 
         public LoginController(IConfiguration config, pokemonGolotApi context)
@@ -33,13 +34,12 @@ namespace apiREST.Controllers
         /// <summary>
         /// Login request to authenticate users
         /// </summary>
-        /// <remarks>That's request to login in admin profile</remarks>
-        /// <response code="401">Unauthorized</response>
-        /// <response code ="403">Wrong login</response>
-        /// <response code="500">Server error</response>
+        /// <remarks> That's request to login in admin profile </remarks>
+        /// <response code="400"> No data on request </response>
+        /// <response code ="403"> Invalid credentials </response>
         [HttpPost]
         [Route("authenticate")]
-        public async Task<ActionResult<LoginOut>> Authenticate(PlayerLogin? _login)
+        public async Task<ActionResult<LoginResponse>> Authenticate(PlayerLogin? _login)
         {
 
             if (_login != null)
@@ -68,14 +68,14 @@ namespace apiREST.Controllers
                     string tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
                     JObject tokenJson = new();
-                    
-                    tokenJson["user_token"] = tokenString;
 
-                    return Ok(tokenJson.ToString());
+                    
+
+                    return Ok(new LoginResponse(tokenString, _playerLogic.toDecryptedPlayer(user)));
                 }
                 else
                 {
-                    return BadRequest("Invalid credentials");
+                    return Forbid("Invalid credentials");
                 }
             }
             else
