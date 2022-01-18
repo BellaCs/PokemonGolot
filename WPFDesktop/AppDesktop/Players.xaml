@@ -33,12 +33,12 @@
             </Button>
         </Grid>
         <Button x:Name="ButtonPlayers" Content="Jugadors" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Background="White" BorderBrush="White" Opacity="0.98" OpacityMask="Black" Foreground="Black">
-        <Button.Effect>
-            <DropShadowEffect/>
-        </Button.Effect>
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
         </Button>
-        <Button x:Name="ButtonPokemons" Content="Pokemons" HorizontalAlignment="Left" Margin="335,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22"  Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White" Click="ButtonPokemons_Click"/>
-        <Button x:Name="ButtonAdmin"  Content="Administradors" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonAdmin_Click"  Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White"/>
+        <Button x:Name="ButtonPokemons" Content="Pokemons" HorizontalAlignment="Left" Margin="335,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22"  Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White" Click="ButtonPokemons_Click" Cursor="Hand"/>
+        <Button x:Name="ButtonAdmin"  Content="Administradors" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonAdmin_Click"  Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White" Cursor="Hand"/>
 
         <Grid HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Background="White" Opacity="0.98">
 

@@ -1,19 +1,15 @@
 ﻿using System;
-
 using System.IO;
 using System.Windows;
 using System.Data;
 using System.Text;
 using System.Text.Json;
 using Newtonsoft.Json;
-
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Windows.Controls;
-
-
 using System.ComponentModel;
 using System.Drawing;
 
@@ -45,11 +41,23 @@ namespace AppDesktop
         }
         private void ButtonCreateAdmin_Click(object sender, RoutedEventArgs e)
         {
+            // Post
             CreateAdmin objSecondWindow = new CreateAdmin();
             this.Visibility = Visibility.Hidden;
             objSecondWindow.Show();
 
         }
+
+        private void ButtonEditAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            // Put
+            Button Clicked = (Button)sender;
+
+            CreateAdmin objSecondWindow = new CreateAdmin();
+            this.Visibility = Visibility.Hidden;
+            objSecondWindow.Show();
+        }
+
 
         private void ButtonCloseSession_Click(object sender, RoutedEventArgs e)
         {
@@ -89,8 +97,11 @@ namespace AppDesktop
                 TableAdmins actual = new TableAdmins();
                 // Generate button
                 Button b = new Button();
-                b.Name = (string)admin["user_name"];
+                b.Content = "Accedir";
+                b.Click += ButtonEditAdmin_Click;
+                b.Tag = (string)admin["user_name"];
 
+                //b.Name = (string)admin["user_name"];
                 actual.Name = (string)admin["name"];
                 actual.Surname = (string)admin["surname"];
                 actual.Email = (string)admin["email"];

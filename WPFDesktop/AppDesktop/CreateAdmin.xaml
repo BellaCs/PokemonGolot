@@ -63,7 +63,7 @@
 
 
 
-            <Button HorizontalAlignment="Right" Margin="0,565,727,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button HorizontalAlignment="Right" Margin="0,565,727,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand">
                 <Button.Background>
                     <ImageBrush ImageSource="/cancel.png"/>
                 </Button.Background>
@@ -83,7 +83,7 @@
             </Button>
 
 
-            <Button HorizontalAlignment="Right" Margin="0,565,480,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="-0.485,0.45">
+            <Button HorizontalAlignment="Right" Margin="0,565,480,0" VerticalAlignment="Top" Height="75"  Width="75" Click="ButtonCancelRegister_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="-0.485,0.45" Cursor="Hand">
                 <Button.Background>
                     <ImageBrush ImageSource="/save.png"/>
                 </Button.Background>

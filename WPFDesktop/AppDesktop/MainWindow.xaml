@@ -17,24 +17,21 @@
 
         <Rectangle HorizontalAlignment="Center" Height="115" Stroke="Black" VerticalAlignment="Top" Width="1280" Fill="Black" Opacity="0.7"/>
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="274,181,0,0" Stroke="Black" VerticalAlignment="Top" Width="725" Fill="Black" Opacity="0.7"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="366,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"><Run Language="es-es"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="366,531,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Foreground="Black"><Run Language="es-es"/>
         <Hyperlink NavigateUri="">He perdut la contrasenya</Hyperlink>
         </TextBlock>
 
-        <Button x:Name="iniciar" 
+        <Button x:Name="iniciar" Cursor="Hand"
                 HorizontalAlignment="Left" Margin="542,571,0,0" VerticalAlignment="Top" Width="190" 
                 Foreground="White" FontWeight="Bold"  
                 ClipToBounds="True" 
                 Height="45" FontSize="24" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF707070" Background="#FF707070"
                 Content="Accedir" OpacityMask="White" Click="Login_OnClick"/>
 
-
-
-
         <TextBlock HorizontalAlignment="Left" Height="46" Margin="366,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="411" FontSize="34" Foreground="White"><Run Text="Iniciar "/><Run Language="es-es" Text="s"/><Run Text="essió"/></TextBlock>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="367,482,0,0" VerticalAlignment="Top" Width="539" Height="34" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" FontWeight="Normal" Foreground="Black" SelectionBrush="#FF00AEFF" FontSize="22"/>
         <TextBox x:Name="userBox" HorizontalAlignment="Left" Margin="366,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="539" Height="34" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="#FFCBCBCB" Foreground="Black" FontWeight="Normal" SelectionBrush="#FF00AEFF" FontSize="22"  />
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="367,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28"><Run Language="es-es" Text="CORREU ELECTRONIC"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="367,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28"><Run Language="es-es" Text="USUARI"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="33" Margin="368,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="28"><Run Language="es-es" Text="CONTRASENYA"/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Height="46" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="34" Foreground="White"><Run Language="es-es" Text="POKEMON GOLOT"/><LineBreak/><Run Language="es-es"/></TextBlock>
 

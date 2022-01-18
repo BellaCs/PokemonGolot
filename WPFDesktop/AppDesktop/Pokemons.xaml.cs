@@ -1,9 +1,8 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using System.Windows.Controls;
-using System.Windows.Media;
-
-
-
 
 namespace AppDesktop
 {
@@ -12,8 +11,6 @@ namespace AppDesktop
     /// </summary>
     public partial class Pokemons : Window
     {
-
-   
 
         public Pokemons()
         {
@@ -55,6 +52,74 @@ namespace AppDesktop
             }
         }
 
+        private void ButtonEditPokemon_Click(object sender, RoutedEventArgs e)
+        {
+            // Put
+            Button Clicked = (Button)sender;
 
+            AddPokemons addpokemons = new AddPokemons();
+            this.Visibility = Visibility.Hidden;
+            addpokemons.Show();
+        }
+
+        class TablePokemons
+        {
+            public int Num_pokedex { get; set; }
+            public string Name { get; set; }
+            public int Attack { get; set; }
+            public int Stamina { get; set; }
+            public int Defense { get; set; }
+            public bool IsActive { get; set; }
+            public string Active { get; set; }
+
+
+            public Button ButtonEdit { get; set; }
+
+        }
+        void DataGridForPokemons()
+        {
+
+            // Read json Document **** Canviar RUTA ***
+            StreamReader r = new StreamReader("C:/Users/Nuria/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
+            string jsonString = r.ReadToEnd();
+            JToken pokemonsData = JToken.Parse(jsonString);
+
+            List<TablePokemons> pokemonList = new List<TablePokemons>();
+
+            foreach (JObject pokemon in pokemonsData)
+            {
+                TablePokemons actual = new TablePokemons();
+                // Generate button
+                Button b = new Button();
+                b.Content = "Accedir";
+                b.Click += ButtonEditPokemon_Click;
+                b.Tag = (string)pokemon["num_pokedex"];
+
+                actual.Num_pokedex = (int)pokemon["num_pokedex"];
+
+                actual.Name = (string)pokemon["name"];
+                if ((bool)pokemon["isActive"])
+                {
+                    actual.Active = (string)"Si";
+                } else {
+                    actual.Active = (string)"No";
+                }
+
+                string test = actual.Active;
+                actual.Attack = (int)pokemon["attack"];
+                actual.Stamina = (int)pokemon["stamina"];
+                actual.Defense = (int)pokemon["defense"];
+
+                actual.ButtonEdit = b;
+                pokemonList.Add(actual);
+            }
+            DataGridPokemons.ItemsSource = pokemonList;
+        }
+
+        private void DataGridPokemons_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataGridForPokemons();
+
+        }
     }
 }

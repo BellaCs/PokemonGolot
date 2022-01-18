@@ -38,14 +38,11 @@ namespace AppDesktop
             foreach (JObject admin in usersList)
             {
                 TableAdmins actual = new TableAdmins();
-
-           
+ 
                 actual.nom = (string)admin["user_name"];
                 actual.email = (string)admin["email"];
                 actual.contrasenya = (string)admin["password"];
           
-       
-
                 adminsList.Add(actual);
             }
 
@@ -53,6 +50,9 @@ namespace AppDesktop
 
         private void Login_OnClick(object sender, RoutedEventArgs e)
         {
+            //string userName = userBox.Text;
+            //string userPassword = passwordBox.Text;
+
             Pokemons pokemonmenu = new Pokemons();
             this.Visibility = Visibility.Hidden;
             pokemonmenu.Show();
