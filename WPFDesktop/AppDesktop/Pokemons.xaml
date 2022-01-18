@@ -105,7 +105,12 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    
                 </DataGrid.Columns>
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="#FF28A309"/>
+                </DataGrid.Resources>
             </DataGrid>
 
             <Button Content="" HorizontalAlignment="Right" Height="70" Margin="0,0,29,15" VerticalAlignment="Bottom" Width="70" Click="ButtonAddPokemon_Click" FontFamily="Caladea" FontWeight="Bold" FontSize="16" Grid.Column="2" Cursor="Hand">
