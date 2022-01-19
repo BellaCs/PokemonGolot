@@ -12,8 +12,8 @@ namespace PokemonGolotEF.Model
         public string friend { get; set; }
 
         [ForeignKey("player")]
-        public virtual User Player { get; set; }
+        public virtual Player Player { get; set; }
         [ForeignKey("friend")]
-        public virtual User Friend { get; set; }
+        public virtual Player Friend { get; set; }
     }
 }

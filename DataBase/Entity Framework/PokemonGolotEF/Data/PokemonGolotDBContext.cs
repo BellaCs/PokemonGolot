@@ -144,6 +144,11 @@ namespace PokemonGolotEF.Data
             model.Entity<PokemonElement>()
                 .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
+            // Player Rols
+
+            model.Entity<PlayerRol>()
+                .HasData(data.pokemonGolot.rols);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -155,8 +160,8 @@ namespace PokemonGolotEF.Data
             }
         }
 
-        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<Object> Object { get; set; }
         public virtual DbSet<Pokemon> Pokemon { get; set; }
@@ -185,5 +190,6 @@ namespace PokemonGolotEF.Data
         public virtual DbSet<PokemonExchange> Pokemon_exchange { get; set;}
         public virtual DbSet<EggPokemonPool> Egg_pokemon_pool { get; set; }
         public virtual DbSet<PokemonElement> Pokemon_element { get; set; }
+        public virtual DbSet<PlayerRol> Player_rols { get; set; }
     }
 }

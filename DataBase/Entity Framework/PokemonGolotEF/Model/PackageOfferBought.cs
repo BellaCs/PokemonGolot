@@ -16,6 +16,6 @@ namespace PokemonGolotEF.Model
         [ForeignKey("package")]
         public virtual PackageOffer Package { get; set; }
         [ForeignKey("user")]
-        public virtual User User { get; set; }
+        public virtual Player User { get; set; }
     }
 }

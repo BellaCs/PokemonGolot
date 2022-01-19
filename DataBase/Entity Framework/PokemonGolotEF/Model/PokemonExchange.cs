@@ -12,6 +12,6 @@ namespace PokemonGolotEF.Model
         [ForeignKey("pokemon")]
         public virtual Pokemon Pokemon { get; set; }
         [ForeignKey("ex_owner")]
-        public virtual User ExOwner { get; set; }
+        public virtual Player ExOwner { get; set; }
     }
 }
