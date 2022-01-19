@@ -28,7 +28,7 @@ namespace apiREST.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemon()
         {
-            return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();
+            return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();            
         }
 
 

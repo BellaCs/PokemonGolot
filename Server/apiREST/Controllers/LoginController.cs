@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Net.Mime;
 
 namespace apiREST.Controllers
 {
@@ -38,9 +39,12 @@ namespace apiREST.Controllers
         /// <remarks> Returns a token key for authorize needed requests and user details </remarks>
         /// <response code="400"> No data on request </response>
         /// <response code="401"> Invalid user rol for this request </response>
-        /// <response code ="403"> Invalid credentials </response>
+        /// <response code="403"> Invalid credentials </response>
+        /// <response code="415"> Unsuported media content type</response>
         [HttpPost]
         [Route("authenticate/admin")]
+        [Consumes("application/x-www-form-urlencoded")]
+        [Produces( MediaTypeNames.Application.Json )]
         public async Task<ActionResult<LoginResponse>> AdminAuthenticate(UserLogin? _login)
         {
             if (_login != null)
