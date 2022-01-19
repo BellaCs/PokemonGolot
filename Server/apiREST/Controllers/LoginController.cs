@@ -45,7 +45,7 @@ namespace apiREST.Controllers
         [Route("authenticate/admin")]
         [Consumes("application/x-www-form-urlencoded")]
         [Produces( MediaTypeNames.Application.Json )]
-        public async Task<ActionResult<LoginResponse>> AdminAuthenticate(UserLogin? _login)
+        public async Task<ActionResult<LoginResponse>> AdminAuthenticate([FromForm] UserLogin? _login)
         {
             if (_login != null)
             {

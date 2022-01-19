@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace apiREST.Controllers
 {
     [AllowAnonymous]
-    [Route("player")]
+    [Route("user")]
     [ApiController]
     public class UserController : ControllerBase
     {

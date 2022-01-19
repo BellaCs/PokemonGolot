@@ -28,6 +28,7 @@ namespace apiREST.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemon()
         {
+            // todo format pokemon to shor info data
             return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();            
         }
 
