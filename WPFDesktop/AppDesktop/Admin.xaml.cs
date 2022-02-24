@@ -86,7 +86,7 @@ namespace AppDesktop
         {
 
             // Read json Document **** Canviar RUTA ***
-            StreamReader r = new StreamReader("C:/Users/Nuria/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
+            StreamReader r = new StreamReader("C:/Users/eloiv/Documents/Estudis/2DAM/Pokemon/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
             string jsonString = r.ReadToEnd();
             JToken usersList = JToken.Parse(jsonString);
 
@@ -105,7 +105,6 @@ namespace AppDesktop
                 actual.Name = (string)admin["name"];
                 actual.Surname = (string)admin["surname"];
                 actual.Email = (string)admin["email"];
-                actual.Role = (string)admin["role"];
                 actual.ButtonEdit = b;
 
                 adminsList.Add(actual);
