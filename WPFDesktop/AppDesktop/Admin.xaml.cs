@@ -12,7 +12,7 @@ using Newtonsoft.Json.Linq;
 using System.Windows.Controls;
 using System.ComponentModel;
 using System.Drawing;
-
+using System.Net.Http;
 
 namespace AppDesktop
 {
@@ -77,14 +77,12 @@ namespace AppDesktop
             public string Name { get; set; }
             public string Surname { get; set; }
             public string Email { get; set; }
-            public string Role { get; set; }
             public Button ButtonEdit { get; set; }
 
         }
 
         void DataGridForAdmins()
         {
-
             // Read json Document **** Canviar RUTA ***
             StreamReader r = new StreamReader("C:/Users/eloiv/Documents/Estudis/2DAM/Pokemon/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
             string jsonString = r.ReadToEnd();
@@ -114,7 +112,7 @@ namespace AppDesktop
 
         private void DataGridAdmins_Loaded(object sender, RoutedEventArgs e)
         {
-            this.DataGridForAdmins();
+            DataGridForAdmins().Wait(); ;
         }
     }
 
