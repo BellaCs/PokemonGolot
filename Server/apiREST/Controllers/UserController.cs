@@ -34,7 +34,7 @@ namespace apiREST.Controllers
         /// <returns></returns>
         [Route("public")]
         [HttpPost]
-        public async Task<ActionResult<ResponsePlayer>> RegisterNewUser(UserRegister newPlayer)
+        public async Task<ActionResult<ResponseUser>> RegisterNewUser(UserRegister newPlayer)
         {
             User player =  _registerLogic.publicRegister(newPlayer);
 
@@ -46,7 +46,7 @@ namespace apiREST.Controllers
             }
             catch (DbUpdateException)
             {
-                if (UserExists(player.user_name))
+                if (UserExists(player.user_name, player.email))
                 {
                     return Conflict();
                 }
@@ -56,11 +56,26 @@ namespace apiREST.Controllers
                 }
             }
 
-            return Ok(_playerLogic.toDecryptedPlayer(player));
+            return Ok(_playerLogic.toDecryptedUser(player));
         }
-        private bool UserExists(string? user_name)
+
+
+        /// <summary>
+        /// Get a list of all admin users registered on database
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [Route("admins")]
+        [HttpGet]
+        public Task<ActionResult<List<Player>>>? GetAdminUsersList()
         {
-            return _context.User.Any(p => p.user_name == user_name);
+
+            return null;
+        }
+
+        private bool UserExists(string? user_name, string? email)
+        {
+            return _context.User.Any(p => p.user_name == user_name || p.email == email);
         }
 
     }

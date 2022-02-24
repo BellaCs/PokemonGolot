@@ -74,7 +74,7 @@ namespace apiREST.Controllers
 
                         JObject tokenJson = new();
 
-                        return Ok(new LoginResponse(tokenString, _userLogic.toDecryptedPlayer(user)));
+                        return Ok(new LoginResponse(tokenString, _userLogic.toDecryptedUser(user)));
                     }
                     else
                     {

@@ -5,7 +5,7 @@ namespace apiREST.Model
 {
     public class Player
     {
-        public Player() 
+        public Player()
         {
             recivedPresents = new HashSet<Present>();
             presentsToSend = new HashSet<Present>();
@@ -24,7 +24,7 @@ namespace apiREST.Model
         [StringLength(20)]
         public string? user_name { get; set; }
         [ForeignKey("Team")]
-        public string? team { get; set; }       
+        public string? team { get; set; }
         [Required]
         [ForeignKey("Level")]
         public short? level { get; set; }
@@ -62,5 +62,23 @@ namespace apiREST.Model
         public virtual ICollection<ObjectInventory> inventory { get; set; }
         public virtual ICollection<GymTrophy> trophys { get; set; }
 
+    }
+
+    public class ResponsePlayer
+    {
+        public string? Team { get; set; }
+        [Required]
+        [ForeignKey("Level")]
+        public short? Level { get; set; }
+        [Required]
+        public int? Inventory_capacity { get; set; }
+        [Required]
+        public int? Current_level_experience { get; set; }
+        [Required]
+        public int? Experience { get; set; }
+        [Required]
+        public int? Pokemon_slots { get; set; }
+        public int? Won_battles { get; set; }
+        public int? Caputred_pokemon { get; set; }
     }
 }

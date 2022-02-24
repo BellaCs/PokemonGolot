@@ -46,19 +46,19 @@ namespace apiREST.Model
         public DateTime birth_date { get; set; }
     }
 
-    public class ResponsePlayer 
+    public class ResponseUser
     {
         [Key]
         [StringLength(20)]
         [Required]
-        public string? user_name { get; set; }
+        public string? User_name { get; set; }
         [Required]
-        public string? email { get; set; }
+        public string? Email { get; set; }
         [Required]
-        public string? name { get; set; }
-        public string? gender { get; set; }
-        public DateTime birth_date { get; set; }
-        public string? rol { get; set; }
+        public string? Name { get; set; }
+        public string? Gender { get; set; }
+        public DateTime Birth_date { get; set; }
+        public ResponsePlayer? Player_info { get; set; }
     }
 
 }
