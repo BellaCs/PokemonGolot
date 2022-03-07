@@ -16,13 +16,13 @@ namespace apiREST.Controllers
 
         private readonly pokemonGolotApi _context;
         private readonly registerLogic _registerLogic;
-        private readonly userLogic _playerLogic;
+        private readonly userLogic _userLogic;
 
         public UserController(pokemonGolotApi context)
         {
             _context = context;
             _registerLogic = new registerLogic();
-            _playerLogic = new userLogic();
+            _userLogic = new userLogic();
         }
 
 
@@ -74,7 +74,7 @@ namespace apiREST.Controllers
                 }
             }
 
-            return Ok(_playerLogic.toDecryptedUser(player));
+            return Ok(_userLogic.toDecryptedUser(player));
         }
 
 
