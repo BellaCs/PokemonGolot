@@ -32,7 +32,7 @@ namespace apiREST.Model
         public string? password { get; set; }
     }
 
-    public class UserRegister 
+    public class UserRegister
     {
         [Required]
         public string? user_name { get; set; }
@@ -44,6 +44,15 @@ namespace apiREST.Model
         public string? password { get; set; }
         public string? gender { get; set; }
         public DateTime birth_date { get; set; }
+    }
+
+    public class ResponseAdminUserToList
+    {
+        public string? user_name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public string? name { get; set; }
     }
 
     public class ResponseUser

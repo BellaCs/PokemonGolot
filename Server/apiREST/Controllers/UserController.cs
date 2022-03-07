@@ -16,13 +16,13 @@ namespace apiREST.Controllers
 
         private readonly pokemonGolotApi _context;
         private readonly registerLogic _registerLogic;
-        private readonly userLogic _playerLogic;
+        private readonly userLogic _userLogic;
 
         public UserController(pokemonGolotApi context)
         {
             _context = context;
             _registerLogic = new registerLogic();
-            _playerLogic = new userLogic();
+            _userLogic = new userLogic();
         }
 
 
@@ -56,7 +56,7 @@ namespace apiREST.Controllers
                 }
             }
 
-            return Ok(_playerLogic.toDecryptedUser(player));
+            return Ok(_userLogic.toDecryptedUser(player));
         }
 
 
@@ -67,10 +67,10 @@ namespace apiREST.Controllers
         [Authorize]
         [Route("admins")]
         [HttpGet]
-        public Task<ActionResult<List<Player>>>? GetAdminUsersList()
+        public async Task<ActionResult<List<ResponseAdminUserToList>>> GetAdminUsersList()
         {
-
-            return null;
+            List<User> admins = await _context.User.Where(u => u.rol == "Admin").OrderBy(u => u.name).ToListAsync();
+            return _userLogic.toAdminResponseList(admins);
         }
 
         private bool UserExists(string? user_name, string? email)
