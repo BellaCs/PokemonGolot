@@ -80,7 +80,7 @@ namespace AppDesktop
         {
 
             // Read json Document **** Canviar RUTA ***
-            StreamReader r = new StreamReader("C:/Users/Nuria/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
+            StreamReader r = new StreamReader("C:/Users/34662/Desktop/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
             string jsonString = r.ReadToEnd();
             JToken pokemonsData = JToken.Parse(jsonString);
 

@@ -24,6 +24,21 @@ namespace apiREST.Model
         public virtual PlayerRol? Rol { get; set; }
     }
 
+    public class GlobalUserRegister
+    {
+        [Required]
+        public string? user_name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public string? name { get; set; }
+        [Required]
+        public string? password { get; set; }
+        public string? gender { get; set; }
+        public DateTime birth_date { get; set; }
+        public string? rol { get; set; }
+    }
+
     public class UserLogin
     {
         [Required]

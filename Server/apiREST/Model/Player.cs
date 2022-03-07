@@ -68,7 +68,6 @@ namespace apiREST.Model
     {
         public string? Team { get; set; }
         [Required]
-        [ForeignKey("Level")]
         public short? Level { get; set; }
         [Required]
         public int? Inventory_capacity { get; set; }

@@ -26,6 +26,23 @@ namespace apiREST.Controllers
         }
 
 
+        /// <summary>
+        /// Get a list of all admin users registered on database
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [Route("admins")]
+        [HttpGet]
+        public Task<ActionResult<List<Player>>>? GetAdminUsersList()
+        {
+
+            return null;
+        }
+
+        private bool UserExists(string? user_name, string? email)
+        {
+            return _context.User.Any(p => p.user_name == user_name || p.email == email);
+        }
 
         /// <summary>
         /// Register new user with 'player' rol
@@ -39,6 +56,7 @@ namespace apiREST.Controllers
             User player =  _registerLogic.publicRegister(newPlayer);
 
             _context.User.Add(player);
+            
 
             try
             {
@@ -60,23 +78,38 @@ namespace apiREST.Controllers
         }
 
 
+
+
         /// <summary>
-        /// Get a list of all admin users registered on database
+        /// Register new user with 'global' rol
         /// </summary>
+        /// <remarks>Return a new global player object with full info</remarks>
         /// <returns></returns>
-        [Authorize]
-        [Route("admins")]
-        [HttpGet]
-        public Task<ActionResult<List<Player>>>? GetAdminUsersList()
+        [Route("global")]
+        [HttpPost]
+        public async Task<ActionResult<ResponseUser>> RegisterNewGlobalUser(GlobalUserRegister newPlayer)
         {
+            User player = _registerLogic.globalRegister(newPlayer);
 
-            return null;
+            _context.User.Add(player);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (UserExists(player.user_name, player.email))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return Ok(_playerLogic.toDecryptedUser(player));
         }
-
-        private bool UserExists(string? user_name, string? email)
-        {
-            return _context.User.Any(p => p.user_name == user_name || p.email == email);
-        }
-
     }
 }
