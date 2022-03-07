@@ -81,11 +81,11 @@ namespace AppDesktop
 
         }
 
-        void DataGridForAdmins()
+        public async Task DataGridForAdmins()
         {
             // Read json Document **** Canviar RUTA ***
-            StreamReader r = new StreamReader("C:/Users/eloiv/Documents/Estudis/2DAM/Pokemon/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
-            string jsonString = r.ReadToEnd();
+            //StreamReader r = new StreamReader("C:/Users/eloiv/Documents/Estudis/2DAM/Pokemon/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
+            string jsonString = await Request.Get.GetAdmin.GetAdminList();
             JToken usersList = JToken.Parse(jsonString);
 
             List<TableAdmins> adminsList = new List<TableAdmins>();
@@ -112,8 +112,8 @@ namespace AppDesktop
 
         private void DataGridAdmins_Loaded(object sender, RoutedEventArgs e)
         {
-            DataGridForAdmins().Wait(); ;
+            DataGridForAdmins().Wait();
         }
-    }
 
+    }
 }
