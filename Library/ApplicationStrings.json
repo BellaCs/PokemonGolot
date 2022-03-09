@@ -1,0 +1,35 @@
+{
+  "cat" : {
+    "Log_In": {
+        "Username" : "",
+        "Password" : "",
+        "Password_Loss" : "",
+        "Enter" : "",
+    },
+
+    "Pokemons" : {
+        "Name" : "",
+        "Active" : "",
+        "Attack" : "",
+        "Stamina" : "",
+        "Defense" : "",
+        "Action" : "",
+    },
+
+    "Administrators" : {
+        "Name" : "",
+        "Surname" : "",
+        "Email" : "",
+        "Action" : "",
+    },
+
+    "Admin_User_Creation" : {
+        "Title" : "",
+        "Email" : "",
+        "Password" : "",
+        "Repeat_Password" : "",
+        "Username" : "",
+        "Name_Surname" : "",
+    }
+  }
+}
