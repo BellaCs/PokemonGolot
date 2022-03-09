@@ -33,8 +33,9 @@ namespace apiREST.Controllers
         [Authorize]
         [Route("admins")]
         [HttpGet]
-        public Task<ActionResult<List<Player>>>? GetAdminUsersList()
+        public async Task<ActionResult<List<ResponsePlayer>>>? GetAdminUsersList()
         {
+            List<User> admins = await _context.User.Where(u => u.rol == "Admin").ToListAsync();
 
             return null;
         }
@@ -109,7 +110,7 @@ namespace apiREST.Controllers
                 }
             }
 
-            return Ok(_playerLogic.toDecryptedUser(player));
+            return Ok(_userLogic.toDecryptedUser(player));
         }
     }
 }
