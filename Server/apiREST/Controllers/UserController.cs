@@ -88,7 +88,7 @@ namespace apiREST.Controllers
         /// <returns></returns>
         [Route("global")]
         [HttpPost]
-        public async Task<ActionResult<ResponseUser>> RegisterNewGlobalUser(GlobalUserRegister newPlayer)
+        public async Task<ActionResult<ResponseGlobalUser>> RegisterNewGlobalUser(GlobalUserRegister newPlayer)
         {
             User player = _registerLogic.globalRegister(newPlayer);
 
@@ -110,7 +110,7 @@ namespace apiREST.Controllers
                 }
             }
 
-            return Ok(_userLogic.toDecryptedUser(player));
+            return Ok(_userLogic.toDecryptedGlobalUser(player));
         }
     }
 }
