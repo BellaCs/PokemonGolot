@@ -61,13 +61,14 @@ namespace apiREST.Model
         public DateTime birth_date { get; set; }
     }
 
-    public class ResponseAdminUserToList
+    public class SimpleUserData
     {
         public string? user_name { get; set; }
         [Required]
-        public string? email { get; set; }
-        [Required]
         public string? name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        
     }
 
     public class ResponseUser
