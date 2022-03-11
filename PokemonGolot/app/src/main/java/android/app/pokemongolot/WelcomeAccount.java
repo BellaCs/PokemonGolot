@@ -19,7 +19,7 @@ public class WelcomeAccount extends AppCompatActivity {
     }
 
     public void createAccount(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, CreateAnAccount.class);
         startActivity(intent);
     }
 }
