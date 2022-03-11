@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.View;
 
-public class InventoriesActivity extends AppCompatActivity {
+public class InventoriesPokemonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,9 @@ public class InventoriesActivity extends AppCompatActivity {
         // Name
     }
 
-    public void accessToInventoriesPokemon(View view) {
-        Intent intent = new Intent(this, InventoriesPokemonActivity.class);
+   public void accessToInventoriesPokemonDetails(View view) {
+        Intent intent = new Intent(this, InventoriesPokemonDetailsActivity.class);
         startActivity(intent);
     }
+
 }

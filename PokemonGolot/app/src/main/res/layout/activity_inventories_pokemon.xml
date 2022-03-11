@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/PokemonTitle"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/candal"
+        android:gravity="center"
+        android:text="Pokémon"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/pokemonUnits2"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginLeft="228dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:ems="10"
+        android:fontFamily="@font/candal"
+        android:includeFontPadding="true"
+        android:inputType="number"
+        android:text="250"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PokemonTitle" />
+
+    <EditText
+        android:id="@+id/pokemonUnits"
+        android:layout_width="90dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="4dp"
+        android:autoText="false"
+        android:ems="10"
+        android:fontFamily="@font/candal"
+        android:gravity="right"
+        android:includeFontPadding="true"
+        android:inputType="number"
+        android:text="01"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:flow_horizontalAlign="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PokemonTitle" />
+
+    <EditText
+        android:id="@+id/barSeparator"
+        android:layout_width="36dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="/"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:flow_horizontalAlign="center"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="100dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="86dp"
+        android:layout_height="93dp"
+        android:foreground="@drawable/_01"
+        android:text="Button"
+        app:backgroundTint="#000000"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="197dp"
+        tools:ignore="MissingConstraints"
+        android:onClick="accessToInventoriesPokemonDetails"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,12 @@
         <activity
             android:name=".InventoriesActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".InventoriesPokemonActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".InventoriesPokemonDetailsActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
