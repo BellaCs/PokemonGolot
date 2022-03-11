@@ -13,7 +13,7 @@ namespace ApiMongo.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetFight")]
         public IEnumerable<Fight> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new Fight
