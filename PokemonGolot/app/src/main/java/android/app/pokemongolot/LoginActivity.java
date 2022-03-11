@@ -20,8 +20,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void logIn(View view) {
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.passwordUser);
+        username = findViewById(R.id.usernameloginInsert);
+        password = findViewById(R.id.passwordloginInsert);
         //Intent intent = new Intent(this, MainActivity2.class);
         if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
             //startActivity(intent);

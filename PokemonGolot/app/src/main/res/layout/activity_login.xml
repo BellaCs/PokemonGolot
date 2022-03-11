@@ -10,22 +10,17 @@
         android:id="@+id/loginButton"
         android:layout_width="282dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="96dp"
         android:background="#FFE500"
         android:onClick="logIn"
         android:text="@string/login"
         android:textColor="#616161"
         app:backgroundTint="#FFE500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordUser"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="587dp" />
 
     <EditText
-        android:id="@+id/passwordUser2"
+        android:id="@+id/passwordloginInsert"
         android:layout_width="321dp"
         android:layout_height="52dp"
         android:layout_marginTop="480dp"
@@ -44,7 +39,7 @@
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/username2"
+        android:id="@+id/usernameloginInsert"
         android:layout_width="321dp"
         android:layout_height="52dp"
         android:background="#FFE500"
@@ -63,6 +58,7 @@
         android:id="@+id/passwordLabel3"
         android:layout_width="325dp"
         android:layout_height="30dp"
+        android:layout_marginTop="14dp"
         android:fontFamily="@font/candal"
         android:gravity="center_horizontal"
         android:text="@string/password"
@@ -70,12 +66,13 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="443dp" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameloginInsert" />
 
     <TextView
         android:id="@+id/usernameLabel3"
         android:layout_width="325dp"
         android:layout_height="0dp"
+        android:layout_marginTop="46dp"
         android:fontFamily="@font/candal"
         android:gravity="center_horizontal"
         android:text="@string/username"
@@ -83,12 +80,13 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="339dp" />
+        app:layout_constraintTop_toBottomOf="@+id/login2" />
 
     <TextView
         android:id="@+id/login2"
         android:layout_width="283dp"
         android:layout_height="45dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/candal"
         android:gravity="center_horizontal"
         android:text="@string/login"
@@ -97,7 +95,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="248dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView4"

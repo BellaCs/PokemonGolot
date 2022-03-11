@@ -2,7 +2,11 @@
 
     //PRINCIPAL PAGE
     <string name="app_name">PokemonGolot</string>
-    <string name="welcome_message">Are you ready for the adventure?</string>
+    <string name="ready_adventure">Are you ready for the adventure?</string>
+
+    //WELCOME PAGE
+    <string name="welcome">Welcome</string>
+    <string name="have_account">I have an account</string>
 
     //REGISTER PAGE
     <string name="date_birth">Date of birth</string>
