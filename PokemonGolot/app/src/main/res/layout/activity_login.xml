@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="381dp"
         android:background="#FFE500"
-        android:onClick="logIn"
+        android:onClick="onClick"
         android:text="@string/login"
         android:textColor="#616161"
         app:backgroundTint="#FFE500"
