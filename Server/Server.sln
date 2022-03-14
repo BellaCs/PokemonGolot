@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiREST", "apiREST\apiREST.csproj", "{09E37135-8549-4551-9D68-D2B777D13E63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiMongo", "ApiMongo\ApiMongo\ApiMongo.csproj", "{A5365CC4-F483-43E3-BE89-6DCBC4ABC8DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Socket", "Socket\Socket.csproj", "{2226B876-672F-484D-B42D-5ABCC404EAB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09E37135-8549-4551-9D68-D2B777D13E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E37135-8549-4551-9D68-D2B777D13E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E37135-8549-4551-9D68-D2B777D13E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E37135-8549-4551-9D68-D2B777D13E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5365CC4-F483-43E3-BE89-6DCBC4ABC8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5365CC4-F483-43E3-BE89-6DCBC4ABC8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5365CC4-F483-43E3-BE89-6DCBC4ABC8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5365CC4-F483-43E3-BE89-6DCBC4ABC8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2226B876-672F-484D-B42D-5ABCC404EAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2226B876-672F-484D-B42D-5ABCC404EAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2226B876-672F-484D-B42D-5ABCC404EAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2226B876-672F-484D-B42D-5ABCC404EAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3783AB5A-05C7-45D1-8517-93EB5A2E3499}
+	EndGlobalSection
+EndGlobal

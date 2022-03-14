@@ -24,6 +24,21 @@ namespace apiREST.Model
         public virtual PlayerRol? Rol { get; set; }
     }
 
+    public class GlobalUserRegister
+    {
+        [Required]
+        public string? user_name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        [Required]
+        public string? name { get; set; }
+        [Required]
+        public string? password { get; set; }
+        public string? gender { get; set; }
+        public DateTime birth_date { get; set; }
+        public string? rol { get; set; }
+    }
+
     public class UserLogin
     {
         [Required]
@@ -32,7 +47,7 @@ namespace apiREST.Model
         public string? password { get; set; }
     }
 
-    public class UserRegister 
+    public class UserRegister
     {
         [Required]
         public string? user_name { get; set; }
@@ -46,19 +61,44 @@ namespace apiREST.Model
         public DateTime birth_date { get; set; }
     }
 
-    public class ResponsePlayer 
+    public class SimpleUserData
+    {
+        public string? user_name { get; set; }
+        [Required]
+        public string? name { get; set; }
+        [Required]
+        public string? email { get; set; }
+        
+    }
+
+    public class ResponseUser
     {
         [Key]
         [StringLength(20)]
         [Required]
-        public string? user_name { get; set; }
+        public string? User_name { get; set; }
         [Required]
-        public string? email { get; set; }
+        public string? Email { get; set; }
         [Required]
-        public string? name { get; set; }
-        public string? gender { get; set; }
-        public DateTime birth_date { get; set; }
-        public string? rol { get; set; }
+        public string? Name { get; set; }
+        public string? Gender { get; set; }
+        public DateTime Birth_date { get; set; }
+        public ResponsePlayer? Player_info { get; set; }
+    }
+
+    public class ResponseGlobalUser
+    {
+        [Key]
+        [StringLength(20)]
+        [Required]
+        public string? User_name { get; set; }
+        [Required]
+        public string? Email { get; set; }
+        [Required]
+        public string? Name { get; set; }
+        public string? Gender { get; set; }
+        public DateTime Birth_date { get; set; }
+
     }
 
 }

@@ -1,5 +1,4 @@
-﻿#nullable disable
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiREST.Data;
 using apiREST.Model;
