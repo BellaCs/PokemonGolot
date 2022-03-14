@@ -22,10 +22,9 @@ public class LoginActivity extends AppCompatActivity {
     public void logIn(View view) {
         username = findViewById(R.id.usernameloginInsert);
         password = findViewById(R.id.passwordloginInsert);
-        //Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, MapActivity.class);
         if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-            //startActivity(intent);
-            Toast.makeText(getApplicationContext(), "Hola",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
         }
         else {
             Toast.makeText(getApplicationContext(), "Dades incorrectes",Toast.LENGTH_SHORT).show();
