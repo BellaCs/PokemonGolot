@@ -22,8 +22,22 @@
         </activity>
         <activity
             android:name=".WelcomeAccount"
-            android:exported="true"></activity>
-
+            android:exported="true" />
+        <activity
+            android:name=".CreateAnAccount"
+            android:exported="true" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".InventoriesActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".InventoriesPokemonActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".InventoriesPokemonDetailsActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

@@ -16,12 +16,12 @@
         app:srcCompat="@drawable/wp_pikachu" />
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/welcomeLabel"
         android:layout_width="336dp"
         android:layout_height="83dp"
         android:fontFamily="@font/candal"
         android:gravity="center"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="#FFFFFF"
@@ -41,23 +41,25 @@
         android:layout_marginTop="92dp"
         android:layout_marginBottom="208dp"
         android:background="#FFE500"
-        android:text="I have an account"
+        android:onClick="haveAccount"
+        android:text="@string/have_account"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:onClick="haveAccount"
         app:backgroundTint="#FFFFE500"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+        app:layout_constraintTop_toBottomOf="@+id/welcomeLabel" />
 
     <Button
         android:id="@+id/createAccount"
         android:layout_width="295dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="20dp"
         android:background="#FFFFE500"
-        android:text="Create an account"
+        android:onClick="createAccount"
+        android:text="@string/create_account"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:backgroundTint="#FFFFE500"
