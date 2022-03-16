@@ -12,7 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="381dp"
         android:background="#FFE500"
-        android:onClick="onClick"
+        android:onClick="logIn"
         android:text="@string/login"
         android:textColor="#616161"
         app:backgroundTint="#FFE500"
@@ -106,6 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/raichu"
-        tools:layout_editor_absoluteY="2dp" />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
