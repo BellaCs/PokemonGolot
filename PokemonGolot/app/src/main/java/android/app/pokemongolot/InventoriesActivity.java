@@ -25,10 +25,4 @@ public class InventoriesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InventoriesPokemonActivity.class);
         startActivity(intent);
     }
-
-    public void accessToPokedex(View view) {
-        Intent intent = new Intent(this, PokedexActivity.class);
-        startActivity(intent);
-    }
-
 }
