@@ -26,19 +26,5 @@ namespace apiREST.Logic
             return decryptedUser;
         }
 
-        public ResponseGlobalUser toDecryptedGlobalUser(User player)
-        {
-            ResponseGlobalUser decryptedGlobalUser = new ResponseGlobalUser();
-
-            //decryptedPlayer.user_name = _enctypt.DecryptUser(player.user_name!);
-            decryptedGlobalUser.User_name = player.user_name;
-            decryptedGlobalUser.Email = player.email;
-            decryptedGlobalUser.Birth_date = player.birth_date;
-            decryptedGlobalUser.Gender = player.gender;
-            decryptedGlobalUser.Name = player.name;
-
-            return decryptedGlobalUser;
-        }
-
     }
 }

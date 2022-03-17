@@ -83,22 +83,6 @@ namespace apiREST.Model
         public string? Name { get; set; }
         public string? Gender { get; set; }
         public DateTime Birth_date { get; set; }
-        public ResponsePlayer? Player_info { get; set; }
-    }
-
-    public class ResponseGlobalUser
-    {
-        [Key]
-        [StringLength(20)]
-        [Required]
-        public string? User_name { get; set; }
-        [Required]
-        public string? Email { get; set; }
-        [Required]
-        public string? Name { get; set; }
-        public string? Gender { get; set; }
-        public DateTime Birth_date { get; set; }
-
     }
 
 }
