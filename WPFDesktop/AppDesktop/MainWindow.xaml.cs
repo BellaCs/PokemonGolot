@@ -45,11 +45,11 @@ namespace AppDesktop
             foreach (JObject admin in usersList)
             {
                 TableAdmins actual = new TableAdmins();
- 
+
                 actual.nom = (string)admin["user_name"];
                 actual.email = (string)admin["email"];
                 actual.contrasenya = (string)admin["password"];
-          
+
                 adminsList.Add(actual);
             }
 
@@ -63,7 +63,8 @@ namespace AppDesktop
             string userName = userBox.Text;
             string userPassword = passwordBox.Password;
             // check if the fields are full
-            if (userName == "" || userPassword =="") {
+            if (userName == "" || userPassword == "")
+            {
                 MessageBox.Show("Cal omplir els camps");
             }
             else
@@ -81,7 +82,7 @@ namespace AppDesktop
                 {
                     // if user isn't correct, show textbox
                     MessageBoxResult result = System.Windows.MessageBox.Show("Dades Incorrectes", "Usuari o contrasenya incorrecte", MessageBoxButton.OK);
-                    
+
                     switch (result)
                     {
                         case MessageBoxResult.OK:
@@ -93,7 +94,7 @@ namespace AppDesktop
                     throw;
                 }
             }
-            
+
 
 
         }

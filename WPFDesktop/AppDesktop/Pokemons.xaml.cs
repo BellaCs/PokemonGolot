@@ -3,6 +3,7 @@ using System.Windows;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Windows.Controls;
+using System.Net;
 
 namespace AppDesktop
 {
@@ -79,11 +80,23 @@ namespace AppDesktop
         void DataGridForPokemons()
         {
 
+            string sURL;
+            sURL = "https://172.24.1.178:7292/api/pokemon";
+
+            var request = WebRequest.Create(sURL);
+            request.Method = "GET";
+
+            using var webResponse = request.GetResponse();
+            using var webStream = webResponse.GetResponseStream();
+
+            using var reader = new StreamReader(webStream);
+            var pokemonsData = reader.ReadToEnd();
+
             // Read json Document **** Canviar RUTA ***
             //StreamReader r = new StreamReader("C:/Users/Nuria/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
-            StreamReader r = new StreamReader("C:/Users/eloiv/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
-            string jsonString = r.ReadToEnd();
-            JToken pokemonsData = JToken.Parse(jsonString);
+            ////StreamReader r = new StreamReader("C:/Users/eloiv/Documents/GitHub/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
+            //string jsonString = r.ReadToEnd();
+            //JToken pokemonsData = JToken.Parse(jsonString);
 
             List<TablePokemons> pokemonList = new List<TablePokemons>();
 
