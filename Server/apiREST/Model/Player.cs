@@ -19,6 +19,30 @@ namespace apiREST.Model
             trophys = new HashSet<GymTrophy>();
         }
 
+        public Player(String user) 
+        {
+            user_name = user;
+            team = null;
+            level = 1;
+            inventory_capacity = 200;
+            current_level_experience = 0;
+            experience = 0;
+            pokemon_slots = 100;
+            won_battles = 0;
+            caputred_pokemon = 0;
+
+            recivedPresents = new HashSet<Present>();
+            presentsToSend = new HashSet<Present>();
+            raidsParticipated = new HashSet<RaidParticipant>();
+            pokemons = new HashSet<PokemonOwned>();
+            friends = new HashSet<Friendship>();
+            pokedex = new HashSet<PokemonRegister>();
+            eggs = new HashSet<EggInventory>();
+            packagesOfferBought = new HashSet<PackageOfferBought>();
+            inventory = new HashSet<ObjectInventory>();
+            trophys = new HashSet<GymTrophy>();
+        }
+
         [Key]
         [ForeignKey("Player")]
         [StringLength(20)]
@@ -61,6 +85,22 @@ namespace apiREST.Model
         public virtual ICollection<PackageOfferBought> packagesOfferBought { get; set; }
         public virtual ICollection<ObjectInventory> inventory { get; set; }
         public virtual ICollection<GymTrophy> trophys { get; set; }
+
+        public ResponsePlayer toResponsePlayer() 
+        {
+            ResponsePlayer response = new ResponsePlayer();
+
+            response.Team = this.team;
+            response.Level = this.level;
+            response.Inventory_capacity = this.inventory_capacity;
+            response.Current_level_experience = this.current_level_experience;
+            response.Experience = this.experience;
+            response.Pokemon_slots = this.pokemon_slots;
+            response.Won_battles = this.won_battles;
+            response.Caputred_pokemon = this.caputred_pokemon;
+
+            return response;
+        }
 
     }
 

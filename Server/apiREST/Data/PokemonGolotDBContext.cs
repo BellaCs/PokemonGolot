@@ -118,5 +118,6 @@ namespace apiREST.Data
 #pragma warning disable CS8618
         public DbSet<User> User { get; set; }
         public DbSet<Pokemon> Pokemon { get; set; }
+        public DbSet<Player> Player { get; set; }
     }
 }
