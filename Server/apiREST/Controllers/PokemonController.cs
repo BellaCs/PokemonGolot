@@ -4,6 +4,7 @@ using apiREST.Data;
 using apiREST.Model;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using ExtensionMethods;
 
 namespace apiREST.Controllers
 {
@@ -69,9 +70,9 @@ namespace apiREST.Controllers
 
                     if (userName != null) {
 
-                        List<PokemonOwned> PokemonsOwnedList = await _context.PokemonsOwned.Where(p => p.owner == userName).ToListAsync();
+                        List<PokemonOwned>? PokemonsOwnedList = await _context.Pokemon_owned.Where(p => p.owner == userName).ToListAsync();
 
-
+                        return PokemonsOwnedList.toPokemonOwnedForListList(_context);
                     }
                     else
                     {

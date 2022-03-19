@@ -1,4 +1,5 @@
-﻿using apiREST.Model;
+﻿using apiREST.Data;
+using apiREST.Model;
 
 namespace ExtensionMethods
 {
@@ -23,20 +24,14 @@ namespace ExtensionMethods
             return response;
         }
 
-
-        /// <summary>
-        /// Custom user extension that converts a user object to simple data response user
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-
-        public static SimpleUserData toSimpleResponseUserData(this User user)
+        public static List<PokemonOwnedForList> toPokemonOwnedForListList(this List<PokemonOwned> pokemons, pokemonGolotApi context) 
         {
-            SimpleUserData response = new SimpleUserData();
+            List<PokemonOwnedForList> response = new List<PokemonOwnedForList>();
 
-            response.name = user.name;
-            response.email = user.email;
-            response.user_name = user.user_name;
+            foreach (PokemonOwned pokemon in pokemons) 
+            {
+                response.Add(pokemon.ToPokemonOwnedForList(context));
+            }
 
             return response;
         }

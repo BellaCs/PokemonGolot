@@ -43,6 +43,7 @@ namespace apiREST.Model
             pokemonOwnedForList.num_pokedex = pokemon;
             pokemonOwnedForList.name = name;
             pokemonOwnedForList.img_front = _logic.getPokemonImgFront(pokemon, context);
+            pokemonOwnedForList.cp = _logic.getPokemonCP(this, context);
 
             return pokemonOwnedForList;
         }

@@ -22,6 +22,22 @@ namespace apiREST.Model
         public string? rol { get; set; }
         [ForeignKey("rol")]
         public virtual PlayerRol? Rol { get; set; }
+
+        /// <summary>
+        /// Custom user extension that converts a user object to simple data response user
+        /// </summary>
+        /// <returns></returns>
+
+        public SimpleUserData toSimpleResponseUserData()
+        {
+            SimpleUserData response = new SimpleUserData();
+
+            response.name = name;
+            response.email = email;
+            response.user_name = user_name;
+
+            return response;
+        }
     }
 
     public class GlobalUserRegister

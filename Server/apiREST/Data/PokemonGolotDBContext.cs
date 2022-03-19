@@ -104,6 +104,7 @@ namespace apiREST.Data
                 .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -119,8 +120,7 @@ namespace apiREST.Data
         public DbSet<User> User { get; set; }
         public DbSet<Pokemon> Pokemon { get; set; }
         public DbSet<Player> Player { get; set; }
-
-        public DbSet<PokemonOwned> PokemonsOwned { get; set; }
-        public DbSet<PokemonLevel> PokemonLevels { get; set; }
+        public DbSet<PokemonOwned> Pokemon_owned { get; set; }
+        public DbSet<PokemonLevel> Pokemon_level { get; set; }
     }
 }
