@@ -19,14 +19,14 @@
             android:id="@+id/termsconditionsLabel"
             android:layout_width="238dp"
             android:layout_height="18dp"
-            android:layout_marginTop="624dp"
+            android:layout_marginTop="708dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/accept_conditions"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
+            app:layout_constraintHorizontal_bias="0.635"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -46,6 +46,21 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <TextView
+            android:id="@+id/genderLabel"
+            android:layout_width="325dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="600dp"
+            android:fontFamily="@font/candal"
+            android:gravity="center_horizontal"
+            android:text="Gender"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
             android:id="@+id/repeatpasswordLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
@@ -60,18 +75,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <EditText
-        android:id="@+id/passwordInsert"
-        android:layout_width="321dp"
-        android:layout_height="54dp"
-        android:background="#FFE500"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="555dp" />
+        <EditText
+            android:id="@+id/passwordInsert"
+            android:layout_width="321dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="548dp"
+            android:background="#FFE500"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/passwordLabel"
@@ -117,6 +133,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <EditText
+            android:id="@+id/nameInsert"
+            android:layout_width="321dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="364dp"
+            android:layout_weight="1"
+            android:background="#FFE500"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/countryLabel"
             android:layout_width="325dp"
@@ -161,65 +191,78 @@
 
 
         <EditText
-        android:id="@+id/usernameInsert"
-        android:layout_width="321dp"
-        android:layout_height="54dp"
-        android:background="#FFE500"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="464dp"
-        tools:ignore="MissingConstraints" />
+            android:id="@+id/usernameInsert"
+            android:layout_width="321dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="456dp"
+            android:background="#FFE500"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/emailInsert"
-        android:layout_width="321dp"
-        android:layout_height="52dp"
-        android:background="#FFE500"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="735dp"
-        tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/emailInsert"
+            android:layout_width="321dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="736dp"
+            android:background="#FFE500"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/repeatpasswordInsert"
-        android:layout_width="321dp"
-        android:layout_height="52dp"
-        android:background="#FFE500"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="643dp"
-        tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/repeatpasswordInsert"
+            android:layout_width="321dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="644dp"
+            android:background="#FFE500"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/createaccountButton"
-            android:layout_width="321dp"
-            android:layout_height="64dp"
+            android:layout_width="271dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="8dp"
             android:background="#FFE500"
+            android:onClick="register"
             android:text="@string/create_account"
             android:textColor="#040404"
             android:textSize="22sp"
-            android:onClick="createAccount"
             app:backgroundTint="#FFE500"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="56dp"
-            tools:layout_editor_absoluteY="858dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/termsconditionsCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#050505"
-            tools:layout_editor_absoluteX="76dp"
-            tools:layout_editor_absoluteY="800dp"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="879dp" />
+
+        <RadioGroup
+            android:id="@+id/genderSelector"
+            android:layout_width="304dp"
+            android:layout_height="52dp"
+            android:background="#FFE500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="829dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

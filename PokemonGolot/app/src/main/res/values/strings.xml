@@ -21,4 +21,12 @@
     //LOGIN PAGE
     <string name="login">Login</string>
 
+
+    //GENDER
+    <string-array name="gender">
+        <item>Female</item>
+        <item>Male</item>
+
+    </string-array>
+
 </resources>

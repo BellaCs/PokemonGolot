@@ -10,20 +10,25 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class LoginPost {
-    public Map<String, Object> post_login(String user, String password, String url)
+public class RegisterPost {
+    public Map<String, Object> post_register(String user, String password, String name, String dateBirth, String email, String url)
     {
         ExecutorService thread_pool = Executors.newCachedThreadPool();
 
         try {
             // Headers
             Map<String, String> headers = new HashMap<>();
-            FormPost loginPost = new FormPost(url, "utf-8", headers);
+            FormPost registerPost = new FormPost(url, "utf-8", headers);
             // Add form field
-            loginPost.addFormField("user_name", user);
-            loginPost.addFormField("password", password);
+            registerPost.addFormField("user_name", user);
+            registerPost.addFormField("password", password);
+            registerPost.addFormField("name", name);
+            //registerPost.addFormField("repeatPassword", repeatPassword);
+            //registerPost.addFormField("dateBirth", dateBirth);
+            registerPost.addFormField("email", email);
+
             // Result
-            Future<String> response = thread_pool.submit(loginPost::finish);
+            Future<String> response = thread_pool.submit(registerPost::finish);
 
             while (!response.isDone()){
                 System.out.println("Waiting...");
