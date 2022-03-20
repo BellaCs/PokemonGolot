@@ -19,22 +19,22 @@
             android:id="@+id/termsconditionsLabel"
             android:layout_width="238dp"
             android:layout_height="18dp"
-            android:layout_marginTop="708dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/accept_conditions"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.635"
+            app:layout_constraintHorizontal_bias="0.636"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <TextView
             android:id="@+id/emailLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="508dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/email"
@@ -43,13 +43,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/repeatpasswordInsert" />
 
         <TextView
             android:id="@+id/genderLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="Gender"
@@ -58,13 +58,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/emailInsert" />
 
         <TextView
             android:id="@+id/repeatpasswordLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="416dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/repeat_password"
@@ -73,27 +73,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordInsert" />
 
         <EditText
             android:id="@+id/passwordInsert"
             android:layout_width="321dp"
             android:layout_height="54dp"
-            android:layout_marginTop="548dp"
+            android:layout_marginTop="20dp"
             android:background="#FFE500"
             android:ems="10"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordLabel"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/passwordLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="328dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/password"
@@ -102,71 +103,42 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/usernameInsert" />
 
         <TextView
             android:id="@+id/usernameLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="236dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/username"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintHorizontal_bias="0.588"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <EditText
-        android:id="@+id/birthdateInsert"
-        android:layout_width="321dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="280dp"
-        android:layout_weight="1"
-        android:background="#FFE500"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/birthdateInsert" />
 
         <EditText
-            android:id="@+id/nameInsert"
+            android:id="@+id/birthdateInsert"
             android:layout_width="321dp"
             android:layout_height="54dp"
-            android:layout_marginTop="364dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:background="#FFE500"
             android:ems="10"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/countryLabel"
-            android:layout_width="325dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="144dp"
-            android:fontFamily="@font/candal"
-            android:gravity="center_horizontal"
-            android:text="@string/country"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/birthdateLabel" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="160dp"
             android:layout_height="174dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -178,63 +150,62 @@
             android:id="@+id/birthdateLabel"
             android:layout_width="325dp"
             android:layout_height="30dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/candal"
             android:gravity="center_horizontal"
             android:text="@string/date_birth"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
 
         <EditText
             android:id="@+id/usernameInsert"
             android:layout_width="321dp"
             android:layout_height="54dp"
-            android:layout_marginTop="456dp"
+            android:layout_marginTop="20dp"
             android:background="#FFE500"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/emailInsert"
             android:layout_width="321dp"
             android:layout_height="52dp"
-            android:layout_marginTop="736dp"
+            android:layout_marginTop="20dp"
             android:background="#FFE500"
             android:ems="10"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailLabel"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/repeatpasswordInsert"
             android:layout_width="321dp"
             android:layout_height="52dp"
-            android:layout_marginTop="644dp"
+            android:layout_marginTop="20dp"
             android:background="#FFE500"
             android:ems="10"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repeatpasswordLabel"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/createaccountButton"
             android:layout_width="271dp"
             android:layout_height="43dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
             android:background="#FFE500"
             android:onClick="register"
             android:text="@string/create_account"
@@ -243,26 +214,52 @@
             app:backgroundTint="#FFE500"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.602"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termsconditionsLabel"
             tools:ignore="MissingConstraints" />
 
         <CheckBox
             android:id="@+id/termsconditionsCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="29dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
             android:textColor="#050505"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="59dp"
-            tools:layout_editor_absoluteY="879dp" />
+            app:layout_constraintEnd_toStartOf="@+id/termsconditionsLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            tools:ignore="MissingConstraints" />
 
         <RadioGroup
-            android:id="@+id/genderSelector"
-            android:layout_width="304dp"
-            android:layout_height="52dp"
-            android:background="#FFE500"
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="829dp" />
+            app:layout_constraintTop_toBottomOf="@+id/genderLabel">
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Male"
+                android:textColor="#FFF"
+                app:buttonTint="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Female"
+                android:textColor="#FFF"
+                app:buttonTint="#FFFFFF" />
+        </RadioGroup>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
