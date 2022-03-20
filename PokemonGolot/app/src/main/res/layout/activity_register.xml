@@ -129,6 +129,7 @@
             android:background="#FFE500"
             android:ems="10"
             android:inputType="date"
+            android:importantForAutofill="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintStart_toStartOf="parent"
