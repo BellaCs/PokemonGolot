@@ -2,6 +2,7 @@ package android.app.pokemongolot;
 
 import android.app.pokemongolot.globals.SharedPreferencesEditor;
 import android.app.pokemongolot.requests.Posts.LoginPost;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -32,11 +33,12 @@ public class LoginActivity extends AppCompatActivity {
 
         LoginPost request = new LoginPost();
 
-        Map<String, Object> map = request.post_login(usernameS, passwordS, R.string.server_base_url + "/user/authenticate");
+        Map<String, Object> map = request.post_login(usernameS, passwordS, getString(R.string.server_base_url) + "/user/authenticate");
 
         if(map != null){
             tokenPreferencesEditor.safeString(getString(R.string.token_key), map.get("token").toString());
-
+            Intent intent = new Intent(this, MapActivity.class);
+            startActivity(intent);
         }
     }
 }

@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
         tokenPreferencesEditor = new SharedPreferencesEditor(getString(R.string.token_file_key), getApplicationContext());
 
     }
-    public void register(View view) {
+    public void startRegister(View view) {
         username = findViewById(R.id.usernameInsert);
         //name = findViewById(R.id.nameInsert);
         password = findViewById(R.id.passwordInsert);
