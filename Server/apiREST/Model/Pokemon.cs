@@ -35,4 +35,5 @@ namespace apiREST.Model
         [Required]
         public bool? isActive { get; set; }
     }
+
 }

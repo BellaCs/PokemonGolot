@@ -3,9 +3,9 @@
     public class LoginResponse
     {
         public string token { get; set; }
-        public ResponsePlayer user { get; set; }
+        public ResponseUser user { get; set; }
 
-        public LoginResponse(string token, ResponsePlayer player) 
+        public LoginResponse(string token, ResponseUser player) 
         {
             this.token = token;
             this.user = player;

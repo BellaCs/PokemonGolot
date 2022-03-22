@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using apiREST.Data;
+using apiREST.Logic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace apiREST.Model
@@ -32,5 +34,31 @@ namespace apiREST.Model
         [ForeignKey("level")]
         public virtual PokemonLevel? Level { get; set; }
 
+        public PokemonOwnedForList ToPokemonOwnedForList(pokemonGolotApi context) {
+
+            PokemonOwnedForList pokemonOwnedForList = new();
+            pokemonLogic _logic = new pokemonLogic();
+
+            pokemonOwnedForList.pokemon_id = pokemon_id;
+            pokemonOwnedForList.num_pokedex = pokemon;
+            pokemonOwnedForList.name = name;
+            pokemonOwnedForList.img_front = _logic.getPokemonImgFront(pokemon, context);
+            pokemonOwnedForList.cp = _logic.getPokemonCP(this, context);
+
+            return pokemonOwnedForList;
+        }
     }
+
+    public class PokemonOwnedForList {
+
+        public int? pokemon_id { get; set; }
+        public int? num_pokedex { get; set; }
+        public string? img_front { get; set; }
+        public string? name { get; set; }
+        public int? cp { get; set; }
+
+
+    }
+
+
 }

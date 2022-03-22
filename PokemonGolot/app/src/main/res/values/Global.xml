@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <string name="server_base_url">
+        https://172.24.4.221:7292
+    </string>
+
+
+    <string name="api_base_url">
+        https://172.24.4.221:7292/api
+    </string>
+
+
+
+</resources>

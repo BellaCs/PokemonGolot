@@ -1,9 +1,10 @@
-﻿#nullable disable
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using apiREST.Data;
 using apiREST.Model;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using ExtensionMethods;
 
 namespace apiREST.Controllers
 {
@@ -29,7 +30,7 @@ namespace apiREST.Controllers
         public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemon()
         {
             // todo format pokemon to shor info data
-            return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();            
+            return await _context.Pokemon.OrderBy(p => p.num_pokedex).ToListAsync();
         }
 
 
@@ -50,14 +51,53 @@ namespace apiREST.Controllers
             {
                 return NotFound();
             }
-            
+
 
             return pokemon;
         }
+
+        [HttpGet("self/owned")]
+        public async Task<ActionResult<List<PokemonOwnedForList>>> GetPokemonOwned()
+        {
+            try
+            {
+                if (HttpContext.User.Identity is ClaimsIdentity identity)
+                {
+                    // obtenir les propietats del token (identitat de l'usuari)
+                    IEnumerable<Claim> claims = identity.Claims;
+                    // obtenir el valor del claim (el nom_usuari)
+                    string? userName = claims.FirstOrDefault(c => c.Type == "UserName")?.Value;
+
+                    if (userName != null) {
+
+                        List<PokemonOwned>? PokemonsOwnedList = await _context.Pokemon_owned.Where(p => p.owner == userName).ToListAsync();
+
+                        return PokemonsOwnedList.toPokemonOwnedForListList(_context);
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                else
+                {
+                    return Unauthorized();
+                }
+
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+
+
+        }
+
 
         private bool PokemonExists(int? id)
         {
             return _context.Pokemon.Any(e => e.num_pokedex == id);
         }
+
     }
 }

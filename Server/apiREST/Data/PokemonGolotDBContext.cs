@@ -104,11 +104,12 @@ namespace apiREST.Data
                 .HasKey(nameof(PokemonElement.pokemon), nameof(PokemonElement.element));
 
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string con = "Host=pokemongolot.postgres.database.azure.com;Port=5432;Database=pokemonGolot;Username=mbellavista;password=";
+                string con = "Host=pokemongolot.postgres.database.azure.com;Port=5432;Database=pokemonGolot;Username=mbellavista;password=Marc1324";
                 //string con = "Host=172.24.127.1;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
                 //string con = "Host=192.168.1.249;Port=5432;Database=pokemonGolot;Username=dbuser;password=patata123";
                 optionsBuilder.UseNpgsql(con);
@@ -118,5 +119,8 @@ namespace apiREST.Data
 #pragma warning disable CS8618
         public DbSet<User> User { get; set; }
         public DbSet<Pokemon> Pokemon { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<PokemonOwned> Pokemon_owned { get; set; }
+        public DbSet<PokemonLevel> Pokemon_level { get; set; }
     }
 }

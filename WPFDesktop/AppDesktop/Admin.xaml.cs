@@ -84,8 +84,8 @@ namespace AppDesktop
         public async Task DataGridForAdmins()
         {
             // Read json Document **** Canviar RUTA ***
-            //StreamReader r = new StreamReader("C:/Users/eloiv/Documents/Estudis/2DAM/Pokemon/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
-            string jsonString = await Request.Get.GetAdmin.GetAdminList();
+            StreamReader r = new StreamReader("C:/Users/34662/Desktop/PokemonGolot/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
+            string jsonString = r.ReadToEnd();
             JToken usersList = JToken.Parse(jsonString);
 
             List<TableAdmins> adminsList = new List<TableAdmins>();
