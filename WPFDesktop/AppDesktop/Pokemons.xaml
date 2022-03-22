@@ -84,13 +84,13 @@
         </Button>
         <Button x:Name="ButtonAdmin"  Content="Administradors" HorizontalAlignment="Left" Margin="621,107,0,0" VerticalAlignment="Top" Width="270" Height="45" FontFamily="Caladea" FontWeight="Bold" FontSize="22" Click="ButtonAdmin_Click"   Background="Black" BorderBrush="Black" Opacity="0.75" OpacityMask="Black" Foreground="White" Cursor="Hand"/>
 
-        <Grid x:Name="GridAdmins" HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Opacity="0.98" Grid.Row="20" Background="#FF7BAF73">
+        <Grid x:Name="GridPokemons" HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Opacity="0.98" Grid.Row="20" Background="#FF7BAF73">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="119*"/>
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="123*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="DataGridPokemons" Margin="10,10,0,0" AutoGenerateColumns="False" Background="White" Cursor="Hand" ItemsSource="{Binding DataGridAdmins}" CanUserAddRows="false" Loaded="DataGridPokemons_Loaded" FontFamily="Caladea" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF30A71A" Grid.ColumnSpan="3">
+            <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="DataGridPokemons" Margin="10,10,0,0" AutoGenerateColumns="True" Background="White" Cursor="Hand" ItemsSource="{Binding DataGridPokemons}" CanUserAddRows="false" Loaded="DataGridPokemons_Loaded" FontFamily="Caladea" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF30A71A" Grid.ColumnSpan="3">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="#Pokédex" Binding="{Binding Num_pokedex}" Width="120" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Nom" Binding="{Binding Name}" Width="180" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>

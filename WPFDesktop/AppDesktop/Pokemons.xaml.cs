@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Windows.Controls;
 using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Net.Http.Headers;
 
 namespace AppDesktop
 {
@@ -77,62 +80,81 @@ namespace AppDesktop
             public Button ButtonEdit { get; set; }
 
         }
-        void DataGridForPokemons()
+        async Task DataGridForPokemonsAsync()
         {
 
-            string sURL;
-            sURL = "https://172.24.1.178:7292/api/pokemon";
-
-            var request = WebRequest.Create(sURL);
-            request.Method = "GET";
-
-            using var webResponse = request.GetResponse();
-            using var webStream = webResponse.GetResponseStream();
-
-            using var reader = new StreamReader(webStream);
-            var pokemonsData = reader.ReadToEnd();
-
-            // Read json Document **** Canviar RUTA ***
-
-            StreamReader r = new StreamReader("C:/Users/34662/Desktop/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
-            string jsonString = r.ReadToEnd();
-            JToken pokemonsData = JToken.Parse(jsonString);
-
-            List<TablePokemons> pokemonList = new List<TablePokemons>();
-
-            foreach (JObject pokemon in pokemonsData)
+            try
             {
-                TablePokemons actual = new TablePokemons();
-                // Generate button
-                Button b = new Button();
-                b.Content = "Accedir";
-                b.Click += ButtonEditPokemon_Click;
-                b.Tag = (string)pokemon["num_pokedex"];
+                HttpClientHandler clientHandler = new HttpClientHandler();
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
 
-                actual.Num_pokedex = (int)pokemon["num_pokedex"];
+                string sURL;
+                //sURL = "https://172.24.1.178:7292/api/pokemon"; //172.24.2.67
+                sURL = "https://172.24.2.67:7292/api/pokemon"; //172.24.2.67
 
-                actual.Name = (string)pokemon["name"];
-                if ((bool)pokemon["isActive"])
+
+                using (var httpClient = new HttpClient(clientHandler))
                 {
-                    actual.Active = (string)"Si";
-                } else {
-                    actual.Active = (string)"No";
+
+   
+                    string token = App.Current.Properties["token"].ToString();
+                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    HttpResponseMessage response = await httpClient.GetAsync(sURL);
+                    string pokemonsData = await response.Content.ReadAsStringAsync();
+
+
+                    JToken pokemonsDataToken = JToken.Parse(pokemonsData);
+
+                    List<TablePokemons> pokemonList = new List<TablePokemons>();
+
+                    foreach (JObject pokemon in pokemonsDataToken)
+                    {
+                        TablePokemons actual = new TablePokemons();
+                        // Generate button
+                        Button b = new Button();
+                        b.Content = "Accedir";
+                        b.Click += ButtonEditPokemon_Click;
+                        b.Tag = (string)pokemon["num_pokedex"];
+
+                        actual.Num_pokedex = (int)pokemon["num_pokedex"];
+
+                        actual.Name = (string)pokemon["name"];
+                        if ((bool)pokemon["isActive"])
+                        {
+                            actual.Active = (string)"Si";
+                        }
+                        else
+                        {
+                            actual.Active = (string)"No";
+                        }
+
+                        string test = actual.Active;
+                        actual.Attack = (int)pokemon["attack"];
+                        actual.Stamina = (int)pokemon["stamina"];
+                        actual.Defense = (int)pokemon["defense"];
+
+                        actual.ButtonEdit = b;
+                        pokemonList.Add(actual);
+                    }
+                    DataGridPokemons.ItemsSource = pokemonList;
                 }
-
-                string test = actual.Active;
-                actual.Attack = (int)pokemon["attack"];
-                actual.Stamina = (int)pokemon["stamina"];
-                actual.Defense = (int)pokemon["defense"];
-
-                actual.ButtonEdit = b;
-                pokemonList.Add(actual);
             }
-            DataGridPokemons.ItemsSource = pokemonList;
+            catch { 
+            
+            }
+    }
+
+
+        private async Task DataGridPokemons_LoadedAsync()
+        {
+            await DataGridForPokemonsAsync();
+
         }
 
-        private void DataGridPokemons_Loaded(object sender, RoutedEventArgs e)
+        private  void DataGridPokemons_Loaded(object sender, RoutedEventArgs e)
         {
-            this.DataGridForPokemons();
+            DataGridPokemons_LoadedAsync().Wait();
 
         }
     }

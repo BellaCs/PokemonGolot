@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Text.Json;
 using System.IO;
+using System.Diagnostics;
+using System.Net.Security;
 
 namespace AppDesktop.Request.Post
 {
@@ -14,7 +16,7 @@ namespace AppDesktop.Request.Post
 
     public class login_post
     {
-        // https://172.24.1.178:7292/Login/authenticate
+        // https://172.24.1.178:7292/user/authenticate
 
         static readonly HttpClient client = new HttpClient();
 
@@ -28,10 +30,25 @@ namespace AppDesktop.Request.Post
         }
 
 
-        public static string loginPost(string userNameLogin, string userPasswordLogin)
+        public static async Task<string> loginPostAsync(string userNameLogin, string userPasswordLogin)
         {
+            
             string sURL;
-            sURL = "https://172.24.1.178:7292/user/authenticate";
+            //sURL = "https://172.24.1.178:7292/user/authenticate"; 172.24.2.67
+            sURL = "https://172.24.2.67:7292/user/authenticate";
+
+
+            KeyValuePair<string, string> password = new KeyValuePair<string, string>("password", userPasswordLogin);
+
+            KeyValuePair<string, string> username = new KeyValuePair<string, string>("user_name", userNameLogin);
+
+            List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
+
+            data.Add(password);
+            data.Add(username);
+
+            return await PostFormUrlEncoded(sURL, data);
+            /*
             try
             {
                 var request = WebRequest.Create(sURL);
@@ -72,7 +89,40 @@ namespace AppDesktop.Request.Post
             {
                 return e.Message.GetType().GetProperty("StatusCode").ToString();
             }
+            */
+        }
 
+
+
+
+        public static async Task<string> PostFormUrlEncoded(string url, IEnumerable<KeyValuePair<string, string>> postData)
+        {
+            try
+            {
+                HttpClientHandler clientHandler = new HttpClientHandler();
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+                using (var httpClient = new HttpClient(clientHandler))
+                    {
+                        using (var content = new FormUrlEncodedContent(postData))
+                        {
+                            content.Headers.Clear();
+                            content.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+
+                            HttpResponseMessage response = await httpClient.PostAsync(url, content);
+
+                            return await response.Content.ReadAsStringAsync();
+                        }
+                    }
+                
+                
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.Message);
+                return "";
+            }
+           
         }
 
     }

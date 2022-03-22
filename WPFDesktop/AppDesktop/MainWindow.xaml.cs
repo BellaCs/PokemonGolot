@@ -5,6 +5,9 @@ using System.IO;
 using System.Collections.Generic;
 using AppDesktop.Request.Post;
 using System.Net;
+using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace AppDesktop
 {
@@ -21,7 +24,6 @@ namespace AppDesktop
         {
             InitializeComponent();
             login_post = new login_post();
-            Application_Start();
         }
 
         class TableAdmins
@@ -55,7 +57,7 @@ namespace AppDesktop
 
         }
 
-        private void Login_OnClick(object sender, RoutedEventArgs e)
+        private async void Login_OnClick(object sender, RoutedEventArgs e)
         {
 
 
@@ -72,7 +74,15 @@ namespace AppDesktop
                 try
                 {
                     // Function validate user
-                    string statusCode = login_post.loginPost(userName, userPassword);
+                    string response = await login_post.loginPostAsync(userName, userPassword);
+                    JObject tokenJson = JObject.Parse(response);
+
+                    string token = tokenJson.GetValue("token").ToString();
+
+                    App.Current.Properties["token"] = token;
+                    string myProperty = App.Current.Properties["token"].ToString();
+
+                    Trace.WriteLine(response);
 
                     Pokemons pokemonmenu = new Pokemons();
                     this.Visibility = Visibility.Hidden;
@@ -99,9 +109,20 @@ namespace AppDesktop
 
         }
 
-        protected void Application_Start()
+        static void NEVER_EAT_POISON_Disable_CertificateValidation()
         {
-            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            // Disabling certificate validation can expose you to a man-in-the-middle attack
+            // which may allow your encrypted message to be read by an attacker
+            // https://stackoverflow.com/a/14907718/740639
+            ServicePointManager.ServerCertificateValidationCallback =
+                delegate (
+                    object s,
+                    X509Certificate certificate,
+                    X509Chain chain,
+                    SslPolicyErrors sslPolicyErrors
+                ) {
+                    return true;
+                };
         }
 
 
