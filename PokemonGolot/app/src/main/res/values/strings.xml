@@ -10,7 +10,7 @@
 
     //REGISTER PAGE
     <string name="date_birth">Date of birth</string>
-    <string name="country">Country</string>
+    <string name="name">Name</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="repeat_password">Repeat password</string>
