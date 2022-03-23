@@ -87,10 +87,9 @@
         <Grid x:Name="GridAdmins" HorizontalAlignment="Left" Height="510" Margin="20,150,20,0" VerticalAlignment="Top" Width="1240" Opacity="0.98" Cursor="Hand" Grid.Row="20" Background="#FF5692C9">
             <DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderAdmin}" x:Name="DataGridAdmins" Margin="10,10,10,85" AutoGenerateColumns="False" Cursor="Hand" ItemsSource="{Binding DataGridAdmins}" CanUserAddRows="false" Loaded="DataGridAdmins_Loaded" FontFamily="Caladea" FontSize="20" FontWeight="Bold" BorderBrush="#FF5692C9" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nom" Binding="{Binding Name}" Width="230" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True" />
-                    <DataGridTextColumn Header="Cognoms" Binding="{Binding Surname}" Width="255" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="275" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Rol" Binding="{Binding Role}" Width="200" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Name}" Width="280" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Cognoms" Binding="{Binding Surname}" Width="305" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="345" FontFamily="Caladea" FontSize="16" FontWeight="Normal" IsReadOnly="True"/>
                     <DataGridTemplateColumn Header="Accions">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
