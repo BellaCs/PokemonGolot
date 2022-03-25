@@ -24,6 +24,8 @@ namespace ExtensionMethods
             return response;
         }
 
+
+
         public static List<PokemonOwnedForList> toPokemonOwnedForListList(this List<PokemonOwned> pokemons, pokemonGolotApi context) 
         {
             List<PokemonOwnedForList> response = new List<PokemonOwnedForList>();

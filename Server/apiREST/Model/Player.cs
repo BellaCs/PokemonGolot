@@ -63,11 +63,6 @@ namespace apiREST.Model
         public int? won_battles { get; set; }
         public int? caputred_pokemon { get; set; }
 
-
-
-
-
-
         [ForeignKey("team")]
         public virtual Team? Team { get; set; }
         [ForeignKey("level")]

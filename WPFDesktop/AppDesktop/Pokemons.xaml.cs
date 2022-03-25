@@ -96,13 +96,15 @@ namespace AppDesktop
                 using (var httpClient = new HttpClient(clientHandler))
                 {
 
-   
-                    string token = App.Current.Properties["token"].ToString();
+
+                    /*string token = App.Current.Properties["token"].ToString();
                     httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                     HttpResponseMessage response = await httpClient.GetAsync(sURL);
-                    string pokemonsData = await response.Content.ReadAsStringAsync();
+                    string pokemonsData = await response.Content.ReadAsStringAsync();*/
 
+                    StreamReader r = new StreamReader("C:/Users/Marc/Desktop/Portfolio/PokemonGolot/WPFDesktop/AppDesktop/assets/examplePokemons.json");
+                    string pokemonsData = r.ReadToEnd();
 
                     JToken pokemonsDataToken = JToken.Parse(pokemonsData);
 

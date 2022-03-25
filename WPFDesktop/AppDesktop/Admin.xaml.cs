@@ -84,7 +84,7 @@ namespace AppDesktop
 
         public void DataGridForAdmins()
         {
-            //****
+            /*
             string sURL;
             sURL = "https://172.24.1.178:7292/api/user/admins";
 
@@ -98,15 +98,14 @@ namespace AppDesktop
             var adminsData = reader.ReadToEnd();
             //var adminsData = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQb2tlbW9uR29sb3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI1YzBjZDMxMi04NGE1LTRhNjgtOWRmNC1lZTQ2YjJlYzJkODMiLCJpYXQiOiIyMi8wMy8yMDIyIDE2OjQ0OjAwIiwiRmlyc3ROYW1lIjoibWFyYyBiZWxsYXZpc3RhIGZhYnJlZ2EiLCJEYXRlIjoiMjIvMDMvMjAyMiAxNjo0Mzo1MSIsIkVtYWlsIjoibWJlbGxhdmlzdGE4QGdtYWlsLmNvbSIsIlVzZXJOYW1lIjoiYmVsbGFjcyIsIlJvbCI6IkFkbWluIiwiZXhwIjoxNjQ4MDUzODQ1LCJpc3MiOiJQb2tlbW9uR29sb3RBdXRoZW50aWNhdGlvblNlcnZlciIsImF1ZCI6IlBva2Vtb25Hb2xvdFNlcnZpY2VQb3N0bWFuQ2xpZW50In0.DQw6xjBjOpJRexJCo4dO6bFDtqF43xI5QpiIMIXfDwo\",\"user\":{\"user_name\":\"bellacs\",\"email\":\"mbellavista8@gmail.com\",\"name\":\"marc bellavista fabrega\",\"gender\":\"m\",\"birth_date\":\"2001-02-11T16:44:12.208Z\";
 
-            JToken usersList = JToken.Parse(adminsData);
+            JToken usersList = JToken.Parse(adminsData);*/
 
            //  App.Current.Properties["token"];
 
             //****
-            // Read json Document **** Canviar RUTA ***
-            //StreamReader r = new StreamReader("C:/Users/34662/Desktop/PokemonGolot/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
-            //string jsonString = r.ReadToEnd();
-            //JToken usersList = JToken.Parse(jsonString);
+            StreamReader r = new StreamReader("C:/Users/Marc/Desktop/Portfolio/PokemonGolot/WPFDesktop/AppDesktop/assets/exampleAdmins.json");
+            string jsonString = r.ReadToEnd();
+            JToken usersList = JToken.Parse(jsonString);
 
             List<TableAdmins> adminsList = new List<TableAdmins>();
 

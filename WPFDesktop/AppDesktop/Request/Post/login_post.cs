@@ -34,8 +34,7 @@ namespace AppDesktop.Request.Post
         {
             
             string sURL;
-            //sURL = "https://172.24.1.178:7292/user/authenticate"; 172.24.2.67
-            sURL = "https://172.24.2.67:7292/user/authenticate";
+            sURL = "https://172.24.1.178:7292/user/authenticate";
 
 
             KeyValuePair<string, string> password = new KeyValuePair<string, string>("password", userPasswordLogin);
